@@ -1,0 +1,344 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- <div class="page-header">
+                            <h1>Accounting Export (XML)</h1>
+                        </div> -->
+                        <!-- Vendor Tab start -->
+                        <div id="vendorTab" class="tab-pane master-material-management-tab-content">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-inline marginB15">
+                                        <div class="form-group ">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="showarchive(this)" checked=""> Accounting Export (XML)
+                                                </label>
+                                            </div>
+                                            <div class="radio marginL30">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="Radio1" value="option1" onclick="showUnarchive(this)"> Accounting Export
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form class="form-inline custom-search-filter clearfix">
+                                        <div class="form-group" style="width:100%;">
+
+                                            <div class="pull-left">
+                                                <label class="pull-left marginT8 marginR10">Project ID</label>
+                                                <span class="select-dropdown pull-left">
+                                                <span class="dropdown-toggle clearfix width100" id="selectprojectIdBtn" data-toggle="modal" data-target="#selectprojectIdPopup"><span class="eventName pull-left">Select </span>
+                                                <span class="caret pull-right marginT8"></span>
+                                                </span>
+                                                </span>
+                                            </div>
+                                            <div class="pull-left marginL30">
+                                                <div class="radio disabled marginR5">
+                                                    <label>
+                                                        <input type="radio" name="markup" checked="checked"> TAE
+                                                    </label>
+                                                </div>
+                                                <div class="radio disabled marginR5">
+                                                    <label>
+                                                        <input type="radio" name="markup" checked="checked"> CSV
+                                                    </label>
+                                                </div>
+                                                <div class="radio marginR5">
+                                                    <label>
+                                                        <input type="radio" name="markup" checked="checked"> XML
+                                                    </label>
+                                                </div>
+                                                <div class="radio marginR5">
+                                                    <label>
+                                                        <input type="radio" name="markup" checked="checked"> XML-V6
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- ACCOUNTING XML START -->
+                                <div class="col-md-12" id="archiveProjectWrap">
+                                    <div class="table-responsive table-wrapper">
+                                        <table class="table" id="vendor-listing-section">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Aluminum Door</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Aluminium Frame</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> FRP Door</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Hardware</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Hollow Metal Door</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Hollow Metal Frame</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Wood Door</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="exportXMLProgressBar">
+                                            0%
+                                        </div>
+                                    </div>
+                                    <form class="form-inline custom-search-filter clearfix">
+                                        <label>Options</label>
+                                        <div class="checkbox btn-block">
+                                            <label>
+                                                <input type="checkbox"> Include Keying
+                                            </label>
+                                        </div>
+                                        <div class="checkbox btn-block">
+                                            <label>
+                                                <input type="checkbox"> Include "Hardware Item Description" in Description
+                                            </label>
+                                        </div>
+                                        <div class="checkbox btn-block">
+                                            <label>
+                                                <input type="checkbox"> Include "Door Width x Height" in Description
+                                            </label>
+                                        </div>
+                                    </form>
+                                    <div class="button-container">
+                                        <div class="row ">
+                                            <div class="col-md-12 text-right">
+                                                <button class="btn btn-primary pull-right" type="button" onclick="showProgress('#exportXMLProgressBar',1000)">
+                                                    Export
+                                                </button>
+                                                <div class="checkbox pull-right marginR15">
+                                                    <label class="text-left">
+                                                        <input type="checkbox" checked="checked"> View Exported
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ACCOUNTING XML END -->
+                                <!-- ACCOUNTING START -->
+                                <div class="col-md-12" id="unarchiveProjectWrap" STYLE="display:none;">
+                                    <div class="table-responsive table-wrapper">
+                                        <table class="table" id="vendor-listing-section">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Aluminum Door</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Aluminium Frame</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> FRP Door</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Hardware</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Hollow Metal Door</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Hollow Metal Frame</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox"> Wood Door</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="exportProgressBar">
+                                            0%
+                                        </div>
+                                    </div>
+                                    <div class="button-container">
+                                        <div class="row ">
+                                            <div class="col-md-12 text-right">
+                                                <button class="btn btn-primary pull-right" type="button" onclick="showProgress('#exportProgressBar',1000)">
+                                                    Export
+                                                </button>
+                                                <div class="checkbox pull-right marginR15">
+                                                    <label class="text-left">
+                                                        <input type="checkbox" checked="checked"> View Exported
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ACCOUNTING END -->
+                            </div>
+                        </div>
+                        <!-- Vendor Tab end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="selectprojectIdPopup" tabindex="-1" role="dialog" aria-labelledby="selectprojectIdPopup">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H1">Project ID</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="style-scroll" style="overflow-x:auto;">
+                            <table class="table singleSelecttoggle" id="projectIDList" style="margin-bottom:0;">
+                                <tbody>
+                                    <tr>
+                                        <td>Regression Test Project</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6001 openings qtyof 1 ceco</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="getval('#projectIDList','#selectprojectIdBtn')">Done</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+</body>
+
+</html>

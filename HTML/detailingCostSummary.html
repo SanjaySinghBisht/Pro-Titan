@@ -1,0 +1,1368 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid esimate-tab-list">
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#summaryScreen" aria-controls="summaryScreen" role="tab" data-toggle="tab">Summary</a>
+                            </li>
+                            <li role="presentation"><a href="#withPhasingScreen" aria-controls="withPhasingScreen" role="tab" data-toggle="tab">With Phasing</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!-- First Tab -->
+                            <div role="tabpanel" class="tab-pane active" id="summaryScreen">
+
+                                <!-- Page Header -->
+                                <div class="page-header clearfix">
+                                    <h1 class="text-left">Summary</h1>
+                                </div>
+                                <div class="tab-body clearfix">
+                                    <div class="row">
+                                        <div class="col-md-12 leftGridArea">
+                                            <form class="form-inline custom-search-filter clearfix">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label class="displayInline">View</label>
+                                                        <select class="form-control" id="Select1" onChange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL10">
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Export">
+                                                            <i class=" glyphicon glyphicon-export"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="pull-left marginL10">
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="markup" checked="checked" onclick="filterColumnByMarkup('margin', '#summaryTable',6)"> Margin
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="markup" onclick="filterColumnByMarkup('markup', '#summaryTable',6)"> Markup
+                                                            </label>
+                                                        </div>
+                                                        <button class="btn btn-default" type="button" title="Refresh Detailed">
+                                                            Refresh Detailed
+                                                        </button>
+                                                        <button class="btn btn-default" type="button" title="Cost Summary Report">
+                                                            Cost Summary Report
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- GRID DATA and FILTERS -->
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                <label>Drag a column header here to group by that column</label>
+                                            </div>
+                                            <div class="table-wrapper">
+                                                <table class="table custom-grid" id="summaryTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="btn-group custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Vendor - Material</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="vendorMaterial" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Cost Type</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="costType" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Qty</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="qty" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Amount</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="amount" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Markup</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="markup" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Selling Price</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="sellingPrice" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Notes</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Invoice</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="invoice" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Group Co</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="groupCo" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </th>
+                                                            <th data-type="vendorMaterial">
+                                                                Vendor - Material
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="costType">
+                                                                Cost Type
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="qty">
+                                                                Qty
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="amount">
+                                                                Amount
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="markup">
+                                                                Markup
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="sellingPrice">
+                                                                Selling Price
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="notes">
+                                                                Notes
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="invoice">
+                                                                Invoice
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="groupCo">
+                                                                Group Co
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td data-type="vendorMaterial" class="dropdown-column">
+                                                                <div class="col-xs-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">RO</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <table class="table">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <td>Abbr.</td>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-value="RO">
+                                                                                    <td>RO - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="YA">
+                                                                                    <td>YA - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="RU">
+                                                                                    <td>RU - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="RF">
+                                                                                    <td>RF - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="PE">
+                                                                                    <td>PE - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="MK">
+                                                                                    <td>MK - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="GT">
+                                                                                    <td>GT - Hardware</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="costType" class="dropdown-column">
+                                                                <div class="col-xs-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Freight In</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <table class="table">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <td>Description</td>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-value="Freight In">
+                                                                                    <td>Freight In</td>
+                                                                                </tr>
+                                                                                <tr data-value="Freight Out">
+                                                                                    <td>Freight Out</td>
+                                                                                </tr>
+                                                                                <tr data-value="Back Charge">
+                                                                                    <td>Back Charge</td>
+                                                                                </tr>
+                                                                                <tr data-value="No Charge">
+                                                                                    <td>No Charge</td>
+                                                                                </tr>
+                                                                                <tr data-value="Remake">
+                                                                                    <td>Remake</td>
+                                                                                </tr>
+                                                                                <tr data-value="Miscellaneous">
+                                                                                    <td>Miscellaneous</td>
+                                                                                </tr>
+                                                                                <tr data-value="Purchased Product">
+                                                                                    <td>Purchased Product</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="qty" class="column-input-number">
+                                                                <input type="number" value="719">
+                                                            </td>
+                                                            <td data-type="amount">1,070,908,.00</td>
+                                                            <td data-type="markup" data-cell-type="markup">0.00</td>
+                                                            <td data-type="sellingPrice">1,070,908.00</td>
+                                                            <td data-type="notes" class="column-text-box">
+                                                                <div class="col-md-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <textarea class="form-control">
+                                                                        </textarea>
+                                                                        <div class="col-md-12 text-right">
+                                                                            <button class="btn btn-primary">Ok</button>
+                                                                            <button class="btn btn-default">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="invoice"></td>
+                                                            <td data-type="groupCo"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td data-type="vendorMaterial" class="dropdown-column">
+                                                                <div class="col-xs-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">RO</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <table class="table">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <td>Abbr.</td>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-value="RO">
+                                                                                    <td>RO - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="YA">
+                                                                                    <td>YA - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="RU">
+                                                                                    <td>RU - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="RF">
+                                                                                    <td>RF - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="PE">
+                                                                                    <td>PE - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="MK">
+                                                                                    <td>MK - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="GT">
+                                                                                    <td>GT - Hardware</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="costType" class="dropdown-column">
+                                                                <div class="col-xs-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Remake</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <table class="table">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <td>Description</td>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-value="Freight In">
+                                                                                    <td>Freight In</td>
+                                                                                </tr>
+                                                                                <tr data-value="Freight Out">
+                                                                                    <td>Freight Out</td>
+                                                                                </tr>
+                                                                                <tr data-value="Back Charge">
+                                                                                    <td>Back Charge</td>
+                                                                                </tr>
+                                                                                <tr data-value="No Charge">
+                                                                                    <td>No Charge</td>
+                                                                                </tr>
+                                                                                <tr data-value="Remake">
+                                                                                    <td>Remake</td>
+                                                                                </tr>
+                                                                                <tr data-value="Miscellaneous">
+                                                                                    <td>Miscellaneous</td>
+                                                                                </tr>
+                                                                                <tr data-value="Purchased Product">
+                                                                                    <td>Purchased Product</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="qty" class="column-input-number">
+                                                                <input type="number" value="930">
+                                                            </td>
+                                                            <td data-type="amount">23,831.57</td>
+                                                            <td data-type="markup" data-cell-type="markup">0.00</td>
+                                                            <td data-type="sellingPrice">23,831.57</td>
+                                                            <td data-type="notes" class="column-text-box">
+                                                                <div class="col-md-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <textarea class="form-control">
+                                                                        </textarea>
+                                                                        <div class="col-md-12 text-right">
+                                                                            <button class="btn btn-primary">Ok</button>
+                                                                            <button class="btn btn-default">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="invoice"></td>
+                                                            <td data-type="groupCo"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td data-type="vendorMaterial" class="dropdown-column">
+                                                                <div class="col-xs-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">YA</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <table class="table">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <td>Abbr.</td>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-value="RO">
+                                                                                    <td>RO - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="YA">
+                                                                                    <td>YA - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="RU">
+                                                                                    <td>RU - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="RF">
+                                                                                    <td>RF - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="PE">
+                                                                                    <td>PE - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="MK">
+                                                                                    <td>MK - Hardware</td>
+                                                                                </tr>
+                                                                                <tr data-value="GT">
+                                                                                    <td>GT - Hardware</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="costType" class="dropdown-column">
+                                                                <div class="col-xs-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Back Charge</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <table class="table">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <td>Description</td>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-value="Freight In">
+                                                                                    <td>Freight In</td>
+                                                                                </tr>
+                                                                                <tr data-value="Freight Out">
+                                                                                    <td>Freight Out</td>
+                                                                                </tr>
+                                                                                <tr data-value="Back Charge">
+                                                                                    <td>Back Charge</td>
+                                                                                </tr>
+                                                                                <tr data-value="No Charge">
+                                                                                    <td>No Charge</td>
+                                                                                </tr>
+                                                                                <tr data-value="Remake">
+                                                                                    <td>Remake</td>
+                                                                                </tr>
+                                                                                <tr data-value="Miscellaneous">
+                                                                                    <td>Miscellaneous</td>
+                                                                                </tr>
+                                                                                <tr data-value="Purchased Product">
+                                                                                    <td>Purchased Product</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="qty" class="column-input-number">
+                                                                <input type="number" value="2450">
+                                                            </td>
+                                                            <td data-type="amount">968,825.68</td>
+                                                            <td data-type="markup" data-cell-type="margin">0.00</td>
+                                                            <td data-type="sellingPrice">968,825.68</td>
+                                                            <td data-type="notes" class="column-text-box">
+                                                                <div class="col-md-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                    <span class="caret"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <textarea class="form-control">
+                                                                        </textarea>
+                                                                        <div class="col-md-12 text-right">
+                                                                            <button class="btn btn-primary">Ok</button>
+                                                                            <button class="btn btn-default">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="invoice"></td>
+                                                            <td data-type="groupCo"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- SECOND TAB -->
+                            <div role="tabpanel" class="tab-pane" id="withPhasingScreen">
+                                <!-- Page Header -->
+                                <div class="page-header clearfix">
+                                    <h1 class="text-left">With Phasing</h1>
+                                </div>
+                                <div class="tab-body clearfix">
+                                    <div class="row">
+                                        <div class="col-md-12 leftGridArea">
+                                            <form class="form-inline custom-search-filter clearfix">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label class="displayInline">View</label>
+                                                        <select class="form-control" id="Select1" onChange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL10">
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Export">
+                                                            <i class=" glyphicon glyphicon-export"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="pull-left marginL10">
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="markup" checked="checked" onclick="filterColumnByMarkup('margin', '#withPhasingTable',7)"> Margin
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="markup" onclick="filterColumnByMarkup('markup', '#withPhasingTable',7)"> Markup
+                                                            </label>
+                                                        </div>
+                                                        <button class="btn btn-default" type="button" title="Refresh Detailed">
+                                                            Refresh Detailed
+                                                        </button>
+                                                        <button class="btn btn-default" type="button" title="Cost Summary Report">
+                                                            Cost Summary Report
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- GRID DATA and FILTERS -->
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                <label>Drag a column header here to group by that column</label>
+                                            </div>
+                                            <div class="table-wrapper">
+                                                <table class="table custom-grid" id="withPhasingTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="btn-group custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Phase</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="phase" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Vendor Material</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="vendorMaterial" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Cost Type</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="costType" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Qty</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="qty" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Amount</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="amount" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Markup</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="markup" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Selling Price</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="sellingPrice" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Notes</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Invoice</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="invoice" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Group Co</span>
+                                                                                <input onClick="gridfilterColumn(this)" data-type="groupCo" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </th>
+                                                            <th data-type="phase">
+                                                                Phase
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="vendorMaterial">
+                                                                Vendor - Material
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="costType">
+                                                                Cost Type
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="qty">
+                                                                Qty
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="amount">
+                                                                Amount
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="markup">
+                                                                Markup
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="sellingPrice">
+                                                                Selling Price
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="notes">
+                                                                Notes
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="invoice">
+                                                                Invoice
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                            <th data-type="groupCo">
+                                                                Group Co
+                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td data-type="phase"></td>
+                                                            <td data-type="vendorMaterial"></td>
+                                                            <td data-type="costType"></td>
+                                                            <td data-type="qty">0</td>
+                                                            <td data-type="amount">0.00</td>
+                                                            <td data-type="markup">0.00</td>
+                                                            <td data-type="sellingPrice">0.00</td>
+                                                            <td data-type="notes"></td>
+                                                            <td data-type="invoice"></td>
+                                                            <td data-type="groupCo"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer HTML -->
+    <script type="text/html" id="subSetTableData">
+        <tr class="child-row hide">
+            <td colspan="14">
+                <div class="table-wrap" style="overflow:scroll;">
+                    <table class="table table-bordered" style="table-layout:inherit;margin-bottom:20px;;margin-bottom:0;">
+                        <thead>
+                            <tr>
+                                <th>Print Code <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Print Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>UOM <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Percentage <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Special Net Price <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>No Charge <i class="glyphicon glyphicon-triangle-top"></i> </th>
+                                <th>List Price <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Discount <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Cost <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Replace Other Preps <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Door Prep 1 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Door Prep 2 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Frame Prep 1 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Frame Prep 2 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </script>
+    <!-- original view | center table -->
+    <script type="text/html" id="centerTableOriginal">
+
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td data-type="checkbox">
+                <input type="checkbox">
+            </td>
+            <td data-type="cost">43.78</td>
+            <td data-type="checkbox">
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="invisible inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-2</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-3</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-4</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-5</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-6</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-7</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-8</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add  btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td data-type="item">HI-9</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td>HJ-1</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td>HJ-2</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td>HJ-3</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit">
+            </td>
+            <td>HJ-4</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used">
+                <input type="checkbox">
+            </td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network">
+                <input type="checkbox">
+            </td>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>43.78</td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+
+    </script>
+    <script type="text/html" id="rightTableOriginal">
+
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+    </script>
+</body>
+
+</html>

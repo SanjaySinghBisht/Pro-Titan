@@ -1,0 +1,868 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assa Abloy</title>
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/exporting.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/scheduling.js"></script>
+</head>
+
+<body onload="countQty();">
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown">
+                                                <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                    Milano Travel
+                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                    Change : C0-01
+                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="input-group marginB10 col-md-3">
+                <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1" style="border-radius:3px 0 0 3px;">
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+            <div class="col-md-12 col-sm-12 no-padding openingHardwareSettable">
+                <table class="table">
+                    <thead>
+                        <tr class="mainHead">
+                            <th class="borderR" width="3%">
+                                <button type="button" class="btn btn-link dropdown-toggle no-padding" style="padding:0px;" >
+                                    <img src="images/Views.png">
+                                </button>
+                            </th>
+                            <th class="borderR">Vendor</th>
+                            <th class="borderR">PO Number</th>
+                            <th class="borderR">Order Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="borderR openingexpandData" width="3%"><i class="fa fa-chevron-down"></i></td>
+                            <td class="borderR">Pemko</td>
+                            <td class="borderR">PO#48-23456</td>
+                            <td class="borderR">Order#A7C-0095678</td>
+                        </tr>
+                        <tr class="openingCollapseRow">
+                            <td colspan="4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="borderR" width="3%">
+                                                <button type="button" class="btn btn-link dropdown-toggle no-padding" style="padding:0px;" >
+                                                    <img src="images/Views.png">
+                                                </button>
+                                            </th>
+                                            <th class="borderR">Hdw Set</th>
+                                            <th class="borderR">Tag</th>
+                                            <th class="borderR">Qty</th>
+                                            <th class="borderR"></th>
+                                            <th class="borderR">Description</th>
+                                            <th class="borderR">Hdw Type</th>
+                                            <th class="borderR">Received</th>
+                                            <th class="borderR">Missing</th>
+                                            <th class="borderR">Damaged</th>
+                                            <th class="borderR">Other</th>
+                                            <th class="borderR">Location</th>
+                                            <th>Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">3A</td>
+                                            <td class="borderR">3</td>
+                                            <td class="borderR">2</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">273X3AFGX36"</td>
+                                            <td class="borderR">Threshold</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">346C X 40"</td>
+                                            <td class="borderR">Rain Guard</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">5A</td>
+                                            <td class="borderR">5</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">6A</td>
+                                            <td class="borderR">6</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">1234567890</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">PDL US26D/15</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderR openingexpandData" width="3%"><i class="fa fa-chevron-down"></i></td>
+                            <td class="borderR">Yale</td>
+                            <td class="borderR">PO#28756</td>
+                            <td class="borderR">Order#687958</td>
+                        </tr>
+                        <tr class="openingCollapseRow">
+                            <td colspan="4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="borderR" width="3%">
+                                                <button type="button" class="btn btn-link dropdown-toggle no-padding" style="padding:0px;" >
+                                                    <img src="images/Views.png">
+                                                </button>
+                                            </th>
+                                            <th class="borderR">Hdw Set</th>
+                                            <th class="borderR">Tag</th>
+                                            <th class="borderR">Qty</th>
+                                            <th class="borderR"></th>
+                                            <th class="borderR">Description</th>
+                                            <th class="borderR">Hdw Type</th>
+                                            <th class="borderR">Received</th>
+                                            <th class="borderR">Missing</th>
+                                            <th class="borderR">Damaged</th>
+                                            <th class="borderR">Other</th>
+                                            <th class="borderR">Location</th>
+                                            <th>Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">3A</td>
+                                            <td class="borderR">3</td>
+                                            <td class="borderR">2</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">273X3AFGX36"</td>
+                                            <td class="borderR">Threshold</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">346C X 40"</td>
+                                            <td class="borderR">Rain Guard</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">5A</td>
+                                            <td class="borderR">5</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">6A</td>
+                                            <td class="borderR">6</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">1234567890</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">PDL US26D/15</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderR openingexpandData" width="3%"><i class="fa fa-chevron-down"></i></td>
+                            <td class="borderR">Yale</td>
+                            <td class="borderR">PO#28755</td>
+                            <td class="borderR">Order#68008</td>
+                        </tr>
+                        <tr class="openingCollapseRow">
+                            <td colspan="4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="borderR" width="3%">
+                                                <button type="button" class="btn btn-link dropdown-toggle no-padding" style="padding:0px;">
+                                                    <img src="images/Views.png">
+                                                </button>
+                                            </th>
+                                            <th class="borderR">Hdw Set</th>
+                                            <th class="borderR">Tag</th>
+                                            <th class="borderR">Qty</th>
+                                            <th class="borderR"></th>
+                                            <th class="borderR">Description</th>
+                                            <th class="borderR">Hdw Type</th>
+                                            <th class="borderR">Received</th>
+                                            <th class="borderR">Missing</th>
+                                            <th class="borderR">Damaged</th>
+                                            <th class="borderR">Other</th>
+                                            <th class="borderR">Location</th>
+                                            <th>Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">3A</td>
+                                            <td class="borderR">3</td>
+                                            <td class="borderR">2</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">273X3AFGX36"</td>
+                                            <td class="borderR">Threshold</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">346C X 40"</td>
+                                            <td class="borderR">Rain Guard</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">5A</td>
+                                            <td class="borderR">5</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">6A</td>
+                                            <td class="borderR">6</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">1234567890</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">PDL US26D/15</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderR openingexpandData" width="3%"><i class="fa fa-chevron-down"></i></td>
+                            <td class="borderR">Rockwood</td>
+                            <td class="borderR">PO#01745</td>
+                            <td class="borderR">Order#9545468</td>
+                        </tr>
+                        <tr class="openingCollapseRow">
+                            <td colspan="4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="borderR" width="3%">
+                                                <button type="button" class="btn btn-link dropdown-toggle no-padding" style="padding:0px;">
+                                                    <img src="images/Views.png">
+                                                </button>
+                                            </th>
+                                            <th class="borderR">Hdw Set</th>
+                                            <th class="borderR">Tag</th>
+                                            <th class="borderR">Qty</th>
+                                            <th class="borderR"></th>
+                                            <th class="borderR">Description</th>
+                                            <th class="borderR">Hdw Type</th>
+                                            <th class="borderR">Received</th>
+                                            <th class="borderR">Missing</th>
+                                            <th class="borderR">Damaged</th>
+                                            <th class="borderR">Other</th>
+                                            <th class="borderR">Location</th>
+                                            <th>Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">3A</td>
+                                            <td class="borderR">3</td>
+                                            <td class="borderR">2</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">273X3AFGX36"</td>
+                                            <td class="borderR">Threshold</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">346C X 40"</td>
+                                            <td class="borderR">Rain Guard</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">5A</td>
+                                            <td class="borderR">5</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">6A</td>
+                                            <td class="borderR">6</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">1234567890</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">PDL US26D/15</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderR openingexpandData" width="3%"><i class="fa fa-chevron-down"></i></td>
+                            <td class="borderR">Rockwood</td>
+                            <td class="borderR">PO#01745</td>
+                            <td class="borderR">Order#9545468</td>
+                        </tr>
+                        <tr class="openingCollapseRow">
+                            <td colspan="4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="borderR" width="3%">
+                                                <button type="button" class="btn btn-link dropdown-toggle no-padding" style="padding:0px;" >
+                                                    <img src="images/Views.png">
+                                                </button>
+                                            </th>
+                                            <th class="borderR">Hdw Set</th>
+                                            <th class="borderR">Tag</th>
+                                            <th class="borderR">Qty</th>
+                                            <th class="borderR"></th>
+                                            <th class="borderR">Description</th>
+                                            <th class="borderR">Hdw Type</th>
+                                            <th class="borderR">Received</th>
+                                            <th class="borderR">Missing</th>
+                                            <th class="borderR">Damaged</th>
+                                            <th class="borderR">Other</th>
+                                            <th class="borderR">Location</th>
+                                            <th>Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">3A</td>
+                                            <td class="borderR">3</td>
+                                            <td class="borderR">2</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">273X3AFGX36"</td>
+                                            <td class="borderR">Threshold</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">4A</td>
+                                            <td class="borderR">4</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">346C X 40"</td>
+                                            <td class="borderR">Rain Guard</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">5A</td>
+                                            <td class="borderR">5</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">6A</td>
+                                            <td class="borderR">6</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">7</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">S88C 16'4"</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="borderR" width="3%"></td>
+                                            <td class="borderR">1234567890</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">1</td>
+                                            <td class="borderR">EA</td>
+                                            <td class="borderR">PDL US26D/15</td>
+                                            <td class="borderR">Gasketing</td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="checkbox" class="form-control" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                            <td class="borderR"><input type="text" class="form-control" style="height:21px;" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script>
+            $(document).ready(function() {
+
+                $('#receiveBtn').hide();
+                $('#printbtn').click(function() {
+                    if ($('#draftCopy').is(':checked')) {
+                        var win = window.open('pdf/Hdw-Order.pdf', '_blank');
+                        win.print();
+
+                    } else {
+                        window.location.href = 'receiveOrder.html';
+
+                    }
+                });
+
+                $('.dotMsg, #logOrderList, #backtoOrderList').hide();
+                $('#dotbtn').click(function() {
+                    $('.dotMsg').show()
+                    setTimeout(function() {
+                        $('.dotMsg').hide()
+                    }, 3000)
+                });
+
+                $('#logorder').click(function() {
+                    $('#logOrderList,#backtoOrderList').show();
+                    $('#orderList').hide();
+                });
+
+                $('#backtoOrderList').click(function() {
+                    $(this).hide();
+                    $('#logOrderList').hide();
+                    $('#orderList').show();
+                });
+            });
+
+            function gotogotodetailEstimatingHardware() {
+                window.location.href = "gotodetailEstimatingHardware.html"
+            }
+        </script>
+</body>
+
+</html>

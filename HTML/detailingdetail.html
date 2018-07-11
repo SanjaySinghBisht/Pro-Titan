@@ -1,0 +1,1262 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailing.js"></script>
+    <style>
+        .selected-row {
+            background: #00a0d0 !important;
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Detailing</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--Navigations-->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#openings-tab" data-toggle="tab">Openings</a></li>
+                                    <li><a href="#questions-tab" data-toggle="tab">Questions</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="openings-tab" class="tab-pane fade in active">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <form class="form-inline custom-search-filter revision clearfix col-md-4">
+                                                        <div class="form-group" style="width:100%;">
+                                                            <div class="pull-left">
+                                                                <label class="displayInline">View</label>
+                                                                <select class="form-control" id="Select1" onchange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                                    <option value="original">(**Original View**)</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="pull-left marginL30">
+                                                                <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                                <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                                </button>
+                                                                <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                                <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                                </button>
+                                                                <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                            </button> -->
+                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                </button>
+
+                                                                <button class="btn btn-default pull-left" type="button" title="Print">
+                                                                    <i class="glyphicon glyphicon-print"></i>
+                                                                </button>
+                                                                <button class="btn btn-default pull-left" type="button" title="Export">
+                                                                    <i class=" glyphicon glyphicon-export"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                                <div class="row">
+                                                    <form class="form-inline col-md-12">
+                                                        <ul class="list-inline">
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Create New" data-toggle="modal" data-target="#insert-row-modal">
+                                                                    <i class="fa fa-plus-square"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Sort">
+                                                                    <i class="fa fa-sort-alpha-asc"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                    <i class="fa fa-square-o"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Color" data-toggle="modal" data-target="#grid-color-model">
+                                                                    <i class="fa fa-paint-brush"></i>
+                                                                </button>
+                                                            </li>
+
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Predefined" data-toggle="modal" data-target="#grid-predefined-model">
+                                                                    <i class="fa fa-magic"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Phases" data-toggle="modal" data-target="#phases-modal">
+                                                                    <i class="fa fa-moon-o"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                    <i class="fa fa-square-o"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                    <i class="fa fa-square-o"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                    <i class="fa fa-refresh"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Errors" data-toggle="modal" data-target="#grid-Error-model">
+                                                                    <i class="fa fa-warning"></i>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Errors" data-toggle="modal" data-target="#grid-Error-model">
+                                                                    <i class="fa fa-dollar"></i>
+                                                                </button>
+                                                            </li>
+                                                            <!--                                            <li>
+                                                                                                            <button class="btn btn-default pull-left" type="button" title="Save" >
+                                                                                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                                                            </button>
+                                                                                                        </li>-->
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Copy Opening to" data-toggle="modal" data-target="#insert-row-copy-modal">
+                                                                    Copy Opening to
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-default pull-left" type="button" title="Copy From Scheduling" data-toggle="modal" data-target="#copy-from-scheduling-modal">
+                                                                    Copy From Scheduling
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </form>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                    <label>Drag a column header here to group by that column</label>
+                                                </div>
+                                                <div class="table-wrapper">
+                                                    <table class="table custom-grid" id="opening-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <label class="btn-group custom-filtr-table">
+                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            <img src="images/Views.png">
+                                                                        </button>
+                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Tag</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="tag" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Qty</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="qty" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">UOM</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="uom" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Predefined</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="predefined" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Width</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="width" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Height</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="height" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Door thickness</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="door thickness" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Door qty</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="door qty" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Hand</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="hand" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Label</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="label" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Door material</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="door material" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Frame material</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="frame material" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Descrition</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="descrition" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Exterior</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="exterior" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Location1</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="location1" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Location2</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="location2" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Degrees</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="degrees" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Arch. mark</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="arch. mark" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Hwd set</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="hwd set" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Phase</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="phase" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Notes</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Wall type</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="wall type" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">Wall thick</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="wall thick" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        </ul>
+                                                                    </label>
+                                                                </th>
+                                                                <th data-type="tag">Tag</th>
+                                                                <th data-type="qty">Qty</th>
+                                                                <th data-type="uom">UOM</th>
+                                                                <th data-type="predefined">Predefined</th>
+                                                                <th data-type="width">Width</th>
+                                                                <th data-type="height">Height</th>
+                                                                <th data-type="door thickness">Door thickness</th>
+                                                                <th data-type="door qty">Door qty</th>
+                                                                <th data-type="hand">Hand</th>
+                                                                <th data-type="label">Label</th>
+                                                                <th data-type="door material">Door material</th>
+                                                                <th data-type="frame material">Frame material</th>
+                                                                <th data-type="descrition">Descrition</th>
+                                                                <th data-type="exterior">Exterior</th>
+                                                                <th data-type="location1">Location1</th>
+                                                                <th data-type="location2">Location2</th>
+                                                                <th data-type="degrees">Degrees</th>
+                                                                <th data-type="arch. mark">Arch. mark</th>
+                                                                <th data-type="hwd set">Hwd set</th>
+                                                                <th data-type="phase">Phase</th>
+                                                                <th data-type="notes">Notes</th>
+                                                                <th data-type="wall type">Wall type</th>
+                                                                <th data-type="wall thick">Wall thick</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr row-id="1" is-row-selected='false'>
+                                                                <td></td>
+                                                                <td data-type="tag">1</td>
+                                                                <td data-type="qty" class="column-input-number">
+                                                                    <input type="number" value="2">
+                                                                </td>
+                                                                <td data-type="uom" cell-type="question">SGL</td>
+                                                                <td data-type="predefined"></td>
+                                                                <td data-type="width">0</td>
+                                                                <td data-type="height">1' 2"</td>
+                                                                <td data-type="door thickness">1 3/4"</td>
+                                                                <td data-type="door qty" class="column-input-number">
+                                                                    <input type="number" value="1">
+                                                                </td>
+                                                                <td data-type="hand"></td>
+                                                                <td data-type="label"></td>
+                                                                <td data-type="door material"></td>
+                                                                <td data-type="frame material"></td>
+                                                                <td data-type="descrition">0*1'2"*13/4"</td>
+                                                                <td data-type="exterior">
+                                                                    <input type="checkbox" />
+                                                                </td>
+                                                                <td data-type="location1"></td>
+                                                                <td data-type="location2"></td>
+                                                                <td data-type="degrees"></td>
+                                                                <td data-type="arch. mark">1</td>
+                                                                <td data-type="hwd set">SV1</td>
+                                                                <td data-type="phase"></td>
+                                                                <td data-type="notes"></td>
+                                                                <td data-type="wall type"></td>
+                                                                <td data-type="wall thick">0</td>
+                                                            </tr>
+                                                            <tr row-id="1" is-row-selected='false'>
+                                                                <td></td>
+                                                                <td data-type="tag">2</td>
+                                                                <td data-type="qty" class="column-input-number">
+                                                                    <input type="number" value="2">
+                                                                </td>
+                                                                <td data-type="uom" cell-type="question">SGL</td>
+                                                                <td data-type="predefined"></td>
+                                                                <td data-type="width">0</td>
+                                                                <td data-type="height">1' 2"</td>
+                                                                <td data-type="door thickness">1 3/4"</td>
+                                                                <td data-type="door qty" class="column-input-number">
+                                                                    <input type="number" value="1">
+                                                                </td>
+                                                                <td data-type="hand"></td>
+                                                                <td data-type="label"></td>
+                                                                <td data-type="door material"></td>
+                                                                <td data-type="frame material"></td>
+                                                                <td data-type="descrition">0*1'2"*13/4"</td>
+                                                                <td data-type="exterior">
+                                                                    <input type="checkbox" />
+                                                                </td>
+                                                                <td data-type="location1"></td>
+                                                                <td data-type="location2"></td>
+                                                                <td data-type="degrees"></td>
+                                                                <td data-type="arch. mark">1</td>
+                                                                <td data-type="hwd set">SV1</td>
+                                                                <td data-type="phase"></td>
+                                                                <td data-type="notes"></td>
+                                                                <td data-type="wall type"></td>
+                                                                <td data-type="wall thick">0</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="questions-tab" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="table-responsive">
+                                                    <table class="table custom-grid">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="btn-group custom-filtr-table">
+                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            <img src="images/Views.png">
+                                                                        </button>
+                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Question Type</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="qusTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Tag</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="qusTagID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Column</span>
+                                                                                    <input type="checkbox" onclick="gridfilterColumn(this)" data-type="columnID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Question</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="questionID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Solution</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="solutionID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Tags</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="tagsID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Status</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="qusStatusID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Date</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="qusDateID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">User</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="qusUserID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Notes</span>
+                                                                                    <input type="checkbox" onclick="gridfilterColumn(this)" data-type="qusNotesID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </th>
+                                                                <th data-type="qusTypeID">
+                                                                    Question Type
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="qusTagID">
+                                                                    Tag
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="columnID">
+                                                                    Column
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="questionID">
+                                                                    Quesion
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="solutionID">
+                                                                    Solution
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="tagsID">
+                                                                    Tags
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="qusStatusID">
+                                                                    Status
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="qusDateID">
+                                                                    Date
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="qusUserID">
+                                                                    User
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                                <th data-type="qusNotesID">
+                                                                    Notes
+                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="odd-row">
+                                                                <td>
+                                                                    <!--                                                                    <button class="vendor-list-toggle-btn btn btn-default">
+                                                                                                                                            <i class="glyphicon glyphicon-plus" ></i>
+                                                                                                                                        </button>-->
+                                                                </td>
+                                                                <td data-type="qusTypeID">Question</td>
+                                                                <td data-type="qusTagID">107</td>
+                                                                <td data-type="columnID">Opening Width</td>
+                                                                <td data-type="questionID">Ques1: How do I do this?</td>
+                                                                <td data-type="solutionID">Slove it</td>
+                                                                <td data-type="tagsID"></td>
+                                                                <td data-type="qusStatusID">Closed</td>
+                                                                <td data-type="qusDateID">03-10-2016 11:45AM</td>
+                                                                <td data-type="qusUserID"></td>
+                                                                <td data-type="qusNotesID"></td>
+                                                            </tr>
+                                                            <tr class="even-row">
+                                                                <td>
+                                                                    <!--                                                                    <button class="vendor-list-toggle-btn btn btn-default">
+                                                                                                                                            <i class="glyphicon glyphicon-plus" ></i>
+                                                                                                                                        </button>-->
+                                                                </td>
+                                                                <td data-type="qusTypeID">Question</td>
+                                                                <td data-type="qusTagID">114</td>
+                                                                <td data-type="columnID">Opening-UOM</td>
+                                                                <td data-type="questionID">Ques2: What is this?</td>
+                                                                <td data-type="solutionID">Slove it</td>
+                                                                <td data-type="tagsID"></td>
+                                                                <td data-type="qusStatusID">Open</td>
+                                                                <td data-type="qusDateID">03-10-2016 11:45AM</td>
+                                                                <td data-type="qusUserID"></td>
+                                                                <td data-type="qusNotesID"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!--                                            <div class="col-md-12 add-delete-control text-left">
+                                                                                            <button class="btn btn-default pull-left" onClick="addNewRecordMaterial('#materialDataTable')">
+                                                                                                <i class="glyphicon glyphicon-plus" ></i>
+                                                                                            </button>
+                                                                                            <button class="btn btn-default pull-left" onClick="deleteTableDataMaterial()">
+                                                                                                <i class="glyphicon glyphicon-minus" ></i>
+                                                                                            </button>
+                                                                                        </div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!---Insert row model -->
+                        <div id="insert-row-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Insert Row</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Enter the range of door #s to insert. You may include prefix or suffix codes to Door #s that already exist will be skipped.
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <form class="form-inline">
+                                                <div class="col-md-3">
+                                                    <div class="input-group">
+                                                        <label>Prefix</label>
+                                                        <input type="text" class="form-control" id="insert-new-prefix" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="input-group">
+                                                        <label>From</label>
+                                                        <input type="number" class="form-control" id="insert-new-from" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="input-group">
+                                                        <label>To</label>
+                                                        <input type="number" class="form-control" id="insert-new-to" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="input-group">
+                                                        <label>Suffix</label>
+                                                        <input type="text" class="form-control" id="insert-new-suffix" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="appendRow('#opening-table')">Insert</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+                        <!-------------->
+
+                        <!---Colors model -->
+                        <div id="grid-color-model" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Custom Grid Color Setup</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table" id="color-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Cell Type</th>
+                                                            <th>Background Color</th>
+                                                            <th>Text Color</th>
+                                                            <th>Border Color</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr cell-cat="question">
+                                                            <td>Question</td>
+                                                            <td color-type="background">
+                                                                <input type="color" />
+                                                            </td>
+                                                            <td color-type="color">
+                                                                <input type="color" />
+                                                            </td>
+                                                            <td color-type="border-color">
+                                                                <input type="color" />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeGridColor('#opening-table')">Ok</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+                        <!-------------->
+
+                        <!---predefined model -->
+                        <div id="grid-predefined-model" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Predefined Entries</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12 custom-search-filter">
+                                                <table class="table" id="predefined-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Type</th>
+                                                            <th>Master/Project</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr cell-cat="">
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn btn btn-default">
+                                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                                </button>
+                                                                Opening
+                                                            </td>
+                                                            <td>Master</td>
+                                                            <td>SA </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row" style="display: none;">
+                                                            <td colspan="3">
+                                                                <table class="table" id="">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>
+                                                                                Field Name
+                                                                            </td>
+                                                                            <td>
+                                                                                Ignore?
+                                                                            </td>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>Qty</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>UOM</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Width</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Height</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Door thickness</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Door qty</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Hand</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Label</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Door material</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Frame material</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Descrition</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Exterior</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Degrees</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Wall type</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Wall thick</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Notes</td>
+                                                                            <td>
+                                                                                <input type="checkbox" />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeGridColor('#opening-table')">Ok</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+                        <!---Errors model--->
+                        <div id="grid-Error-model" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Error Checking</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <form class="form-inline custom-search-filter revision clearfix col-md-12">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label class="displayInline">View</label>
+                                                        <select class="form-control" id="Select1" onchange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL30">
+                                                        <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                    </button> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+
+                                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Export">
+                                                            <i class=" glyphicon glyphicon-export"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <form class="form-inline col-md-12">
+                                                <ul class="list-inline">
+                                                    <li style="vertical-align: middle;">
+                                                        <button class="btn btn-default pull-left" type="button" title="Check Error">
+                                                            Check Error
+                                                        </button>
+                                                    </li>
+                                                    <li style="vertical-align: middle;">
+                                                        <button class="btn btn-default pull-left" type="button" title="Goto Error">
+                                                            Goto Error
+                                                        </button>
+                                                    </li>
+                                                    <li style="vertical-align: middle;">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="" checked="">Keep Form On</label>
+                                                        </div>
+                                                    </li>
+                                                    <li style="vertical-align: middle;">
+                                                        <div class="radio">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" value="scheduling" name="grid-error" checked="">Scheduling</label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" value="estimating" name="grid-error">Estimating</label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                    <label>Drag a column header here to group by that column</label>
+                                                </div>
+                                                <div class="table-wrapper">
+                                                    <table class="table custom-grid" id="errors-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="width50">
+                                                                    <label class="btn-group custom-filtr-table">
+                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            <img src="images/Views.png">
+                                                                        </button>
+                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">opening</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="opening" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">error description</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="error description" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">ignore</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="ignore" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">door</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="door" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">frame</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="frame" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                            <li><a class="pull-left btn-block clearfix"><span class="pull-left">label</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="label" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        </ul>
+                                                                    </label>
+                                                                </th>
+                                                                <th data-type="opening">opening</th>
+                                                                <th data-type="error description">error description</th>
+                                                                <th data-type="ignore">ignore</th>
+                                                                <th data-type="door">door</th>
+                                                                <th data-type="frame">frame</th>
+                                                                <th data-type="label">label</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr row-type='scheduling'>
+                                                                <td></td>
+                                                                <td data-type="opening">1</td>
+                                                                <td data-type="error description">Door hand specifies active hand-No hardware is marked Active or Inactive</td>
+                                                                <td data-type="ignore">
+                                                                    <input type="checkbox" />
+                                                                </td>
+                                                                <td data-type="door"></td>
+                                                                <td data-type="frame"></td>
+                                                                <td data-type="label"></td>
+                                                            </tr>
+                                                            <tr row-type='estimating'>
+                                                                <td></td>
+                                                                <td data-type="opening">2</td>
+                                                                <td data-type="error description">Opening width might not match Door width</td>
+                                                                <td data-type="ignore">
+                                                                    <input type="checkbox" />
+                                                                </td>
+                                                                <td data-type="door"></td>
+                                                                <td data-type="frame"></td>
+                                                                <td data-type="label"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!--                                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeGridColor('#opening-table')">Ok</button>
+                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+                        <!---Insert copy model -->
+                        <div id="insert-row-copy-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog " role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Insert Row</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    This utility allows you to quickely create numerious Openings by coping everything from an existing.
+                                                </p>
+                                                <p>
+                                                    Enter the Openings you wish to add. Seperate the values with Spaces immediately after the commas will.(Example - 101, 102, 103)
+                                                </p>
+                                                <p>
+                                                    If the value does not exist you will be asked to confirm
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <form class="form-inline">
+                                                <div class="col-md-12 marginT20">
+                                                    <textarea class="form-control" style="width: 100%;height: 120px;" id="criteriaContent">
+
+                                                    </textarea>
+                                                </div>
+                                                <div class="col-md-3 marginT20">
+                                                    <div class="input-group">
+                                                        <label>Prefix</label>
+                                                        <input type="text" class="form-control" id="insert-copy-prefix" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 marginT20">
+                                                    <div class="input-group">
+                                                        <label>From</label>
+                                                        <input type="number" class="form-control" id="insert-copy-from" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 marginT20">
+                                                    <div class="input-group">
+                                                        <label>To</label>
+                                                        <input type="number" class="form-control" id="insert-copy-to" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 marginT20">
+                                                    <div class="input-group">
+                                                        <label>Suffix</label>
+                                                        <input type="text" class="form-control" id="insert-copy-suffix" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-center marginT20">
+                                                    <button class="btn btn-default" type="button" onclick="validateCriteria()">
+                                                        Validate Criteria
+                                                    </button>
+                                                    <button class="btn btn-default" type="button" onclick="clearCriteria()">
+                                                        Clear Criteria
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="copyRow('#opening-table')">Ok</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+                        <!---Copy opening from scheduling model -->
+                        <div id="copy-from-scheduling-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Copy Opening From Scheduling</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table" id="copy-scheduling-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="width70">
+                                                                <label class="btn-group custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">opening</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="opening" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">location</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="location" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">opening description</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="opening description" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                    </ul>
+                                                                    <input type="checkbox" />
+                                                                </label>
+                                                            </th>
+                                                            <th data-type="opening">opening</th>
+                                                            <th data-type="location">location</th>
+                                                            <th data-type="opening description">opening description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="opening" data-id="tag">101</td>
+                                                            <td data-type="location" data-id="location1"></td>
+                                                            <td data-type="opening description" data-id="descrition">3'0"*4'0"*1 3/4"FRPD/ALF</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="opening" data-id="tag">102</td>
+                                                            <td data-type="location" data-id="location1"></td>
+                                                            <td data-type="opening description" data-id="descrition">3'0"*4'0"*1 3/4"Existing/ALF</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="opening" data-id="tag">103</td>
+                                                            <td data-type="location" data-id="location1"></td>
+                                                            <td data-type="opening description" data-id="descrition">4'0"*6'0"*1 3/4"FRPD/Steel</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="opening" data-id="tag">104</td>
+                                                            <td data-type="location" data-id="location1"></td>
+                                                            <td data-type="opening description" data-id="descrition">3'0"*7'0"*1 3/4"Glass/SSF</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="copyFromOther('#copy-scheduling-table', '#opening-table')">Ok</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+                        <!---phases model -->
+                        <div id="phases-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">Phase Openings</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12 table-responsive">
+                                                <table class="table custom-grid" id="copy-scheduling-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="width50">
+                                                                <label class="btn-group custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">description</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="description" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">type</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="type" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">parent phase description</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="parent phase description" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">notes</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">tag</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="tag" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                        <li><a class="pull-left btn-block clearfix"><span class="pull-left">location</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="location" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                    </ul>
+                                                                </label>
+                                                            </th>
+                                                            <th data-type="description">description</th>
+                                                            <th data-type="type">type</th>
+                                                            <th data-type="parent phase description">parent phase description</th>
+                                                            <th data-type="notes">notes</th>
+                                                            <th data-type="tag">tag</th>
+                                                            <th data-type="location">location</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td data-type="description" class="column-input">
+                                                                <input type="text" value="2nd Floor" />
+                                                            </td>
+                                                            <td data-type="type" class="column-select">
+                                                                <select>
+                                                                    <option value="estimating">Estimating</option>
+                                                                    <option value="detailing">Detailing</option>
+                                                                </select>
+                                                            </td>
+                                                            <td data-type="parent phase description" class="column-input">
+                                                                <input type="text" value="" />
+                                                            </td>
+                                                            <td data-type="notes" class="column-textarea">
+                                                                <div class="col-md-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <textarea class="form-control">
+
+                                                                        </textarea>
+                                                                        <div class="col-md-12 text-right">
+                                                                            <button class="btn btn-primary">Ok</button>
+                                                                            <button class="btn btn-default">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="tag" class="column-input">
+                                                                <input type="text" value="1" />
+                                                            </td>
+                                                            <td data-type="location" class="column-input">
+                                                                <input type="text" value="" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td data-type="description" class="column-input">
+                                                                <input type="text" value="4nd Floor" />
+                                                            </td>
+                                                            <td data-type="type" class="column-select">
+                                                                <select>
+                                                                    <option value="estimating">Estimating</option>
+                                                                    <option value="detailing">Detailing</option>
+                                                                </select>
+                                                            </td>
+                                                            <td data-type="parent phase description" class="column-input">
+                                                                <input type="text" value="" />
+                                                            </td>
+                                                            <td data-type="notes" class="column-textarea">
+                                                                <div class="col-md-12">
+                                                                    <span class="dropdown-toggle" data-toggle="dropdown"></span>
+                                                                    <div class="dropdown-menu">
+                                                                        <textarea class="form-control">
+
+                                                                        </textarea>
+                                                                        <div class="col-md-12 text-right">
+                                                                            <button class="btn btn-primary">Ok</button>
+                                                                            <button class="btn btn-default">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td data-type="tag" class="column-input">
+                                                                <input type="text" value="2" />
+                                                            </td>
+                                                            <td data-type="location" class="column-input">
+                                                                <input type="text" value="" />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-12 add-delete-control text-left custom-search-filter">
+                                                <button class="btn btn-default pull-left" onClick="addNewRecordMaterial('#materialDataTable')">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" onClick="deleteTableDataMaterial()">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <!--                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="copyFromOther('#copy-scheduling-table', '#opening-table')">Ok</button>
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>-->
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">John Knipper/div>
+                    </div>
+                </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script type="text/javascript ">
+        </script>
+</body>
+
+</html>

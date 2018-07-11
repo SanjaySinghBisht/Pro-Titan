@@ -1,0 +1,115 @@
+.selected-column{
+    background: #0081c2 !important;
+    color: #ffffff !important;
+}
+.selected-submenuItems{
+    border: 2px solid #0081c2;
+    box-shadow: 0px 0px 5px 2px #6ac6f4;
+}
+.selected-submenuItems img{
+    width: 40px;
+    height: 65px;
+}
+.thumb>img{
+    width: 30px;
+    height: 50px;
+}
+.centered-modal{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%) !important;
+    -webkit-transform: translate(-50%,-50%) !important;
+    -moz-transform: translate(-50%,-50%) !important;
+    -ms-transform: translate(-50%,-50%) !important;
+    -o-transform:translate(-50%,-50%) !important;
+}
+
+.add-new{
+    position: absolute;
+    bottom: 25px;
+    right: 37px;
+}
+.add-new>i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0081c2;
+    color: #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+#final-total-table>tbody>tr>td{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*************************************
+* generic styling for ALS elements
+************************************/
+
+.als-container {
+    position: relative;
+    width: 100%;
+    margin: 10px 0 0 auto;
+    z-index: 0;
+}
+
+.als-viewport {
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto;
+    height: 70px !important;
+}
+
+.als-wrapper {
+    position: relative;
+    list-style: none;
+}
+
+.als-item {
+    position: relative;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+}
+
+.als-prev, .als-next {
+    position: absolute;
+    cursor: pointer;
+    clear: both;
+}
+
+.submenu-list {
+	margin: 10px 0 0 auto;
+}
+
+.submenu-list .als-item {
+	margin: 0px 5px;
+	padding: 4px 0px;
+	/*min-height: 120px;*/
+	min-width: 50px;
+	text-align: center;
+}
+
+.submenu-list .als-item img {
+	display: block;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+.submenu-list .als-prev, .submenu-list .als-next {
+	top: 18px;
+}
+
+.submenu-list .als-prev {
+	left: 10px;
+}
+
+.submenu-list .als-next {
+	right: 10px;
+}

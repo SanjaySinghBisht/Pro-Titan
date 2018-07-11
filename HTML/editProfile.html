@@ -1,0 +1,221 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assa Abloy</title>
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/ionicons.min.css" type="text/css" rel="stylesheet" />
+    <link rel='stylesheet' href='css/fullcalendar.min.css' />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+    <!--ribbon js -->
+
+    <!--        <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5/themes/default/easyui.css">
+                <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5/themes/icon.css">
+                <link rel="stylesheet" type="text/css" href="jquery-easyui-ribbon/ribbon.css">
+                <link rel="stylesheet" type="text/css" href="jquery-easyui-ribbon/ribbon-icon.css">
+                <script type="text/javascript" src="jquery-easyui-1.5/jquery.min.js"></script>
+                <script type="text/javascript" src="jquery-easyui-1.5/jquery.easyui.min.js"></script>
+                <script type="text/javascript" src="jquery-easyui-ribbon/jquery.ribbon.js"></script>-->
+
+    <!-- Bootstrap realted JS -->
+
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script type="text/javascript" src="js/landing.js"></script>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <header class="header pos-relative">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+
+                                <div class="col-md-7">
+                                    <ul class="nav navbar-nav">
+                                        <li><span>Welcome Erdmann, Dawn</span></li>
+                                        <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                </li>
+                                                <li>
+                                                    <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <input type="button" value="Help Forms">
+                                                </li>
+                                                <li>
+                                                    <input type="button" value="Live Chat">
+                                                </li>
+                                                <li>
+                                                    <input type="button" value="FAQ">
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                        <li><a href="contactUs.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3 pull-right">
+                                    <div class="indicator">
+                                        <ul class="indicator-btn">
+                                            <li class="list-unstyled">
+                                                <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pushbuttons pos-headerpushbuttons">
+                    <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                </div>
+    </header>
+    <div id='ribbonMenuBar' class='marginB15'>
+
+    </div>
+    <div class="container-fluid marginT20 content-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12 ">
+                    <div class="page-header clearfix">
+                        <h1 class="pull-left">Edit Profile</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3 ">
+                    <div class="col-md-12 card paddingV10">
+                        <div class="form-group col-md-4 col-md-offset-4">
+                            <label>Select Profile</label>
+                            <select class="form-control" id="selected-profile">
+                                <option value="">Select</option>
+                                <option value="All">All</option>
+                                <option value="Detailing">Detailing</option>
+                                <option value="Estimating">Estimating</option>
+                                <option value="Hardware Management">Hardware Management</option>
+                                <option value="Material Management">Material Management</option>
+                                <option value="Processing">Processing</option>
+                                <option value="Quotation">Quotation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 marginT20" id="edit-profile-info">
+                <form class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6 marginT20">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Profile Name</label>
+                                <input class="form-control" type="text" name="profile_name" placeholder="Profile Name" value="Detailing" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 marginT20">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Interval to change Password(days)</label>
+                                <input class="form-control" type="number" name="interval_change_pass" placeholder="Interval to change Password(days)" value="5" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 marginT20">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="Yes" name="must_change_pass" checked="" />Must Change Password</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 marginT20">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="Yes" name="audit_mode" checked="" />Audit Mode</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 marginT20">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Profile's Parent</label>
+                                <select class="form-control" name="profile_parent">
+                                    <option value="">Select</option>
+                                    <option value="All">All</option>
+                                    <option value="Detailing">Detailing</option>
+                                    <option value="Estimating">Estimating</option>
+                                    <option value="Hardware Management" selected="">Hardware Management</option>
+                                    <option value="Material Management">Material Management</option>
+                                    <option value="Processing">Processing</option>
+                                    <option value="Quotation">Quotation</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="col-md-12 button-container text-right" style="margin-top: 170px">
+                    <button class="btn btn-primary">
+                        Update Profile
+                    </button>
+                    <button class="btn btn-default marginL10">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('#edit-profile-info').hide();
+            $('#selected-profile').change(function() {
+                if ($('#selected-profile').val()) {
+                    $('#edit-profile-info').show();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

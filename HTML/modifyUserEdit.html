@@ -1,0 +1,494 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <!--<div class="app-title">Protech</div>-->
+
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Modify User</h1>
+                            <!-- <div class="pull-right">
+                              <div class="search-user clearfix">
+                                <input class=" form-control pull-left" type="text" name="search_user" value="" placeholder="Search User" />
+                                <button type="button" class="search-btn pull-right"><span class="glyphicon glyphicon-search"></span></button>
+                              </div>
+                            </div> -->
+                        </div>
+
+                        <div class="row filters-wrapper">
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                <div class="col-md-6">
+                                    <div class="search-wrapper">
+                                        <div class="search-label">
+                                            Search :
+                                        </div>
+                                        <div class="search-container clearfix">
+                                            <input type="text" class="form-control pull-left" value="" placeholder="Search" title="Search">
+                                            <button type="button" class="pull-left">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 filter-container">
+                                    <label>
+                                        Filter :
+                                    </label>
+                                    <input type="text" placeholder="Name" class="form-control filter-input" />
+                                    <input type="text" placeholder="User ID" id="user_id_filter" class="form-control filter-input" />
+                                    <input type="text" placeholder="Company" class="form-control filter-input" />
+                                    <input type="text" placeholder="Profile" class="form-control filter-input" />
+                                    <!--<select id="company">
+                                      <option>Name</option>
+                                      <option>L01</option>
+                                      <option>L02</option>
+                                      <option>L03</option>
+                                    </select>
+                                    <select id="Select1">
+                                      <option>UserID</option>
+                                      <option>L01</option>
+                                      <option>L02</option>
+                                      <option>L03</option>
+                                    </select>
+                                    <select id="Select2">
+                                      <option>Company</option>
+                                      <option>L01</option>
+                                      <option>L02</option>
+                                      <option>L03</option>
+                                    </select>
+                                    <select id="Profile">
+                                      <option>Profile</option>
+                                      <option>L01</option>
+                                      <option>L02</option>
+                                      <option>L03</option>
+                                    </select>-->
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="container-fluid table-container">
+                            <div class="row">
+                                <div class="table-count">
+                                    4 Search results
+                                </div>
+                                <table class="table" id="user-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="width50">
+                                                <div class="btn-group custom-filtr-table">
+                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                        <img src="images/Views.png">
+                                                    </button>
+                                                    <ul class="dropdown-menu filter-grid-column">
+
+                                                        <li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">User Name</span>
+                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="username" class="filter-grid-check pull-right text-right" checked="checked">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">User Id</span>
+                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="userid" class="filter-grid-check pull-right text-right" checked="checked">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">Company</span>
+                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="company" class="filter-grid-check pull-right text-right" checked="checked">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">Profile</span>
+                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="profile" class="filter-grid-check pull-right text-right" checked="checked">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">Select</span>
+                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="select" class="filter-grid-check pull-right text-right" checked="checked">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </th>
+                                            <th data-type="username">
+                                                User Name
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>
+                                            <th data-type="userid">
+                                                User ID
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>
+                                            <th data-type="company">
+                                                Company
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>
+                                            <th data-type="profile">
+                                                Profile
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>
+                                            <th data-type="select">
+                                                Select User
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="active">
+                                            <td></td>
+                                            <td class="col1" data-type="username">
+                                                John Mathews
+                                            </td>
+                                            <td class="col2" data-type="userid">
+                                                ABC123
+                                            </td>
+                                            <td class="col3" data-type="company">
+                                                Assa Abloy
+                                            </td>
+                                            <td class="col4" data-type="profile">
+                                                Admin
+                                            </td>
+                                            <td class="col5" data-type="select">
+                                                <input type="radio" id="" checked name="modify-selected-user" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="col1" data-type="username">
+                                                John Simmons
+                                            </td>
+                                            <td class="col2" data-type="userid">
+                                                EFG1234
+                                            </td>
+                                            <td class="col3" data-type="company">
+                                                Assa Abloy
+                                            </td>
+                                            <td class="col4" data-type="profile">
+                                                Admin
+                                            </td>
+                                            <td class="col5" data-type="select">
+                                                <input type="radio" id="" name="modify-selected-user" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="col1" data-type="username">
+                                                John Jacob
+                                            </td>
+                                            <td class="col2" data-type="userid">
+                                                HIJ454
+                                            </td>
+                                            <td class="col3" data-type="company">
+                                                Assa Abloy
+                                            </td>
+                                            <td class="col4" data-type="profile">
+                                                Non Admin
+                                            </td>
+                                            <td class="col5" data-type="select">
+                                                <input type="radio" id="" name="modify-selected-user" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="col1" data-type="username">
+                                                John S
+                                            </td>
+                                            <td class="col2" data-type="userid">
+                                                JKL1234
+                                            </td>
+                                            <td class="col3" data-type="company">
+                                                Assa Abloy
+                                            </td>
+                                            <td class="col4" data-type="profile">
+                                                Admin
+                                            </td>
+                                            <td class="col5" data-type="select">
+                                                <input type="radio" id="" name="modify-selected-user" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="container-fluid ">
+                            <!--<div class="row details-header">
+                              <div class="col-md-6  details-header-name">
+                                <label> 
+
+                                </label>
+                              </div>
+                              <div class="col-md-6 text-right details-header-action">
+                                <button type="button" id="update-user" class="btn btn-primary">
+                                  Save Changes
+                                </button>
+                              </div>
+                            </div>-->
+                            <div class="row">
+                                <h4 class="form-sub-title">
+                                    Details
+                                </h4>
+                            </div>
+                            <form roll="form">
+                                <div class="update-user-form-container">
+                                    <!--<div class="col-md-10 col-md-offset-1 form-header-container">
+                                      <h4 class="form-header">Details</h4>
+                                    </div>-->
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="full_name">Full Name</label>
+                                                <input class="form-control" type="text" name="full_name" value="John Mathews" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="address">Address</label>
+                                                <input class="form-control" type="text" name="address" value="Sreet Abc123" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="company"> Company</label>
+                                                <select class="form-control" name="companies" selected="Assa Abloy">
+                                                    <option value="Assa Abloy" selected>Assa Abloy</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="zip"> Zip</label>
+                                                <input class="form-control" type="text" name="zip" value="122008" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="employee_no">Employee no.</label>
+                                                <Input class="form-control" type="text" name="employee_no" value="ABC123" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="city">City</label>
+                                                <Input class="form-control" type="text" name="city" value="Gurgaon" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="countries">Email Address</label>
+                                                <Input class="form-control" type="text" name="email" value="John@assaabloy.com" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="countries">State</label>
+                                                <select class="form-control" name="states" selected="California">
+                                                    <option value="State">State</option>
+                                                    <option value="California" selected>California</option>
+                                                    <option value="Florida">Florida</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="company">Phone no.</label>
+                                                <Input class="form-control" type="text" name="Phone number" value="9876543210" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="countries">Country</label>
+                                                <select class="form-control" name="countries" selected="INDIA">
+                                                    <option value="INDIA" selected>INDIA</option>
+                                                    <option value="USA">USA</option>
+                                                    <option value="UK">UK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="company">Cell no.</label>
+                                                <Input class="form-control" type="text" name="Phone number" value="1234567890" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="employee_no">Certification</label>
+                                                <Input class="form-control" type="text" name="employee_no" value="ABC" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="assign-profile-label">Assign Profile</label>
+                                                <select name="profile" class="form-control">
+                                                    <option selected="Administrator" value="Administrator" selected>Administrator</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-12 clearfix">
+                                            <div class="form-group">
+                                                <label class="add-sign-label">Add Signature</label>
+                                                <div class="image-upload">
+                                                    <!-- <label for="file-input">
+                                                    <img style="height:20;" src="images/upload.jpg"/>
+                                                 </label> 
+                                                 <input id="file-input" type="file"/>-->
+                                                    <a class='btn btn-default' href='javascript:void(0);'>
+                                                        Upload
+                                                        <input type="file" style='' name="file_source" size="40" >
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 clearfix">
+                                            <div class="form-group">
+                                                <label for="profile"> </label>
+                                                <div class="row userformfield">
+                                                    <!--<div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                                                      <span class="chkbox"><Input style="position:inherit" type="checkbox" name="ViewCalendar"  /> View Calendar</span>
+                                                    </div>-->
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                                                        <span class="chkbox"><Input style="position:inherit" type="checkbox" name="IsSecurityAdmin" /> Is Security Admin</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-container text-right">
+                                        <button class="btn btn-primary" type="button" title="Save" onclick="location.href = ''">Save Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+
+</body>
+
+</html>

@@ -1,0 +1,1410 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailing.js"></script>
+
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Detailing</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--Navigations-->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#openings-tab" data-toggle="tab">Openings</a></li>
+                                    <li><a href="#questions-tab" data-toggle="tab">Questions</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="openings-tab" class="tab-pane fade in active">
+                                        <!-- Default panel contents -->
+                                        <div class="row">
+                                            <form class="form-inline custom-search-filter revision clearfix col-md-4">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label class="displayInline">View</label>
+                                                        <select class="form-control" id="Select1" onchange="selectView('#centerTable > tbody', this.value, 'centertable')">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL30">
+                                                        <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                    </button> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+
+                                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Export">
+                                                            <i class=" glyphicon glyphicon-export"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <form class="form-inline col-md-12" style="margin-bottom: 0;">
+                                                <ul class="list-inline">
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Create New" data-toggle="modal" data-target="#insert-row-modal">
+                                                            <i class="fa fa-plus-square"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Sort">
+                                                            <i class="fa fa-sort-alpha-asc"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="fa fa-square-o"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Color" data-toggle="modal" data-target="#grid-color-model">
+                                                            <i class="fa fa-paint-brush"></i>
+                                                        </button>
+                                                    </li>
+
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Predefined" data-toggle="modal" data-target="#grid-predefined-model">
+                                                            <i class="fa fa-magic"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Phases" data-toggle="modal" data-target="#phases-modal">
+                                                            <i class="fa fa-moon-o"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="fa fa-square-o"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="fa fa-square-o"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="fa fa-refresh"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Errors" data-toggle="modal" data-target="#grid-Error-model">
+                                                            <i class="fa fa-warning"></i>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Errors" data-toggle="modal" data-target="#grid-Error-model">
+                                                            <i class="fa fa-dollar"></i>
+                                                        </button>
+                                                    </li>
+                                                    <!--                                            <li>
+                                                                                                    <button class="btn btn-default pull-left" type="button" title="Save" >
+                                                                                                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                                                    </button>
+                                                                                                </li>-->
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Copy Opening to" data-toggle="modal" data-target="#insert-row-copy-modal">
+                                                            Copy Opening to
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="btn btn-default pull-left" type="button" title="Copy From Scheduling" data-toggle="modal" data-target="#copy-from-scheduling-modal">
+                                                            Copy From Scheduling
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                        <div class="panel panel-theme panel-primary">
+                                            <div class="panel-heading">Opening</div>
+                                            <div class="panel-body" id="pbDiv">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                    <label>Drag a column header here to group by that column</label>
+                                                </div>
+                                                <div class="table-wrapper" style="min-height:auto;" id="nestedTable">
+                                                    <table class="table" style="table-layout:auto;">
+                                                        <thead>
+                                                            <tr class="borderB">
+                                                                <th class="width30 borderR">
+                                                                    <div class="btn-group custom-filtr-table">
+                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                            <img src="images/Views.png">
+                                                                        </button>
+                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Frame Type</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="frameTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Door Type</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="doorTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="pull-left btn-block clearfix">
+                                                                                    <span class="pull-left">Opening Type</span>
+                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="openingTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                </a>
+                                                                            </li>
+
+                                                                        </ul>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-left borderR " data-type="frameTypeID">Frame Type</th>
+                                                                <th class="text-left borderR" data-type="doorTypeID">Door Type</th>
+                                                                <th class="text-left" data-type="openingTypeID">Opening Type</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="padding0 borderR">
+                                                                    <table class="table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                        <button style="height:20px;" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><img src="images/Views.png"> </button>
+                                                                                    </div>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                </td>
+                                                                <td data-type="frameTypeID" class="padding0 borderR">
+                                                                    <table class="table tableRowSelection" style="width:auto; max-width:none; table-layout:auto;">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>&nbsp;</th>
+                                                                                <th data-type="PredefineID">Predefined</th>
+                                                                                <th data-type="qtyID">Qty</th>
+                                                                                <th data-type="UOMID">UOM</th>
+                                                                                <th data-type="frameTypeID">Frame Type</th>
+                                                                                <th data-type="widthID">Width</th>
+                                                                                <th data-type="heightID">Height</th>
+                                                                                <th data-type="jambDepthID">Jamb Depth</th>
+                                                                                <th data-type="handID">Hand</th>
+                                                                                <th data-type="vendorID">Vendor</th>
+                                                                                <th data-type="drawingID">Drawing</th>
+                                                                                <th data-type="elevationID">Elevation</th>
+                                                                                <th data-type="elevSheetID">Elev.sheet</th>
+                                                                                <th data-type="anchorSheetID">Anchor Sheet</th>
+                                                                                <th data-type="costID">Cost</th>
+                                                                                <th data-type="user1ID">User 1</th>
+                                                                                <th data-type="user2ID">User 2</th>
+                                                                                <th data-type="user3ID">User 3</th>
+                                                                                <th data-type="user4ID">User 4</th>
+                                                                                <th data-type="user5ID">User 5</th>
+                                                                                <th data-type="notesID">Notes</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr onclick="showFormValues(['#frameForm']);">
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">4</td>
+                                                                                <td data-type="UOMID">PRA/PRI</td>
+                                                                                <td data-type="frameTypeID">
+                                                                                    <span class="frameTypeName" onclick="frameTypeFrmValue('#frameForm');">FS</span>
+                                                                                    <div class="popoverDetails">
+                                                                                        <i class="fa fa-times removePopover" aria-hidden="true"></i>
+                                                                                        <table class="table" style="table-layout:auto; width:auto; max-width:none;">
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Vendor</th>
+                                                                                                    <th>Elevation Type</th>
+                                                                                                    <th>Profile</th>
+                                                                                                    <th>Gauge</th>
+                                                                                                    <th>Steel Type</th>
+                                                                                                    <th>Jamb Face</th>
+                                                                                                    <th>Head Face</th>
+                                                                                                    <th>Contruction</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td>CU</td>
+                                                                                                    <td>3F</td>
+                                                                                                    <td>M</td>
+                                                                                                    <td>16</td>
+                                                                                                    <td>CR</td>
+                                                                                                    <td>2"</td>
+                                                                                                    <td>2"</td>
+                                                                                                    <td>Weld Full</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">0</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRA/PRI</td>
+                                                                                <td data-type="frameTypeID">FS</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">0</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRA/PRI</td>
+                                                                                <td data-type="frameTypeID">FS</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">0</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRA/PRI</td>
+                                                                                <td data-type="frameTypeID">FS</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">0</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRA/PRI</td>
+                                                                                <td data-type="frameTypeID">FS</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">0</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                                <td data-type="doorTypeID" class="padding0 borderR">
+                                                                    <table class="table tableRowSelection" style="width:auto; max-width:none; table-layout:auto;">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th data-type="PredefineID">Predefined</th>
+                                                                                <th data-type="qtyID">Qty</th>
+                                                                                <th data-type="UOMID">UOM</th>
+                                                                                <th data-type="widthID">Width</th>
+                                                                                <th data-type="heightID">Height</th>
+                                                                                <th data-type="thicknessID">Thickness</th>
+                                                                                <th data-type="hand1ID">Hand</th>
+                                                                                <th data-type="vendor1ID">Vendor</th>
+                                                                                <th data-type="material1ID">Material</th>
+                                                                                <th data-type="drwaing1ID">Drawing</th>
+                                                                                <th data-type="elevSheet1ID">Elevation</th>
+                                                                                <th data-type="elevSheet1ID">Elev. Sheet</th>
+                                                                                <th data-type="costID">Notes</th>
+                                                                                <th data-type="user11ID">User 1</th>
+                                                                                <th data-type="user21ID">User 2</th>
+                                                                                <th data-type="user31ID">User 3</th>
+                                                                                <th data-type="user41ID">User 4</th>
+                                                                                <th data-type="user51ID">User 5</th>
+                                                                                <th data-type="costID">Cost</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">4</td>
+                                                                                <td data-type="UOMID">PRA</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">2'4 3/4"</td>
+                                                                                <td data-type="handID">NH</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">4</td>
+                                                                                <td data-type="UOMID">PRA</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">2'4 3/4"</td>
+                                                                                <td data-type="handID">NH</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRI</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">1 3/4"</td>
+                                                                                <td data-type="handID">NH</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRI</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">1 3/4"</td>
+                                                                                <td data-type="handID">NH</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="qtyID">1</td>
+                                                                                <td data-type="UOMID">PRI</td>
+                                                                                <td data-type="widthID">0</td>
+                                                                                <td data-type="heightID">0</td>
+                                                                                <td data-type="jambDepthID">1 3/4"</td>
+                                                                                <td data-type="handID">NH</td>
+                                                                                <td data-type="vendorID">&nbsp;</td>
+                                                                                <td data-type="drawingID">&nbsp;</td>
+                                                                                <td data-type="elevationID">&nbsp;</td>
+                                                                                <td data-type="elevSheetID">&nbsp;</td>
+                                                                                <td data-type="anchorSheetID">&nbsp;</td>
+                                                                                <td data-type="costID">&nbsp;</td>
+                                                                                <td data-type="user1ID">&nbsp;</td>
+                                                                                <td data-type="user2ID">&nbsp;</td>
+                                                                                <td data-type="user3ID">&nbsp;</td>
+                                                                                <td data-type="user4ID">&nbsp;</td>
+                                                                                <td data-type="user5ID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                                <td data-type="openingTypeID" class="padding0">
+                                                                    <table class="table tableRowSelection" style="width:auto; max-width:none; table-layout:auto;">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th data-type="qty1ID">Qty</th>
+                                                                                <th data-type="UOM1ID">UOM</th>
+                                                                                <th data-type="PredefineID">Predefined</th>
+                                                                                <th data-type="width1ID">Width</th>
+                                                                                <th data-type="height1ID">Height</th>
+                                                                                <th data-type="doorthicknessID">Door Thickness</th>
+                                                                                <th data-type="doorQtyID">Door Qty</th>
+                                                                                <th data-type="handID">Hand</th>
+                                                                                <th data-type="labelID">Label</th>
+                                                                                <th data-type="doorMaterialID">Door Material</th>
+                                                                                <th data-type="framamaterialID">Frame Material</th>
+                                                                                <th data-type="descriptionID">Description</th>
+                                                                                <th data-type="exteriorID">Exterior</th>
+                                                                                <th data-type="locationid">Location 1</th>
+                                                                                <th data-type="from-toID">From/To</th>
+                                                                                <th data-type="location2ID">Location 2</th>
+                                                                                <th data-type="degreesID">Degrees</th>
+                                                                                <th data-type="archMarckID">Arch. Mark</th>
+                                                                                <th data-type="hdwSetID">Hdw Set</th>
+                                                                                <th data-type="phaseID">Phase</th>
+                                                                                <th data-type="notesID">Notes</th>
+                                                                                <th data-type="wallTypeID">Wall Type</th>
+                                                                                <th data-type="wallThickID">Wall Thick</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td data-type="qty1ID">4</td>
+                                                                                <td data-type="UOM1ID">PRA/PRI</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="width1ID">0</td>
+                                                                                <td data-type="height1ID">0</td>
+                                                                                <td data-type="doorthicknessID">2'4 3/4"</td>
+                                                                                <td data-type="doorQtyID">2</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="labelID">&nbsp;</td>
+                                                                                <td data-type="doorMaterialID">&nbsp;</td>
+                                                                                <td data-type="framamaterialID">&nbsp;</td>
+                                                                                <td data-type="descriptionID">2-0" x 2'4 3/4"/</td>
+                                                                                <td data-type="exteriorID">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                                <td data-type="locationid">&nbsp;</td>
+                                                                                <td data-type="from-toID">&nbsp;</td>
+                                                                                <td data-type="location2ID">&nbsp;</td>
+                                                                                <td data-type="degreesID">&nbsp;</td>
+                                                                                <td data-type="archMarckID">1</td>
+                                                                                <td data-type="hdwSetID">SA2</td>
+                                                                                <td data-type="phaseID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                                <td data-type="wallTypeID">&nbsp;</td>
+                                                                                <td data-type="wallThickID">0</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="qty1ID">4</td>
+                                                                                <td data-type="UOM1ID">PRA/PRI</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="width1ID">0</td>
+                                                                                <td data-type="height1ID">0</td>
+                                                                                <td data-type="doorthicknessID">2'4 3/4"</td>
+                                                                                <td data-type="doorQtyID">2</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="labelID">&nbsp;</td>
+                                                                                <td data-type="doorMaterialID">&nbsp;</td>
+                                                                                <td data-type="framamaterialID">&nbsp;</td>
+                                                                                <td data-type="descriptionID">2-0" x 2'4 3/4"/</td>
+                                                                                <td data-type="exteriorID">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                                <td data-type="locationid">&nbsp;</td>
+                                                                                <td data-type="from-toID">&nbsp;</td>
+                                                                                <td data-type="location2ID">&nbsp;</td>
+                                                                                <td data-type="degreesID">&nbsp;</td>
+                                                                                <td data-type="archMarckID">1</td>
+                                                                                <td data-type="hdwSetID">SA2</td>
+                                                                                <td data-type="phaseID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                                <td data-type="wallTypeID">&nbsp;</td>
+                                                                                <td data-type="wallThickID">0</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="qty1ID">4</td>
+                                                                                <td data-type="UOM1ID">PRA/PRI</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="width1ID">0</td>
+                                                                                <td data-type="height1ID">0</td>
+                                                                                <td data-type="doorthicknessID">2'4 3/4"</td>
+                                                                                <td data-type="doorQtyID">2</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="labelID">&nbsp;</td>
+                                                                                <td data-type="doorMaterialID">&nbsp;</td>
+                                                                                <td data-type="framamaterialID">&nbsp;</td>
+                                                                                <td data-type="descriptionID">2-0" x 2'4 3/4"/</td>
+                                                                                <td data-type="exteriorID">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                                <td data-type="locationid">&nbsp;</td>
+                                                                                <td data-type="from-toID">&nbsp;</td>
+                                                                                <td data-type="location2ID">&nbsp;</td>
+                                                                                <td data-type="degreesID">&nbsp;</td>
+                                                                                <td data-type="archMarckID">1</td>
+                                                                                <td data-type="hdwSetID">SA2</td>
+                                                                                <td data-type="phaseID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                                <td data-type="wallTypeID">&nbsp;</td>
+                                                                                <td data-type="wallThickID">0</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="qty1ID">4</td>
+                                                                                <td data-type="UOM1ID">PRA/PRI</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="width1ID">0</td>
+                                                                                <td data-type="height1ID">0</td>
+                                                                                <td data-type="doorthicknessID">2'4 3/4"</td>
+                                                                                <td data-type="doorQtyID">2</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="labelID">&nbsp;</td>
+                                                                                <td data-type="doorMaterialID">&nbsp;</td>
+                                                                                <td data-type="framamaterialID">&nbsp;</td>
+                                                                                <td data-type="descriptionID">2-0" x 2'4 3/4"/</td>
+                                                                                <td data-type="exteriorID">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                                <td data-type="locationid">&nbsp;</td>
+                                                                                <td data-type="from-toID">&nbsp;</td>
+                                                                                <td data-type="location2ID">&nbsp;</td>
+                                                                                <td data-type="degreesID">&nbsp;</td>
+                                                                                <td data-type="archMarckID">1</td>
+                                                                                <td data-type="hdwSetID">SA2</td>
+                                                                                <td data-type="phaseID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                                <td data-type="wallTypeID">&nbsp;</td>
+                                                                                <td data-type="wallThickID">0</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-type="qty1ID">4</td>
+                                                                                <td data-type="UOM1ID">PRA/PRI</td>
+                                                                                <td data-type="PredefineID">&nbsp;</td>
+                                                                                <td data-type="width1ID">0</td>
+                                                                                <td data-type="height1ID">0</td>
+                                                                                <td data-type="doorthicknessID">2'4 3/4"</td>
+                                                                                <td data-type="doorQtyID">2</td>
+                                                                                <td data-type="handID">&nbsp;</td>
+                                                                                <td data-type="labelID">&nbsp;</td>
+                                                                                <td data-type="doorMaterialID">&nbsp;</td>
+                                                                                <td data-type="framamaterialID">&nbsp;</td>
+                                                                                <td data-type="descriptionID">2-0" x 2'4 3/4"/</td>
+                                                                                <td data-type="exteriorID">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                                <td data-type="locationid">&nbsp;</td>
+                                                                                <td data-type="from-toID">&nbsp;</td>
+                                                                                <td data-type="location2ID">&nbsp;</td>
+                                                                                <td data-type="degreesID">&nbsp;</td>
+                                                                                <td data-type="archMarckID">1</td>
+                                                                                <td data-type="hdwSetID">SA2</td>
+                                                                                <td data-type="phaseID">&nbsp;</td>
+                                                                                <td data-type="notesID">&nbsp;</td>
+                                                                                <td data-type="wallTypeID">&nbsp;</td>
+                                                                                <td data-type="wallThickID">0</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- Grid ends here-->
+                                                <div id="dragbar"></div>
+                                                <!-- row ends -->
+
+                                                <div class="row" id="panDiv">
+                                                    <button class="btn btn-default" aria-expanded="true" style="position:absolute;right:0;;z-index:10;" onclick="hideForms(this, ['#frameForm','#doorForm','#openingForm','#hdwItemForm'])">
+                                                        <i class="fa fa-chevron-up"></i>
+                                                    </button>
+                                                    <button class="col-md-1 btn btn-primary obFrm pfm1 hide" id="pfm11" onclick="opFrm(this)" title="Openings"><span class="glyphicon glyphicon-plus-sign"></span</button>
+                                                    <button class="col-md-1 btn btn-primary obFrm pfm2 hide" id="pfm21" onclick="opFrm(this)" title="Frame"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                                                    <button class="col-md-1 btn btn-primary obFrm pfm3 hide" id="pfm31" onclick="opFrm(this)" title="Door"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                                                    <button class="col-md-1 btn btn-primary obFrm pfm4 hide" id="pfm41" onclick="opFrm(this)" title="Hwd Set"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                                                    <div class="col-md-3 pform" id="pfm1">
+                                                        <div class="panel panel-theme panel-primary">
+                                                            <!-- Default panel contents -->
+                                                            <div class="panel-heading" id="popen" onclick="openModal(this)">Openings <span class="glyphicon glyphicon-minus-sign minibtn" id="mBtn1" onclick="clsFrm(this)"></span></div>
+                                                            <div class="panel-body">
+                                                                <form class="form-horizontal custom-search-filter" id="openingForm">
+
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-12">
+                                                                            <select class="form-control" id="Select2">
+                                                                                <option>Opening type</option>
+                                                                                <option>Item1</option>
+                                                                                <option>Item2</option>
+                                                                                <option>Item3</option>
+                                                                                <option>Item4</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Width</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Height</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Door Material</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Frame Material</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Label</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="button-container text-right clearfix">
+                                                                        <div class="pull-right">
+                                                                            <button class="btn btn-primary" type="button" title="Add New Opening" data-toggle="modal" data-target="#addNewOpening">Add New Opening</button>
+                                                                            <button class="btn btn-primary" type="button" title="Save">Save</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 pform" id="pfm2">
+                                                        <div class="panel panel-theme panel-primary">
+                                                            <!-- Default panel contents -->
+                                                            <div class="panel-heading" id="fra" onclick="openModal(this)">Frame <span class="glyphicon glyphicon-minus-sign minibtn" id="mBtn2" onclick="clsFrm(this)"></span></div>
+                                                            <div class="panel-body">
+                                                                <form class="form-horizontal custom-search-filter" id="frameForm">
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-12">
+                                                                            <select class="form-control" id="sel1" onchange="getSel(this)">
+                                                                                <option>Frame type</option>
+                                                                                <option>Item1</option>
+                                                                                <option>Item2</option>
+                                                                                <option>Item3</option>
+                                                                                <option>Item4</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Width</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Height</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Vendor</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="email" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Elevation Type</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Profile</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Gauge</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Steel Type</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Jamb Face</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Construction</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="email" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Label</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="button-container text-right clearfix">
+                                                                        <div class="pull-right">
+                                                                            <button class="btn btn-primary" type="button" title="Add New Frame" data-toggle="modal" data-target="#addNewFrame">Add New Frame</button>
+                                                                            <button class="btn btn-primary" type="button" title="Save">Save</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 pform" id="pfm3">
+                                                        <div class="panel panel-theme panel-primary">
+                                                            <!-- Default panel contents -->
+                                                            <div class="panel-heading" id="doo" onclick="openModal(this)">Door <span class="glyphicon glyphicon-minus-sign minibtn" id="mBtn3" onclick="clsFrm(this)"></span></div>
+                                                            <div class="panel-body">
+                                                                <form class="form-horizontal custom-search-filter" id="doorForm">
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-12">
+                                                                            <select class="form-control" id="sel2" onchange="getSel(this)">
+                                                                                <option>Door type</option>
+                                                                                <option>Item1</option>
+                                                                                <option>Item2</option>
+                                                                                <option>Item3</option>
+                                                                                <option>Item4</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Width</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Height</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Material</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Vendor</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="email" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Series</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Edge</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Gauge/Construction</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Steel Type / Species</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Face Type</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Label</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="button-container text-right clearfix">
+                                                                        <div class="pull-right">
+                                                                            <button class="btn btn-primary" type="button" title="Add New Door" data-toggle="modal" data-target="#addNewDoor">Add New Door</button>
+                                                                            <button class="btn btn-primary" type="button" title="Save">Save</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 pform" id="pfm4">
+                                                        <div class="panel panel-theme panel-primary">
+                                                            <!-- Default panel contents -->
+                                                            <div class="panel-heading" id="hdset" onclick="openModal(this)">Hdw Set <span class="glyphicon glyphicon-minus-sign minibtn" id="mBtn4" onclick="clsFrm(this)"></span></div>
+                                                            <div class="panel-body">
+                                                                <form class="form-horizontal custom-search-filter" id="hdwItemForm">
+
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Hdw Item</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="HI-1">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Qty.</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="3.00">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">UOM</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="EA">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Leaf</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="B">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Manuf.</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="AD">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Part Description</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="1870 2.75 119">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Notes</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" data-value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-sm-4 control-label">Hdw Type Description</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="email" class="form-control" data-value="Surface Closer">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="button-container text-right clearfix">
+                                                                        <div class="pull-right">
+                                                                            <button class="btn btn-primary" type="button" title="Add New Door" data-toggle="modal" data-target="#addhdwSet">Add Hdw Set</button>
+                                                                            <button class="btn btn-primary" type="button" title="Save">Save</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- row ends -->
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="formModal" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" id="modtit">Modal Header</h4>
+                                                </div>
+                                                <div class="modal-body" style="padding:40px 50px;" id="fmodalbody"></div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Modal ending here -->
+
+                                    <!-- Modal -->
+                                    <div class="modal" id="addNewOpening" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Add New Openings</h4>
+                                                </div>
+                                                <div class="modal-body" style="padding:40px 50px">
+                                                    <form class="form-horizontal custom-search-filter" id="Form1">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">Opening Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" data-value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Predefined</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Qty</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Width</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Height</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Door Thickness</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Door Qty</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Hand</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Label</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Door Material</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Frame Material</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Description</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Exterior</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Location1</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> To/From</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Location2</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Degrees</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Arch. Mark</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Hdw Set</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Phase</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Notes</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Wall Types</label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary" id="saveNewOpening">Save </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal ending here -->
+
+                                    <!-- Modal -->
+                                    <div class="modal" id="addNewFrame" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Add New Frame</h4>
+                                                </div>
+                                                <div class="modal-body" style="padding:40px 50px">
+                                                    <form class="form-horizontal custom-search-filter" id="Form2">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">Frame Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" data-value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Predefined</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Qty</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Width</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Height</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Jamb Depth</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Hand</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Vendor</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Drawing</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" />Elevation</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Elve. Sheet</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Anchor Sheet</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Cost</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 1</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 2</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 3
+                                                            </label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 4</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Arch. Mark</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 5</label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary" id="Button1">Save </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal" id="addNewDoor" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Add New Door</h4>
+                                                </div>
+                                                <div class="modal-body" style="padding:40px 50px">
+                                                    <form class="form-horizontal custom-search-filter" id="Form3">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">Door Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" data-value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Predefined</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Qty</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Width</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Height</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Thickness</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Hand</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Vendor</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Drawing</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" />Elevation</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Elve. Sheet</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Anchor Sheet</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Cost</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 1</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 2</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 3
+                                                            </label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 4</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Arch. Mark</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> User 5</label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary" id="Button2">Save </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="modal" id="addhdwSet" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Add Hdw Set</h4>
+                                                </div>
+                                                <div class="modal-body" style="padding:40px 50px">
+                                                    <form class="form-horizontal custom-search-filter" id="Form4">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">Hdw Set Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" data-value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Hdw Item</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Qty</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> UOM</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Leaf</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Manuf</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Part Description</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Notes</label>
+                                                            <label class="col-sm-4 control-label">
+                                                                <input type="checkbox" /> Hdw Type Description</label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary" id="Button3">Save </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="questions-tab"></div>
+                                </div>
+                                <!-- tab content ends here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">John Knipper/div>
+                    </div>
+                </div>
+        </footer>
+</body>
+
+</html>

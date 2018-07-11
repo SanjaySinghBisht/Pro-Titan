@@ -1,0 +1,1613 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid esimate-tab-list">
+
+                        <!-- Tab panes -->
+
+                        <!-- Page Header -->
+                        <div class="page-header clearfix">
+                            <h1 class="text-left"><span>Hardware</span> </h1>
+                        </div>
+
+                        <div class="col-md-12">
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchForHardware">Search For Hardware </button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCopySets">Copy Sets </button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalHardwareConversion">Hardware Conversion </button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInsertRow">Insert Row </button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddDoor">Add Doors </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Footer HTML -->
+
+        <!-- Modal For Search -->
+        <div class="modal fade " id="searchForHardware" tabindex="-1" role="dialog" aria-labelledby="searchForHardware">
+            <div class="modal-dialog bs-example-modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Search For Hardware</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="col-md-12 wholeLeftArea">
+                            <div class="row pos-relative ">
+
+                                <div class="col-md-6 leftArea pos-relative">
+                                    <div class="pos-absolute" style="right: 0; z-index: 99;">
+                                        <button class="btn btn-default resizeBtnIcon expandtable collapseTable" id="toggleBtn" type="button" title="Reset">
+                                            <i class="glyphicon glyphicon-resize-full"></i></button>
+                                    </div>
+                                    <div class="moveBtn" style="right: -35px;">
+                                        <a onclick="transferData('.leftGrid', '#centertable');"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+
+                                        <a onclick="deleteRow(this, '#leftTopGrid, #leftGridFavouriteTable,#leftBottomGrid, #centertable')"><span class="glyphicon glyphicon-trash margin-TB15"></span></a>
+                                        <a onclick="cutDataVendorCrossXfr('#', '#')"><span class="glyphicon glyphicon-resize-horizontal"></span></a>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="clearfix marginB15">
+                                            <div class="padding-10px">
+                                                <button class="btn btn-default text-icon-btn" type="button" title="Search" onclick="swipeTable('#leftGridFavouriteTable', '#leftTopGrid ')">
+                                                    <i class="glyphicon glyphicon-search"></i>Search
+
+                                                </button>
+                                                <button class="btn btn-default text-icon-btn" type="button" title="Recent">
+                                                    <i class="glyphicon glyphicon-new-window"></i>Recent
+
+                                                </button>
+                                                <button class="btn btn-default text-icon-btn" type="button" title="Favorite" onclick="swipeTable('#leftTopGrid', '#leftGridFavouriteTable ')">
+                                                    <i class="glyphicon glyphicon-heart"></i>Favorite
+
+                                                </button>
+                                                <button class="btn btn-default text-icon-btn" type="button" title="Other Project">
+                                                    <i class="glyphicon glyphicon-modal-window"></i>Other Project
+
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <form class="form-horizontal custom-search-filter clearfix" style="margin-bottom: 0;">
+                                            <div class="form-group col-md-12">
+                                                <div class="pull-left marginR5">
+                                                    <select class="form-control">
+                                                        <option selected>Mfr.</option>
+                                                        <option value="">PE</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginR5">
+                                                    <select class="form-control">
+                                                        <option selected>Type</option>
+                                                        <option value="">LO</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginR5">
+                                                    <select class="form-control" id="">
+                                                        <option value="original">Product Line</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginR5">
+                                                    <input type="text" class="form-control" placeholder="Search" />
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                        <div class="topgridarea clearfix marginB15">
+                                            <div class="table-wrap overflow-auto" style="height: 179px;">
+                                                <table class="table table-bordered table-striped custom-search-filter leftGrid" id="leftTopGrid" style='margin-bottom: 0;'>
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <th class="table-head width50 text-right" data-type="checkbox">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Mfr. </span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="mfr" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Type</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Product Line</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="productLine" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Part Description </span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDesc" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Cut Sheet</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="cutsheet" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th class="table-head width70" data-type="mfr">Mfr. <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head width70" data-type="type">Type <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head" data-type="productLine">Product Line <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head  width150" data-type="partDesc">Part Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head width90" data-type="cutsheet">Cut Sheet <i class="glyphicon glyphicon-triangle-top"></i></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">29SE</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18BRASS</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SATIN</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SILVER</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18WHITE</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18BRASS</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SATIN</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SILVER</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18WHITE</td>
+                                                            <td data-type="cutsheet">
+                                                                <img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered table-striped custom-search-filter leftGrid" id="leftGridFavouriteTable" style='display: none; margin-bottom: 0;'>
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <th class="table-head width50 text-right" data-type="checkbox">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Category</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="categoryID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Name</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="nameID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Use</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="useID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Notes</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="notesID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th class="table-head width150" data-type="categoryID">Category <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head width150" data-type="nameID">Name <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head" data-type="useID">Use <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head  width150" data-type="notesID">Notes <i class="glyphicon glyphicon-triangle-top"></i></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">School</td>
+                                                            <td data-type="nameID">Class Room Sets</td>
+                                                            <td data-type="useID">Locks</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Hospital</td>
+                                                            <td data-type="nameID">Silver Cross</td>
+                                                            <td data-type="useID">Locks</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Hotel</td>
+                                                            <td data-type="nameID">Hotel Office</td>
+                                                            <td data-type="useID">HMD</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Hospital</td>
+                                                            <td data-type="nameID">St. Johns</td>
+                                                            <td data-type="useID">Locks</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">ASSA Abloy</td>
+                                                            <td data-type="nameID">Standard Mater</td>
+                                                            <td data-type="useID">Vendor</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Alligion</td>
+                                                            <td data-type="nameID">Standard Mater</td>
+                                                            <td data-type="useID">Vendor</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="bottomtGridArea">
+                                            <h5 class="text-left">Modifiers</h5>
+                                            <div class="table-wrap  overflow-auto" style="height: 150px;">
+                                                <table class="table table-bordered table-striped custom-search-filter leftGrid" id="Table1" style="margin-bottom: 0;">
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <th class="table-head width50 text-right" data-type="checkbox">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Print Code </span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="printCode" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Description</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="desc" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th class="table-head" data-type="printCode">Print Code <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head" data-type="desc">Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">11</td>
+                                                            <td data-type="desc">17/32(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">12</td>
+                                                            <td data-type="desc">39/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">13</td>
+                                                            <td data-type="desc">43/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">14</td>
+                                                            <td data-type="desc">47/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">15</td>
+                                                            <td data-type="desc">55/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">16</td>
+                                                            <td data-type="desc">59/64(13mm) Spindle Length</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6" id="centerArea">
+                                    <div class="row" style="margin-left: 30px;">
+                                        <div class="pos-absolute" style="right:0; z-index: 99;">
+                                            <button class="btn btn-default resizeBtnIcon expandtableLeftTable collapseTableLeftTable" id="toggleBtnLeftTable" type="button" title="Reset"><i class="glyphicon glyphicon-resize-full"></i> </button>
+                                        </div>
+                                        <div class="clearfix marginB15">
+                                            <form class="form-inline custom-search-filter clearfix">
+                                                <div class="form-group" style="width: 100%;">
+                                                    <div class="pull-left">
+                                                        <label class="displayInline">View</label>
+                                                        <select class="form-control" id="Select12">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL10">
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Reset">
+                                                            <i class="glyphicon glyphicon-copy"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Reset">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Reset">
+                                                            <i class="glyphicon glyphicon-file"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <form class="form-inline custom-search-filter clearfix" style="margin-bottom: 20px;">
+                                            <div class="pull-left">
+                                                <div class="form-group">
+                                                    <label>Hdw Set</label>
+                                                    <select class="form-control" id="Select6">
+                                                        <option value="original">Select</option>
+                                                        <option value="">1.0</option>
+                                                        <option value="">2.0</option>
+                                                        <option value="">3.0</option>
+                                                        <option value="">4.0</option>
+                                                        <option value="">5.0</option>
+                                                        <option value="">6.0</option>
+                                                        <option value="">7.0</option>
+                                                        <option value="">8.0</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="pull-left marginL10">
+                                                <label class="displayInline">Opening Size</label>
+                                                <input type="text" class="form-control width50" placeholder="Width" />
+                                                <input type="text" class="form-control width50 " placeholder="Height" />
+                                            </div>
+                                            <div class="pull-left marginL10">
+                                                <div class="form-group">
+
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="select"> Single
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="select" /> Pair
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="pull-right marginL30">
+                                                <button type="button" onclick="duplicateRecord('#centertable')" class="btn btn-default btn-sm" style="">Duplicate</button>
+                                                <button type="button" onclick="addNewRecord('#centertable')" class="btn btn-default btn-sm">New</button>
+                                            </div>
+
+                                        </form>
+                                        <div class="table-wrap overflow-auto " style="height: 368px;">
+                                            <table class="table table-bordered table-striped custom-search-filter" style="margin-bottom: 0;" id="centertable">
+                                                <thead>
+                                                    <tr class="table-head">
+                                                        <th class="table-head width50 text-right">
+                                                            <div class="btn-group pull-left custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Item</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="item" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Mrf.</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="mrfID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Part Description</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescription" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Used ?</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="productLine" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Type </span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <input type="checkbox" onclick="checkAll(this)">
+                                                        </th>
+                                                        <th class="table-head" data-type="item">Item <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head width150" data-type="partDescription">Part Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head" data-type="mrfID">Mrf. <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head" data-type="usedId">Used ? <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head" data-type="type">Type <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="addedRow" style="display: none;">
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">&nbsp;</td>
+                                                        <td data-type="partDescription">29SE</td>
+                                                        <td data-type="usedId">PE</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">LO</td>
+                                                    </tr>
+                                                    <tr class="vendor-list-toggle-row">
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="item" colspan="5">
+                                                            <table class="table table-bordered table-striped custom-search-filter">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th data-type="checkbox" class="text-right width50">
+                                                                            <input type="checkbox" class="childCheck">
+                                                                        </th>
+                                                                        <th data-type="printCode" class="width150">Print Code</th>
+                                                                        <th data-type="desc">Description</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <tr>
+                                                                            <td data-type="checkbox" class="text-right">
+                                                                                <input type="checkbox" class="childCheck">
+                                                                            </td>
+                                                                            <td data-type="printCode">12</td>
+                                                                            <td data-type="desc">39/64(13mm) Spindle Length</td>
+                                                                        </tr>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 pdfArea">
+                            <div class="pull-right" style="z-index:99;">
+                                <button class="btn btn-default collapsetablePDF expandtablePDF resizeBtnIcon " id="toggleBtnPDF" type="button" title="Reset">
+                                    <i class="glyphicon glyphicon-resize-full"></i>
+                                </button>
+                            </div>
+
+                            <!-- <iframe src="pdf/sample.pdf" width="100%" height="500">
+This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>
+</iframe>-->
+
+                            <embed style="margin-top:52px;" src="pdf/sample.pdf" type="application/pdf" width="100%" height="360">
+                            <!-- <object data="pdf/Pricebook Management.pdf" type="application/pdf" width="100%" height="500">
+</object>-->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+
+        <!-- Modal For Search -->
+        <div class="modal fade" id="modalCopySets" tabindex="-1" role="dialog" aria-labelledby="modalCopySets">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H4">Copy Set</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    This utility allows you to quickely create numerious Openings by coping everything from an existing.
+                                </p>
+                                <p>
+                                    Enter the Openings you wish to add. Seperate the values with Spaces immediately after the commas will.(Example - 101, 102, 103)
+                                </p>
+                                <p>
+                                    If the value does not exist you will be asked to confirm
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form class="form-inline">
+                                <div class="col-md-12 marginT20">
+                                    <textarea class="form-control" style="width: 100%;height: 120px;" id="criteriaContent">
+
+                                    </textarea>
+                                </div>
+                                <div class="col-md-3 marginT20">
+                                    <div class="input-group">
+                                        <label>Prefix</label>
+                                        <input type="text" class="form-control" id="insert-copy-prefix" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 marginT20">
+                                    <div class="input-group">
+                                        <label>From</label>
+                                        <input type="number" class="form-control" id="insert-copy-from" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 marginT20">
+                                    <div class="input-group">
+                                        <label>To</label>
+                                        <input type="number" class="form-control" id="insert-copy-to" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3 marginT20">
+                                    <div class="input-group">
+                                        <label>Suffix</label>
+                                        <input type="text" class="form-control" id="insert-copy-suffix" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center marginT20">
+                                    <button class="btn btn-default" type="button" onclick="validateCriteria()">
+                                        Validate Criteria
+                                    </button>
+                                    <button class="btn btn-default" type="button" onclick="clearCriteria()">
+                                        Clear Criteria
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="copyRow('#opening-table')">Ok</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- Modal End -->
+
+        <!-- Modal For Hardware Conversion -->
+        <div class="modal fade" id="modalHardwareConversion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog bs-example-modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H2">Hardware Conversion</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="form-sub-title">Hardware Vendor</h4>
+                                <form class="form-inline custom-search-filter clearfix marginB15">
+                                    <div class="form-group">
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control" id="Select1" onchange="selectView('#centerTable > tbody', this.value, 'centertable')">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                      <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                    </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="table-wrapper">
+                                    <table class="table sortingTable" id="hardwareVendorTable">
+                                        <thead>
+                                            <tr>
+                                                <th data-type="Type">Type <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                <th data-type="Name">Name <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                <th data-type="Print Code">Print Code <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                <th data-type="Descriotion">Description <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-type="HI">HI</td>
+                                                <td data-type="Sargent">Sargent </td>
+                                                <td data-type="557 US36D">557 US36D</td>
+                                                <td data-type="Cont. Hinge">Cont. Hinge</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Elevation Type</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">3PC</td>
+                                                <td data-type="">The Three Sided Frame</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Elevation Type</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">BL</td>
+                                                <td data-type="">Borrowed Light</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Elevation Type</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">SL</td>
+                                                <td data-type="">Sidelight</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Profile</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">SC</td>
+                                                <td data-type="">Caused Opening Frame</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Profile</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">SU</td>
+                                                <td data-type="">Unequal Rabbet Frame</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Gauge</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">16</td>
+                                                <td data-type="">16 Gauge</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Steel Type</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">A60</td>
+                                                <td data-type="">Galvanneal A60</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Steel Type</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">CRS</td>
+                                                <td data-type="">Cold Rolled Steel</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-type="">Jamb Face</td>
+                                                <td data-type="">Ceco </td>
+                                                <td data-type="">2*</td>
+                                                <td data-type="">2" Face Jamb</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="form-sub-title">New Hardware Vendor</h4>
+                                <form class="form-inline custom-search-filter clearfix marginB15">
+                                    <div class="form-group">
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control" id="Select2" onchange="selectView('#centerTable > tbody', this.value, 'centertable')">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                      <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                    </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="table-wrapper">
+                                    <div class="table-wrapper">
+                                        <table class="table sortingTable" id="newHardwareVendorTable">
+                                            <thead>
+                                                <tr>
+                                                    <th data-type="Type">Type <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Name">Name <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Print Code">Print Code <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Descriotion">Description <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="557 US36D">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Cont. Hinge">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="3PC">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="The Three Sided Frame">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="BL">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Borrowed Light">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="SL">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Sidelight">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="SC">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Caused Opening Frame">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="SU">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Unequal Rabbet Frame">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="16">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="16 Gauge">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="A60">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Galvanneal A60">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="CRS">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="Cold Rolled Steel">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField">
+                                                            <option>Select</option>
+                                                            <option>HI</option>
+                                                            <option>Elevation</option>
+                                                            <option>Profile</option>
+                                                            <option>Gauge</option>
+                                                            <option>Steel Type</option>
+                                                            <option>Jamb Face</option>
+                                                            <option>Anchor</option>
+                                                            <option>Packing</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="">
+                                                        <select class="form-control popupCustomField" onchange="showVal(this)">
+                                                            <option selected>Select</option>
+                                                            <option>Ceco</option>
+                                                            <option>Fleming</option>
+                                                        </select>
+                                                    </td>
+                                                    <td data-type="2*">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                    <td data-type="2* Face Jamb">
+                                                        <input type="text" class="form-control popupCustomField" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+
+        <!---Insert row model -->
+        <div class="modal fade" id="modalInsertRow" tabindex="-1" role="dialog" aria-labelledby="modalInsertRowLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">Insert Row</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                Enter the range of door #s to insert. You may include prefix or suffix codes to Door #s that already exist will be skipped.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form class="form-inline">
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <label>Prefix</label>
+                                        <input type="text" class="form-control" id="insert-new-prefix" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <label>From</label>
+                                        <input type="number" class="form-control" id="insert-new-from" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <label>To</label>
+                                        <input type="number" class="form-control" id="insert-new-to" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <label>Suffix</label>
+                                        <input type="text" class="form-control" id="insert-new-suffix" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="appendRow('#opening-table')">Insert</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="modalAddDoor">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add Opening to Estimate Details:</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <form class="">
+                            <div class="form-group">
+                                <button class="btn btn-success col-md-2" type="button" onclick="decrementCounter('#doorSlector', 1)"><i class=" glyphicon glyphicon-chevron-left"></i></button>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="doorSlector" onchange="getAssignedIdVal('#hdwSetTable', $('#doorSlector').val(), '#hardwareSetFromAssignedId')">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-success col-md-2" type="button" onclick="incrementCounter('#doorSlector', 4)">
+                                    <i class=" glyphicon glyphicon-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Ths utility allows you to quickly create numerous opening in the detail screen with the above hardware set.
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Openings below will be assigned to Set 1</label>
+                                <input class="form-control" type="text" id="hardwareSetAssignId">
+                            </div>
+                            <div class="form-group">
+                                <label>Openings below are assigned to Set 1</label>
+                                <input class="form-control" type="text" id="hardwareSetFromAssignedId">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Pair of doors (Active/Inactive)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Pair of doors (Both Active)
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="addDoors('#hdwSetTable', $('#doorSlector').val(), $('#hardwareSetAssignId').val())">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+</body>
+
+</html>

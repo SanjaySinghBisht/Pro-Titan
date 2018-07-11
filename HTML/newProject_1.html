@@ -1,0 +1,786 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assa Abloy</title>
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/datepicker.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <!--        <div class="container-fluid">
+            <div class="row">
+                <div class="menu-container">
+                    <ul class="nav nav-tabs menu-list">
+                        <li ><a  href="landingPage.html">Home</a></li>
+                        <li class="active current-menu" ><a data-toggle="tab" href="#project-menu">Project</a></li>
+                        <li><a data-toggle="tab" href="#project-management-menu">Project Management</a></li>
+                        <li><a data-toggle="tab" href="#estimating-menu">Estimating</a></li>
+                        <li><a data-toggle="tab" href="#quoting-menu">Quoting</a></li>
+                        <li><a data-toggle="tab" href="#detailing-menu">Detailing</a></li>
+                        <li><a data-toggle="tab" href="#processing-menu">Processing</a></li>
+                        <li><a data-toggle="tab" href="#vendor-management-menu">Vendor Management</a></li>
+                        <li><a data-toggle="tab" href="#utility-menu">Utility</a></li>
+                        <li><a data-toggle="tab" href="#reports-menu">Reports</a></li>
+                    </ul>
+                    <div class="tab-content menu-detail-container">
+                        <div id="home-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="project-menu" class="tab-pane fade in active">
+                            <ul class="list-inline list-unstyled">
+                                <li class="text-center current-menu" >
+                                    <a href="newProject_1.html">
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                        <img src="images/icons/create.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Create Project</span>
+                                    </a>
+
+                                </li>
+                                <li class="text-center">
+                                    <a href="openProject.html">
+                                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                        <img src="images/icons/open.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Open Project</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-copy" aria-hidden="true"></i>
+                                        <img src="images/icons/copy.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Copy Project</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+                                        <img src="images/icons/import.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Import Project</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+                                        <img src="images/icons/export.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Export Project</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-file-zip-o" aria-hidden="true"></i>
+                                        <img src="images/icons/archive.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Archive Project</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-mail-forward" aria-hidden="true"></i>
+                                        <img src="images/icons/revision.png" class="" alt="Cinque Terre" ><br>
+                                        <span>Revision</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="project-management-menu" class="tab-pane fade">
+                            <ul class="list-inline list-unstyled">
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                                        <img src="images/icons/project.png" class="" alt="By Project" ><br>
+                                        <span>By Project</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <img src="images/icons/category.png" class="" alt="By Category" ><br>
+                                        <span>By Category</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <img src="images/icons/calendar.png" class="" alt="Calendar" ><br>
+                                        <span>Calendar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="estimating-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="quoting-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="detailing-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="processing-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="vendor-management-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="utility-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="vendor-management-menu" class="tab-pane fade">
+
+                        </div>
+                        <div id="reports-menu" class="tab-pane fade">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>-->
+
+        <div class="container-fluid">
+            <div class="row both-column-height-equal">
+                <!-- sidebar menu start -->
+                <!--                <div class="col-md-2 sidebar">
+                    <div class="panel-group" id="accordion" role="tablist">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuOne" aria-expanded="true">
+                                        <span class="glyphicon glyphicon-minus"></span> Project
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuOne" class="panel-collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li class="active"><a href="newProject.html" title="Create Project">Create Project</a></li>
+                                        <li><a href="openProject.html" title="Open Project">Open Project</a></li>
+                                        <li><a href="importProject.html" title="Import Project">Import Project</a></li>
+                                        <li><a href="exportProject.html" title="Export Project">Export Project</a></li>
+                                        <li><a href="copyProject.html" title="Copy Project">Copy Project</a></li>
+                                        <li><a href="revisions.html" title="Revisions">Revisions</a></li>
+                                        <li><a href="archive.html" title="Archive Project">Archive Project</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuTwo" aria-expanded="false" title="Project Management">
+                                        <span class="glyphicon glyphicon-plus"></span> Project Management
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="byProject.html" title="By Project">By Project</a></li>
+                                        <li><a href="byCategory.html" title="By Category">By Category</a></li>
+                                        <li><a href="calendar.html" title="Calendar">Calendar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuThree" aria-expanded="false">
+                                        <span class="glyphicon glyphicon-plus"></span> Estimating
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="createHardwareSet.html" title="Hardware">Hardware</a></li>
+                                        <li><a href="bulkMaterial.html" title="Bulk Material">Bulk Material</a></li>
+                                        <li><a href="detailing.html" title="Detail Material">Detail Material</a></li>
+                                        <li><a href="costingSummary.html" title="Costing Summary">Costing Summary</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="quoting.html">
+                                        <span class="glyphicon glyphicon-no"></span> Quoting
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuFive" aria-expanded="false" title="Detailing">
+                                        <span class="glyphicon glyphicon-plus"></span> Detailing
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="javascript:void(0);" title="Hardware">Hardware</a></li>
+                                        <li><a href="javascript:void(0);" title="Detail">Detail</a></li>
+                                        <li><a href="javascript:void(0);" title="Submittal">Submittal</a></li>
+                                        <li><a href="javascript:void(0);" title="Cost Summary">Cost Summary</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuSix" aria-expanded="false" title="Processing">
+                                        <span class="glyphicon glyphicon-plus"></span> Processing
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuSix" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="processingHardware.html" title="Hardware">Hardware</a></li>
+                                        <li><a href="javascript:void(0);" title="Material">Material</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuSeven" aria-expanded="false" title="Vendor Management">
+                                        <span class="glyphicon glyphicon-plus"></span> Vendor Management
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuSeven" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="masterHardwareManagement.html" title="Master Hardware Management">Master Hardware Management</a></li>
+                                        <li><a href="masterMaterialManagement.html" title="Master Material Management">Master Material Management</a></li>
+                                        <li><a href="javascript:void(0);" title="Project Hardware Management">Project Hardware Management</a></li>
+                                        <li><a href="javascript:void(0);" title="Project Material Management">Project Material Management</a></li>
+                                        <li><a href="javascript:void(0);" title="Master Cost Adjustments">Master Cost Adjustments</a></li>
+                                        <li><a href="javascript:void(0);" title="Project Cost Adjustments">Project Cost Adjustments</a></li>
+                                        <li><a href="javascript:void(0);" title="Transfer Material Price book">Transfer Material Price book</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#leftMenuEight" aria-expanded="false" title="Utility">
+                                        <span class="glyphicon glyphicon-plus"></span> Utility
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="leftMenuEight" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="javascript:void(0);" title="Price Book Clean-up">Price Book Clean-up</a></li>
+                                        <li><a href="javascript:void(0);" title="Switch Users">Switch Users</a></li>
+                                        <li><a href="javascript:void(0);" title="Accounting Export (XML)">Accounting Export (XML)</a></li>
+                                        <li><a href="javascript:void(0);" title="Accounting Export">Accounting Export</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="javascript:void(0);" aria-expanded="false" title="Reports">
+                                        <span class="glyphicon glyphicon-no"></span> Reports
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div> sidebar menu end -->
+
+                <div class="col-xs-12 contentCollapsable marginT20">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void(0);" class="collapseBtn" title="Sidebar Collapse Button"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandBtn" title="Sidebar Expand Button"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+
+                    <!--    -->
+                    <div class="container-fluid">
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">New Project</h1>
+                        </div>
+
+                        <form roll="form">
+                            <div class="project-form-container">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="form-group required">
+                                            <label>Project ID</label>
+                                            <input class="form-control" type="text" name="projectID" placeholder="Project ID" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-12">
+                                        <div class="form-group required">
+                                            <label>Project Description</label>
+                                            <input class="form-control" type="text" name="projectDescription" placeholder="Project Description" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Estimate Number</label>
+                                            <input class="form-control" type="text" name="estimateNumber" placeholder="Estimate Number" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Architects Project Number</label>
+                                            <input class="form-control" type="text" name="architectsProjectNumber" placeholder="Architects Project Number" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="form-sub-title">Company Information</h4>
+                                <div class="row company-info-fields">
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group addmore-select-dropdown">
+                                            <label>Architect</label>
+                                            <select class="form-control" name="architect">
+                                                <option>Select</option>
+                                                <option>Vikas</option>
+                                                <option>John</option>
+                                                <option>Saurabh</option>
+                                                <option>Ashish</option>
+                                            </select>
+                                            <button class="btn btn-primary" type="button" title="Add more" onclick="location.href = 'addArchitectContractor.html'">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group addmore-select-dropdown">
+                                            <label>Contractor</label>
+                                            <select class="form-control" name="contractor">
+                                                <option>Select</option>
+                                                <option>Batson-Cook Company</option>
+                                                <option>Beverage Construction, Inc.</option>
+                                                <option>Big Hammer Construction, Inc.</option>
+                                                <option>Clark Construction</option>
+                                                <option>DPR Construction</option>
+                                            </select>
+                                            <button class="btn btn-primary" type="button" title="Add more" onclick="location.href = 'addContractor.html'">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group addmore-select-dropdown">
+                                            <label>Facility/Owner</label>
+                                            <select class="form-control" name="facilityOwner">
+                                                <option>Select</option>
+                                                <option>John</option>
+                                                <option>Larry</option>
+                                                <option>Toni</option>
+                                            </select>
+                                            <button class="btn btn-primary" type="button" title="Add more" onclick="location.href = ''">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Salesperson</label>
+                                            <select class="form-control" name="Salesperson">
+                                                <option>Select</option>
+                                                <option>Adam</option>
+                                                <option>Andy</option>
+                                                <option>Dan</option>
+                                                <option>John</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Project Manager</label>
+                                            <select class="form-control" name="Salesperson">
+                                                <option>Select</option>
+                                                <option>Adam</option>
+                                                <option>Andy</option>
+                                                <option>Dan</option>
+                                                <option>John</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input class="form-control" type="text" placeholder="9/26/2016" id="datepicker">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="form-sub-title">Jobsite Information</h4>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Job Name</label>
+                                            <input class="form-control" type="text" name="jobName" placeholder="Job Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Country</label>
+                                            <select class="form-control" name="countries">
+                                                <option value="United State" selected>United State</option>
+                                                <option value="USA">USA</option>
+                                                <option value="UK">UK</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Address1</label>
+                                            <input class="form-control" type="text" name="address" placeholder="Address1" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Address2</label>
+                                            <input class="form-control" type="text" name="address" placeholder="Address2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Address3</label>
+                                            <input class="form-control" type="text" name="address" placeholder="Address3" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input class="form-control" type="text" name="city" placeholder="City" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>State</label>
+                                            <select class="form-control" name="states" selected="State">
+                                                <option value="State" selected>State</option>
+                                                <option value="California">California</option>
+                                                <option value="Florida">Florida</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Zip</label>
+                                            <input class="form-control" type="text" name="zip" placeholder="Zip" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Phone no.</label>
+                                            <input class="form-control" type="text" name="Phone number" placeholder="Phone Number" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="company">Cell no.</label>
+                                            <input class="form-control" type="text" name="cellNumber" placeholder="Cell Number" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" type="text" name="Email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input class="form-control" type="text" name="contact" placeholder="Contact" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Fax</label>
+                                            <input class="form-control" type="text" name="fax" placeholder="Fax" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="form-sub-title">Rates</h4>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Labour Rate</label>
+                                            <input class="form-control" type="text" name="laberRates" placeholder="0.00" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Installation Rate</label>
+                                            <input class="form-control" type="text" name="installationRates" placeholder="0.00" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group required">
+                                            <label>Measurement System</label>
+                                            <select class="form-control" name="measurmentSystem">
+                                                <option>Select</option>
+                                                <option>English (Ft/In)</option>
+                                                <option>English (Inches)</option>
+                                                <option>Metric</option>
+                                                <option>Metric (MM)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-12 project-note-box">
+                                        <div class="form-group">
+                                            <label>Project Notes</label>
+                                            <textarea></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Authorized Users</label>
+                                            <button type="button" class="btn btn-block auth-users-dropdown-btn">
+                                                <span class="pull-left">Name</span>
+                                                <span class="glyphicon glyphicon-triangle-bottom pull-right"></span>
+                                            </button>
+                                            <div class="auth-users-dropdown-cont">
+                                                <div class="auth-users-name" id="dropdownCheck">
+                                                    <label>
+                                                        <input type="checkbox"> Adam Kincaid</label>
+                                                    <label>
+                                                        <input type="checkbox"> Administrator</label>
+                                                    <label>
+                                                        <input type="checkbox"> Andy Vitali</label>
+                                                    <label>
+                                                        <input type="checkbox"> Dan Perry</label>
+                                                    <label>
+                                                        <input type="checkbox"> John Knipper</label>
+                                                    <label>
+                                                        <input type="checkbox"> Regression Tester</label>
+                                                </div>
+                                                <div Class="auth-users-action-btn">
+                                                    <button class="btn btn-default" type="button" onclick="checkAllDropdown('#dropdownCheck')" title="All Select">All Select</button>
+                                                    <button class="btn btn-primary" type="button" title="Ok" onclick="location.href = ''">Ok</button>
+                                                    <button class="btn btn-default" type="button" title="Cancel" onclick="location.href = ''">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 mandatory-symbol">* - Required entry</div>
+                                </div>
+                                <div class="button-container text-right">
+                                    <button class="btn btn-primary" type="button" title="Ok" onclick="location.href = ''">Ok</button>
+                                    <button class="btn btn-default" type="button" title="Cancel" onclick="location.href = ''">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">John Knipper</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+
+        <!-- Chat screen start  -->
+        <div class="liveChatOuter">
+            <div class="liveChatHeader">Chat <a href="javascript:void(0);" class="closeChat"><i class="glyphicon glyphicon-remove"></i></a></div>
+            <div class="liveChatContainer">adfs</div>
+            <div class="liveChatFooter">
+                <textarea class="form-control" rows="2"></textarea>
+            </div>
+        </div>
+        <!-- Chat screen end  -->
+
+        <div class="modal fade" role="dialog" id="helpForm">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Help Form</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>First Name:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email ID:</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Comments:</label>
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <!-- Custom JS -->
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <!-- Bootstrap realted JS -->
+        <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src='js/mustache.js'></script>
+        <script type="text/javascript" src="js/script.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".auth-users-dropdown-btn").click(function() {
+                    $(this).next(".auth-users-dropdown-cont").show();
+                });
+                // $(".auth-users-action-btn .btn-primary").click(function(){
+                //   $(this).parents(".auth-users-dropdown-cont").hide()
+                // });
+                if ($("#datepicker").length) {
+                    $("#datepicker").datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    }).datepicker('update', new Date());
+                };
+                $(".livechatShow").click(function() {
+                    $(".liveChatOuter").show()
+                })
+                $(".closeChat").click(function() {
+                    $(".liveChatOuter").hide()
+                })
+            });
+        </script>
+</body>
+
+</html>

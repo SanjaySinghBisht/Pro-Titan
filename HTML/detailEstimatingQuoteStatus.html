@@ -1,0 +1,583 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailcostsummary.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+
+                <div class="contentCollapsable pos-relative">
+
+                    <div class="container-fluid esimate-tab-list">
+                        <!-- Tabs -->
+                        <div class="page-header clearfix">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <h1 class="pull-left marginT30">Cost & Quoting</h1>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3 ">
+                                    <div class="stepwizardarea">
+
+                                        <ul class="stepwizardrow">
+                                            <li class="active-step">
+                                                <span class="step-count"></span>
+                                                <span class="step-name">Hardware</span>
+                                            </li>
+                                            <li class="active-step">
+                                                <span class="step-count"></span>
+                                                <span class="step-name">List & Type</span>
+                                            </li>
+                                            <li class="active-step"><span class="step-count"></span>
+                                                <span class="step-name">Material</span>
+                                            </li>
+                                            <li class="active-step"><span class="step-count"></span>
+                                                <span class="step-name">Cost Summary</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="CQmenuHeader row">
+                            <div class="header col-md-8 col-md-offset-3">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingCostSummary.html'"><a href="detailEstimatingCostSummary.html">Group Your Material</a><span><i class="glyphicon glyphicon-th-list"></i></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingCostSummaryFrame.html'"><a href="detailEstimatingCostSummaryFrame.html">Choose Template & Contractor</a><span><i class="glyphicon glyphicon-stats"></i><br/></span></div>
+                                    </div>
+
+                                    <!-- <div class="col-md-2"><div class="cqmenuBtn"><a href="#">Select Contractor</a><span><i class="glyphicon glyphicon-user"></i><br/></span></div></div> -->
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingQuoting.html'"><a href="detailEstimatingQuoting.html">Submit Quotes</a><span><i class="glyphicon glyphicon-flash"></i><br/></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingManagequote.html'"><a href="detailEstimatingManagequote.html" class="active">Manage Your Quotes</a><span class="active"><i class="glyphicon glyphicon-compressed"></i><br/></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of CQ menu End here -->
+                        <div class="tab-content" style="margin-top: 30px;">
+                            <div role="tabpanel" class="tab-pane active" style="margin-top:0px;border: 1px solid #f1f1f1;padding: 0px 15px 15px;background: rgba(250, 250, 250, 0.64);">
+
+                                <div class="row managequotePanel">
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row clearfix marginT25">
+
+                                                    <!--<div class="col-md-2 pull-left">
+														<button class="btn btn-info CnqBtn" onclick="createNewQuo()">Create New Quote</button>
+													</div>
+													<div class="col-md-5 pull-left paddingTB3">
+													<div class="col-md-1 filterLink" id="allQuo"><span class="glyphicon glyphicon-list"></span> &nbsp;All</div>
+													<div class="col-md-2 filterLink" id="recentQuo"><span class="glyphicon glyphicon-file"></span> &nbsp;<a class="text-act">Recent</a><span class="badge activeBadge">9</span></div>
+
+													<div class="dropdown col-md-2 filterLink">
+														<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Active <span class="badge activeBadge">21</span>
+														<span class="caret"></span></button>
+														<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+														  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Active Q1</a></li>
+														  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Active Q2</a></li>
+														  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Active Q3</a></li>
+														  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Active Q4</a></li>
+														</ul>
+													  </div>
+													</div>
+													<div class="col-md-3 pull-right"><input type="text" class="form-control" placeholder="Search.."></div>-->
+
+                                                    <div class="setStatusArea">dsafas</div>
+                                                </div>
+
+                                                <div class="row clearfix marginT25 QuotelistArea">
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="carousel slide multi-item-carousel" id="theCarousel">
+                                                                    <div class="carousel-inner">
+                                                                        <div class="item active">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>ABC Construction <img class="logoquoteBox" src="images/tgclogo.png"/></h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li class="text-info stat1">Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="stat1">
+                                                                                                                <option>Update Status</option>
+                                                                                                                <option>Win</option>
+                                                                                                                <option>Lost</option>
+                                                                                                                <option>Bid</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>FBI Construction <img class="logoquoteBox" src="images/tgclogo.png"/> </h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li class="text-info stat2">Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="stat2">
+                                                                                                                <option>Update Status</option>
+                                                                                                                <option>Win</option>
+                                                                                                                <option>Lost</option>
+                                                                                                                <option>Bid</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>RAW Construction <img class="logoquoteBox" src="images/tgclogo.png"/></h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li class="text-info stat3">Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="stat3">
+                                                                                                                <option>Update Status</option>
+                                                                                                                <option>Win</option>
+                                                                                                                <option>Lost</option>
+                                                                                                                <option>Ended</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>BBC Construction <img class="logoquoteBox" src="images/tgclogo.png"/></h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li class="text-info">Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="sel1">
+                                                                                                                <option>Update Status</option>
+                                                                                                                <option>Win</option>
+                                                                                                                <option>Lost</option>
+                                                                                                                <option>Bid</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>CBI Construction <img class="logoquoteBox" src="images/tgclogo.png"/></h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li class="text-info">Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="sel1">
+                                                                                                                <option>Update</option>
+                                                                                                                <option>Stopped</option>
+                                                                                                                <option>Running</option>
+                                                                                                                <option>Ended</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>SBI Construction <img class="logoquoteBox" src="images/tgclogo.png"/></h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li>Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="sel1">
+                                                                                                                <option>Update</option>
+                                                                                                                <option>Stopped</option>
+                                                                                                                <option>Running</option>
+                                                                                                                <option>Ended</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- add  more items here -->
+                                                                        <!-- Example item start:  -->
+
+                                                                        <div class="item">
+                                                                            <div class="col-xs-4">
+                                                                                <a href="#1">
+                                                                                    <div class="QuoteBoxDiv">
+                                                                                        <h4>CCD Construction <img class="logoquoteBox" src="images/tgclogo.png"/></h4>
+                                                                                        <p>Abc construction is a company which provide</p>
+                                                                                        <div class="listData row">
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Create Date</li>
+                                                                                                    <li>Quote Value</li>
+                                                                                                    <li class="text-info">Status</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <ul>
+                                                                                                    <li>Due Date</li>
+                                                                                                    <li>Sales Persons</li>
+                                                                                                    <li>Quote Class</li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="footerData row marginT20">
+                                                                                            <div class="col-md-3">
+                                                                                                <button class="btn btn-link link hisBtn">History</button>
+                                                                                            </div>
+                                                                                            <div class="col-md-9">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-md-7 updateSt">
+                                                                                                        <div class="form-group">
+                                                                                                            <select class="form-control" id="sel1">
+                                                                                                                <option>Update</option>
+                                                                                                                <option>Stopped</option>
+                                                                                                                <option>Running</option>
+                                                                                                                <option>Ended</option>
+                                                                                                            </select>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4">
+                                                                                                        <button class="btn-info btn-rsend">Resend</button>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!--  Example item end -->
+                                                                    </div>
+                                                                    <a class="left carousel-control leftArr" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                                                                    <a class="right carousel-control rightArr" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of quoting Panel -->
+                        </div>
+                        <!-- End of tab Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

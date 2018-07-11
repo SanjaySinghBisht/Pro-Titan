@@ -1,0 +1,1001 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/project.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- <div class="page-header">
+                            <h1>Project Discount</h1>
+                        </div> -->
+                        <!-- project Discount Tab start -->
+                        <div class="row Projrow">
+                            <div class="col-md-12">
+                                <div class="row ProjrowTabHeader clearfix">
+                                    <div class="col-md-5 pull-right padding0">
+                                        <div class="form-inline">
+                                            <div class="col-md-4 padding0">
+                                                <div class="form-group">
+                                                    <label for="focusedInput">vendor :</label>
+                                                    <select class="form-control amselect" id="Vendor">
+                                                        <option>Don-Jo</option>
+                                                        <option>Ives</option>
+                                                        <option>K.N. Crowder</option>
+                                                        <option>Norton</option>
+                                                        <option>Pemko</option>
+                                                        <option>Rixson</option>
+                                                        <option>Rockwood</option>
+                                                        <option>Secruition</option>
+                                                        <option>Yele</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-5 padding0">
+                                                <div class="form-group">
+                                                    <label for="focusedInput">Price Book :</label>
+                                                    <select class="form-control amselect" id="PBook">
+                                                        <option>January 2015</option>
+                                                        <option>Februry 2016</option>
+                                                        <option>March 2014</option>
+                                                        <option>December 2016</option>
+                                                        <option>October 2015</option>
+                                                        <option>November 2014</option>
+                                                        <option>August 2012</option>
+                                                        <option>May 2011</option>
+                                                        <option>July 2017</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 padding0 pull-right">
+                                                <div class="form-group pull-right">
+                                                    <button id="vendQuoBtn" class="btn btn-primary" data-toggle="modal" data-target="#vender_quote_modal">Vender Quote</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End ProjrowTabHeader -->
+
+                                <div class="row ProjrowtabularGrid marginT25">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="ProjrowtabularGridHead">
+                                                <div class="col-md-3">Name</div>
+                                                <div class="col-md-2">Abbr.</div>
+                                                <div class="col-md-3">Type</div>
+                                                <div class="col-md-2">Vendor Adjustments</div>
+                                                <div class="col-md-2">Price Book Adjustments</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="ProjrowtabularGridData">
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse51"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Don-Jo
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse51" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse512"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse512" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 512-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 51-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse52"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Ives
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse52" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse522"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse522" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 522-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 52-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse53"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> K.N Crowder
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse53" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse532"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse532" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 532-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 53-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse54"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Norton
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse54" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse542"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse542" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 542-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 54-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse55"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> pemko
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse55" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse552"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse552" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 552-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 55-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse56"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Rixon
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50/ -63</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse56" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse562"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse562" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 562-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 56-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse57"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Rockwood
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse57" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse572"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse572" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 572-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 57-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse58"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Securiton
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse58" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse582"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse582" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 582-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 58-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                                <div class="panel-group">
+                                                    <div class="panel">
+
+                                                        <div class="panel-heading row vendorRows">
+                                                            <div class="panel-title col-md-3">
+                                                                <a data-toggle="collapse" href="#collapse59"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Yele
+                                                            </div>
+                                                            <div class="type col-md-2">DJ</div>
+                                                            <div class="type col-md-3">HDW</div>
+                                                            <div class="type col-md-2">-50</div>
+                                                            <div class="type col-md-2">&nbsp;</div>
+                                                        </div>
+                                                        <!-- end Panel-heading row-->
+
+                                                        <div id="collapse59" class="panel-collapse collapse inside_collap">
+                                                            <div class="row headerV">
+                                                                <div class="col-md-2">Type</div>
+                                                                <div class="col-md-2">Adj #1</div>
+                                                                <div class="col-md-2">Adj #2</div>
+                                                                <div class="col-md-2">Adj #3</div>
+                                                                <div class="col-md-2">Adj #4</div>
+                                                                <div class="col-md-2">Adj #5</div>
+                                                            </div>
+                                                            <!-- end rwo-HeaderV-->
+                                                            <div class="panel">
+                                                                <div class="panel-heading row">
+                                                                    <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse592"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                    <div class="col-md-2">0.00</div>
+                                                                </div>
+                                                                <!-- end Pheading row-->
+
+                                                                <div id="collapse592" class="panel-collapse collapse child_collap">
+                                                                    <div class="row headerV">
+                                                                        <table class="table table_collap table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Type</th>
+                                                                                    <th>Description</th>
+                                                                                    <th>Part Description</th>
+                                                                                    <th>Adjustment</th>
+                                                                                    <th>List Price</th>
+                                                                                    <th>Spec. Net</th>
+                                                                                    <th>Spec. Net Price</th>
+                                                                                    <th>No Charge</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>HI</td>
+                                                                                    <td>Hinge Pin Stop</td>
+                                                                                    <td>Don-Jo 1512</td>
+                                                                                    <td>&nbsp;</td>
+                                                                                    <td>0.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                    <td>20.00</td>
+                                                                                    <td>
+                                                                                        <input type="checkbox" name="specNet" checked>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <!-- end row Header-->
+                                                                </div>
+                                                                <!-- end Collapse 592-->
+                                                            </div>
+                                                            <!-- end Inside Panel-->
+                                                        </div>
+                                                        <!-- end Outside Collapse 59-->
+                                                    </div>
+                                                    <!-- end Outside Panel-->
+
+                                                </div>
+                                                <!-- end Panel Group-->
+
+                                            </div>
+                                            <!-- end ProjrowtabularGridData-->
+                                        </div>
+                                        <!-- end col-md-12-->
+                                    </div>
+                                    <!-- end row-->
+
+                                </div>
+                                <!-- end ProjrowtabularGrid -->
+
+                            </div>
+                            <!-- End column-md-12 of Projrow -->
+                        </div>
+                        <!-- End Row of Projrow -->
+                        <!-- End project Discount Tab start -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <!---Vender Quote model -->
+        <div id="vender_quote_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="venderquotemodal">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="vq">Vender Quote</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table_collap table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Vendor</th>
+                                            <th>Project</th>
+                                            <th>Quote Number</th>
+                                            <th>Revision #</th>
+                                            <th>Prefix</th>
+                                            <th>Amount</th>
+                                            <th>Qty.</th>
+                                            <th>Issued on/</th>
+                                            <th>valid Thru.</th>
+                                            <th>Notes</th>
+                                            <th>Docs</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>AA</td>
+                                            <td>2624Openings</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>11-17-2016</td>
+                                            <td>12-17-2016</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Quote Log</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+</body>
+
+</html>

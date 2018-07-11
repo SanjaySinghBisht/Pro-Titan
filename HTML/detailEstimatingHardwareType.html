@@ -1,0 +1,629 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailEstimatingHardwareType.js"></script>
+</head>
+
+<body onload="countQty();">
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <div class="page-header clearfix">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <h1 class="pull-left marginT30">My Types</h1>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3 ">
+                                    <div class="stepwizardarea">
+
+                                        <ul class="stepwizardrow">
+                                            <li class="active-step">
+                                                <span class="step-count"></span>
+                                                <span class="step-name">Hardware</span>
+                                            </li>
+
+                                            <li class="default-step"><span class="step-count"></span>
+                                                <span class="step-name">Material</span>
+                                            </li>
+                                            <li class="default-step"><span class="step-count"></span>
+                                                <span class="step-name">Cost & Quote</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <!--<tabs-->
+                                <div class="tabsmyList">
+                                    <div class="pull-left">
+                                        <div class="btn-group btnMylist">
+                                            <button type="button" class="btn btn-default" onclick="resetFrameAndDoors()">Create</button>
+                                            <button type="button" class="btn btn-default marginL10" style="margin-left: 10px" data-toggle="modal" data-target="#modalCopySets">Copy</button>
+                                            <button type="button" class="btn btn-default marginL10" style="margin-left: 10px">Share</button>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle btnCV" type="button" data-toggle="dropdown"><span class="btntxt">Frame & Door type </span> <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a tabindex="-1" href="detailEstimatingHardwareList.html">Hardware List</a></li>
+                                                <li><a tabindex="-1" href="detailEstimatingHardwareType.html">Frame & Door type</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--<tabs-->
+                                <br/>
+                                <div class="tablemyList">
+                                    <table class="table tabled-striped table-bordered" id="myType">
+                                        <thead class="">
+                                            <tr>
+                                                <th class=" width50 text-right">
+                                                    <div class="btn-group pull-left custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Type</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Type Name</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Type Name" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Type Description</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Type Description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Category</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Category" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <input type="checkbox" class="pull-right" onclick="checkAll(this)" />
+                                                </th>
+                                                <th class="" data-type="Type">Type<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                <th class="" data-type="Type Name">Type Name<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                <th class="" data-type="Type Description">Type Description<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                <th class="" data-type="Category">Category<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" class="pull-right" />
+                                                </td>
+                                                <td data-type="Type">Door Type</td>
+                                                <td data-type="Type Name">F1</td>
+                                                <td data-type="Type Description">CU HMF SL CR SGL</td>
+                                                <td data-type="Category">Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" class="pull-right" />
+                                                </td>
+                                                <td data-type="Type">Frame Type</td>
+                                                <td data-type="Type Name">F2</td>
+                                                <td data-type="Type Description">CU HMF SL CR SGL</td>
+                                                <td data-type="Category">Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>
+                                                    <input type="checkbox" class="pull-right" />
+                                                </td>
+                                                <td data-type="Type">Opening Type</td>
+                                                <td data-type="Type Name">F3</td>
+                                                <td data-type="Type Description">CU HMF SL CR SGL</td>
+                                                <td data-type="Category">Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" class="pull-right" />
+                                                </td>
+                                                <td data-type="Type">&nbsp;</td>
+                                                <td data-type="Type Name">F5</td>
+                                                <td data-type="Type Description">CU HMF SL CR SGL</td>
+                                                <td data-type="Category">Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" class="pull-right" />
+                                                </td>
+                                                <td data-type="Type">&nbsp;</td>
+                                                <td data-type="Type Name">F6</td>
+                                                <td data-type="Type Description">CU HMF SL CR SGL</td>
+                                                <td data-type="Category">Standard Curries, HMF</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <div class="framedoorForms">
+                                    <div class="col-md-6 pform" id="pfm2">
+                                        <div class="panel panel-theme panel-primary">
+                                            <!-- Default panel contents -->
+                                            <div class="panel-heading" id="fraType"><span class="formico ico2"></span>Frame</div>
+                                            <div class="panel-body">
+                                                <form class="form-horizontal custom-search-filter" id="frameForm">
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label"><strong>Frame Type Name</strong></label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="FS" value="FS">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">UOM</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="PRA/PRI" value="PRA/PRI">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Width/Height</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="0" value="0">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Jamb Depth</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="0" value="0">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Hand</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Vendor</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Elevation Type</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Profile</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Gauge</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Steel Type</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <!--                                                    <div class="form-group">
+                                                                                                            <label class="col-sm-4 control-label">Steel Type</label>
+                                                                                                            <div class="col-sm-8">
+                                                                                                                <input type="text" class="form-control" data-value="">
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Jamb Face</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Head Face</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Label</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Construction</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Anchor</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Add On</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                                <div class="button-container text-right clearfix">
+                                                    <div class="pull-right">
+                                                        <button class="btn btn-primary" type="button" title="Save" data-toggle="modal" data-target="#confirmationMsg" onclick="createOrUpdateFrameDoor('#frameForm', '#myType')">Save Frame Type</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pform" id="pfm3">
+                                        <div class="panel panel-theme panel-primary">
+                                            <!-- Default panel contents -->
+                                            <div class="panel-heading" id="dooType"><span class="formico ico3"></span>Door</div>
+                                            <div class="panel-body">
+                                                <form class="form-horizontal custom-search-filter" id="doorForm">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label"><strong>Door Type Name</strong></label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">UOM</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="PRA" value="PRA">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Width/Height</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="0" value="0">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Thickness</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="0" value="0">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Hand</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Vendor</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Material</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Series</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Edge/Stile</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Gauge/Construction</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Steel Type/Species</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">label</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Face Type</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <!--                                                    <div class="form-group">
+                                                                                                            <label class="col-sm-4 control-label">Construction</label>
+                                                                                                            <div class="col-sm-8">
+                                                                                                                <input type="email" class="form-control" data-value="">
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Bevel</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Finish</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Edge</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" data-value="">
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                                <div class="button-container text-right clearfix">
+                                                    <div class="pull-right">
+                                                        <button class="btn btn-primary" type="button" title="Save" data-toggle="modal" data-target="#confirmationMsg" onclick="createOrUpdateFrameDoor('#doorForm', '#myType')">Save Door type</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-right clearfix" id="">
+                                        <div class="pull-right">
+                                            <button class="btn btn-primary" type="button" title="Save" data-toggle="modal" data-target="#modalOpeningName" onclick="">Save Together as Opening</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalCopySets" tabindex="-1" role="dialog" aria-labelledby="modalCopySets">
+                    <div class="modal-dialog " role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="H4">Copy Types</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            This utility allows you to quickely create numerious Openings by coping everything from an existing.
+                                        </p>
+                                        <p>
+                                            Enter the Openings you wish to add. Seperate the values with Spaces immediately after the commas will.(Example - 101, 102, 103)
+                                        </p>
+                                        <p>
+                                            If the value does not exist you will be asked to confirm
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <form class="form-inline">
+                                        <!--                                                <div class="col-md-12 marginT20">
+                                                                                        <textarea class="form-control" style="width: 100%;height: 120px;" id="criteriaContent">
+
+                                                                                        </textarea>
+                                                                                    </div>-->
+                                        <!--                                    <div class="col-md-3 marginT20">
+                                        <div class="input-group">
+                                            <label>Prefix</label>
+                                            <input type="text" class="form-control" id="insert-copy-prefix"/>
+                                        </div>
+                                    </div>-->
+                                        <div class="col-md-6 marginT20">
+                                            <div class="input-group">
+                                                <label>From</label>
+                                                <!--<input type="number" class="form-control" id="insert-copy-from"/>-->
+                                                <select class="form-control" id="insert-copy-from">
+                                                    <option>Door Type</option>
+                                                    <option>Frame Type</option>
+                                                    <option>Opening Type</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 marginT20">
+                                            <div class="input-group">
+                                                <label>To</label>
+                                                <!--<input type="number" class="form-control" id="insert-copy-to"/>-->
+                                                <select class="form-control" id="insert-copy-from">
+                                                    <option>Door Type</option>
+                                                    <option>Frame Type</option>
+                                                    <option>Opening Type</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--                                    <div class="col-md-3 marginT20">
+                                        <div class="input-group">
+                                            <label>Suffix</label>
+                                            <input type="text" class="form-control" id="insert-copy-suffix"/>
+                                        </div>
+                                    </div>-->
+                                        <!--                                                <div class="col-md-12 text-center marginT20">
+                                                                                        <button class="btn btn-default" type="button" onclick="validateCriteria()">
+                                                                                            Validate Criteria
+                                                                                        </button>
+                                                                                        <button class="btn btn-default" type="button" onclick="clearCriteria()">
+                                                                                            Clear Criteria
+                                                                                        </button>
+                                                                                    </div>-->
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="copyRow('#myLists')">Ok</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <div class="modal fade" id="modalOpeningName" tabindex="-1" role="dialog" aria-labelledby="modalInsertRowLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="gridSystemModalLabel">Opening Name</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <form class="form-inline">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <label>Enter Opening Name</label>
+                                                <input type="text" class="form-control" id="insert-new-prefix" />
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="createOrUpdateFrameDoor('#doorForm,#frameForm', '#myType')">Save</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+</body>
+
+</html>

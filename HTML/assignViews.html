@@ -1,0 +1,268 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <!--<div class="app-title">Protech</div>-->
+
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Assign Views</h1>
+                            <!-- <div class="pull-right">
+             <div class="search-user clearfix">
+                <input class=" form-control pull-left" type ="text" name="search_user" value="" placeholder="Search User"/>
+                <button type="button" class="search-btn pull-right"><span class="glyphicon glyphicon-search"></span></button>
+             </div>
+            </div> -->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label class="pull-left col-md-1">User Name</label>
+                                    <div class="pull-left col-md-2">
+                                        <select class="form-control">
+                                            <option value="User Name" selected>Select</option>
+                                            <option value="Administrator">Administrator</option>
+                                            <option value="John Knipper">John Knipper</option>
+                                            <option value="User 1">User 1</option>
+                                            <option value="User 2">User 2</option>
+                                        </select>
+                                    </div>
+                                    <p>Select the user name you want to copy the views to then select the desired.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                    <label>Drag a column header here to group by that column</label>
+                                </div>
+                                <div class="table-wrapper">
+                                    <table class="table custom-grid">
+                                        <thead>
+                                            <tr>
+                                                <th width="40">
+                                                    <div class="btn-group custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png" class="boximgthumbsize">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">User Name</span>
+                                                                    <input onClick="gridfilterColumn(this)" type="checkbox" data-type="userName" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Views</span>
+                                                                    <input onClick="gridfilterColumn(this)" type="checkbox" data-type="views" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </th>
+                                                <th width="40">
+                                                    <input type="checkbox" onclick="selectAll(this)" />
+                                                </th>
+                                                <th data-type="userName">
+                                                    User Name
+                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                </th>
+                                                <th data-type="views">
+                                                    Views
+                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td width="40">&nbsp;</td>
+                                                <td width="40">
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">Administrator</td>
+                                                <td data-type="views">Project Hardware Management- Jenny</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">Administrator</td>
+                                                <td data-type="views">Project Hardware Management- Staci</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">Administrator</td>
+                                                <td data-type="views">Scheduling Detail- Estimating</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">Administrator</td>
+                                                <td data-type="views">Scheduling Detail- Estimating View</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">John Knipper</td>
+                                                <td data-type="views">Master Door/Frame Material Management- Prep Class</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">John Knipper</td>
+                                                <td data-type="views">Master Hardware Management- # of cylinders</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="userName">John Knipper</td>
+                                                <td data-type="views">Scheduling Detail- To-Form-Handing</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="button-container text-right">
+                                    <button class="btn btn-primary" type="button" title="Ok">Ok</button>
+                                    <button class="btn btn-default" type="button" title="Cancel">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script>
+            $(document).ready(function() {
+
+                $('.search-user').click(function() {
+                    if ($('#SearchUser').val() == 'John') {
+                        window.location.href = 'disableUserSearch.html';
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>

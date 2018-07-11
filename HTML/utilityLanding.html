@@ -1,0 +1,232 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assa Abloy</title>
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/exporting.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/scheduling.js"></script>
+    <style type="text/css">
+        .divImg img {
+            width: 70%;
+        }
+        
+        .bg-white p {
+            margin: 0 0 10px;
+        }
+        /*#project-name ul li:nth-child(5){
+         display: none;
+         }*/
+        
+        .dark-blue-bg {
+            background: #363f52;
+            color: #fff;
+        }
+        
+        .bg-white {
+            background: #fff;
+        }
+        
+        .bg-light-grey {
+            background: #d8dfe5;
+        }
+        
+        .bg-light-grey h3 {
+            color: #737175;
+        }
+        
+        .pie-div h5 {
+            margin: 5px 0 !important;
+        }
+        
+        .scrollable-section {
+            max-height: 750px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .text-blue {
+            color: #00a0d0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body onload="countQty();">
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown">
+                                                <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                    Milano Travel
+                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                    Change : C0-01
+                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="col-md-12 no-padding ultility-contanier" style="margin-top:50px;">
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" onclick="window.location.href='projectDiscount.html'">
+                                    <img src="images/setting-project-discount.jpg">
+                                    <h3>Master Discount</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" onclick="window.location.href='receiving.html'">
+                                    <img src="images/receiving.jpg">
+                                    <h3>Receiving</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" onclick="window.location.href='accountingExportXML.html'">
+                                    <img src="images/accounting-export.jpg">
+                                    <h3>Accounting Export</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" onclick="window.location.href='transferMaterialPriceBook.html'">
+                                    <img src="images/pricebook.jpg">
+                                    <h3>Custom Price Books</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box">
+                                    <img src="images/setting-tags.jpg">
+                                    <h3>Tags</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box">
+                                    <img src="images/status-list.jpg">
+                                    <h3>Status List</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box">
+                                    <img src="images/opening-browser.jpg">
+                                    <h3>Opening Browser</h3>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script>
+            $(document).ready(function() {
+
+                $('#receiveBtn').hide();
+                $('#printbtn').click(function() {
+                    if ($('#draftCopy').is(':checked')) {
+                        var win = window.open('pdf/Hdw-Order.pdf', '_blank');
+                        win.print();
+
+                    } else {
+                        window.location.href = 'receiveOrder.html';
+
+                    }
+                });
+
+                $('.dotMsg, #logOrderList, #backtoOrderList').hide();
+                $('#dotbtn').click(function() {
+                    $('.dotMsg').show()
+                    setTimeout(function() {
+                        $('.dotMsg').hide()
+                    }, 3000)
+                });
+
+                $('#logorder').click(function() {
+                    $('#logOrderList,#backtoOrderList').show();
+                    $('#orderList').hide();
+                });
+
+                $('#backtoOrderList').click(function() {
+                    $(this).hide();
+                    $('#logOrderList').hide();
+                    $('#orderList').show();
+                });
+            });
+
+            function gotogotodetailEstimatingHardware() {
+                window.location.href = "gotodetailEstimatingHardware.html"
+            }
+        </script>
+</body>
+
+</html>

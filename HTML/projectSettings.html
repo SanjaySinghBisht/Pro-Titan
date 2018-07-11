@@ -1,0 +1,889 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!--<link href="css/bootstrap-toggle.css" type="text/css" rel="stylesheet" />-->
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailEstimatingHardware.js"></script>
+    <!--<script type="text/javascript" src="js/bootstrap-toggle.js"></script>-->
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid esimate-tab-list">
+                        <div class="col-md-12 no-padding col-md-offset-1" style="margin-top:50px;">
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" data-toggle="modal" data-target='#projectDiscount'>
+                                    <img src="images/setting-project-discount.jpg">
+                                    <h3>Project Discount</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" data-toggle="modal" data-target='#masterKeySystem'>
+                                    <img src="images/master-key.jpg">
+                                    <h3>Master Key System</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" data-toggle="modal" data-target='#groupOpenings'>
+                                    <img src="images/group-openings.jpg">
+                                    <h3>Group Openings</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" data-toggle="modal" data-target='#tagManagement'>
+                                    <img src="images/setting-tags.jpg">
+                                    <h3>Tags</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12 no-padding setting-opt-box" data-toggle="modal" data-target='#statusList'>
+                                    <img src="images/status-list.jpg">
+                                    <h3>Status List</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            $('.added-row').hide();
+            $(document).ready(function() {
+                $('#addRowTableClose').click(function() {
+                    $('.added-row').show();
+                });
+
+                $('#addNewModifierBox').hide();
+                $('#addnewModifBtn').click(function() {
+                    $('#searchHardwareModifier').hide();
+                    $('#addNewModifierBox').show();
+                });
+
+                $('#adModokbtn, #adModcancelbtn').click(function() {
+                    $('#searchHardwareModifier').show();
+                    $('#addNewModifierBox').hide();
+                });
+            });
+        </script>
+        <!-- Footer HTML -->
+
+</body>
+<!-- Project Data Change Popup -->
+<div class="modal fade change-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="changePopupData">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Milano Travel Change Management</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                    <button class="btn btn-default pull-left marginR5 start-new-change">
+                        Start New
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                        Drop
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target="#commitData" disabled="disabled">
+                        Commit
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 details-change">
+                        Details
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 switch-to-change">
+                        Switch To
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                        Compare
+                    </button>
+                    <button class="btn btn-primary pull-right create-final-estimate-btn">
+                        Create Final Estimate
+                    </button>
+                </div>
+                <table class="table project-change-data-table" style="table-layout:auto;">
+                    <thead>
+                        <tr class="borderB mainHead">
+                            <th class="borderR" data-type="Change">
+                                Change
+                            </th>
+                            <th class="borderR" data-type="Status">
+                                Status
+                            </th>
+                            <th class="borderR" data-type="Description">
+                                Description
+                            </th>
+                            <th class="borderR" data-type="Owner">
+                                Owner
+                            </th>
+                            <th class="borderR" data-type="Start-Date">
+                                Start Date
+                            </th>
+                            <th data-type="Commit-Date">
+                                Commit Date
+                            </th>
+                            <th data-type="compare-time">
+                                Time
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="add-data" style="display:none;">
+                            <td class="borderR">
+                                <input type="text" class="form-text change-value">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <input type="text" class="form-text description">
+                            </td>
+                            <td class="borderR">
+                                <input type="text" class="form-text owner">
+                            </td>
+                            <td class="borderR">
+                                <input id="datetimepicker1" type="text" class="start-date">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                        </tr>
+                        <tr class="current-row">
+                            <td class="borderR">Current</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Milano Travel</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <a href="#" class="comparsion-point" title="Start"><span class="badge new marginR10">C</span>
+                                    </a></td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="borderR">C0-01</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Sample Description</td>
+                            <td class="borderR">Dawn</td>
+                            <td class="borderR">05/16/2017</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new marginR10">C</span></a><a href="#" class="comparsion-point" title="Before"><span style="display: inline-block;" class="badge before marginR10">B</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="change-state-legend">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="badge start marginR10">S</span>
+                                    <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge committed marginR10">N</span>
+                                    <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge new marginR10">C</span>
+                                    <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge before marginR10">B</span>
+                                    <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge after marginR10">A</span>
+                                    <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Changes Commit Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="commitData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Commit Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 commit-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Drop Changes Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="dropData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Drop Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 drop-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="tagManagement" id="tagManagement">
+    <div class="modal-dialog modal-sm" role="document" style="width:98%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Tags</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 tags-btn-list no-padding">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="input-group col-md-4 pull-left">
+                                    <input type="file" name="img[]" class="file">
+                                    <input type="text" class="form-control input-lg" disabled="" placeholder="Choose File" style="border-radius:3px 0 0 3px;">
+                                    <span class="input-group-btn">
+                                        <button class="browse btn btn-primary input-lg" type="button">
+                                            Browse
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary marginR10 import-tags">
+                                        Import
+                                    </button>
+                                    <button class="browse btn btn-primary marginR10 export-tags" disabled="disabled">
+                                        Export
+                                    </button>
+                                    <button class="btn btn-primary delete-tags">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding tags-grid-container style-scroll">
+                    <table class="table tags-grid">
+                        <thead>
+                            <tr class="borderB mainHead">
+                                <th class="borderR" colspan="11">Tags</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td class="borderR">
+                                    <span>Phase 1</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 2</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 3</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 4</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 5</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 6</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 7</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 8</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 9</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Phase 10</span>
+                                </td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR">
+                                    <span>Building A</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Building B</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Building C</span>
+                                </td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+
+                            </tr>
+                            <tr>
+                                <td class="borderR">
+                                    <span>Floor 1</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Floor 2</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Floor 3</span>
+                                </td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR">
+                                    <span>Interior</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Exterior</span>
+                                </td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR">
+                                    <span>Office</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Closet</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Bathroom</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Bedroom</span>
+                                </td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR">
+                                    <span>Fix/Review</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Reviewed</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Complete</span>
+                                </td>
+                                <td class="borderR">
+                                    <span>Approved</span>
+                                </td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                                <td class="borderR"><span></span></td>
+                            </tr>
+                        </tbody>
+                        <tbody style="display:none;">
+                            <tr>
+                                <td>
+                                    <ul class="list-inline list-unstyled">
+                                        <li>
+                                            <span class="edit-label">Phase 1</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 2</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 3</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 4</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 5</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 6</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 7</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 8</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 9</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Phase 10</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline list-unstyled">
+                                        <li>
+                                            <span class="edit-label">Building A</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Building B</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Building C</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline list-unstyled">
+                                        <li>
+                                            <span class="edit-label">Floor 1</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Floor 2</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Floor 3</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline list-unstyled">
+                                        <li>
+                                            <span class="edit-label">Interior</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Exterior</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline list-unstyled">
+                                        <li>
+                                            <span class="edit-label">Office</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Closet</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Bathroom</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Bedroom</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline list-unstyled">
+                                        <li>
+                                            <span class="edit-label">Fix/Review</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Reviewed</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Complete</span>
+                                        </li>
+                                        <li>
+                                            <span class="edit-label">Approved</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:20px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:20px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:20px 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:20px 10px;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Project Discount Modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="projectDiscount" id="projectDiscount">
+    <div class="modal-dialog modal-sm" role="document" style="width:98%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Project Discount</h4>
+            </div>
+            <div class="modal-body clearfix">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Master Key System Modal 1 -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="masterKeySystem" id="masterKeySystem">
+    <div class="modal-dialog modal-lg" role="document" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Master Key System: Milano Travel</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-12 no-padding button-bar">
+                        <button class="btn btn-primary marginR10" id="createMasterKey">
+                            Create
+                        </button>
+                        <button class="btn btn-primary marginR10"  id="importMasterKey">
+                            Import
+                        </button>
+                        <button class="btn btn-primary marginR10" id="exportMasterKey">
+                            Export
+                        </button>
+                        <button class="btn btn-primary marginR10" disabled="disabled" id="deleteMasterKey">
+                            Delete
+                        </button>
+                        <button class="btn btn-primary marginR10" disabled="disabled" id="viewMasterKey">
+                            View
+                        </button>
+                        <button class="btn btn-primary" disabled="disabled" id="printMasterKey">
+                            Print
+                        </button>
+                    </div>
+                    <div class="col-md-12 no-padding marginT10 master-key-preview-section">
+                        <label class="marginT10">Preview</label>
+                        <div class="col-md-12 no-padding master-key-preview-area">
+                            <span>THIS PROJECT DOES NOT HAVE A MASTER KEY SYSTEM YET</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding marginT10 master-key-create-area">
+                        <label class="marginT10">Choose a System</label>
+                        <div class="col-md-12 no-padding master-key-level-section">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="col-md-12 no-padding level-system">
+                                        <img src="images/2levelsystem.png" />
+                                        <label class="marginT10">2 Level System</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 no-padding level-system">
+                                        <img src="images/3levelsystem.png" />
+                                        <label class="marginT10">3 Level System</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 no-padding level-system" id="4levelsystem">
+                                        <img src="images/4levelsystem.png" />
+                                        <label class="marginT10">4 Level System</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary marginT10 pull-right" data-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Master Key System Modal 2 -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="createMasterKeySystem" id="createMasterKeySystem">
+    <div class="modal-dialog modal-lg" role="document" style="width:98%;" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Master Key System: Milano Travel</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="col-md-12 no-padding text-center add-master-key-level">
+                    <label class="master-key-level-label">
+                        <span>GGM</span>
+                    </label>
+                    <img src="images/addGMK.jpg" class="boximgthumbsize marginR10 marginL10" id="addGrandMasterKey">
+                    <img src="images/removeGMK.jpg" class="boximgthumbsize" id="removeGrandMasterKey">
+                </div>
+                <div class="col-md-12 no-padding master-key-level-container style-scroll marginT30 marginB10">
+                    <div class="master-key-level-bx">
+                        <div class="col-md-12 no-padding">
+                            <label class="master-key-level-label"><span class="edit-mk">A</span></label>
+                            <img src="images/addMK.jpg" class="boximgthumbsize marginR10 marginL10 addMasterKey" data-attr-counter="0">
+                            <img src="images/removeMK.jpg" class="boximgthumbsize removeMasterKey">
+                            <input type='hidden' id='key' value='65'/>
+                        </div>
+                        <div class="marginT30 master-key-listing-container">
+                            <div class="master-key-box">
+                                <div class="col-md-8 no-padding master-key-listing-bx">
+                                    <div class="panel-group" id="accordionS">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="allChildKey">
+                                                    <i class="more-less glyphicon glyphicon-chevron-down"></i>                                                    
+                                                    </a>
+                                                    <span>AA</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 no-padding add-change-key-btn marginL10">
+                                    <ul class="list-unstyled">
+                                        <li><img src="images/addCK.jpg" class="boximgthumbsize marginB5 addChildKey"></li>
+                                        <li><img src="images/removeCK.jpg" class="boximgthumbsize removeChildKey"></li>
+                                        <li>
+                                            <input type="color" class="marginT5 change-key-color">
+                                        </li>
+                                    </ul>                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <button class="btn btn-primary pull-right" id="master-key-cancel">
+                    Cancel
+                </button>
+                <button class="btn btn-primary marginR10 pull-right" id="master-key-done">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Group Opening Modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="groupOpenings" id="groupOpenings">
+    <div class="modal-dialog modal-sm" role="document" style="width:98%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Group Openings</h4>
+            </div>
+            <div class="modal-body clearfix">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Status List Modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="statusList" id="statusList">
+    <div class="modal-dialog modal-sm" role="document" style="width:98%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Status List</h4>
+            </div>
+            <div class="modal-body clearfix">
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

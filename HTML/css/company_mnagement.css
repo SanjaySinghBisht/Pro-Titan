@@ -1,0 +1,131 @@
+.company-mgmt-dtl{
+    padding: 20px 0; 
+}
+.no-padding{
+    padding:0;
+}
+.margin-v-5{
+    margin-top:5px;
+    margin-bottom: 5px; 
+}
+.margin-v-10{
+    margin-top:10px !important;
+    margin-bottom: 10px !important; 
+}
+.margin-v-20{
+    margin-top:20px;
+    margin-bottom: 20px; 
+}
+.margin-v-100{
+    margin-top:100px;
+    margin-bottom: 100px; 
+}
+.padding-v-5{
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+.padding-v-10{
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.padding-5px{
+    padding: 5px 0;
+}
+.padding-10px{
+    padding: 10px 0;
+}
+.padding-20px{
+    padding: 20px 0;
+}
+.form-action-container{
+    background: #f2f2f2;
+    padding: 10px 0;
+    margin: 100px 0;
+}
+.form-action-container button{
+    margin: 0 0 0 10px;
+}
+.disabled-input{
+    background:#ffffff;
+    border:none;
+    pointer-events:none;
+    padding: 0 !important;
+    /*height: 15px;*/
+}
+.drop-btn{
+    padding: 10px !important;
+}
+/* company preference */
+
+.default-project-tasks-popup{
+    position: absolute;
+    width: 220px;
+    padding: 0;
+    border: 1px solid #d2d2d2;
+    background: #ffffff;
+    z-index: 100;
+}
+.default-project-tasks-popup .task-list-header{
+    padding: 5px 0;
+    outline: 1px solid #d2d2d2;
+}
+.default-project-tasks-popup .task-list-header .dropdown{
+    padding: 5px;
+}
+.default-project-tasks-popup .task-list-header .dropdown span{
+    font-size: 12px;
+    cursor: pointer;
+}
+.default-project-tasks-popup .task-list-body{
+    height: 160px;
+    overflow: auto;
+}
+.default-project-tasks-popup .task-list-actions{
+    outline: 1px solid #d2d2d2;
+    padding: 5px 0;
+}
+.default-project-tasks-popup .task-list-actions button{
+    margin: 0 5px;
+}
+.default-message textarea{
+    /*height: 150px;*/
+    outline: none;
+    /*max-height: 150px;*/
+    /*outline: 1px solid #d2d2d2;*/
+}
+
+#default-export-folder-input{
+    display: none;
+}
+
+.legend-header{
+    position: absolute;
+    background: #ffffff;
+    top: -13px;
+    padding: 0 5px;
+    font-size: 15px;
+}
+.fieldset-body{
+    position: relative;
+    padding: 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px; 
+    margin: 10px;
+}
+.input-wrapper{
+
+}
+.input-wrapper>label{
+    font-weight: normal;
+    margin-right: 10px;
+}
+.input-wrapper>input{
+    width: auto;
+    display: inline-block;
+}
+#smtp-input{
+    width: 60px;
+}
+/*.input-wrapper>input:focus{
+    border: 1px solid;
+}*/

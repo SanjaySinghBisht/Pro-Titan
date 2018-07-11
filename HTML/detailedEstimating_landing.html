@@ -1,0 +1,1750 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/exporting.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/exporting.js"></script>
+    <script>
+        $(function() {
+            $('#container-bar').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        'Hardware',
+                        'Frames',
+                        'Doors',
+                        'Labor',
+                        'Freight',
+                        'Overall'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Estimated',
+                    data: [50000, 57300, 58000, 89888, 90000, 455000]
+
+                }, {
+                    name: 'Scheduled',
+                    data: [52000, 60000, 61000, 90000, 91000, 467000]
+
+                }]
+            });
+            $('#container-stacked').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        'Available to Assign PO',
+                        'Available to Order',
+                        'Available to Recieve',
+                        'Available to assign Shipment',
+                        'Available to Ship',
+                        'Completed'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Status',
+                    data: [0, 30, 300, 30, 45, 30]
+
+                }]
+            });
+        });
+    </script>
+    <style type="text/css">
+        .change-status {
+            display: none !important;
+        }
+        
+        .divImg img {
+            width: 70%;
+        }
+        
+        .bg-white p {
+            margin: 0 0 10px;
+        }
+        /*#project-name ul li:nth-child(5){
+                display: none;
+            }*/
+        
+        .dark-blue-bg {
+            background: #363f52;
+            color: #fff;
+        }
+        
+        .bg-white {
+            background: #fff;
+        }
+        
+        .bg-light-grey {
+            background: #d8dfe5;
+        }
+        
+        .bg-light-grey h3 {
+            color: #737175;
+        }
+        
+        .pie-div h5 {
+            margin: 5px 0 !important;
+        }
+        
+        .scrollable-section {
+            max-height: 750px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .text-blue {
+            color: #00a0d0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body onload="countQty();">
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid ">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <!-- <div class="col-xs-12 col-sm-1 dark-blue-bg scrollable-section">
+                                 <div class="pie-div" id="details-pie-div">
+                                    <h5 class="text-center">Openings</h5>
+                                    <div class="divImg">
+                                        <a href="projectsOpenings.html"><img width="90" src="images/openings.jpg"></a>
+                                    </div>
+                                </div>
+                                <div class="pie-div" id="details-pie-div">
+                                    <h5 class="text-center">Groups</h5>
+                                    <div class="divImg">
+                                        <a href="projectsGroups.html"><img width="90" src="images/groups.jpg"></a>
+                                    </div>
+                                </div>
+                                <div class="pie-div" id="details-pie-div">
+                                    <h5 class="text-center">Hardware Sets</h5>
+                                    <div class="divImg">
+                                       <a href="detailEstimatingHardware.html"> <img width="90" src="images/hardware.jpg"></a>
+                                    </div>
+                                </div>
+                                <div class="pie-div" id="details-pie-div">
+                                    <h5 class="text-center">Proposals</h5>
+                                    <div class="divImg">
+                                       <a href="detailEstimatingCostSummary.html"> <img  width="90" src="images/cost.jpg"></a>
+                                    </div>
+                                </div>
+                                <div class="pie-div" id="details-pie-div">
+                                    <h5 class="text-center">Reports</h5>
+                                    <div class="divImg">
+                                       <a href="projectsReports.html"> <img width="90" src="images/reports.jpg"></a>
+                                    </div>
+                                </div>
+                                <div class="pie-div" id="details-pie-div">
+                                    <h5 class="text-center">Tags Managememt</h5>
+                                    <div class="divImg">
+                                       <a href="tagsManagement.html"> <img width="90" src="images/tagManagement.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>  -->
+                            <div class="col-xs-12 col-sm-12">
+                                <h2 class="text-blue">Summary</h2>
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>Simple Summary</h3>
+                                        </div>
+                                        <div class="col-xs-12 bg-white announcement-container well">
+                                            <div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <p>Number of Openings <strong class="pull-right">164</strong></p>
+                                                    <p>Number of Single Doors <strong class="pull-right">152</strong></p>
+                                                    <p>Number of paired Doors <strong class="pull-right">12</strong></p>
+                                                    <p>Number of Unique Openings <strong class="pull-right">34</strong></p>
+                                                    <p>Number of Unique Frames <strong class="pull-right">6</strong></p>
+                                                    <p>Number of Unique Doors <strong class="pull-right">14</strong></p>
+                                                    <p>Number of Hardware Sets Frames <strong class="pull-right">36</strong></p>
+                                                </div>
+                                                <div style="border-left: 1px solid #efefef" class="col-xs-12 col-sm-6">
+                                                    <p>Hardware Sets <strong class="pull-right">150</strong></p>
+                                                    <p>Vendors <strong class="pull-right">5</strong></p>
+                                                    <p>Grahan Wood Doors <strong class="pull-right">50</strong></p>
+                                                    <p>Curries HMD <strong class="pull-right">114</strong></p>
+                                                    <p>Curries HMF <strong class="pull-right">164</strong></p>
+                                                    <p>Estimated <strong class="pull-right">$184,326.92</strong></p>
+                                                    <p>Schedule <strong class="pull-right">$192,400.36</strong></p>
+                                                    <p>Invoiced <strong class="pull-right">$64,612.00</strong></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>Delta Report Comparison to Estimated</h3>
+                                        </div>
+                                        <div class="col-md-12 announcement-container well">
+                                            <div class="col-md-12">
+                                                <div id="container-bar" style="min-width: 310px; height: 240px; margin: 0 auto"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row marginT20">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>Order Processing Status</h3>
+                                        </div>
+                                        <div class="col-md-12 announcement-container well">
+                                            <div class="col-md-12">
+                                                <div id="container-stacked" style="min-width: 310px; height: 240px; margin: 0 auto"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>By Phase</h3>
+                                        </div>
+                                        <div class="col-md-12 announcement-container well" style="min-height: 270px">
+                                            <div class="col-md-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <!-- Modal Window -->
+        <div class="modal fade " tabindex="-1" role="dialog" id="assignPOwindow">
+            <div class="modal-dialog bs-example-modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Hardware Ordering</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <form class="form-inline custom-search-filter revision clearfix">
+                                <div class="form-group" style="width: 100%;">
+                                    <div class="pull-left">
+                                        <label class="displayInline">View</label>
+                                        <select class="form-control" id="Select2" onchange="selectView('#centerTable > tbody', this.value, 'centertable')">
+                                            <option value="original">(**Original View**)</option>
+                                        </select>
+                                    </div>
+                                    <div class="pull-left marginL30">
+                                        <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                        </button>
+                                        <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                            <i class="glyphicon glyphicon-minus"></i>
+                                        </button>
+                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                        </button>
+
+                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                            <i class="glyphicon glyphicon-print"></i>
+                                        </button>
+                                        <button class="btn btn-default pull-left" type="button" title="Export">
+                                            <i class=" glyphicon glyphicon-export"></i>
+                                        </button>
+                                    </div>
+                                    <div class="pull-left marginL30">
+                                        <label class="displayInline">Search PO's &nbsp; </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="pull-left marginL30">
+                                        <label class="displayInline">View Last &nbsp; </label>
+                                        <input type="number" class="form-control width50" /> &nbsp; Days
+                                    </div>
+
+                                    <div class="pull-right marginL30">
+                                        <label class="displayInline">
+                                            <input type="radio" name="projects" /> Current Project Only </label>
+                                        <label class="displayInline">
+                                            <input type="radio" name="projects" /> All Project </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="alert alert-success dotMsg">
+                            DOT Successfully
+                        </div>
+                        <div class="table-responsive marginB15" id="orderList">
+                            <table class="table tableLayout">
+                                <thead>
+                                    <tr>
+                                        <th class="width30">
+                                            <div class="btn-group custom-filtr-table">
+                                                <button type="button" class="btn btn-filter  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <img src="images/Views.png">
+                                                </button>
+                                                <ul class="dropdown-menu filter-grid-column">
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Purchase Order</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="pOrderID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Date</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dateID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Vendor</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="vendorID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Date Required</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dateRequiredID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Description</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="descID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">PO Acknowledgement</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="poID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Quote</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quoteID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Notes</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="notesID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Location</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="locationID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Order Contact</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="orderContactID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Order Contact Email</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="contactEmailID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Architect</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="ArchitectID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold to Name </span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="soldnameID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Address 1</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="address1" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Address 2</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="address2" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Address 3</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="address3" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold City</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="cityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold State</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="stateID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Zip</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="zipID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Country</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="countryID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Ship to Jobsite</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="jobsiteID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Ship Address 1</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="shipcountryID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <input type="checkbox" onclick="selectAll(this)" />
+                                        </th>
+                                        <th data-type="pOrderID">Purchase Order
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="dateID">Date
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="vendorID">Vendor
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="dateRequiredID">Date Required
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="descID">Description
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="poID">PO Acknowledgement
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="quoteID">Quote
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="notesID">Notes
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="locationID">Locations
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="orderContactID">Order Contacts
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="contactEmailID">Order Contacts Email
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="ArchitectID">Architects
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="soldnameID">Sold to Name
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="address1">Sold Address 1
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="address2">Sold Address 2
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="address3">Sold Address 3
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="cityID">Sold City
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="stateID">Sold State
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="zipID">Sold Zip
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="countryID">Sold Country
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="jobsiteID">Ship to Jobsite
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipName">Ship to Name
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipaddress1">Ship Address 1
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipaddress2">Ship Address 2
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipaddress3">Ship Address 3
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipCity">Ship City
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipState">Ship State
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipZip">Ship Zip
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipCountry">Ship Country
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipVia">Ship Via
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipAccount">Ship Account
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipinstruction">Shipping Instructions
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="scheduleShipDate">Schedule Ship Date
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipcomplete">Ship Complete
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="donotship">Do Not Ship Before Date
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="mrfInst.">Mrf Instructions
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="contact">Contact
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="phone">Phone
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="attachments">Attachments
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="attachmentCode">Attachment Code
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="specialInfo">Special Information
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="mrflocation">Mrf Location
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="potype">PO Type
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="viewOnline">View Online
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width30">
+                                            <button class="btn btn-default btn-expanded toggle-btn"><i class="glyphicon glyphicon-plus"></i></button>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="pOrderID">From Stock</td>
+                                        <td data-type="dateID">10/03/2016 01:49</td>
+                                        <td data-type="vendorID">SA</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">From Stock</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">edss@nagarro.com</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">ASSA Abloy Door Group </td>
+                                        <td data-type="address1">1502 12th ST NW</td>
+                                        <td data-type="address2">PO Box 1648</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">Mason City</td>
+                                        <td data-type="stateID">IA</td>
+                                        <td data-type="zipID">50402-1648</td>
+                                        <td data-type="countryID">US</td>
+                                        <td data-type="jobsiteID">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="shipName">Ship to Name </td>
+                                        <td data-type="shipaddress1">1502 12th st NW</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">Mason City</td>
+                                        <td data-type="shipState">IA</td>
+                                        <td data-type="shipZip">50401-</td>
+                                        <td data-type="shipCountry">US</td>
+                                        <td data-type="shipVia">Pool Ship</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">(641) 494-2700</td>
+                                        <td data-type="attachments">0</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">Stock Order</td>
+                                        <td data-type="viewOnline">https://extranet.assaabloydss.com/</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive marginB15" id="logOrderList">
+                            <table class="table tableLayout">
+                                <thead>
+                                    <tr>
+                                        <th class="width30">
+                                            <div class="btn-group custom-filtr-table">
+                                                <button type="button" class="btn btn-filter  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    <img src="images/Views.png">
+                                                </button>
+                                                <ul class="dropdown-menu filter-grid-column">
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Purchase Order</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="pOrderID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Date</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dateID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Vendor</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="vendorID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Date Required</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dateRequiredID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Description</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="descID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">PO Acknowledgement</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="poID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Quote</span>
+                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quoteID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Notes</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="notesID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Location</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="locationID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Order Contact</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="orderContactID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Order Contact Email</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="contactEmailID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Architect</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="ArchitectID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold to Name </span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="soldnameID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Address 1</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="address1" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Address 2</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="address2" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Address 3</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="address3" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold City</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="cityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold State</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="stateID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Zip</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="zipID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Sold Country</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="countryID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Ship to Jobsite</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="jobsiteID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pull-left btn-block clearfix">
+                                                            <span class="pull-left">Ship Address 1</span>
+                                                            <input type="checkbox" onclick="gridfilterColumn(this)" data-type="shipcountryID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <input type="checkbox" onclick="selectAll(this)" />
+                                        </th>
+                                        <th data-type="pOrderID">Purchase Order
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="dateID">Date
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="vendorID">Vendor
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="dateRequiredID">Date Required
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="descID">Description
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="poID">PO Acknowledgement
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="quoteID">Quote
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="notesID">Notes
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="locationID">Locations
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="orderContactID">Order Contacts
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="contactEmailID">Order Contacts Email
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="ArchitectID">Architects
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="soldnameID">Sold to Name
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="address1">Sold Address 1
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="address2">Sold Address 2
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="address3">Sold Address 3
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="cityID">Sold City
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="stateID">Sold State
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="zipID">Sold Zip
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="countryID">Sold Country
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="jobsiteID">Ship to Jobsite
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipName">Ship to Name
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipaddress1">Ship Address 1
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipaddress2">Ship Address 2
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipaddress3">Ship Address 3
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipCity">Ship City
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipState">Ship State
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipZip">Ship Zip
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipCountry">Ship Country
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipVia">Ship Via
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipAccount">Ship Account
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipinstruction">Shipping Instructions
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="scheduleShipDate">Schedule Ship Date
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="shipcomplete">Ship Complete
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="donotship">Do Not Ship Before Date
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="mrfInst.">Mrf Instructions
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="contact">Contact
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="phone">Phone
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="attachments">Attachments
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="attachmentCode">Attachment Code
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="specialInfo">Special Information
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="mrflocation">Mrf Location
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="potype">PO Type
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                        <th data-type="viewOnline">View Online
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="width30">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td data-type="pOrderID">&nbsp;</td>
+                                        <td data-type="dateID">&nbsp;</td>
+                                        <td data-type="vendorID">&nbsp;</td>
+                                        <td data-type="dateRequiredID">&nbsp;</td>
+                                        <td data-type="descID">&nbsp;</td>
+                                        <td data-type="poID">&nbsp;</td>
+                                        <td data-type="quoteID">&nbsp;</td>
+                                        <td data-type="notesID">&nbsp;</td>
+                                        <td data-type="locationID">&nbsp;</td>
+                                        <td data-type="orderContactID">&nbsp; </td>
+                                        <td data-type="contactEmailID">&nbsp;</td>
+                                        <td data-type="ArchitectID">&nbsp;</td>
+                                        <td data-type="soldnameID">&nbsp;</td>
+                                        <td data-type="address1">&nbsp;</td>
+                                        <td data-type="address2">&nbsp;</td>
+                                        <td data-type="address3">&nbsp;</td>
+                                        <td data-type="cityID">&nbsp;</td>
+                                        <td data-type="stateID">&nbsp;</td>
+                                        <td data-type="zipID">&nbsp;</td>
+                                        <td data-type="countryID">&nbsp;</td>
+                                        <td data-type="jobsiteID">&nbsp;</td>
+                                        <td data-type="shipName">&nbsp;</td>
+                                        <td data-type="shipaddress1">&nbsp;</td>
+                                        <td data-type="shipaddress2">&nbsp;</td>
+                                        <td data-type="shipaddress3">&nbsp;</td>
+                                        <td data-type="shipCity">&nbsp;</td>
+                                        <td data-type="shipState">&nbsp;</td>
+                                        <td data-type="shipZip">&nbsp;</td>
+                                        <td data-type="shipCountry">&nbsp;</td>
+                                        <td data-type="shipVia">&nbsp;</td>
+                                        <td data-type="shipAccount">&nbsp;</td>
+                                        <td data-type="shipinstruction">&nbsp;</td>
+                                        <td data-type="scheduleShipDate">&nbsp;</td>
+                                        <td data-type="shipcomplete">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td data-type="donotship">&nbsp;</td>
+                                        <td data-type="mrfInst.">&nbsp;</td>
+                                        <td data-type="contact">&nbsp;</td>
+                                        <td data-type="phone">&nbsp;</td>
+                                        <td data-type="attachments">&nbsp;</td>
+                                        <td data-type="attachmentCode">&nbsp;</td>
+                                        <td data-type="specialInfo">&nbsp;</td>
+                                        <td data-type="mrflocation">&nbsp;</td>
+                                        <td data-type="potype">&nbsp;</td>
+                                        <td data-type="viewOnline">&nbsp;</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer clearfix">
+                        <div class="pull-left clearfix">
+                            <button type="button" class="btn btn-primary pull-left" id="logorder">Log Order</button>
+                            <button type="button" class="btn btn-primary pull-left" id="dotbtn">DOT</button>
+
+                            <span class="form-inline pull-left marginR15 marginT10 marginL10">
+                                <label>
+                                    <input type="checkbox" class="marginR5 pull-left" id="dotorder" />&nbsp; Print a copy of DOT Order</label></span>
+                            <span class="form-inline marginR15 pull-left marginT10">
+                                <label>
+                                    <input type="checkbox" class=" marginR5 pull-left" id="leadsheet" />
+                                    &nbsp; Include Keying Lead Sheet</label></span>
+                            <span class="form-inline marginR15 pull-left marginT10">
+                                <label>
+                                    <input type="checkbox" class=" marginR5 pull-left" id="showCost" />
+                                    &nbsp; Show Cost</label></span>
+
+                        </div>
+                        <div class="pull-right">
+                            <span class="form-inline marginR15">
+                                <label>
+                                    <input type="checkbox" class=" marginR5 pull-left" id="draftCopy" />
+                                    &nbsp; Draft Copy</label></span>
+                            <button type="button" class="btn btn-primary" id="printbtn" data-dismiss="modal">Print</button>
+                            <button type="button" class="btn btn-primary" id="previewbtn">Preview</button>
+                            <button type="button" class="btn btn-default" id="backtoOrderList">Back</button>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <script>
+            $(document).ready(function() {
+
+                $('#receiveBtn').hide();
+                $('#printbtn').click(function() {
+                    if ($('#draftCopy').is(':checked')) {
+                        var win = window.open('pdf/Hdw-Order.pdf', '_blank');
+                        win.print();
+
+                    } else {
+                        window.location.href = 'receiveOrder.html';
+
+                    }
+                });
+
+                $('.dotMsg, #logOrderList, #backtoOrderList').hide();
+                $('#dotbtn').click(function() {
+                    $('.dotMsg').show()
+                    setTimeout(function() {
+                        $('.dotMsg').hide()
+                    }, 3000)
+                });
+
+                $('#logorder').click(function() {
+                    $('#logOrderList,#backtoOrderList').show();
+                    $('#orderList').hide();
+                });
+
+                $('#backtoOrderList').click(function() {
+                    $(this).hide();
+                    $('#logOrderList').hide();
+                    $('#orderList').show();
+                });
+            });
+
+            function gotogotodetailEstimatingHardware() {
+                window.location.href = "gotodetailEstimatingHardware.html"
+            }
+        </script>
+
+        <!-- Project Data Change Popup -->
+        <div class="modal fade change-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="changePopupData">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Milano Travel</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                            <button class="btn btn-default pull-left marginR5 start-new-change" disabled="disabled">
+                                Start
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                                Drop
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target='#commitData' disabled="disabled">
+                                Commit
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 details-change">
+                                Details
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 switch-to-change">
+                                Switch To
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                                Compare
+                            </button>
+                        </div>
+                        <table class="table project-change-data-table" style="table-layout:auto;">
+                            <thead>
+                                <tr class="borderB mainHead">
+                                    <th class="borderR" data-type="Change">
+                                        Change
+                                    </th>
+                                    <th class="borderR" data-type="Status">
+                                        Status
+                                    </th>
+                                    <th class="borderR" data-type="Description">
+                                        Description
+                                    </th>
+                                    <th class="borderR" data-type="Owner">
+                                        Owner
+                                    </th>
+                                    <th class="borderR" data-type="Start-Date">
+                                        Start Date
+                                    </th>
+                                    <th data-type="Commit-Date">
+                                        Commit Date
+                                    </th>
+                                    <th data-type="compare-time">
+                                        Time
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="add-data">
+                                    <td class="borderR">
+                                        <input type="text" class="form-text change-value">
+                                    </td>
+                                    <td class="borderR"></td>
+                                    <td class="borderR">
+                                        <input type="text" class="form-text description">
+                                    </td>
+                                    <td class="borderR">
+                                        <input type="text" class="form-text owner">
+                                    </td>
+                                    <td class="borderR">
+                                        <input id="datetimepicker1" type="text" class="start-date" />
+                                    </td>
+                                    <td class="borderR"></td>
+                                    <td class="borderR"></td>
+                                </tr>
+                                <tr class="current-row">
+                                    <td class="borderR">Current</td>
+                                    <td class="borderR">Active</td>
+                                    <td class="borderR">Milano Travel</td>
+                                    <td class="borderR"></td>
+                                    <td class="borderR"></td>
+                                    <td class="borderR"></td>
+                                    <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a></td>
+                                </tr>
+                                <tr class="data-row">
+                                    <td class="borderR">C0-01</td>
+                                    <td class="borderR">Active</td>
+                                    <td class="borderR">Sample Description</td>
+                                    <td class="borderR">Dawn</td>
+                                    <td class="borderR">05/16/2017</td>
+                                    <td class="borderR"></td>
+                                    <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a><a href="#" class="comparsion-point" title="Before"><span class="badge before" style="display:inline-block"><i class="fa fa-mail-reply"></i></span></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-state-legend">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class='badge start marginR10'><i class="fa fa-arrow-circle-right"></i></span>
+                                    <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                                </li>
+                                <li>
+                                    <span class='badge new marginR10'><i class="glyphicon glyphicon-screenshot"></i></span>
+                                    <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                                </li>
+                                <li>
+                                    <span class='badge before marginR10'><i class="fa fa-mail-reply"></i></span>
+                                    <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                                </li>
+                                <li>
+                                    <span class='badge committed marginR10'><i class="fa fa-check-circle"></i></span>
+                                    <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                                </li>
+                                <li>
+                                    <span class='badge after marginR10'><i class="fa fa-mail-forward"></i></span>
+                                    <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Changes Commit Popup -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="commitData">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Commit Your Changes?</h4>
+                    </div>
+                    <div class="modal-body clearfix col-md-offset-2">
+                        <button class="btn btn-primary pull-left marginR5 commit-done">
+                            Yes
+                        </button>
+                        <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Drop Changes Popup -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="dropData">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Drop Your Changes?</h4>
+                    </div>
+                    <div class="modal-body clearfix col-md-offset-2">
+                        <button class="btn btn-primary pull-left marginR5 drop-done">
+                            Yes
+                        </button>
+                        <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,2173 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailEstimatingHardwareType.js"></script>
+</head>
+
+<body onload="countQty();">
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#" class="logo" title="Assa Abloy" tabindex="1"></a>
+                            </div>
+
+                            <div class="col-md-5 pull-right">
+                                <div class="row">
+                                    <div class="col-md-5 src-box-hdr">
+                                        <!-- 
+                        <div class="search-user pull-right">
+                          <input class=" form-control pull-left" type="text" name="search-all" value="" placeholder="Search" />
+                          <button type="button" class="search-btn pull-right"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                                            -->
+                                    </div>
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav navbar-right ">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+    </div>
+    <div class="container-fluid content-container">
+
+        <div class="row both-column-height-equal">
+            <div class="contentCollapsable pos-relative">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="page-header clearfix">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <h1 class="pull-left marginT30">My Types</h1>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                <div class="stepwizardarea ">
+
+                                    <ul class="stepwizardrow myTypes">
+                                        <li class="active-step">
+                                            <span class="step-count"></span>
+                                            <span class="step-name">Hardware</span>
+                                        </li>
+                                        <li class="active-step"><span class="step-count"></span>
+                                            <span class="step-name">Types</span>
+                                        </li>
+                                        <li class="default-step"><span class="step-count"></span>
+                                            <span class="step-name">Material</span>
+                                        </li>
+                                        <li class="default-step"><span class="step-count"></span>
+                                            <span class="step-name">Cost & Quote</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <!--<tabs-->
+
+                            <button class="btn btn-primary marginB10" onclick="toggleDiv(this,'.assignTypeArea')">Types Library </button>
+
+                            <div class="assignTypeArea" style="display:none;">
+                                <div class="form-inline searchBar clearfix ">
+
+                                    <div class="pull-right">
+                                        <div class="input-group custom-searchbtn">
+                                            <input type="search" class="form-control" placeholder="Search Project" style="font-size:12px; height: 26px;">
+                                            <div class="input-group-addon" style="font-size:12px; ">
+                                                <i class="fa fa-search"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tablemyList">
+                                    <table class="table tabled-striped table-bordered" id="" onclick="selectTableForm(this, event, '.leftframedoorForms #accordion' )">
+                                        <thead class="">
+                                            <tr>
+                                                <th class="" style="width:90px;" data-type="Type">Type<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                <th class="" data-type="Type Name">Type Name<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                <th class="" data-type="Type Description">Type Description<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                <th class="" data-type="Category">Category<i class="glyphicon glyphicon-triangle-top"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-type="Door Type">
+                                                <td style="width:90px;">Door Type</td>
+                                                <td>F1</td>
+                                                <td>CU HMF SL CR SGL</td>
+                                                <td>Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr data-type="Frame Type">
+                                                <td>Frame Type</td>
+                                                <td>F2</td>
+                                                <td>CU HMF SL CR SGL</td>
+                                                <td>Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr data-type="Opening Type">
+                                                <td>Opening Type</td>
+                                                <td>F3</td>
+                                                <td>CU HMF SL CR SGL</td>
+                                                <td>Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr data-type="Door Type">
+                                                <td style="width:90px;">Door Type</td>
+                                                <td>F1</td>
+                                                <td>CU HMF SL CR SGL</td>
+                                                <td>Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr data-type="Frame Type">
+                                                <td>Frame Type</td>
+                                                <td>F2</td>
+                                                <td>CU HMF SL CR SGL</td>
+                                                <td>Standard Curries, HMF</td>
+                                            </tr>
+                                            <tr data-type="Opening Type">
+                                                <td>Opening Type</td>
+                                                <td>F3</td>
+                                                <td>CU HMF SL CR SGL</td>
+                                                <td>Standard Curries, HMF</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="form-inline  custom-search-filter clearfix marginT25 marginB10 cusFilterSch" style="margin-top:0; margin-bottom:10px; ">
+                                <div class="form-group">
+                                    <!--<button class="btn btn-success" type="button"><i class=" glyphicon glyphicon-chevron-left"></i></button>-->
+
+                                    <select class="form-control marginB5" id="Select4">
+                                        <option value="original">Select Openings</option>
+                                        <option value="">1.0</option>
+                                        <option value="">2.0</option>
+                                        <option value="">3.0</option>
+                                        <option value="">4.0</option>
+                                        <option value="">5.0</option>
+                                        <option value="">6.0</option>
+                                        <option value="">7.0</option>
+                                        <option value="">8.0</option>
+                                    </select>
+                                    <input type="text" class="form-control marginB5" style="width:300px; padding:3px 10px;" placeholder="Type your openings." />
+                                    <button class="btn btn-default" style="margin-top:-4px;">Assign</button>
+                                    <!--<span class="instruction">This utility allows you to quickly assign Types to Detail screen
+</span>-->
+                                    <!--<button class="btn btn-success " type="button">
+                                                                        <i class=" glyphicon glyphicon-chevron-right"></i>
+                                                                    </button>-->
+                                </div>
+
+                            </div>
+
+                            <div class="leftframedoorForms">
+                                <!-- Accordion Forms -->
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#openings" aria-expanded="false" aria-controls="doorTypes">
+                                              Openings Types
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="openings" class="panel-collapse collapse" role="tabpanel" data-category="Opening Type" aria-labelledby="headingThree">
+                                            <div class="panel-body">
+                                                <!-- Default panel contents -->
+                                                <form class="form-horizontal custom-search-filter" id="openingsForm">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label"><strong>Opening Type Name
+</strong></label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="F3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">UOM</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" data-type="UOM" class="form-control" value="" data-value="BL">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Qty</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="" data-type="qty">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Width</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-type="Width" data-value="3'">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Height</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-type="Height" data-value="4'">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Door Thickness
+                                                        </label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-type="Thickness" data-value="1 3/4'">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Hardware Set
+                                                        </label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" value="" data-type="Hdw Set" data-value="H8">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Wall Type
+                                                        </label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" value="" data-type="Wall Type">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Wall Thickness
+                                                        </label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-type="Wall Thickness">
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+
+                                                <hr />
+                                                <div class="row">
+                                                    <!-- Frames Form -->
+                                                    <div class="col-md-6">
+                                                        <h2 class="form-head clearfix"><span class="pull-left">Frames Type </span><span class="formpagination pull-right hide"><a href="javascript:void(0);" onclick="formfadeIn(this,'#openingFramesForm')">1</a><a href="javascript:void(0);" onclick="formfadeIn(this,'#openingFramesForm')">2</a></span></h2>
+                                                        <form class="form-horizontal custom-search-filter" id="openingFramesForm">
+
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label"> Name</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="FS">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">UOM</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="PRA/PRI" data-type="UOM">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Qty</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="1">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Width</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="3'0" " data-type="Width ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Height</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control "  value=" " data-value="4 '0"" data-type="Height">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Jamb Depth</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="2' " data-type="Jamb Depth ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Hand</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="email " class="form-control " value=" " data-value="LH " data-type="Jamb Depth ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Vendor</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="email " class="form-control " value=" " data-value="CU " data-type="Vendor ">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Elevation Type</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="3PC " data-type="Elevation Type ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Profile</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="BC " data-type="Profile ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Trim Gauge</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="16 " data-type="Gauge/Trim ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Steel Type</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="A60 " data-type="Steel Type ">
+                                                        </div>
+                                                    </div>
+                                                    <!--                                                    <div class="form-group ">
+                                                                                                            <label class="col-sm-4 control-label ">Steel Type</label>
+                                                                                                            <div class="col-sm-8 ">
+                                                                                                                <input type="text " class="form-control " data-value=" ">
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Jamb Face</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="2 '" data-type="Jamb Face">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Head Face</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="2' " data-type="Head Face ">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Label</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="12PSI " data-type="Label ">
+                                                        </div>
+                                                    </div> 
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Construction</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="SM " data-type="Construction ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Anchor</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="A00 " data-type="Anchor ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Add On</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="CAP " data-type="Add On ">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                   </div>
+                                                   <div class="col-md-6 " style="padding-left:0; ">
+                                                       <h2 class="form-head clearfix "><span class="pull-left ">Door Type </span><span class="formpagination pull-right hide "><a href="javascript:void(0); " onclick="formfadeIn(this, '#openingDoorsForm') ">1</a><a href="javascript:void(0); " onclick="formfadeIn(this, '#openingDoorsForm') ">2</a></span></h2>
+                                                       <form class="form-horizontal custom-search-filter " id="openingDoorsForm ">
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label "> Name</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">UOM</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="SGL " data-type="UOM ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Qty</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="1 " >
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Width</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="3 '0"" data-type="Width">
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Height</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="3'0 "" data-type="Height">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Hand</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="email" class="form-control" value="" data-value="LH" data-type="Hand">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Vendor</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="email" class="form-control" value="" data-value="CU" data-type="Vendor">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Material</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="HMD" data-type="Material">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Series</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="A4" data-type="Series">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Edge/Stile</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="" data-type="Edge/Stile">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Gauge / Construction</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="16" data-type="Gauge/Construction">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Steel Type/Species</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="A40" data-type="Steel Type/Species">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">label</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="AUF" data-type="label">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Face Type</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="2P" data-type="Face Type">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Bevel</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="3/3" data-type="Bevel">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Finish</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="CBG" data-type="Finish">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-4 control-label">Edge</label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" value="" data-value="CB" data-type="Edge">
+                                                                </div>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <h4 class="panel-title clearfix">
+                                            <a class="collapsed pull-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#framesType" aria-expanded="false" aria-controls="framesType">
+                                              Frames Type
+                                            </a>
+
+                                              <span class="formpagination pull-right  marginT10 marginR5 hide"><a href="javascript:void(0);" onclick="formfadeIn(this,'#framesForm')">1</a><a href="javascript:void(0);" onclick="formfadeIn(this,'#framesForm')">2</a></span>
+                                          </h4>
+                                        </div>
+                                        <div id="framesType" class="panel-collapse collapse" role="tabpanel" data-category="Frame Type" aria-labelledby="headingTwo">
+                                            <div class="panel-body">
+
+                                                <!-- Default panel contents -->
+                                                <form class="form-horizontal custom-search-filter" id="framesForm">
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label"><strong>Frame Type Name</strong></label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="FS">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">UOM</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="PRA/PRI" data-type="UOM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Qty</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="" data-type="qty">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Width</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="3'0" " data-type="Width ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Height</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control "  value=" " data-value="4 '0"" data-type="Height">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Jamb Depth</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="2' " data-type="Jamb Depth ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Hand</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="email " class="form-control " value=" " data-value="LH " data-type="Jamb Depth ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Vendor</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="email " class="form-control " value=" " data-value="CU " data-type="Vendor ">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Elevation Type</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="3PC " data-type="Elevation Type ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Profile</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="BC " data-type="Profile ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Trim Gauge</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="16 " data-type="Gauge/Trim ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Steel Type</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="A60 " data-type="Steel Type ">
+                                                        </div>
+                                                    </div>
+                                                    <!--                                                    <div class="form-group ">
+                                                                                                            <label class="col-sm-4 control-label ">Steel Type</label>
+                                                                                                            <div class="col-sm-8 ">
+                                                                                                                <input type="text " class="form-control " data-value=" ">
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Jamb Face</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="2 '" data-type="Jamb Face">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Head Face</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="2' " data-type="Head Face ">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Label</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="12PSI " data-type="Label ">
+                                                        </div>
+                                                    </div> 
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Construction</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="SM " data-type="Construction ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Anchor</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="A00 " data-type="Anchor ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Add On</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="CAP " data-type="Add On ">
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                        </div>
+                                      </div>
+                                          </div>
+                                      <div class="panel panel-default ">
+                                        <div class="panel-heading " role="tab " id="headingOne ">
+                                          <h4 class="panel-title clearfix ">
+                                            <a class="collapsed pull-left " role="button " data-toggle="collapse " data-parent="#accordion " href="#doorTypes " aria-expanded="false " aria-controls="doorTypes ">
+                                              Door Type
+                                            </a>
+
+                                              <span class="formpagination pull-right marginT10 marginR5 hide "><a href="javascript:void(0); " onclick="formfadeIn(this, '#doorsForm') ">1</a><a href="javascript:void(0); " onclick="formfadeIn(this, '#doorsForm') ">2</a></span>
+                                          </h4>
+                                        </div>
+                                        <div id="doorTypes " class="panel-collapse collapse " data-category="Door Type " role="tabpanel " aria-labelledby="headingOne ">
+                                          <div class="panel-body ">
+                                            <!-- Default panel contents -->
+                                                <form class="form-horizontal custom-search-filter " id="doorsForm ">
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label "><strong>Door Type Name</strong></label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">UOM</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="SGL " data-type="UOM ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Qty</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value=" " data-type="qty " >
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-sm-4 control-label ">Width</label>
+                                                        <div class="col-sm-8 ">
+                                                            <input type="text " class="form-control " value=" " data-value="3 '0"" data-type="Width">
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Height</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="3'0 "" data-type="Height">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Hand</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" value="" data-value="LH" data-type="Hand">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Vendor</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="email" class="form-control" value="" data-value="CU" data-type="Vendor">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Material</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="HMD" data-type="Material">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Series</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="A4" data-type="Series">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Edge/Stile</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="" data-type="Edge/Stile">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Gauge/Construction</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="16" data-type="Gauge/Construction">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Steel Type/Species</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="A40" data-type="Steel Type/Species">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">label</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="AUF" data-type="label">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Face Type</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="2P" data-type="Face Type">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Bevel</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="3/3" data-type="Bevel">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Finish</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="CBG" data-type="Finish">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">Edge</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" value="" data-value="CB" data-type="Edge">
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="button-container text-right clearfix">
+                                <div class="pull-right">
+                                    <button class="btn btn-primary" type="button" title="Add to Library" data-toggle="modal" data-target="#addLibraryPopup">Add to Library</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-8 ">
+                            <div class="openingTableArea">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#openingsTable" aria-controls="openingsTable" role="tab" data-toggle="tab">Openings</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active " id="openingsTable">
+                                        <div class="row typesPage groupHdwSet clearfix">
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>UOM</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>BL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Bank</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>PR</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>PRA/PRI</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SGL</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Width</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>3'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'5</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'7</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>7'3</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'0</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Height</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>3'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'5</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'7</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>7'3</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'0</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Thickness</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Hdw Set</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>H8</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>H9</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Wall Type</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>H8</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>H9</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB10">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Wall Thickness</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#openingsForm, #openingFramesForm, #openingDoorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>H8</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>H9</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <br />
+                            <br />
+                            <div class="openingTableArea">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#framesTable" aria-controls="framesTable" role="tab" data-toggle="tab">Frames</a></li>
+                                    <li role="presentation"><a href="#doorsTable" aria-controls="doorsTable" role="tab" data-toggle="tab">Doors</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="framesTable">
+                                        <div class="row typesPage groupHdwSet clearfix">
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>UOM</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>BL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Bank</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>PR</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>PRA/PRI</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SGL</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Vendor</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>C</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CU</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>BA</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FW</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Gauge/Trim</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>12</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>14</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>16</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>18</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>20</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Label</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CONS</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>D60D</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>D60S</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>D70D</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>L20B</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Width</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>5'0"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Height</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>8'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>7'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>7'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Jamb Depth</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Elevation Type</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>3PC</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3F</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3PC</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2F</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FD</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Steel Type</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>AL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>304-2B</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>A60</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>A60</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>A40</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Jamb Face</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5" onclick="customValues(this, event, '#framesForm')">
+                                                    <div class="col-head">
+                                                        <h2>Head Face</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Construction</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CN</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SBE</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CN</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>BEF</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FW</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Anchor</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>AMP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CA</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CS</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DC</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>EWA</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Drawing</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Elev. 4</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 5</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 6</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 7</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 8</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Elevation</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Handling</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>LH</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>RH</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>LH</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Bifold</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Pocket</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Profile</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#framesForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane " id="doorsTable">
+                                        <div class="row typesPage groupHdwSet clearfix">
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>UOM</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>BL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Bank</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>PR</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>PRA/PRI</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SGL</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Vendor</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>C</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CU</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>BA</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FW</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Gauge/Trim</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>12</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>14</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>16</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>18</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>20</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Label</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CONS</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>D60D</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>D60S</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>D70D</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>L20B</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Width</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>5'0"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Height</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>8'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>7'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>7'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4'0"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Jamb Depth</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Elevation Type</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>3PC</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3F</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3PC</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2F</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FD</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Steel Type</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>AL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>304-2B</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>A60</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>A60</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>A40</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Jamb Face</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Head Face</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2"</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Construction</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CN</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SBE</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CN</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>BEF</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>FW</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Anchor</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>AMP</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CA</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CS</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>DC</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>EWA</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Drawing</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Elev. 4</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 5</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 6</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 7</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Elev. 8</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Elevation</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Handling</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>LH</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>RH</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>LH</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Bifold</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Pocket</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Profile</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Louver</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Glass</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 marginB30">
+                                                <div class="block clearfix marginR5">
+                                                    <div class="col-head">
+                                                        <h2>Add on</h2>
+                                                    </div>
+                                                    <div class="block-content blocktiles padding0">
+                                                        <table class="table marginB0" onclick="customValues(this, event, '#doorsForm')">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-sm " tabindex="-1" role="dialog" id="addLibraryPopup">
+        <div class="modal-dialog  modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">New Types</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <form class="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter Name" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer HTML -->
+</body>
+
+</html>

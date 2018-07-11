@@ -1,0 +1,391 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assa Abloy</title>
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/ionicons.min.css" type="text/css" rel="stylesheet" />
+    <link rel='stylesheet' href='css/fullcalendar.min.css' />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+    <!--ribbon js -->
+
+    <!-- Bootstrap realted JS -->
+
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script type="text/javascript" src="js/landing.js"></script>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <header class="header pos-relative">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+
+                                <div class="col-md-7">
+                                    <ul class="nav navbar-nav">
+                                        <li><span>Welcome Erdmann, Dawn</span></li>
+                                        <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                </li>
+                                                <li>
+                                                    <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <input type="button" value="Help Forms">
+                                                </li>
+                                                <li>
+                                                    <input type="button" value="Live Chat">
+                                                </li>
+                                                <li>
+                                                    <input type="button" value="FAQ">
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                        <li><a href="contactUs.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3 pull-right">
+                                    <div class="indicator">
+                                        <ul class="indicator-btn">
+                                            <li class="list-unstyled">
+                                                <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pushbuttons pos-headerpushbuttons">
+                    <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                </div>
+    </header>
+    <div id='ribbonMenuBar' class='marginB15'>
+
+    </div>
+    <div class="container-fluid content-container">
+        <div class="row marginT10">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 box-header">
+                                <h3>Announcement</h3>
+                            </div>
+                            <div class="col-md-12 announcement-container well">
+                                <div class="col-md-12">
+                                    <div class="page-header clearfix">
+                                        <h1 class="pull-left">Assa Abloy Announcements</h1>
+                                    </div>
+                                    <div class="col-md-12 card">
+                                        <div class="announcement-header">
+                                            <h3>Announcement Title</h3>
+                                            <span>October 5, 2016</span>
+                                        </div>
+                                        <div class="announcement-body">
+                                            <p>
+                                                Comprehensive, up-to-date news coverage, aggregated from all sources. <a href="#"> know more</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 marginT20">
+                                    <div class="page-header clearfix">
+                                        <h1 class="pull-left">Entity Announcements</h1>
+                                    </div>
+                                    <div class="col-md-12 card">
+                                        <div class="announcement-header">
+                                            <h3>Announcement Title</h3>
+                                            <span>October 5, 2016</span>
+                                        </div>
+                                        <div class="announcement-body">
+                                            <p>
+                                                Comprehensive, up-to-date news coverage, aggregated from all sources. <a href="#"> know more</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 marginT20">
+                                    <div class="page-header clearfix">
+                                        <h1 class="pull-left">Personalized Announcements</h1>
+                                    </div>
+                                    <div class="col-md-12 card marginT10">
+                                        <div class="announcement-header">
+                                            <h3>Announcement Title</h3>
+                                            <span>October 5, 2016</span>
+                                        </div>
+                                        <div class="announcement-body">
+                                            <p>
+                                                Comprehensive, up-to-date news coverage, aggregated from all sources. <a href="#"> know more</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 card marginT15">
+                                        <div class="announcement-header">
+                                            <h3>Announcement Title</h3>
+                                            <span>October 5, 2016</span>
+                                        </div>
+                                        <div class="announcement-body">
+                                            <p>
+                                                Comprehensive, up-to-date news coverage, aggregated from all sources. <a href="#"> know more</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 box-header">
+                            <h3>Calendar</h3>
+                        </div>
+                        <div class="col-md-12 announcement-container well">
+                            <div class="col-md-5 ">
+                                <div id="desktop-calendar" class="col-md-12 card">
+
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12 view-calendar card">
+                                            <div class="col-md-12 text-center view-calendar-header">
+                                                <h3>View Calendar</h3>
+                                            </div>
+                                            <div class="col-md-12 view-calendar-body">
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />My Calendar</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Company Calendar</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Ship Calendar</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Bid Calendar</label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12 view-calendar card">
+                                            <div class="col-md-12 text-center view-calendar-header">
+                                                <h3>Team: Cruz, Larry</h3>
+                                            </div>
+                                            <div class="col-md-12 view-calendar-body">
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Cruz, Larry</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Bodily, Braeden</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Derosso Austin</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Hankins, Jeremiah</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Leclair, Philippe</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" />Steinberg, Adam</label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row marginT20">
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary">
+                                            View
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row marginT15">
+                        <div class="col-md-12 box-header">
+                            <h3>Recent Projects</h3>
+                        </div>
+                        <div class="col-md-12 announcement-container well">
+                            <div class="col-md-12">
+                                <div class="row recent-project-conatainer">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="col-md-12 card">
+                                                    <div class="col-md-10">
+                                                        <div class="card-header">
+                                                            <h3>165651</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p>
+                                                                Comcast
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2 card-action-container">
+                                                        <button class="">
+                                                            <i class="fa fa-folder-open"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="col-md-12 card">
+                                                    <div class="col-md-10">
+                                                        <div class="card-header">
+                                                            <h3>535353</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p>
+                                                                Pine Rest Flex Bed
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2 card-action-container">
+                                                        <button class="">
+                                                            <i class="fa fa-folder-open"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!--                                                <div class="col-md-6 marginT10">
+                                                    <div class="col-md-12 card">
+                                                        <div class="col-md-10">
+                                                            <div class="card-header">
+                                                                <h3>565156</h3>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p>
+                                                                    Soldier Field
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2 card-action-container" >
+                                                            <button class="">
+                                                                <i class="fa fa-folder-open"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-12 recent-project-actions">
+                                <div class="row">
+                                    <div class="col-md-12 marginT20">
+                                        <button class="btn btn-primary">
+                                            <span><i class="fa fa-plus-circle"></i></span> Create Project
+                                        </button>
+                                        <button class="btn btn-primary">
+                                            <span><i class="fa fa-folder-open"></i></span> Open Project
+                                        </button>
+                                        <button class="btn btn-primary">
+                                            <span><i class="fa fa-copy"></i></span> Copy Project
+                                        </button>
+                                        <button class="btn btn-primary">
+                                            <span><i class="fa fa-arrow-circle-o-down"></i></span> Import/Export Project
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="container-fluid ">
+            <div class="row ">
+                <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                <div class="col-md-4 col-sm-4 col-xs-12 ">John Knipper</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

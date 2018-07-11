@@ -1,0 +1,164 @@
+.announcement-container{
+    min-height: 158px;
+    /* overflow: auto; */
+    background: #f6f6f6;
+    padding: 15px 0;border-radius: 0;border-top: 0;margin-bottom: 0
+}
+.announcement-container .announcement-header h3{
+    font-size: 16px;color: #222;
+    margin: 10px 0;
+}
+.announcement-container .announcement-header span{
+    color: #757575;
+    font-size: 13px;
+}
+.announcement-container .announcement-body p a{
+    color: #00a0d0;
+}
+.recent-project-conatainer p{margin-bottom: 0}
+.card{
+    background: #ffffff;
+    box-shadow: 0 1px 5px 0px #d2d2d2;
+}
+.announcement-container .page-header{margin-bottom: 10px}
+.announcement-container .page-header h1{margin-bottom: 0;font-size: 18px}
+.card .card-header h3{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.card .card-body{
+
+}
+.both-center{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.announcement-container .card .card-action-container{
+    /*    height: 100%;*/
+    position: relative;
+}
+.announcement-container .card .card-action-container button{
+    margin: 50% auto;
+    border: none;
+    background: transparent;
+    color: #00a0d0;
+    font-size: 30px;
+}
+#desktop-calendar{
+    padding: 10px;
+}
+#desktop-calendar .fc-toolbar h2{
+    font-size: 24px;
+}
+#desktop-calendar .fc-toolbar{
+    margin-bottom: 10px;
+}
+#desktop-calendar .fc-basic-view .fc-body .fc-row{
+    min-height: 1em;
+}
+.view-calendar{
+    overflow: auto;
+    padding: 0;
+}
+.view-calendar .view-calendar-header{
+    box-shadow: 0 2px 5px 0px #d2d2d2;
+    padding: 0;
+}
+.view-calendar .view-calendar-header h3{
+    margin: 10px;font-size: 18px;text-align: left;
+}
+/*.view-calendar .view-calendar-header label{
+    font-size: 20px;
+    display: inline-block;
+    padding: 8px
+}*/
+.view-calendar .view-calendar-body{
+    height: 220px;
+    overflow: auto;
+}
+.view-calendar .view-calendar-body ul>li{
+    /*min-height: 25px;*/
+    font-size: 15px;
+}
+.view-calendar .view-calendar-footer{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.recent-project-conatainer{
+    /* height: 270px; */
+    overflow: auto;
+}
+.announcement-container>div{
+    position: relative;
+}
+.recent-project-actions{
+    position: absolute;
+    bottom: 0;
+}
+.recent-project-actions .btn{padding: 8px 12px}
+.box-header{
+    background: #00a0d0;
+	position:relative;
+}
+.box-header>h3{
+    margin: 10px 0;
+    color: #ffffff;
+    /*font-weight: bold;*/
+}
+
+.dropDownCalender{
+    position: absolute;
+    top: 16px;
+    right: 176px;
+}
+
+.teamCalenderView{
+	position: absolute;
+    top: 16px;
+    right: 22px;
+}
+
+.dropDownCalender .head{
+	font-size: 14px;
+    padding: 0px;
+    background: none;
+    border: 0;
+    color: #ffffff;
+    font-weight: normal;
+}
+.dropDownCalender .dropdown-toggle, .teamCalenderView .dropdown-toggle{
+    background: none;
+    color: #fff;
+    border: 0;
+}
+.teamCalenderView .head {
+    padding: 0px;
+    font-size: 14px;
+    background: none;
+    border: 0;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.dropDownCalender ul, .teamCalenderView ul{
+	padding: 5px 5px 0px 15px;
+    overflow-y: hidden;
+    max-height: none; 
+	
+}
+
+.dropDownCalender ul li label, .teamCalenderView ul li label{
+	font-size:13px;	
+}
+
+.viewDiv .btn{
+	padding: 5px 10px;
+    font-size: 14px;
+    margin: 5px 10px 10px;
+}

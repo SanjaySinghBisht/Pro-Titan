@@ -1,0 +1,170 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="thumbnail-slider/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-toggle.css" type="text/css" rel="stylesheet" />
+
+    <link href="css/quickEstimatingMaterial.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.als-1.7.min.js"></script>
+    <script src="thumbnail-slider/thumbnail-slider.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/quickEstimatingMaterial.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!--<div class="col-md-3 leftslider text-center">
+                              <a href="#" class="uparrow"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+                              <ul class="reportTemplate">
+                                  <li><img src="images/report1.png" /></li>
+                                  <li><img src="images/report2.png" /></li>
+                                  <li><img src="images/report3.png" /></li>
+                                  <li><img src="images/report4.png" /></li>
+                                  <li><img src="images/report1.png" /></li>
+                                  <li><img src="images/report2.png" /></li>
+                                  <li><img src="images/report3.png" /></li>
+                                  <li><img src="images/report4.png" /></li>
+                              </ul>
+                               <a href="#" class="downarrow"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+                           </div>-->
+                        <div class="col-md-8 col-md-offset-2 ">
+                            <div class="">
+                                <div class="als-container reportTemplate submenu-list" id="single-hollow-metal-frame" data-id="als-container_0">
+                                    <span class="als-prev" data-id="als-prev_0" style=""><img src="images/prev.png" alt="prev" title="previous"></span>
+                                    <div class="als-viewport" data-id="als-viewport_0" style="width: 720px; height: 58px;">
+                                        <ul class="als-wrapper padding0" data-id="als-wrapper_0" style="width: 1080px; height: 58px;">
+                                            <li class="als-item thumb" data-toggle="modal" href="#grid-select-filters" id="als-item_0_0" style="left: -240px;">
+                                                <img src="images/report4.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_1" style="left: -240px;"><img src="images/report1.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_2" style="left: -240px;"><img src="images/report2.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_3" style="left: -240px;"><img src="images/report3.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_4" style="left: -240px;"><img src="images/report4.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_5" style="left: -240px;"><img src="images/report1.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_6" style="left: -240px;"><img src="images/report2.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_7" style="left: -240px;"><img src="images/report3.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_8" style="left: -240px;"><img src="images/report4.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_9" style="left: -240px;"><img src="images/report1.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_10" style="left: -240px;"><img src="images/report2.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_11" style="left: -240px;"><img src="images/report3.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_12" style="left: -240px;"><img src="images/report4.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_13" style="left: -240px;"><img src="images/report1.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_14" style="left: -240px;"><img src="images/report2.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_15" style="left: -240px;"><img src="images/report3.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_16" style="left: -240px;"><img src="images/report4.png"></li>
+                                            <li class="als-item thumb" id="als-item_0_17" style="left: -240px;"><img src="images/report1.png"></li>
+                                            <!-- <li class="als-item thumb"><img src="images/frame-slider/9.jpg"></li>
+                                                     <li class="als-item thumb"><img src="images/frame-slider/10.jpg"></li>-->
+                                        </ul>
+                                    </div>
+                                    <span class="als-next" data-id="als-next_0"><img src="images/next.png" alt="next" title="next"></span>
+                                    <div class="add-new" onclick="window.location.href = 'file://foo/bar/';">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">John Knipper/div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1937 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Assa Abloy</title>
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/project.css" type="text/css" rel="stylesheet" />
+    <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap-toggle.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+    <script type="text/javascript" src="js/bootstrap-toggle.js"></script>
+    <script type="text/javascript" src="js/detailEstimatingHardware.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/detailedEstimating.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/exporting.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.project-detail-bx a').click(function () {
+                $(this).parent('.project-detail-bx').addClass('unselect-bx');
+                if ($(this).parent('.project-detail-bx').hasClass("select-bx")) {
+                    $(this).parent('.project-detail-bx').addClass('unselect-bx').removeClass("select-bx");
+                }
+            });
+        });
+        $(function () {
+            $('#container-bar').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        'Hardware',
+                        'Frames',
+                        'Doors',
+                        'Labor',
+                        'Freight',
+                        'Overall'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Estimated',
+                    data: [50000, 57300, 58000, 89888, 90000, 455000]
+
+                }, {
+                    name: 'Scheduled',
+                    data: [52000, 60000, 61000, 90000, 91000, 467000]
+
+                }]
+            });
+            $('#container-stacked').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        'Available to Assign PO',
+                        'Available to Order',
+                        'Available to Recieve',
+                        'Available to assign Shipment',
+                        'Available to Ship',
+                        'Completed'
+                    ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Status',
+                    data: [0, 30, 300, 30, 45, 30]
+
+                }]
+            });
+        });
+    </script>
+    <style type="text/css">
+        .project-detail-bx {
+            position: relative;
+        }
+
+        .project-detail-bx a[data-target="#charts"] {
+            position: absolute;
+            right: 2px;
+            top: 10px;
+            z-index: 999;
+        }
+
+        .unselect-bx {
+            border: 2px solid #e1e1e1 !important;
+            opacity: 1 !important;
+        }
+
+        .divImg img {
+            width: 70%;
+        }
+
+        .bg-white p {
+            margin: 0 0 10px;
+        }
+        /*#project-name ul li:nth-child(5){
+         display: none;
+         }*/
+
+        .dark-blue-bg {
+            background: #363f52;
+            color: #fff;
+        }
+
+        .bg-white {
+            background: #fff;
+        }
+
+        .bg-light-grey {
+            background: #d8dfe5;
+        }
+
+        .bg-light-grey h3 {
+            color: #737175;
+        }
+
+        .pie-div h5 {
+            margin: 5px 0 !important;
+        }
+
+        .scrollable-section {
+            max-height: 750px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .text-blue {
+            color: #00a0d0;
+            margin-top: 0;
+        }
+
+        #changePopupData tr.addedNRow {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown">
+                                                <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                    Milano Travel
+                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                    Change : C0-01
+                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable">
+                    <div class="col-md-3 col-sm-3 col-lg-3">
+                        <div class="leftSidebar recent-projects" style="height: 530px;">
+                            <div class="titleSideBar">
+                                <h2>Open My Recent Project</h2>
+                            </div>
+                            <div class="bodySideBar" style="height: 87%">
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>7-15078</strong></span><br/>Comcast Teakwood Tech Suite B</a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>14-0045 TS</strong></span><br/>Public Safety Facility </a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>15-3214CL</strong></span><br/>Cargill Office Center Renewal</a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>16-2201</strong></span><br/>Medline Industries Office Tenant Fit-out</a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>07-48523</strong></span><br/>Building 880</a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>14-9456</strong></span><br/>Perry Lane Hotel</a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>16-15648</strong></span><br/>Arcadia Bluffs South Lodge  </a>
+                                </div>
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>16-15650</strong></span><br/>Arcadia Bluffs North Lodge</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="legends">
+                            <ul>
+                                <li class="estimate bg-preparing" data-attr-section="preparing"><img src="images/prepare.png" alt="prepare" title="prepare"><span>Preparing</span></li>
+                                <li class="estimate bg-estimate" data-attr-section="estimate"><img src="images/estimate.png" alt="estimate" title="estimate"><span>Estimated</span></li>
+                                <li class="pending bg-pending" data-attr-section="pending"><img src="images/pending.png" alt="pending" title="pending"><span>Pending Proposals</span></li>
+                                <li class="schedule bg-schedule" data-attr-section="schedule"><img src="images/schedule.png" alt="schedule" title="schedule"><span>Schedule</span></li>
+                                <li class="closed bg-close" data-attr-section="close"><img src="images/closed.png" alt="closed" title="closed"><span>Closed</span></li>
+                                <li class="inactive bg-inactive" data-attr-section="inactive"><img src="images/inactive.png" alt="inactive" title="inactive"><span>Inactive</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="container-fluid card-view">
+                            <div class="col-md-12 col-sm-12 col-xs-12 export-success-msg-section">
+                                <div class="alert alert-success fade in">Project has been exported successfully</div>
+                            </div>
+                            <div class="page-header clearfix paddingV10">
+                                <h1 class="pull-left">Open Projects</h1>
+                                <div class="pull-right">
+                                    <a class="card-pro-detail pull-right marginR10 active" style="display:inline-block; cursor:pointer" title="Card View">
+                                        <img src="images/card-view.png" class="boximgthumbsize" />
+                                    </a>
+                                    <a class="grid-pro-detail pull-right marginR10" style="display:inline-block; cursor:pointer" title="Grid View">
+                                        <img src="images/GridView.png" class="boximgthumbsize" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 grid-view-detail">
+                                    <div class="form-group pull-right">
+                                        Show Hidden
+                                        <!-- <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No" data-style="ios" data-onstyle="success" data-offstyle="danger"
+                                            data-size="small" id="showhidden"> -->
+                                        <input type="checkbox" class="toggle-sm" checked data-toggle="toggle">
+                                    </div>
+                                    <form class="form-inline pull-left">
+                                        <div class="input-group">
+                                            <input type="search" class="form-control" placeholder="Search Project">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-search"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary marginR10 pull-right" name="Hide">Hide</button>
+                                        <a class="btn btn-primary marginR10 marginL10 pull-right open-current-project" name="Open" disabled="disabled" onclick="window.location.href='detailedEstimating_landing_current.html';">Open</a>
+                                    </form>
+                                <div class="table-wrapper">
+                                    <table class="table" id="project-table">
+                                        <thead>
+                                            <tr class="MainHead">
+                                                <th class="width50">
+                                                    <div class="btn-group custom-filtr-table pull-left">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" id="listViewFilterBtn" data-toggle="modal" data-target="#ViewFilterPopup"> <img src="images/Views.png"></button>
+                                                    </div>
+                                                </th>
+                                                <th data-type="Project ID"  data-attr-name="Project ID">Project ID</th>
+                                                <th data-type="Description" data-attr-name="Description">Project Name</th>
+                                                <th data-type="Date Created" data-attr-name="Date Created">Date Created</th>
+                                                <th class="width70" data-type="Details">&nbsp;</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                <td class="change-record"><i class="fa fa-chevron-down project-data-expand" style="display:inline-block;"></i></td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">16-05961</td>
+                                                <td data-type="Description" data-attr-name="Description">Milano Travel</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp;</td>
+                                            </tr>
+                                            <tr class="changes-status-row">
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <table class="table" style="font-size:14px; border:1px solid #dedede;">
+                                                        <tr class="mainHead status-inner-row" style="font-size:12px;">
+                                                            <th class="borderR">Change</th>
+                                                            <th class="borderR">Status</th>
+                                                            <th class="borderR">Description</th>
+                                                            <th class="borderR">Created</th>
+                                                            <th class="borderR">Last Modified</th>
+                                                            <th class="borderR">Commit Date</th>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing_current.html'">
+                                                            <td class="borderR">C0-01</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">04/12/2017</td>
+                                                            <td class="borderR">05/10/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing_current.html'">
+                                                            <td class="borderR">C0-02</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">03/23/2017</td>
+                                                            <td class="borderR">05/06/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                <td class="change-record"><i class="fa fa-chevron-down project-data-expand" style="display:inline-block;"></i></td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">09-15646</td>
+                                                <td data-type="Description" data-attr-name="Description" >Building 880</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp; </td>
+
+                                            </tr>
+                                            <tr class="changes-status-row">
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <table class="table" style="font-size:14px; border:1px solid #dedede;">
+                                                        <tr class="mainHead status-inner-row" style="font-size:12px;">
+                                                            <th class="borderR">Change</th>
+                                                            <th class="borderR">Status</th>
+                                                            <th class="borderR">Description</th>
+                                                            <th class="borderR">Created</th>
+                                                            <th class="borderR">Last Modified</th>
+                                                            <th class="borderR">Commit Date</th>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing_current.html'">
+                                                            <td class="borderR">C0-01</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">04/12/2017</td>
+                                                            <td class="borderR">05/10/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing_current.html'">
+                                                            <td class="borderR">C0-02</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">03/23/2017</td>
+                                                            <td class="borderR">05/06/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                <td class="change-record"><i class="fa fa-chevron-down project-data-expand" style="display:inline-block;"></i></td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">16-22504</td>
+                                                <td data-type="Description" data-attr-name="Description" >Medline Industries Office Tenant Fit-Out</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details"> &nbsp; </td>
+                                            </tr>
+                                            <tr class="changes-status-row">
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <table class="table" style="font-size:14px; border:1px solid #dedede;">
+                                                        <tr class="mainHead status-inner-row" style="font-size:12px;">
+                                                            <th class="borderR">Change</th>
+                                                            <th class="borderR">Status</th>
+                                                            <th class="borderR">Description</th>
+                                                            <th class="borderR">Created</th>
+                                                            <th class="borderR">Last Modified</th>
+                                                            <th class="borderR">Commit Date</th>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                            <td class="borderR">C0-01</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">04/12/2017</td>
+                                                            <td class="borderR">05/10/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                            <td class="borderR">C0-02</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">03/23/2017</td>
+                                                            <td class="borderR">05/06/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                <td class="change-record"><i class="fa fa-chevron-down project-data-expand" style="display:inline-block;"></i></td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">15-32415</td>
+                                                <td data-type="Description" data-attr-name="Description" >Cargill Office Center Renewal</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp;</td>
+                                            </tr>
+                                            <tr class="changes-status-row">
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <table class="table" style="font-size:14px; border:1px solid #dedede;">
+                                                        <tr class="mainHead status-inner-row" style="font-size:12px;">
+                                                            <th class="borderR">Change</th>
+                                                            <th class="borderR">Status</th>
+                                                            <th class="borderR">Description</th>
+                                                            <th class="borderR">Created</th>
+                                                            <th class="borderR">Last Modified</th>
+                                                            <th class="borderR">Commit Date</th>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                            <td class="borderR">C0-01</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">04/12/2017</td>
+                                                            <td class="borderR">05/10/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                        <tr ondblclick="location.href='detailedEstimating_landing2.html'">
+                                                            <td class="borderR">C0-02</td>
+                                                            <td class="borderR">Active</td>
+                                                            <td class="borderR">Sample Description</td>
+                                                            <td class="borderR">03/23/2017</td>
+                                                            <td class="borderR">05/06/2017</td>
+                                                            <td class="borderR"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" class="hidden-project" style="display:none;">
+                                                <td>&nbsp;</td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">15-32415</td>
+                                                <td data-type="Description" data-attr-name="Description">Cargill Office Center Renewal</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td>
+                                                    <button class="btn btn-primary pull-right unhide">Unhide</button>
+                                                </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td> &nbsp; </td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">16-05961</td>
+                                                <td data-type="Description" data-attr-name="Description">Milano Travel</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp; </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td>&nbsp; </td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">16-22504</td>
+                                                <td data-type="Description" data-attr-name="Description">Medline Industries Office Tenant Fit-Out</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp; </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td>&nbsp;  </td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">09-15646</td>
+                                                <td data-type="Description" data-attr-name="Description">Building 880</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp; </td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td>&nbsp;</td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">15-32415</td>
+                                                <td data-type="Description" data-attr-name="Description">Cargill Office Center Renewal</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp;</td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td>&nbsp;</td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">16-05961</td>
+                                                <td data-type="Description" data-attr-name="Description">Milano Travel</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp;</td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td>&nbsp;</td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">16-22504</td>
+                                                <td data-type="Description" data-attr-name="Description">Medline Industries Office Tenant Fit-Out</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp;</td>
+                                            </tr>
+                                            <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing1.html'">
+                                                <td>&nbsp;</td>
+                                                <td data-type="Project ID" data-attr-name="Project ID">09-15646</td>
+                                                <td data-type="Description" data-attr-name="Description">Building 880</td>
+                                                <td data-type="Date Created" data-attr-name="Date Created">09-21-2016</td>
+                                                <td data-type="Details">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                                <div class="col-md-12 card-view-detail">
+                                    <div class="col-md-12 no-padding">
+                                        <div class="form-group pull-right">
+                                            Show Hidden
+                                            <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No" data-style="ios" data-onstyle="success" data-offstyle="danger"
+                                                data-size="small" id="showhidden-card" class="show-hidden-card">
+                                        </div>
+                                        <form class="form-inline pull-left">
+                                            <div class="input-group">
+                                                <input type="search" class="form-control" placeholder="Search Project">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                            </div>
+                                            <button type="button" data-toggle="modal" data-target="#thumbnailViewFilterPopup" id="customproductfilter" style="margin-left:10px; border:0px; padding:0px;"
+                                                class="marginR10">
+                                                <img src="images/Views.png" />
+                                            </button>
+                                            <button class="btn btn-primary marginR10 pull-right hide-card" name="Hide">Hide</button>
+                                            <a class="btn btn-primary marginR10 pull-right open-current-project" name="Open" disabled="disabled" onclick="window.location.href='detailedEstimating_landing_current.html';">Open</a>
+
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Milano Travel
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 16-02594</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 7/21/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Milano Travel</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 12365588</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 5/10/17</li>
+                                                        <li data-type="users"><span>Users :</span> Larry Cruz</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Larry Cruz</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Proposals</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/20/2017 10:20 AM Larry Cruz</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                     
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="pending" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-pending" ondblclick="location.href='detailedEstimating_landing2.html'">Building 880
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 06-54864</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 6/27/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Building 880</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 18518</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 3/15/17</li>
+                                                        <li data-type="users"><span>Users :</span> Dawn Erdman</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Dawn Erdman</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Pending</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/18/2017 09:27 AM Valerie Cesario</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#nochangeorderPopupData">No Change - Start New </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Medlline Industries
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 15-165165</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 5/14/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Medlline Industries</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> rj-tiotl-8</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 2/10/17</li>
+                                                        <li data-type="users"><span>Users :</span> Valerie Cesario</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Valerie Cesario</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Scheduled</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 5/25/2017 10:27 AM Valerie Cesario</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Cargill Office Center Renewal
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 16-02594</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 4/1/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Cargill Office Center Renewal</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 189793848</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 2/21/17</li>
+                                                        <li data-type="users"><span>Users :</span> Larry Cruz</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Larry Cruz</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Proposal</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/18/2017 09:27 AM Valerie Cesario</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Perry Lane Hotel
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 16-02594</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 6/30/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Perry Lane Hotel</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 12365588</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 3/10/17</li>
+                                                        <li data-type="users"><span>Users :</span> Larry Cruz</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Larry Cruz</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Proposals</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 5/25/2017 10:27 AM Larry Cruz</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="pending" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-pending" ondblclick="location.href='detailedEstimating_landing2.html'">Arcadia Bluffs South Lodge
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 06-54864</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 6/27/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Arcadia Bluffs South Lodge</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 18518</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 3/15/17</li>
+                                                        <li data-type="users"><span>Users :</span> Dawn Erdman</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Dawn Erdman</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Pending</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/20/2017 10:20 AM Larry Cruz</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#nochangeorderPopupData">No Change - Start New </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="estimate" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-estimate" ondblclick="location.href='detailedEstimating_landing2.html'">Sears Tower
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 16-02594</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 7/21/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Sears Tower</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 12365588</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 5/10/17</li>
+                                                        <li data-type="users"><span>Users :</span> Larry Cruz</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Larry Cruz</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Proposals</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers opening-final-estimate-btn" data-toggle="modal" data-target="#nochangePopupData">Open Final Estimate
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Bank of America Edition
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 06-54864</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 6/27/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Bank of America Edition</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 18518</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 3/15/17</li>
+                                                        <li data-type="users"><span>Users :</span> Dawn Erdman</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Dawn Erdman</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Pending</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 5/25/2017 10:27 AM Larry Cruz</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Raymond james Stadium
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 16-02594</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 7/21/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Raymond james Stadium</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 12365588</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 5/10/17</li>
+                                                        <li data-type="users"><span>Users :</span> Larry Cruz</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Larry Cruz</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Proposals</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/18/2017 09:27 AM Valerie Cesario</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="pending" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-pending" ondblclick="location.href='detailedEstimating_landing2.html'">Building 880
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 06-54864</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 6/27/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Building 880</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 18518</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 3/15/17</li>
+                                                        <li data-type="users"><span>Users :</span> Dawn Erdman</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Dawn Erdman</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span>Pending</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/20/2017 10:20 AM Larry Cruz</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#nochangeorderPopupData"> No Change - Start New </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Medlline Industries
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 16-02594</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 7/21/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Medlline Industries</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 12365588</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 5/10/17</li>
+                                                        <li data-type="users"><span>Users :</span> Larry Cruz</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Larry Cruz</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Proposals</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 7/18/2017 09:27 AM Valerie Cesario</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-attr-id="preparing" class="col-md-3 mh-470 project-boxes">
+                                            <div class="project-detail-bx">
+                                                <a href="javascript:void(0)" data-toggle="modal" data-target="#charts"> <img src="images/Summary.png" class="pull-right" style="margin-top:-6px;" /></a>
+                                                <h3 class="bg-preparing" ondblclick="location.href='detailedEstimating_landing2.html'">Cargill Office Center Renewal
+                                                </h3>
+                                                <div class="project-data">
+                                                    <ul class="list-unstyled">
+                                                        <li data-type="project-id"><span>Project ID :</span> 06-54864</li>
+                                                        <li data-type="created-date"><span>Created On :</span> 6/27/17</li>
+                                                        <li data-type="project-desc"><span>Proj name :</span> Cargill Office Center Renewal</li>
+                                                        <li data-type="architect-project"><span>Arch Project# :</span> 18518</li>
+                                                        <li data-type="start-date"><span>Started On :</span> 3/15/17</li>
+                                                        <li data-type="users"><span>Users :</span> Dawn Erdman</li>
+                                                        <li data-type="project-manager"><span>Proj Mgr :</span> Dawn Erdman</li>
+                                                        <li data-type="project-status"><span>Proj Status :</span> Pending</li>
+                                                    </ul>
+                                                    <span style="padding-left:5px;">Last Edit 5/25/2017 10:27 AM Larry Cruz</span>
+                                                </div>
+                                                <div class="change-order-row">
+                                                    <a href="#" class="change-numbers" data-toggle="modal" data-target="#changePopupData">Change
+                                    <span class="badge">1</span> 
+                                    
+                                    
+                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal-export-project" tabindex="-1" role="dialog" aria-labelledby="modalInsertRowLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;f</button>-->
+                                    <h4 class="modal-title" id="gridSystemModalLabel">Export Type</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <form class="">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="radio clearfix">
+                                                            <label>
+                                                                <input type="radio" name="importType">PRO-TECH</label>
+                                                        </div>
+                                                        <div class="radio clearfix">
+                                                            <label>
+                                                                <input type="radio" name="importType">AAOS</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" name="">Include Discount</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary export-file-btn" type="button" title="Export" data-dismiss="modal" onclick="$('#exportFileBtn').trigger('click'),showSuccessMsg('Project has been exported successfully')">Export</button>
+                                    <input type="file" class="hide" id="exportFileBtn">
+                                    <!--<button type="button" class="btn btn-primary"  onclick="">Export</button>-->
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <div class="modal fade progressbarmodal" tabindex="-1" role="dialog" id="cutDataPopup">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-heading">
+                                        Processing...
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default cancelHide" data-dismiss="modal" id="cancelProcess">Cancel</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <div class="modal fade" id="project-detail-popup" tabindex="-1" role="dialog" aria-labelledby="modalInsertRowLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content ">
+                                <div class="modal-header">
+                                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                    <h4 class="modal-title" id="gridSystemModalLabel">Project Details</h4>
+                                </div>
+                                <div class="modal-body container">
+                                    <div class="row">
+                                        <!--                                    <div class="col-md-12">
+                              Enter the range of door #s to insert. You may include prefix or suffix codes to Door #s that already exist will be skipped.
+                              </div>-->
+                                    </div>
+                                    <div class="row">
+                                        <form class="form-inline">
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project ID</label>
+                                                    <input type="text" class="form-control" id="ProjectID" value="16-21265" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Description</label>
+                                                    <input type="text" class="form-control" id="Description" value="St. Johns Hospital" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Architects Project #</label>
+                                                    <input type="number" class="form-control" id="Architects" value="12" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Stage</label>
+                                                    <input type="text" class="form-control" id="stage" value="Scheduling" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Date Created</label>
+                                                    <input type="text" class="form-control" id="date-created" value="09-21-2015" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Date Started</label>
+                                                    <input type="text" class="form-control" id="date-started" value="09-21-2015" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Users</label>
+                                                    <div class="dropdown">
+                                                        <button id="dLabel" class="dropdownEditDeleteBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            3
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <div class="dropdown-menu form-inline dropdownEditDeleteList " aria-labelledby="dLabel">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="" value="Dawn Erdmann">
+                                                                <a class="deletename" onclick="removeUser(this, '.dropdownEditDeleteList')"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="" value="Valerie Cesario">
+                                                                <a class="deletename" onclick="removeUser(this, '.dropdownEditDeleteList')"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="" value="Beau St. Louis">
+                                                                <a class="deletename" onclick="removeUser(this, '.dropdownEditDeleteList')"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                            <button class="btn btn-primary bdr3" type="button" title="Add" onclick="addUser(this,'.dropdownEditDeleteList ',event)">Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project Manager</label>
+                                                    <input type="text" class="form-control" id="project-manager" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Bid Date</label>
+                                                    <input type="text" class="form-control" id="project-manager" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Date Completed</label>
+                                                    <input type="text" class="form-control" id="date-completed" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Contractor </label>
+                                                    <input type="text" class="form-control" id="Contractor" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Architect </label>
+                                                    <input type="text" class="form-control" id="Architect" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Architects </label>
+                                                    <input type="text" class="form-control" id="Architects" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project Number</label>
+                                                    <input type="text" class="form-control" id="ProjectNumber" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Salesperson</label>
+                                                    <input type="text" class="form-control" id="Salesperson" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Measurement System</label>
+                                                    <input type="text" class="form-control" id="MeasurementSystem" value="English(Ft./In)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Hourly Labour Rate</label>
+                                                    <input type="text" class="form-control" id="HourlyLabourRate" value="15" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Hourly Installation Rate</label>
+                                                    <input type="text" class="form-control" id="HourlyInstallationRate" value="13" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Estimate Number</label>
+                                                    <input type="text" class="form-control" id="EstimateNumber" value="123456" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project Estimator ID</label>
+                                                    <input type="text" class="form-control" id="ProjectEstimatorID" value="" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="appendRow('#estimating-home-table')">Insert</button>-->
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">Test Project</div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">John Knipper</div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer HTML -->
+                </div>
+            </div>
+            <script>
+                $('#project-table tbody tr').click(function () {
+                    $('.table-actions button[name="Open"]').css('opacity', '1');
+                    //$('#project-table tbody tr').removeClass('selected-row');
+                    $(this).toggleClass('selected-row');
+                });
+
+                $('.hidden-project').hide();
+                $('#showhidden').change(function () {
+                    if ($(this).prop('checked')) {
+                        $('.hidden-project').hide();
+
+                    } else {
+                        $('.hidden-project').show();
+                        //$('.hidden-project').removeClass('selected-row');
+                    }
+                });
+
+                $('.unhide').click(function () {
+
+                    $(this).hide();
+
+                });
+            </script>
+            <!-- Project Data Change Popup -->
+            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="changePopupData">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title current-project-name">Milano Travel</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                     <button class="btn btn-default pull-left marginR5 start-new-change" disabled="disabled">
+                     Start
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                     Drop
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target='#commitData' disabled="disabled">
+                     Commit
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 details-change">
+                     Details
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 switch-to-change">
+                     Switch To
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                     Compare
+                     </button>
+                  </div> -->
+                            <table class="table project-change-data-table" style="table-layout:auto;">
+                                <thead>
+                                    <tr class="borderB mainHead">
+                                        <th class="borderR" data-type="Change">
+                                            Change
+                                        </th>
+                                        <th class="borderR" data-type="Status">
+                                            Status
+                                        </th>
+                                        <th class="borderR" data-type="Description">
+                                            Description
+                                        </th>
+                                        <th class="borderR" data-type="Owner">
+                                            Owner
+                                        </th>
+                                        <th class="borderR" data-type="Start-Date">
+                                            Start Date
+                                        </th>
+                                        <th data-type="Commit-Date">
+                                            Commit Date
+                                        </th>
+                                        <!-- <th data-type="compare-time">
+                              Time
+                           </th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--  <tr class="add-data">
+                           <td class="borderR"><input type="text" class="form-text change-value"></td>
+                           <td class="borderR"></td>
+                           <td class="borderR"><input type="text" class="form-text description"></td>
+                           <td class="borderR"><input type="text" class="form-text owner"></td>
+                           <td class="borderR">
+                              <input id="datetimepicker1" type="text" class="start-date" />
+                           </td>
+                           <td class="borderR"></td>
+                           <td class="borderR"></td> 
+                        </tr>-->
+                                    <tr class="current-row" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                        <td class="borderR">Current</td>
+                                        <td class="borderR">Active</td>
+                                        <td class="borderR current-project-name">Milano Travel</td>
+                                        <td class="borderR"></td>
+                                        <td class="borderR"></td>
+                                        <td class="borderR"></td>
+                                        <!-- <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a></td> -->
+                                    </tr>
+                                    <tr class="data-row" ondblclick="location.href='detailedEstimating_landing_current.html'">
+                                        <td class="borderR">C0-01</td>
+                                        <td class="borderR">Active</td>
+                                        <td class="borderR">Sample Description</td>
+                                        <td class="borderR">Dawn</td>
+                                        <td class="borderR">05/16/2017</td>
+                                        <td class="borderR"></td>
+                                        <!-- <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a><a href="#" class="comparsion-point" title="Before"><span class="badge before" style="display:inline-block"><i class="fa fa-mail-reply"></i></span></a></td> -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-state-legend">
+                     <ul class="list-unstyled">
+                        <li>
+                           <span class='badge start marginR10'><i class="fa fa-arrow-circle-right"></i></span>
+                           <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                        </li>
+                        <li>
+                           <span class='badge new marginR10'><i class="glyphicon glyphicon-screenshot"></i></span>
+                           <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                        </li>
+                        <li>
+                           <span class='badge before marginR10'><i class="fa fa-mail-reply"></i></span>
+                           <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                        </li>
+                        <li>
+                           <span class='badge committed marginR10'><i class="fa fa-check-circle"></i></span>
+                           <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                        </li>
+                        <li>
+                           <span class='badge after marginR10'><i class="fa fa-mail-forward"></i></span>
+                           <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                        </li>
+                     </ul>
+                  </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="nochangeorderPopupData">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title current-project-name">Milano Travel</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                     <button class="btn btn-default pull-left marginR5 start-new-change" disabled="disabled">
+                     Start
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                     Drop
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target='#commitData' disabled="disabled">
+                     Commit
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 details-change">
+                     Details
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 switch-to-change">
+                     Switch To
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                     Compare
+                     </button>
+                  </div> -->
+                            <table class="table project-change-data-table newrow" style="table-layout:auto;">
+                                <thead>
+                                    <tr class="borderB mainHead">
+                                        <th class="borderR" data-type="Change">
+                                            Change
+                                        </th>
+                                        <th class="borderR" data-type="Status">
+                                            Status
+                                        </th>
+                                        <th class="borderR" data-type="Description">
+                                            Description
+                                        </th>
+                                        <th class="borderR" data-type="Owner">
+                                            Owner
+                                        </th>
+                                        <th class="borderR" data-type="Start-Date">
+                                            Start Date
+                                        </th>
+                                        <th data-type="Commit-Date">
+                                            Commit Date
+                                        </th>
+                                        <!-- <th data-type="compare-time">
+                              Time
+                           </th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--  <tr class="add-data">
+                           <td class="borderR"><input type="text" class="form-text change-value"></td>
+                           <td class="borderR"></td>
+                           <td class="borderR"><input type="text" class="form-text description"></td>
+                           <td class="borderR"><input type="text" class="form-text owner"></td>
+                           <td class="borderR">
+                              <input id="datetimepicker1" type="text" class="start-date" />
+                           </td>
+                           <td class="borderR"></td>
+                           <td class="borderR"></td> 
+                        </tr>-->
+                                    <tr class="current-row" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                        <td class="borderR">Current</td>
+                                        <td class="borderR">Active</td>
+                                        <td class="borderR current-project-name">Milano Travel</td>
+                                        <td class="borderR"></td>
+                                        <td class="borderR"></td>
+                                        <td class="borderR"></td>
+                                        <!-- <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a></td> -->
+                                    </tr>
+                                    <!--<tr class="data-row" ondblclick="location.href='detailedEstimating_landing2.html'">
+                           <td class="borderR">C0-01</td>
+                           <td class="borderR">Active</td>
+                           <td class="borderR">Sample Description</td>
+                           <td class="borderR">Dawn</td>
+                           <td class="borderR">05/16/2017</td>
+                           <td class="borderR"></td>
+                            <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a><a href="#" class="comparsion-point" title="Before"><span class="badge before" style="display:inline-block"><i class="fa fa-mail-reply"></i></span></a></td> 
+                        </tr>-->
+                                </tbody>
+                            </table>
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-state-legend">
+                     <ul class="list-unstyled">
+                        <li>
+                           <span class='badge start marginR10'><i class="fa fa-arrow-circle-right"></i></span>
+                           <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                        </li>
+                        <li>
+                           <span class='badge new marginR10'><i class="glyphicon glyphicon-screenshot"></i></span>
+                           <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                        </li>
+                        <li>
+                           <span class='badge before marginR10'><i class="fa fa-mail-reply"></i></span>
+                           <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                        </li>
+                        <li>
+                           <span class='badge committed marginR10'><i class="fa fa-check-circle"></i></span>
+                           <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                        </li>
+                        <li>
+                           <span class='badge after marginR10'><i class="fa fa-mail-forward"></i></span>
+                           <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                        </li>
+                     </ul>
+                  </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="nochangePopupData">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title current-project-name">Building 880 sanjay</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                     <button class="btn btn-default pull-left marginR5 start-new-change" disabled="disabled">
+                     Start
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                     Drop
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target='#commitData' disabled="disabled">
+                     Commit
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 details-change">
+                     Details
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 switch-to-change">
+                     Switch To
+                     </button>
+                     <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                     Compare
+                     </button>
+                  </div> -->
+                            <table class="table project-change-data-table newrow" style="table-layout:auto;">
+                                <thead>
+                                    <tr class="borderB mainHead">
+                                        <th class="borderR" data-type="Change">
+                                            Change
+                                        </th>
+                                        <th class="borderR" data-type="Status">
+                                            Status
+                                        </th>
+                                        <th class="borderR" data-type="Description">
+                                            Description
+                                        </th>
+                                        <th class="borderR" data-type="Owner">
+                                            Owner
+                                        </th>
+                                        <th class="borderR" data-type="Start-Date">
+                                            Start Date
+                                        </th>
+                                        <th data-type="Commit-Date">
+                                            Commit Date
+                                        </th>
+                                        <!-- <th data-type="compare-time">
+                              Time
+                           </th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <tr class="add-data">
+                           <td class="borderR"><input type="text" class="form-text change-value"></td>
+                           <td class="borderR"></td>
+                           <td class="borderR"><input type="text" class="form-text description"></td>
+                           <td class="borderR"><input type="text" class="form-text owner"></td>
+                           <td class="borderR">
+                              <input id="datetimepicker1" type="text" class="start-date" />
+                           </td>
+                           <td class="borderR"></td>
+                            <td class="borderR"></td>
+                        </tr> -->
+                                    <tr class="current-row" ondblclick="location.href='detailedEstimating_landing2.html'">
+                                        <td class="borderR">Current</td>
+                                        <td class="borderR">Active</td>
+                                        <td class="borderR current-project-name">Milano Travel</td>
+                                        <td class="borderR"></td>
+                                        <td class="borderR"></td>
+                                        <td class="borderR"></td>
+                                        <!-- <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a></td> -->
+                                    </tr>
+                                    <!-- 
+                           <tr class="data-row">
+                               <td class="borderR">C0-01</td>
+                               <td class="borderR">Active</td>
+                               <td class="borderR">Sample Description</td>
+                               <td class="borderR">Dawn</td>
+                               <td class="borderR">05/16/2017</td>
+                               <td class="borderR"></td>
+                               <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new"><i class="glyphicon glyphicon-screenshot"></i></span></a><a href="#" class="comparsion-point" title="Before"><span class="badge before" style="display:inline-block"><i class="fa fa-mail-reply"></i></span></a></td>
+                           </tr> -->
+                                </tbody>
+                            </table>
+                            <!--  <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-state-legend">
+                     <ul class="list-unstyled">
+                        <li>
+                           <span class='badge start marginR10'><i class="fa fa-arrow-circle-right"></i></span>
+                           <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                        </li>
+                        <li>
+                           <span class='badge new marginR10'><i class="glyphicon glyphicon-screenshot"></i></span>
+                           <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                        </li>
+                        <li>
+                           <span class='badge before marginR10'><i class="fa fa-mail-reply"></i></span>
+                           <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                        </li>
+                        <li>
+                           <span class='badge committed marginR10'><i class="fa fa-check-circle"></i></span>
+                           <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                        </li>
+                        <li>
+                           <span class='badge after marginR10'><i class="fa fa-mail-forward"></i></span>
+                           <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                        </li>
+                     </ul>
+                  </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Changes Commit Popup -->
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="commitData">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Commit Your Changes?</h4>
+                        </div>
+                        <div class="modal-body clearfix col-md-offset-2">
+                            <button class="btn btn-primary pull-left marginR5 commit-done">
+                                Yes
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                                No
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Drop Changes Popup -->
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="dropData">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Drop Your Changes?</h4>
+                        </div>
+                        <div class="modal-body clearfix col-md-offset-2">
+                            <button class="btn btn-primary pull-left marginR5 drop-done">
+                                Yes
+                            </button>
+                            <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                                No
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Charts Popup-->
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel1" id="charts">
+                <div class="modal-dialog modal-lg" style="width: 70%" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">Summary</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>Simple Summary</h3>
+                                        </div>
+                                        <div class="col-xs-12 bg-white announcement-container well">
+                                            <div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <p>Number of Openings <strong class="pull-right">164</strong></p>
+                                                    <p>Number of Single Doors <strong class="pull-right">152</strong></p>
+                                                    <p>Number of paired Doors <strong class="pull-right">12</strong></p>
+                                                    <p>Number of Unique Openings <strong class="pull-right">34</strong></p>
+                                                    <p>Number of Unique Frames <strong class="pull-right">6</strong></p>
+                                                    <p>Number of Unique Doors <strong class="pull-right">14</strong></p>
+                                                    <p>Number of Hardware Sets Frames <strong class="pull-right">36</strong></p>
+                                                </div>
+                                                <div style="border-left: 1px solid #efefef" class="col-xs-12 col-sm-6">
+                                                    <p>Hardware Sets <strong class="pull-right">150</strong></p>
+                                                    <p>Vendors <strong class="pull-right">5</strong></p>
+                                                    <p>Grahan Wood Doors <strong class="pull-right">50</strong></p>
+                                                    <p>Curries HMD <strong class="pull-right">114</strong></p>
+                                                    <p>Curries HMF <strong class="pull-right">164</strong></p>
+                                                    <p>Estimated <strong class="pull-right">$184,326.92</strong></p>
+                                                    <p>Schedule <strong class="pull-right">$192,400.36</strong></p>
+                                                    <p>Invoiced <strong class="pull-right">$64,612.00</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>Delta Report Comparison to Estimated</h3>
+                                        </div>
+                                        <div class="col-md-12 announcement-container well">
+                                            <div class="col-md-12">
+                                                <div id="container-bar" style="height:240px; margin: 0 auto"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row marginT20">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>Order Processing Status</h3>
+                                        </div>
+                                        <div class="col-md-12 announcement-container well">
+                                            <div class="col-md-12">
+                                                <div id="container-stacked" style="height: 240px; margin: 0 auto"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="col-md-12 box-header bg-light-grey">
+                                            <h3>By Phase</h3>
+                                        </div>
+                                        <div class="col-md-12 announcement-container well" style="min-height: 270px">
+                                            <div class="col-md-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Views Popup -->
+            <div class="modal fade bs-example-modal-lg" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="ViewFilterPopup"
+                data-backdrop="false" id="ViewFilterPopup">
+                <div class="modal-dialog modal-lg" role="document" style="width:85%;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Views</h4>
+                        </div>
+                        <div class="modal-body" style="padding:0;">
+                            <div class="col-md-12 no-padding view-filter-container" style="height:auto;">
+                                <!-- Left Pannel -->
+                                <div class="col-md-3 no-padding view-left-pannel">
+                                    <div class="col-md-12 marginB10">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="New View Name" id="new-view-name" style="height:35px;">
+                                            <span class="input-group-addon" id="add-new-view-name">Add</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginB10">
+                                        <button class="btn btn-primary col-md-4 marginR15" title="share my custom view" data-toggle="modal" data-target="#shareviewsPopup">Share</button>
+                                        <button class="btn btn-primary col-md-4 marginR10" data-toggle="modal" data-target="#importviewsPopup">Import</button>
+                                        <button class="btn btn-primary pull-right col-md-3">Delete</button>
+                                    </div>
+                                    <div class="col-md-12 no-padding view-name-container">
+                                        <ul class="list-unstyled view-name-list">
+                                            <li class="active" data-attr-id="originalListTable">Original View</li>
+                                            <li data-attr-id="sampleListTable">Sample</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Right Pannel -->
+                                <div class="col-md-9 no-padding view-right-panel">
+                                    <div class="col-md-12 no-padding">
+                                        <table class="table viewoptionTable showTable" id="originalListTable">
+                                            <thead>
+                                                <tr class="mainHead">
+                                                    <th colspan="3">&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-attr-name="Project ID" Class="borderR">Project ID</td>
+                                                    <td data-attr-name="Description" Class="borderR">Project Name</td>
+                                                    <td data-attr-name="Date Created" Class="borderR">Date Created</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+
+                                        <table class="table viewoptionTable" id="sampleListTable">
+                                            <thead>
+                                                <tr class="mainHead">
+                                                    <th colspan="3">&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-attr-name="Project ID" Class="borderR">Project ID</td>
+                                                    <td data-attr-name="Description" Class="borderR">Project Name</td>
+                                                    <td data-attr-name="Date Created" Class="borderR">Date Created</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                        <button class="btn btn-primary pull-right marginT10 marginR10 marginB10" data-dismiss="modal" onclick="viewFilter(this,'#project-table', '#sampleListTable');">
+                                                                    Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thumbnail Views Popup -->
+            <div class="modal fade bs-example-modal-lg" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="thumbnailViewFilterPopup"
+                id="thumbnailViewFilterPopup">
+                <div class="modal-dialog modal-lg" role="document" style="width:85%;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Views</h4>
+                        </div>
+                        <div class="modal-body" style="padding:0;">
+                            <div class="col-md-12 no-padding view-filter-container" style="height:auto;">
+                                <!-- Left Pannel -->
+                                <div class="col-md-3 no-padding view-left-pannel">
+                                    <div class="col-md-12 marginB10">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="New View Name" id="new-view-name" style="height:35px;">
+                                            <span class="input-group-addon" id="add-new-view-name">Add</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 marginB10">
+                                        <button class="btn btn-primary col-md-4 marginR15" title="share my custom view" data-toggle="modal" data-target="#shareviewsPopup">Share</button>
+                                        <button class="btn btn-primary col-md-4 marginR10" data-toggle="modal" data-target="#importviewsPopup">Import</button>
+                                        <button class="btn btn-primary pull-right col-md-3">Delete</button>
+                                    </div>
+                                    <div class="col-md-12 no-padding view-name-container">
+                                        <ul class="list-unstyled view-name-list">
+                                            <li class="active" data-attr-id="originalTableThumbnail">Original View</li>
+                                            <li data-attr-id="sampleTableThumbnail">Sample</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Right Pannel -->
+                                <div class="col-md-9 no-padding view-right-panel">
+                                    <div class="col-md-12 no-padding">
+                                        <table class="table viewoptionTable showTable" id="originalTableThumbnail">
+                                            <thead>
+                                                <tr class="mainHead">
+                                                    <th colspan="4">&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-type="project-id">Project ID</td>
+                                                    <td data-type="project-desc">Project Name</td>
+                                                    <td data-type="architect-project">Architects Projects #</td>
+                                                    <td data-type="created-date">Date Created</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="start-date">Date Started</td>
+                                                    <td data-type="users">Users</td>
+                                                    <td data-type="project-manager">Project Manger</td>
+                                                    <td data-type="project-status">Status of Project</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table viewoptionTable filter-proj-data" id="sampleTableThumbnail">
+                                            <thead>
+                                                <tr class="mainHead">
+                                                    <th colspan="4">&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-type="project-id">Project ID</td>
+                                                    <td data-type="project-desc">Project Name</td>
+                                                    <td data-type="architect-project">Architects Projects #</td>
+                                                    <td data-type="created-date">Date Created</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-type="start-date">Date Started</td>
+                                                    <td data-type="users">Users</td>
+                                                    <td data-type="project-manager">Project Manger</td>
+                                                    <td data-type="project-status">Status of Project</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                        <button class="btn btn-primary pull-right marginT10 marginR10 marginB10" data-dismiss="modal">
+                                                        Cancel
+                                                    </button>
+                                        <button class="btn btn-primary pull-right marginT10 marginR10 marginB10 show-views" data-dismiss="modal">
+                                                        Done
+                                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share Users Popup -->
+            <div class="modal fade" id="shareviewsPopup" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="shareviewsPopup">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="H1">Share</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <div class="style-scroll" style="overflow-x:auto;  height:200px;">
+                                <table class="table singleSelecttoggle" id="shareUserList" style="margin-bottom:0;">
+                                    <tbody>
+                                        <tr>
+                                            <td>Dawn Erdmann</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Larry Cruz</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Valerie Cesario</td>
+                                        </tr>
+                                        <tr>
+                                            <td>David Drenth</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Beau St Louis</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Toni Shafer</td>
+                                        </tr>
+                                        <tr>
+                                            <td>John Koranda</td>
+                                        </tr>
+                                        <tr>
+                                            <td>All Company</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="removeTrSelection(this, '#shareUserList')">Done</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+            <!-- Import Users Popup -->
+            <div class="modal fade" id="importviewsPopup" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="importviewsPopup">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="H1">Import Views</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <div class="style-scroll" style="overflow-x:auto;  height:200px;">
+                                <table class="table singleSelecttoggle" id="importUserList" style="margin-bottom:0;">
+                                    <thead>
+                                        <tr>
+                                            <th>User Name</th>
+                                            <th>View Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>User 1</td>
+                                            <td>View 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>User 2</td>
+                                            <td>View 2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>User 3</td>
+                                            <td>View 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>User 4</td>
+                                            <td>View 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>User 5</td>
+                                            <td>View 5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>User 6</td>
+                                            <td>View 6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>User 7</td>
+                                            <td>View 7</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="addCustomViewBtn">Done</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,953 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <title>Assa Abloy</title>
+
+        <!-- Custom Style CSS -->
+        <link href="css/style.css" type="text/css" rel="stylesheet" />
+        <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+        <!-- Custom JS -->
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+        <!-- Bootstrap realted JS -->
+        <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src='js/mustache.js'></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <div class="stickyFooterRelContainer">
+            <!-- Header Start -->
+             <header class="header pos-relative">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                            <div class="row">
+                               <div class="col-md-12">
+                                    <div class="row">
+                                        
+                                        <div class="col-md-7">
+                                            <ul class="nav navbar-nav">
+                                                <li><span>Welcome Erdmann, Dawn</span></li>
+                                                <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                     <li><input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'"></li>
+                                                    <li><input type="button" value="Logout" onclick="window.location.href = './login.html'"></li>
+                                                </ul>
+                                            </li>
+                                            <li  class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle" >Help</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><input type="button" value="Help Forms"></li>
+                                                        <li><input type="button" value="Live Chat"></li>
+                                                        <li><input type="button" value="FAQ"></li>
+                                                    </ul>
+
+                                            </li>
+                                                <li><a href="contactUs.html">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 pull-right">
+                                            <div class="indicator">
+                                                <ul class="indicator-btn">
+                                                    <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                    </li>
+                                                </ul>
+                                            <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pushbuttons pos-headerpushbuttons">
+                    <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                </div>
+            </header>
+            <div id='ribbonMenuBar' class='marginB15'>
+
+            </div>
+        </div>
+
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+
+
+                <div class="col-xs-12 contentCollapsable pos-relative"> 
+                    <div class="container-fluid esimate-tab-list" >
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+
+
+                            <!-- Page Header -->
+                            <div class="page-header clearfix">
+                                <h1 class="text-left">Create Hardware Set</h1>
+                            </div>
+                            <!--<div class="tab-heading">
+                                <h2>Create Hardware Set</h2>
+                              </div>-->
+                            <div class="row">
+                                <div class="col-md-12 clearfix">
+                                    <div class="padding-10px">
+                                        <button class="btn btn-primary" type="button" title="Open Project">
+                                            <i class="glyphicon glyphicon-plus"></i> Create
+                                        </button>
+                                        <button class="btn btn-default" type="button" title="Open Project">
+                                            <i class="glyphicon glyphicon-copy Copy"></i> Copy
+                                        </button>
+                                        <button class="btn btn-default" type="button" title="Open Project">
+                                            <i class="glyphicon glyphicon-pencil"></i> Edit
+                                        </button>
+                                        <button class="btn btn-default" type="button" title="Open Project">
+                                            <i class="glyphicon glyphicon-share"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12" id="hardwareSetWrapc">
+                                    <div class="col-md-5 centerGridArea" style="padding-left:0;">
+                                        <div class="">
+                                            <div class=" clearfix">
+                                                <h3 style="margin-top:0">My Hardware Set</h2>
+                                                    <div class="" style="">
+                                                        <table class="table table-bordered table-striped custom-search-filter" id="centerTable">
+                                                            <thead>
+                                                                <tr class="table-head">
+                                                                    <th class="table-head" data-type="item" style="width:15%">Item <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                                    <th class="table-head" data-type="mfr" style="width:15%"> Mfr <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                                    <th class="table-head" data-type="partDescription"> Part Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                                    <th class="table-head" data-type="checkbox" style="width:15%">Used <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td data-type="item">HI-1</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 526 3D 630</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-2</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 640 3D A8 SSL</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-3</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 640 3D ENERGY x 4 Wire SSL</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td data-type="item">HI-13</td>
+                                                                    <td data-type="mfr">HA</td>
+                                                                    <td data-type="partDescription">AB850 5" x 4-1/2" US32D ETW-8</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-1</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 526 3D 630</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-2</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 640 3D A8 SSL</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-3</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 640 3D ENERGY x 4 Wire SSL</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td data-type="item">HI-13</td>
+                                                                    <td data-type="mfr">HA</td>
+                                                                    <td data-type="partDescription">AB850 5" x 4-1/2" US32D ETW-8</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-1</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 526 3D 630</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-type="item">HI-2</td>
+                                                                    <td data-type="mfr">SW</td>
+                                                                    <td data-type="partDescription">TE 640 3D A8 SSL</td>
+                                                                    <td data-type="used"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 rightGridArea " style="padding-left:20px;">
+                                        <div class="">
+                                            <h3 class="text-left" style="margin-top:0;">Hardware Set</h3>
+                                            <div class="btn-block">
+                                                <table class="table table-bordered table-striped custom-search-filter" id="lastSectionTable">
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <td data-type="hardware"> Hardware
+                                                                <i class="glyphicon glyphicon-triangle-top"></i></td>
+                                                            <td data-type="mfr">Mfr <i class="glyphicon glyphicon-triangle-top"></i></td>
+                                                            <td data-type="desc">Description <i class="glyphicon glyphicon-triangle-top"></i></td>
+                                                            <td data-type="qty">Qty <i class="glyphicon glyphicon-triangle-top"></i></td>
+                                                            <td data-type="leaf">Leaf <i class="glyphicon glyphicon-triangle-top"></i></td>
+                                                            <td data-type="leaf"></td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-1</td>
+                                                            <td data-type="mfr">SW</td>
+                                                            <td data-type="desc">TE 526 3D 630</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-2</td>
+                                                            <td data-type="mfr">SW</td>
+                                                            <td data-type="desc">TE 640 3D A8 SSL</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-3</td>
+                                                            <td data-type="mfr">HA</td>
+                                                            <td data-type="desc">TE 640 3D ENERGY x 4 Wire SSL</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-4</td>
+                                                            <td data-type="mfr">HA</td>
+                                                            <td data-type="desc">AB800 4-1/2" x 4-1/2" US32D</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-1</td>
+                                                            <td data-type="mfr">SW</td>
+                                                            <td data-type="desc">TE 526 3D 630</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-2</td>
+                                                            <td data-type="mfr">SW</td>
+                                                            <td data-type="desc">TE 640 3D A8 SSL</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-3</td>
+                                                            <td data-type="mfr">HA</td>
+                                                            <td data-type="desc">TE 640 3D ENERGY x 4 Wire SSL</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-4</td>
+                                                            <td data-type="mfr">HA</td>
+                                                            <td data-type="desc">AB800 4-1/2" x 4-1/2" US32D</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-1</td>
+                                                            <td data-type="mfr">SW</td>
+                                                            <td data-type="desc">TE 526 3D 630</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="hardware">HI-2</td>
+                                                            <td data-type="mfr">SW</td>
+                                                            <td data-type="desc">TE 640 3D A8 SSL</td>
+                                                            <td data-type="qty">1</td>
+                                                            <td data-type="leaf"></td>
+                                                            <td data-type="cut-sheets" class="table-cell cut-sheet"><img onclick="$('#pdfShowBox').toggleClass('hide');$('#hardwareSetWrapc').toggleClass('col-md-12').toggleClass('col-md-10');" src="images/pdf-icon.png" width="12" height="16"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-2 hide' id="pdfShowBox" style='background-image:url(images/Capturepdf.jpg);background-repeat:no-repeat;height:348px;background-size:100%;margin-top:38px;'>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button class='btn btn-primary' onclick="window.location.href = 'createHardwareSetNew1.html'">
+                                    Add Parts
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com  </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="copyFromSet">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Copy Hardware Set From</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered table-stripped" id="copyFromSetHdwSetTable">
+                            <thead>
+                                <tr>
+                                    <th style="width:10%;">&nbsp;</th>
+                                    <th>Hdw Set</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="radio" name="hdw-id"></td>
+                                    <td>2</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="hdw-id"></td>
+                                    <td>3</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="hdw-id"></td>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary submit-btn" data-dismiss="modal">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="copySetTo">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Copy Hardware Set:1</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            This utility allows you to quickly create numerous hardware sets by copying everything from an existing hardware set.
+                        </p>
+                        <textarea class="btn-block" id="copySetToIds"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary submit-btn" data-dismiss="modal">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="addDoor">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add Opening to Estimate Details:</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <form class="">
+                            <div class="form-group">
+                                <button class="btn btn-success col-md-2" type="button" onclick="decrementCounter('#doorSlector', 1)" ><i class=" glyphicon glyphicon-chevron-left"></i></button>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="doorSlector" onchange="getAssignedIdVal('#hdwSetTable', $('#doorSlector').val(), '#hardwareSetFromAssignedId')">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-success col-md-2" type="button" onclick="incrementCounter('#doorSlector', 4)">
+                                    <i class=" glyphicon glyphicon-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Ths utility allows you to quickly create numerous opening in the detail screen with the above hardware set.
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Openings below will be assigned to Set 1</label>
+                                <input class="form-control" type="text" id="hardwareSetAssignId">
+                            </div>
+                            <div class="form-group">
+                                <label>Openings below are assigned to Set 1</label>
+                                <input class="form-control" type="text" id="hardwareSetFromAssignedId">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Pair of doors (Active/Inactive)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Pair of doors (Both Active)
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="addDoors('#hdwSetTable', $('#doorSlector').val(), $('#hardwareSetAssignId').val())">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="getSetsSchedule">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Copy Hdw Sets from Scheduling</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <table class="table table-striped table-bordered" id="schedulingCopyFromTable">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" onclick="checkAll(this)"></th>
+                                    <th>Code  <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                    <th>Description  <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox"></td>
+                                    <td>CO</td>
+                                    <td>Material</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox"></td>
+                                    <td>RO</td>
+                                    <td>Material</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox"></td>
+                                    <td>CO</td>
+                                    <td>Material</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-md-6 text-left padding0">
+                            <button type="button" class="btn btn-default" onclick="$('#schedulingCopyFromTable > thead > tr > th:first-child input').prop('checked', false);$('#schedulingCopyFromTable > thead > tr > th:first-child input').trigger('click')">Select All</button>
+                            <button type="button" class="btn btn-default" onclick="$('#schedulingCopyFromTable > thead > tr > th:first-child input').prop('checked', true);$('#schedulingCopyFromTable > thead > tr > th:first-child input').trigger('click');">Clear All</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary submit-btn">OK</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Footer HTML -->
+        <script type="text/html" id="subSetTableData">
+        <tr class="child-row hide">
+            <td colspan="14">
+                <div class="table-wrap" style="overflow:scroll;">
+                    <table class="table table-bordered" style="table-layout:inherit;margin-bottom:20px;;margin-bottom:0;">
+                        <thead>
+                            <tr>
+                                <th>Print Code <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Print Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>UOM <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Percentage <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Special Net Price <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>No Charge <i class="glyphicon glyphicon-triangle-top"></i> </th>
+                                <th>List Price <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Discount <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Cost <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Replace Other Preps <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Door Prep 1 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Door Prep 2 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Frame Prep 1 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                <th>Frame Prep 2 <i class="glyphicon glyphicon-triangle-top"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </script>
+    <!-- original view | center table -->
+    <script type="text/html" id="centerTableOriginal">
+
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" >
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td data-type="checkbox"><input type="checkbox"></td>
+            <td data-type="cost">43.78</td>
+            <td data-type="checkbox"><input type="checkbox"></td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="invisible inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-2</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr class="table-head">
+            <td class="text-center">
+                <button class="inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-3</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-4</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button><input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-5</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-6</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button><input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-7</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-8</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add  btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td data-type="item">HI-9</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr class="child-row hide">
+            <td colspan="9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Print Code</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>17/32 Spindel Length</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button><input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td>HJ-1</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td>HJ-2</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td>HJ-3</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <button class="inside-grid-add invisible btn btn-default pull-left">
+                    <i class="glyphicon glyphicon-plus" ></i>
+                </button>
+                <input class="pull-left" type="checkbox" style="position:inherit" >
+            </td>
+            <td>HJ-4</td>
+            <td data-type="mfr">MK</td>
+            <td data-type="used"></td>
+            <td data-type="type">HI</td>
+            <td data-type="special-network"><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td>43.78</td>
+            <td><input type="checkbox"></td>
+        </tr>
+
+    </script>
+    <script type="text/html" id="rightTableOriginal">
+
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input style="position:inherit" type="checkbox">
+            </td>
+            <td data-type="item">HI-1</td>
+            <td data-type="mfr">MK</td>
+            <td>T43786</td>
+        </tr>
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+/*---------------------------Calender -A.M ----------------*/
+.leftcSideBar {
+    height: 814px;
+    background: #000;
+	width: 100px;
+}
+.leftcSideBarOption div{
+	text-align: center;
+    margin-top: 10px;
+}
+
+.leftcSideBarOption div .cButtons {
+    padding: 15px;
+    margin: 12px;
+    background: #000;
+    border: 1px solid #5a5959;
+}
+.leftcSideBarOption div .cButtons span {
+    font-size: 30px;
+    color: #c8c8ca;
+}
+.leftcSideBarOption {
+    margin-top: 100px;
+}
+
+.leftcSideBarOption div .cButtons:hover {
+    background: #c8c8ca;
+}
+
+.leftcSideBarOption div .activecBtn{
+	background: #c8c8ca !important;
+	outline:0;
+}
+
+.leftcSideBarOption div .activecBtn span{
+	 color: #fff !important;
+}
+.leftcSideBarOption div .cButtons:hover >span{
+    color: #fff;
+}
+.leftcSideBarOption div .cButtons span:hover {
+    color: #ffffff;
+}
+
+.rightcSideBox .fc-toolbar {
+    background: #c8c8ca;
+    padding: 15px;
+    color: #fff;
+}
+
+.slidecSideBox {
+    min-height: 736px;
+    background: #444;
+
+}
+
+.slidecSideBoxSlide{
+	position:absolute;
+	left:-1000px;
+}
+
+.calenderArea {
+    min-height: 600px;
+}
+
+.searchAreahd {
+    padding: 20px 12px;
+}
+
+.currentMonCal {
+    margin: 20px 0px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.13);
+}
+
+.currentMonCal table tr th{
+	border:0px !important;
+	color:#ffffff;
+}
+
+.currentMonCal table tr td{
+	border:0px !important;
+	color:#ffffff;
+	vertical-align:middle !important;
+}
+
+.currentMonCal .fc-basic-view .fc-body .fc-row{
+	min-height:0px;
+}
+
+.currentMonCal  .fc td.fc-today {
+    color:#000;
+}
+
+.currentMonCal .fc-toolbar {
+    background: none;
+    padding: 5px;
+    color: #fff;
+}
+
+.currentMonCal .fc-toolbar  h2{
+       font-size: 16px;
+    margin-top: 5px;
+}
+
+.usercPro {
+    padding: 0px 0px;
+    margin: 2px 12px;
+}
+
+ .fc-myCustomButton1-button{   
+	background: #fafafa;
+    border: 1px solid #fafafa;
+    width: 100px;
+    margin-right: 20px !important;
+    border-radius: 1px !important;
+	padding-right: 20px !important;
+ }
+ 
+ .fc-myCustomButton2-button{
+	 background: #fafafa;
+    border: 1px solid #fafafa;
+    min-width: 140px;
+    margin-right: 20px !important;
+    border-radius: 1px !important;
+	padding-right: 20px !important;
+ }
+ 
+ .fc-myCustomButton1-button:after, .fc-myCustomButton2-button:after  {
+    width: 0px;
+    content: '';
+    height: 0px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #4a4a4a;
+    position: absolute;
+    top: 12px;
+    right: 9px;
+}
+
+
+.fc-activeUserPro-button {
+    width: 145px;
+    background: #c8c8ca;
+    box-shadow: none;
+    border: 0px !important;
+}
+
+.userArea {
+    margin-top: 18px;
+}
+
+.fc-newEvents-button {
+    width: 140px;
+    border-radius: 4px;
+	margin-right: 20px !important;
+	box-shadow: 1px 1px 5px #999;
+}
+
+
+
+.dropDownAllusers, .dropDownAllprojects {
+    width: 150px;
+    background: #fafafa;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: -8px;
+	position:absolute;
+}
+.dropDownAllusers ul, .dropDownAllprojects ul {
+    list-style: none;
+    padding: 0px;
+	margin-bottom: 0px;
+}
+
+
+
+.dropDownAllusers ul li, .dropDownAllprojects ul li {
+    text-align: left;
+    background: #fff;
+    margin-bottom: 3px;
+	    border: 1px solid #f2f2f2;
+    padding-left: 5px;
+}
+
+.selectuser{
+	border: 1px solid #fff;
+    padding: 1px;
+    opacity: 0.7;
+}
+
+.highLightTd {
+    background: #00a0d0 !important;
+}
+
+.reminderRadios{
+	    padding: 1px 30px;
+    height: 27px;
+    width: 100%;
+    display: block;
+}
+
+#adNewEventForm{
+	    margin-bottom: 0px;
+}
+
+.fc-recurrEvents-button {
+    margin-right: 30px !important;
+	box-shadow: 1px 1px 5px #999;
+	width: 140px;
+    border-radius: 4px;
+}
+.recurrEvent {
+    font-size: 13px !important;
+    color: #fff;
+    background: #999;
+    border: 1px solid #777;
+    box-shadow: -1px 1px 2px #626060;
+	border-radius: 3px;
+}
+
+.saveEventForm {
+    box-shadow: -1px 2px 2px #999;
+    border: 1px solid #00a0d0;
+    border-radius: 3px;
+}
+
+.recurrConti {
+    box-shadow: -1px 2px 2px #999;
+    border-radius: 3px;
+}
+
+.recurrBtn{
+	box-shadow: -1px 2px 2px #999;
+    border-radius: 3px;
+	border: 1px solid #777;
+}
+
+.cBtitle{
+	font-size:12px;
+	color:#999999;
+}
+.activecBtn +.cBtitle{
+	color:#fafafa !important;
+}
+.fc-disabled{
+	opacity: 0.6;
+    cursor: no-drop !important;
+}
+.selusercPro {
+    border: 0px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+.selectuserProfile{
+	padding: 4px;
+    width: 83px;
+    margin-left: 10px;
+    background: #000;
+    font-size: 12px;
+    color: #ddd;
+    border: 1px solid #555;
+}
+.calendartype {
+    width: 160px;
+    background: #e6e6e6;
+    position: absolute;
+    right: 162px;
+    z-index: 99999;
+    top: 44px;
+    border: 1px solid #ddd;
+}
+
+.calendartype ul {
+    list-style: none;
+    padding: 0px;
+	margin-bottom: 0px;
+	padding: 5px 0px;
+}
+.calendartype ul li {
+    padding: 3px 15px;
+
+}
+
+.calendartype ul li:hover{
+    background:#fafafa;
+}
+.paddingL10{
+	padding-left:10px;
+}

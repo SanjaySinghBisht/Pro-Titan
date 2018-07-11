@@ -1,0 +1,238 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="page-header">
+                            <h1>Price Book Cleanup</h1>
+                        </div>
+                        <!-- Vendor Tab start -->
+                        <div id="vendorTab" class="tab-pane master-material-management-tab-content">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <form class="form-inline custom-search-filter clearfix">
+                                        <div class="form-group" style="width:100%;">
+                                            <div class="pull-left">
+                                                <label class="displayInline">View</label>
+                                                <select class="form-control" id="Select1" onchange="selectView('#centerTable > tbody', this.value, 'centertable')">
+                                                    <option value="original">(**Original View**)</option>
+                                                </select>
+                                            </div>
+                                            <div class="pull-left marginL30">
+                                                <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" type="button" title="Print">
+                                                    <i class="glyphicon glyphicon-print"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" type="button" title="Export">
+                                                    <i class=" glyphicon glyphicon-export"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive table-wrapper">
+                                        <table class="table" id="vendor-listing-section">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="btn-group custom-filtr-table">
+                                                            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                <img src="images/Views.png">
+                                                            </button>
+                                                            <ul class="dropdown-menu filter-grid-column">
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Project Id.</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Project Id." class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Project Description</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Project Description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Abbr.</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Abbr." class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Vendor Name</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Vendor Name" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Vendor Type</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Vendor Type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Effective Price Book</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Effective Price Book" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="pull-left btn-block clearfix">
+                                                                        <span class="pull-left">Price Book That Is No Longer Used</span>
+                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Price Book That Is No Longer Used" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <input type="checkbox" onclick="checkAll(this)">
+                                                        </div>
+                                                    </th>
+
+                                                    <th data-type="Project Id.">Project Id.<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    </th>
+                                                    <th data-type="Project Description">Project Description<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Abbr.">Abbr.<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Vendor Name">Vendor Name<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Vendor Type">Vendor Type<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Effective Price Book">Effective Price Book<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    <th data-type="Price Book That Is No Longer Used">Price Book That Is No Longer Used<span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="button-container">
+                                        <div class="row ">
+                                            <div class="col-md-12 text-right">
+                                                <button class="btn btn-danger">
+                                                    Delete
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Vendor Tab end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

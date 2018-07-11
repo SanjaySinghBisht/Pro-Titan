@@ -1,0 +1,243 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailcostsummary.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+
+                <div class="contentCollapsable pos-relative">
+
+                    <div class="container-fluid esimate-tab-list">
+                        <!-- Tabs -->
+                        <div class="page-header clearfix">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <h1 class="pull-left marginT30">Cost & Quoting</h1>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3 ">
+                                    <div class="stepwizardarea">
+
+                                        <ul class="stepwizardrow">
+                                            <li class="active-step">
+                                                <span class="step-count"></span>
+                                                <span class="step-name">Hardware</span>
+                                            </li>
+                                            <li class="active-step">
+                                                <span class="step-count"></span>
+                                                <span class="step-name">List & Type</span>
+                                            </li>
+                                            <li class="active-step"><span class="step-count"></span>
+                                                <span class="step-name">Material</span>
+                                            </li>
+                                            <li class="active-step"><span class="step-count"></span>
+                                                <span class="step-name">Cost Summary</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="CQmenuHeader row">
+                            <div class="header col-md-8 col-md-offset-3">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn"><a href="detailEstimatingCostSummary.html">Group Your Material</a><span><i class="glyphicon glyphicon-th-list"></i></span></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn"><a href="detailEstimatingCostSummaryFrame.html">Choose Template & Contractor</a><span><i class="glyphicon glyphicon-stats"></i><br/></span></div>
+                                    </div>
+                                    <!-- <div class="col-md-2"><div class="cqmenuBtn"><a href="#">Select Contractor</a><span><i class="glyphicon glyphicon-user"></i><br/></span></div></div> -->
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn"><a href="detailEstimatingQuoting.html" class="active">Submit Quotes</a><span class="active"><i class="glyphicon glyphicon-flash"></i><br/></span></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn"><a href="detailEstimatingManagequote.html">Manage Your Quotes</a><span><i class="glyphicon glyphicon-compressed"></i><br/></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of CQ menu End here -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active">
+
+                                <div class="row quotingPanel">
+                                    <div class="col-md-12">
+                                        <div class="row marginT20">
+                                            <div class="col-md-6">
+                                                <div class="quoteBox" id="quoteBox">
+                                                    <div class="quoteHeader">
+                                                        <h4>Quote1 <span class="pull-right viewQuo" id="qview1" data-toggle="modal" data-target="#zoomMod1">View</span></h4>
+                                                    </div>
+                                                    <div id="quoteFrame1" class="qview">
+                                                        <img src="images/quote1.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="quoteBox" id="quoteBox">
+                                                    <div class="quoteHeader">
+                                                        <h4>Quote2 <span class="pull-right viewQuo" id="qview2" data-toggle="modal" data-target="#zoomMod1">View</span></h4>
+                                                    </div>
+                                                    <div id="quoteFrame2" class="qview">
+                                                        <img src="images/quote1.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row marginT20">
+                                            <div class="col-md-6">
+                                                <div class="quoteBox" id="quoteBox">
+                                                    <div class="quoteHeader">
+                                                        <h4>Quote3 <span class="pull-right viewQuo" id="qview3" data-toggle="modal" data-target="#zoomMod1">View</span></h4>
+                                                    </div>
+                                                    <div id="quoteFrame3" class="qview">
+                                                        <img src="images/quote1.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="quoteBox" id="quoteBox">
+                                                    <div class="quoteHeader">
+                                                        <h4>Quote4 <span class="pull-right viewQuo" id="qview4" data-toggle="modal" data-target="#zoomMod1">View</span></h4>
+                                                    </div>
+                                                    <div id="quoteFrame4" class="qview">
+                                                        <img src="images/quote1.png" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row marginT20">
+                                            <button class="btn btn-primary btn-shad pull-right" disabled style="margin-right:48px;">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of quoting Panel -->
+                            </div>
+                            <!-- End of tab Content -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- zoom Modal on view1  -->
+        <div class="modal fade" id="zoomMod1" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body zoomMbody">
+                        <button type="button" class="close closePos" data-dismiss="modal">&times;</button>
+                        <img src="images/quote1.png" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- zoom Modal view 1 End -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

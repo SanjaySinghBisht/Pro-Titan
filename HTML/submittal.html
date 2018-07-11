@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="project-form-container">
+                            <div class="row ">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="page-header clearfix">
+                                                <h1 class="pull-left">Submittal Formats</h1>
+                                            </div>
+                                            <div class="row ">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <form class="form-inline custom-search-filter revision clearfix col-md-4">
+                                                        <div class="form-group" style="width:100%;">
+                                                            <div class="pull-left">
+                                                                <label class="displayInline">View</label>
+                                                                <select class="form-control" id="Select1" onchange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                                    <option value="original">(**Original View**)</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="pull-left marginL30">
+                                                                <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                                </button>
+                                                                <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                                </button>
+                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                </button>
+                                                                <button class="btn btn-default pull-left" type="button" title="Print">
+                                                                    <i class="glyphicon glyphicon-print"></i>
+                                                                </button>
+                                                                <button class="btn btn-default pull-left" type="button" title="Export">
+                                                                    <i class=" glyphicon glyphicon-export"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                    <!-----Quote Status Start -------------------------->
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                        <label>Drag a column header here to group by that column</label>
+                                                    </div>
+                                                    <div class="table-wrapper">
+                                                        <table class="table custom-grid" id="material-table" style="width:auto;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="width:5%;">
+                                                                        <div class="btn-group custom-filtr-table">
+                                                                            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                <img src="images/Views.png">
+                                                                            </button>
+                                                                            <ul class="dropdown-menu filter-grid-column">
+                                                                                <li>
+                                                                                    <a class="pull-left btn-block clearfix">
+                                                                                        <span class="pull-left">Description</span>
+                                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="pull-left btn-block clearfix">
+                                                                                        <span class="pull-left">Format</span>
+                                                                                        <input onclick="gridfilterColumn(this)" type="checkbox" data-type="format" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th data-type="description">
+                                                                        Description
+                                                                        <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                    </th>
+                                                                    <th data-type="format">
+                                                                        Format
+                                                                        <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td data-type="description">Cover</td>
+                                                                    <td data-type="format">
+                                                                        <a href="javascript:;">Edit</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td data-type="description">Cover w/notes</td>
+                                                                    <td data-type="format">
+                                                                        <a href="javascript:;">Edit</a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">John Knipper</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<html lang="en">
+        
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+            <title>Assa Abloy</title>
+            <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+            <link href="css/ionicons.min.css" type="text/css" rel="stylesheet" />
+            <link rel='stylesheet' href='css/fullcalendar.min.css' />
+            <!-- Custom Style CSS -->
+            <link href="css/style.css" type="text/css" rel="stylesheet" />
+            <link href="css/landingPage.css" type="text/css" rel="stylesheet" />
+            <!-- Custom JS -->
+            <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+            <script type="text/javascript" src="js/moment.js"></script>
+            <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+            <!--ribbon js -->
+        
+            <!-- Bootstrap realted JS -->
+        
+            <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+            <script type='text/javascript' src='js/mustache.js'></script>
+            <script type="text/javascript" src="js/script.js"></script>
+        
+            <script type="text/javascript" src="js/landing.js"></script>
+            <style>
+        
+            </style>
+        
+        </head>
+        
+        <body>
+            <header class="header pos-relative">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+        
+                                        <div class="col-md-7">
+                                            <ul class="nav navbar-nav">
+                                                <li><span>Welcome Erdmann, Dawn</span></li>
+                                                <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                        </li>
+                                                        <li>
+                                                            <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <input type="button" value="Help Forms">
+                                                        </li>
+                                                        <li>
+                                                            <input type="button" value="Live Chat">
+                                                        </li>
+                                                        <li>
+                                                            <input type="button" value="FAQ">
+                                                        </li>
+                                                    </ul>
+        
+                                                </li>
+                                                <li><a href="contactUs.html">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 pull-right">
+                                            <div class="indicator">
+                                                <ul class="indicator-btn">
+                                                    <li class="list-unstyled">
+                                                        <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                                Milano Travel
+                                                            </a>
+                                                        <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                                Change : C0-01
+                                                            </a>
+                                                    </li>
+                                                </ul>
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pushbuttons pos-headerpushbuttons">
+                            <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                            <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                        </div>
+            </header>
+            <div id='ribbonMenuBar' class='marginB15'>
+        
+            </div>
+            <div class="container-fluid">
+                <div class="row marginT10">
+                    <div class="col-md-12">
+        
+                        <div class="col-md-5" id="calenderContainer">
+                            <div class="row">
+                                <div class="col-md-12 no-padding">
+                                    <button class="btn btn-default pull-right marginT5 marginL10" data-toggle="modal" data-target="#calenderuserPopupData">View User</button>
+                                    <button class="btn btn-default pull-right marginT5 marginL10" data-toggle="modal" data-target="#calendarPopupData">View Calendar</button><!-- 
+                                    <button class="btn btn-default pull-right marginT5 " data-toggle="modal" data-target="#">Add new Item</button> -->
+                                </div>
+                                <div class="col-md-12 announcement-container well marginT10">
+                                    <div class="col-md-12 ">
+                                        <div class="card">
+                                            <div id="desktop-calendar" class="col-md-12 card"></div>
+                                            <!-- <img style="height: 520px;" src="images/Calendar.png" class="img img-responsive"> -->
+                                        </div>
+        
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="row marginT10">
+                                    <div class="col-md-6 project-lists">
+                                        <ul>
+                                            <li class="events-header"><a href="javascript:void(0)">Today</a></li>
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0)">Bid Due: Soldier Field Renovation</a>
+                                                        <a href="detailedEstimating_landing2.html" class="btn btn-xs pull-right marginT5 btn-primary marginL10">Open project</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 project-lists">
+                                        <ul>
+                                            <li class="events-header"><a href="javascript:void(0)"> Tomorrow</a></li>
+                                            <li>
+                                                <ul li>
+                                                    <li>
+                                                        <a href="javascript:void(0)">Finish Submittal: D’Lish Expansion</a>
+                                                        <a href="detailedEstimating_landing2.html" class="btn btn-xs pull-right marginT5 btn-primary marginL10">Open project</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)">Call: John Doe with ABC Inc. </a>
+                                                        <a href="detailedEstimating_landing2.html" class="btn btn-xs pull-right marginT5 btn-primary marginL10">Open project</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 box-header">
+                                        <h3>Notifications</h3>
+                                    </div>
+                                    <div class="col-md-12 announcement-container well notifications style-scroll" style="max-height: 700px;overflow:auto;">
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Soldier Field Renovation</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">50 Items received on site.</a></li>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">2 Purchase order not sent</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br/>
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Harbour Inn Cafe</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">Purchase Order 588465 has been changed to status: Shipped</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br/>
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Hiltopm Park Inn</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">Bid past Due</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br/>
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Building 254 Renovation</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">Job status moved to: Won</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br/>
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Harbour Inn Cafe</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">Purchase Order 588465 has been changed to status: Shipped</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br/>
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Hiltopm Park Inn</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">Bid past Due</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <br/>
+                                        <div class="notifications-box">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 box-header">
+                                                    <h3>Project: Building 254 Renovation</h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <div class="col-md-12 card padding10">
+                                                    <ul>
+                                                        <li>
+                                                            <a href=""> <a href="javascript:void(0)">Job status moved to: Won</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <!-- End of announcement-container-->
+                                </div>
+                            </div>
+        
+                            <!-- End of My recent projects-->
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+            <footer class="footer">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 ">John Knipper</div>
+                    </div>
+                </div>
+            </footer>
+        
+            <!-- Calender Popup -->
+            <div class="modal fade calendar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="calendarPopupData">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">View Calendar</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <div class="style-scroll" style="height:110px; overflow-x:auto;">
+                                <table class="table singleSelecttoggle" id="calenderList" style="margin-bottom:0;">
+        
+                                    <tbody>
+                                        <tr>
+                                            <td>My Calendar</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Company Calendar</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ship Calendar</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bid Calendar</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary pull-right" data-dismiss="modal" id="changeCalender">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- View User Popup -->
+            <div class="modal fade calenderuser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="calenderuserPopupData">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">View Users</h4>
+                        </div>
+                        <div class="modal-body clearfix">
+                            <div class="style-scroll" style="height:140px; overflow-x:auto;">
+                                <table class="table multiSelecttoggle " style="margin-bottom:0;">
+                                    <tbody>
+                                        <tr>
+                                            <td>Cruz, Larry</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bodily, Braeden</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Derosso Austin</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leclair, Philippe</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Steinberg, Adam</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary pull-right" data-dismiss="modal" id="viewUserCalender">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        
+        </html>

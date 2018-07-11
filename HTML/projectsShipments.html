@@ -1,0 +1,331 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!--<link href="css/bootstrap-toggle.css" type="text/css" rel="stylesheet" />-->
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailEstimatingHardware.js"></script>
+    <!--<script type="text/javascript" src="js/bootstrap-toggle.js"></script>-->
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid esimate-tab-list">
+
+                        <!-- Tab panes -->
+
+                        <!-- Page Header -->
+                        <!-- <div class="page-header clearfix">
+                            <div class="row">
+                                <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <h1 class="pull-left">Reports</h1>
+                                </div>
+                            </div> 
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            $('.added-row').hide();
+            $(document).ready(function() {
+                $('#addRowTableClose').click(function() {
+                    $('.added-row').show();
+                });
+
+                $('#addNewModifierBox').hide();
+                $('#addnewModifBtn').click(function() {
+                    $('#searchHardwareModifier').hide();
+                    $('#addNewModifierBox').show();
+                });
+
+                $('#adModokbtn, #adModcancelbtn').click(function() {
+                    $('#searchHardwareModifier').show();
+                    $('#addNewModifierBox').hide();
+                });
+            });
+        </script>
+        <!-- Footer HTML -->
+
+</body>
+<!-- Project Data Change Popup -->
+<div class="modal fade change-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="changePopupData">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Milano Travel Change Management</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                    <button class="btn btn-default pull-left marginR5 start-new-change">
+                        Start New
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                        Drop
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target="#commitData" disabled="disabled">
+                        Commit
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 details-change">
+                        Details
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 switch-to-change">
+                        Switch To
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                        Compare
+                    </button>
+                    <button class="btn btn-primary pull-right create-final-estimate-btn">
+                        Create Final Estimate
+                    </button>
+                </div>
+                <table class="table project-change-data-table" style="table-layout:auto;">
+                    <thead>
+                        <tr class="borderB mainHead">
+                            <th class="borderR" data-type="Change">
+                                Change
+                            </th>
+                            <th class="borderR" data-type="Status">
+                                Status
+                            </th>
+                            <th class="borderR" data-type="Description">
+                                Description
+                            </th>
+                            <th class="borderR" data-type="Owner">
+                                Owner
+                            </th>
+                            <th class="borderR" data-type="Start-Date">
+                                Start Date
+                            </th>
+                            <th data-type="Commit-Date">
+                                Commit Date
+                            </th>
+                            <th data-type="compare-time">
+                                Time
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="add-data" style="display:none;">
+                            <td class="borderR">
+                                <input type="text" class="form-text change-value">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <input type="text" class="form-text description">
+                            </td>
+                            <td class="borderR">
+                                <input type="text" class="form-text owner">
+                            </td>
+                            <td class="borderR">
+                                <input id="datetimepicker1" type="text" class="start-date">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                        </tr>
+                        <tr class="current-row">
+                            <td class="borderR">Current</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Milano Travel</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <a href="#" class="comparsion-point" title="Start"><span class="badge new marginR10">C</span>
+                                    </a></td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="borderR">C0-01</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Sample Description</td>
+                            <td class="borderR">Dawn</td>
+                            <td class="borderR">05/16/2017</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new marginR10">C</span></a><a href="#" class="comparsion-point" title="Before"><span style="display: inline-block;" class="badge before marginR10">B</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="change-state-legend">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="badge start marginR10">S</span>
+                                    <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge committed marginR10">N</span>
+                                    <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge new marginR10">C</span>
+                                    <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge before marginR10">B</span>
+                                    <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge after marginR10">A</span>
+                                    <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Changes Commit Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="commitData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Commit Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 commit-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Drop Changes Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="dropData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Drop Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 drop-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,160 @@
+.width80 {
+    width: 80px !important;
+}
+
+.width85 {
+    width: 85px !important;
+}
+
+.width90 {
+    width: 90px !important;
+}
+
+.width100 {
+    width: 100px !important;
+}
+
+.adminContentSection {
+    box-shadow: 2px 0px 3px #d7d7d7;
+    padding: 15px 15px 15px 30px;
+    border-radius: 8px;
+    min-height: 635px;
+    margin-left: -30px;
+}
+
+.adminContentSection {
+    width: calc(75% + 15px);
+}
+
+.section-header h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    color: #0094ff;
+}
+
+.section-header .btn {
+    font-size: 13px;
+    padding: 4px 12px;
+    margin: -5px 0 5px 0;
+}
+
+#toggleArea .page-header h1 .btn-default {
+    padding: 5px 8px;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #e3e3e3 1%, #f2f2f2 100%) repeat scroll 0 0;
+    border-color: #ccc;
+}
+
+.table-head th {
+    color: #757575;
+}
+
+hr {
+    border-color: #b2b2b2;
+    margin: 0 0 20px 0;
+}
+
+.panel-heading {
+    padding: 0;
+}
+
+a[aria-expanded="false"] span.glyphicon,
+a[aria-expanded="true"] span.glyphicon {
+    font-size: 12px;
+}
+
+a[aria-expanded="false"] span.glyphicon-minus:before {
+    content: "\002b";
+}
+
+a[aria-expanded="true"] span.glyphicon-plus:before {
+    content: "\2212";
+}
+
+.searchBar {
+    border: 1px solid #ededed;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #e3e3e3 1%, #f2f2f2 100%) repeat scroll 0 0;
+}
+
+.greyBgColor {
+    border: 1px solid #ededed;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #e3e3e3 1%, #f2f2f2 100%) repeat scroll 0 0;
+}
+
+.input-group.custom-searchbtn input {
+    padding: 0 10px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.input-group.custom-searchbtn .input-group-addon {
+    padding: 5px;
+}
+
+.groupHdwSet .block {
+    background: none;
+}
+
+.groupHdwSet .overflow {
+    overflow: auto;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.ios .btn {
+    padding: 5px 20px 5px 10px;
+    font-size: 14px;
+}
+
+.searchBar select.form-control {
+    padding: 0 5px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.searchBar .btn {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.opacity05 {
+    opacity: 0.5;
+}
+
+.button-container button.btn {
+    padding: 5px 8px;
+    font-size: 14px;
+}
+
+.projectSidebar li.active {
+    background: #23748e;
+}
+
+#permisions-action .box-header h3 {
+    margin-top: 0;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+#permission-tree ul li {
+    font-size: 13px;
+}
+
+#permisions-action-body div label {
+    font-size: 13px;
+}
+
+#permisions-action-body div label div {
+    margin-right: 10px;
+}
+
+.paddingT15 {
+    padding-top: 15px;
+}

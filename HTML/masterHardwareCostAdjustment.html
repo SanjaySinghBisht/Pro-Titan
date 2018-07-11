@@ -1,0 +1,439 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Master Cost Adjustment</h1>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 pos-relative">
+
+                                <form class="form-inline custom-search-filter revision clearfix">
+                                    <div class="form-group" style="width:100%;">
+
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+                                        <div class="pull-left marginL30 ">
+                                            <label class="displayInline">Vendor</label>
+                                            <div class="dropdown displayInline"><a href="#" class="dropdown-toggle  columnselectmenu clearfix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="appendtext">Select </span><span class="caret pull-right marginT8"></span></a>
+                                                <ul class="dropdown-menu transfervendor">
+                                                    <li><a href="#" class="clearfix"><span class="abbr">Abbr.</span><span class="pull-left vendorName">Vendor</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">AD</span><span class="pull-left vendorName">Adams Rite</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">AH</span><span class="pull-left vendorName">Architectural</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">AK</span><span class="pull-left vendorName">Alarm Contro</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">AV</span><span class="pull-left vendorName">American Sp</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">AW</span><span class="pull-left vendorName">Arrow Lock</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">BB</span><span class="pull-left vendorName">Bobrick</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">BE</span><span class="pull-left vendorName">Stanley Secure</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">BO</span><span class="pull-left vendorName">Bommer</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">BU</span><span class="pull-left vendorName">Burn Manufacter</span></a></li>
+                                                    <li><a href="#" class="clearfix"><span class="abbr">DC</span><span class="pull-left vendorName">Door Controls</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <label class="displayInline">Part Description Containing</label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                                <div class="table-wrapper transferMaterial grid ">
+
+                                    <table class="table sortingTable scrollingTable" id="masterHardwarecostTable">
+                                        <thead>
+                                            <tr>
+                                                <th class="width30">
+                                                    <div class="btn-group custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Type</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="typeID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Adj. #1</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="adj1ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Adj. #2</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="adj2ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Adj. #3</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="adj3ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Adj. #4</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="adj4ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Adj. #5</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="adj5ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </th>
+                                                <th class="width150" data-type="typeId">Type</th>
+                                                <th data-type="adj1ID">Adj #1 </th>
+                                                <th data-type="adj2ID" class="widthP16">Adj #2 </th>
+                                                <th data-type="adj3ID" class="widthP16">Adj #3 </th>
+                                                <th data-type="adj4ID" class="widthP16">Adj #4 </th>
+                                                <th data-type="adj5ID" class="widthP16">Adj #5 </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">PV</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">BO</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">CY</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">EA</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">ED</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">ES</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">ET</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">BO</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">LO</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">MU</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">OT</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">PP</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">PS</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td class="width150" data-type="typeId">PV</td>
+                                                <td data-type="adj1ID">0.00 </td>
+                                                <td data-type="adj2ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj3ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj4ID" class="widthP16">0.00 </td>
+                                                <td data-type="adj5ID" class="widthP16">0.00</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="progressBarwindow">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Installing</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            Processing...
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default cancelHide" data-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+</body>
+
+</html>

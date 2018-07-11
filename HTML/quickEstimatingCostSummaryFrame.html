@@ -1,0 +1,433 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="thumbnail-slider/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+    <link href="css/quickEstimatingMaterial.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap-toggle.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.als-1.7.min.js"></script>
+    <script src="thumbnail-slider/thumbnail-slider.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/quickEstimatingMaterial.js"></script>
+    <script type="text/javascript" src="js/bootstrap-toggle.js"></script>
+    <script type="text/javascript" src="js/costsummaryFrames.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+
+                <div class="contentCollapsable pos-relative">
+
+                    <div class="container-fluid esimate-tab-list">
+                        <!-- Tabs -->
+                        <div class="page-header clearfix">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <h1 class="pull-left marginT30">Cost & Quoting</h1>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3 ">
+                                    <div class="stepwizardarea">
+
+                                        <ul class="stepwizardrow">
+                                            <li>
+                                                <span class="step-count"></span>
+                                                <span class="step-name">Hardware</span>
+                                            </li>
+                                            <!--<li class="active-step">
+                                                <span class="step-count"></span>
+                                                <span class="step-name">List & Type</span>
+                                            </li>-->
+                                            <li><span class="step-count"></span>
+                                                <span class="step-name">Material</span>
+                                            </li>
+                                            <li class="active-step"><span class="step-count"></span>
+                                                <span class="step-name">Cost & Quotes</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="CQmenuHeader row">
+                            <div class="header col-md-8 col-md-offset-2">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './quickEstimatingCostSummary.html'"><a href="quickEstimatingCostSummary.html">Group Your Material</a><span><i class="glyphicon glyphicon-th-list"></i></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './quickEstimatingCostSummaryFrame.html'"><a href="quickEstimatingCostSummaryFrame.html" class="active">Choose Template & Contractor</a><span class="active"><i class="glyphicon glyphicon-stats"></i><br/></span></div>
+                                    </div>
+
+                                    <!-- <div class="col-md-2"><div class="cqmenuBtn"><a href="#">Select Contractor</a><span><i class="glyphicon glyphicon-user"></i><br/></span></div></div> -->
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './quickEstimatingQuoting.html'"><a href="quickEstimatingQuoting.html">Submit Quotes</a><span><i class="glyphicon glyphicon-flash"></i><br/></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './quickEstimatingManagequote.html'"><a href="quickEstimatingManagequote.html">Quotes Status</a><span><i class="glyphicon glyphicon-compressed"></i><br/></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn"><a href="#" class="">History</a><span class=""><i class="glyphicon glyphicon-cd"></i><br/></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of CQ menu End here -->
+                        <br />
+                        <div class="costSummaryFrame">
+                            <div class="col-md-10 col-md-offset-1 clearfix">
+                                <div class="col-md-4">
+                                    <div class="chooseTemplate setfieldSetDesign">
+                                        <fieldset style="min-height:475px;">
+                                            <legend>Choose Template</legend>
+                                            <div style="width:118px;" class="pull-left marginL30 marginT10">
+                                                <div class="verticleSliderContainer text-center">
+                                                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                                                    <ul class="verticleSlider">
+                                                        <li><img src="images/report1.png"></li>
+                                                        <li><img src="images/report2.png"></li>
+                                                        <li><img src="images/report3.png"></li>
+                                                        <li><img src="images/report4.png"></li>
+                                                        <li><img src="images/report1.png"></li>
+                                                        <li><img src="images/report2.png"></li>
+                                                        <li><img src="images/report3.png"></li>
+                                                        <li><img src="images/report4.png"></li>
+                                                        <li><img src="images/report1.png"></li>
+                                                        <li><img src="images/report2.png"></li>
+                                                        <li><img src="images/report3.png"></li>
+                                                        <li><img src="images/report4.png"></li>
+                                                    </ul>
+                                                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                                                </div>
+                                            </div>
+                                            <div style="width:300px;" class="pull-left marginT10">
+                                                <div class="showlargeImg pos-relative">
+                                                    <img src="images/report1.png" />
+                                                    <div class="preview-edit-frame" data-target="#pdfViewEdit" data-toggle="modal">
+                                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="contractorsArea setfieldSetDesign">
+                                        <fieldset style="min-height:475px;">
+                                            <legend>Choose Contractor
+                                                <!--<span class="required">(Frame should be selected)</span>--></legend>
+                                            <div class="clearfix">
+                                                <button class="btn btn-primary pull-right marginL10" data-target="#addContractor" data-toggle="modal"> Add New Contractor</button>
+                                                <form class="form-inline text-right marginB5">
+                                                    <div class="input-group">
+                                                        <input type="search" class="form-control" placeholder="Search Contractor">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <table class="table" style="margin-bottom:0;">
+                                                <thead>
+                                                    <tr class="table-head">
+                                                        <th class="width70">&nbsp;</th>
+                                                        <th>Contractor Name</th>
+                                                        <th>Company Name</th>
+                                                        <th>Email Id</th>
+                                                        <th class="width70">&nbsp;</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="showsearchlist">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox1">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox2">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox3">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox4">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox5">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox6">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="width70"><span class="glyphicon glyphicon-user"></span></td>
+                                                        <td>John Smith</td>
+                                                        <td>Assa Abloy</td>
+                                                        <td>john.smith@asssabloy.com</td>
+                                                        <td class="width70">
+                                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-style="android" data-onstyle="success" data-offstyle="danger" data-size="small" id="Checkbox7">
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </fieldset>
+                                    </div>
+                                    <div class="text-right clearfix">
+                                        <button type="button" class="btn btn-primary marginT10" onclick="location.href='quickEstimatingQuoting.html'">Done</button>
+                                    </div>
+                                </div>
+                                <!--<div class="frameArea">
+                                    <div class="framelargeImg text-center">
+                                        <img src="images/report4.png" />
+                                    </div>
+                                    <!--<div class="als-container reportTemplate submenu-list" id="single-hollow-metal-frame" data-id="als-container_0">
+                                            <span class="als-prev" data-id="als-prev_0" style=""><img src="images/prev.png" alt="prev" title="previous"></span>
+                                            <div class="als-viewport" data-id="als-viewport_0" style="width: 720px; height: 58px;">
+                                                <ul class="als-wrapper padding0" data-id="als-wrapper_0" style="width: 1080px; height: 58px;">
+                                                    <li class="als-item thumb" data-toggle="modal" href="#grid-select-filters" id="als-item_0_0" style="left: -240px;">
+                                                        <img src="images/report4.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_1" style="left: -240px;"><img src="images/report1.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_2" style="left: -240px;"><img src="images/report2.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_3" style="left: -240px;"><img src="images/report3.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_4" style="left: -240px;"><img src="images/report4.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_5" style="left: -240px;"><img src="images/report1.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_6" style="left: -240px;"><img src="images/report2.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_7" style="left: -240px;"><img src="images/report3.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_8" style="left: -240px;"><img src="images/report4.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_9" style="left: -240px;"><img src="images/report1.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_10" style="left: -240px;"><img src="images/report2.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_11" style="left: -240px;"><img src="images/report3.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_12" style="left: -240px;"><img src="images/report4.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_13" style="left: -240px;"><img src="images/report1.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_14" style="left: -240px;"><img src="images/report2.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_15" style="left: -240px;"><img src="images/report3.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_16" style="left: -240px;"><img src="images/report4.png"></li>
+                                                    <li class="als-item thumb" id="als-item_0_17" style="left: -240px;"><img src="images/report1.png"></li>
+                                                    <!-- <li class="als-item thumb"><img src="images/frame-slider/9.jpg"></li>
+                                                     <li class="als-item thumb"><img src="images/frame-slider/10.jpg"></li>
+                                                </ul>
+                                            </div>
+                                            <span class="als-next" data-id="als-next_0"><img src="images/next.png" alt="next" title="next"></span>
+                                            <div class="add-new" onclick="window.location.href = 'file://foo/bar/';">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </div>
+                                </div>-->
+                            </div>
+
+                        </div>
+                        <!-- End of tab Content -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="pdfViewEdit" tabindex="-1" role="dialog" aria-labelledby="pdfViewEdit">
+            <div class="modal-dialog" role="document" style="width:700px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit/Preview Frame</h4>
+                    </div>
+                    <div class="modal-body clearfix text-center">
+                        <img src="images/quotepopup.png" class="width100P" />
+                        <!--groupHdwSet  end here -->
+                    </div>
+                    <!--Modal Body end -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Save">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="addContractor" tabindex="-1" role="dialog" aria-labelledby="pdfViaddContractorewEdit">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title" id="H1">Add New Contractor</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="row clearfix" id="parentList">
+                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                <div class="form-group">
+                                    <label>User Image</label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                <div class="form-group">
+                                    <label>Contractor Name</label>
+                                    <input class="form-control" type="email" name="email" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input class="form-control" type="text" name="phone" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Email ID</label>
+                                    <input class="form-control" type="text" name="address" placeholder="Address1">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--groupHdwSet  end here -->
+                    </div>
+                    <!--Modal Body end -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Save">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

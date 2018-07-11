@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/company_mnagement.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/company-management.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <!--<div class="app-title">Protech</div>-->
+
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Application Setup</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="nav nav-tabs" id="">
+                                    <li><a href="companyForm.html">Company</a></li>
+                                    <li><a href="companyPreference.html">Company Preference</a></li>
+                                    <li class="active"><a href="databaseLocation.html">Database Location</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="container-fluid company-mgmt-dtl" id="databaseLocation">
+                            <div class="row margin-v-20">
+                                <div class="col-md-12 text-center">
+                                    <label>Please Enter Valid Locations For The Following Databases</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2 form-group">
+                                                <label>
+                                                    PRO-TECH 8
+                                                </label>
+                                                <input type="file" name="" id="protech8File" class="file">
+                                                <div class="input-group">
+
+                                                    <input type="text" id="protech8FilePath" class="form-control" placeholder="" value="127.0.0.1/3051:C:\Program Files (x86)\EDSS\PRO-TECH+\PRODATA.FDB">
+                                                    <span class="input-group-btn">
+                                                    <button class="drop-btn btn btn-default" type="button" id="">
+                                                        <span class="glyphicon glyphicon-triangle-bottom">
+                                                        </span>
+                                                    </button>
+                                                    </span>
+                                                    <span class="input-group-btn">
+                                                    <button class="browse btn btn-primary" type="button" id="protech8Browse">
+                                                        Browse
+                                                    </button>
+                                                </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-md-offset-2 form-group">
+                                                <label>
+                                                    Elevation Power
+                                                </label>
+                                                <input type="file" id="elevationPowerFile" class="file">
+                                                <div class="input-group">
+                                                    <input id="elevationPowerFilePath" type="text" class="form-control" placeholder="" value="127.0.0.1/3051:C:\Program Files (x86)\EDSS\PRO-TECH+\PRODATA.FDB">
+                                                    <span class="input-group-btn">
+                                                    <button class=" drop-btn btn btn-default" type="button" id="">
+                                                        <span class="glyphicon glyphicon-triangle-bottom">
+                                                        </span>
+                                                    </button>
+                                                    </span>
+                                                    <span class="input-group-btn">
+                                                    <button class="browse btn btn-primary" type="button" id="elevationPowerBrowse">
+                                                        Browse
+                                                    </button>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row form-action-container">
+                                            <div class="col-md-12 text-right">
+                                                <button class="btn btn-primary" id="save-database-location">
+                                                    Ok
+                                                </button>
+                                                <button class="btn btn-default" id="cancel-database-location">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+</body>
+
+</html>

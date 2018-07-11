@@ -1,0 +1,1058 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/project.css" type="text/css" rel="stylesheet" />
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable">
+                    <div class="col-md-3 col-sm-3 col-lg-3">
+                        <div class="leftSidebar" style="height: 648px;">
+                            <div class="titleSideBar">
+                                <h2>Open My Recent Project</h2>
+                            </div>
+
+                            <div class="bodySideBar" style="height: 87%">
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>7-15078</strong></span><br/>Comcast Teakwood Tech Suite B</a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>14-0045 TS</strong></span><br/>Public Safety Facility </a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>15-3214CL</strong></span><br/>Cargill Office Center Renewal</a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>16-2201</strong></span><br/>Medline Industries Office Tenant Fit-out</a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>07-48523</strong></span><br/>Building 880</a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>14-9456</strong></span><br/>Perry Lane Hotel</a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>16-15648</strong></span><br/>Arcadia Bluffs South Lodge  </a>
+                                </div>
+
+                                <div class="bodylinks">
+                                    <a href="#"><span><strong>16-15650</strong></span><br/>Arcadia Bluffs North Lodge</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="container-fluid card-view">
+                            <div class="col-md-12 col-sm-12 col-xs-12 export-success-msg-section">
+                                <div class="alert alert-success fade in">Project has been exported successfully</div>
+                            </div>
+                            <div class="page-header clearfix paddingV10">
+                                <h1 class="pull-left">Open Projects</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- <form class="form-inline custom-search-filter revision pull-left">
+                                    <div class="form-group">
+                                        <div class="pull-left">
+                                           <!--  <label class="displayInline">View</label>
+                                            <select class="form-control" id="Select1" onchange="selectView('#centerTable > tbody', this.value, 'centertable')" >
+                                                <option value="original">(**Original View**)</option>
+                                            </select> 
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View">
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View">
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                              <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button> 
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form> -->
+                                    <form class="form-inline filters revision col-md-4 col-md-offset-1">
+                                        <div class="form-group">
+                                            <!--                                        <label>
+                                                                                    Filters:
+                                                                                </label>-->
+                                            <!-- <button class="btn btn-primary marginL10" name="My Projects Only" onclick="filterProjectWiseData(event, this, '#project-table')">
+                                            My Projects Only
+                                        </button> -->
+
+                                            <!-- <button class="btn btn-default marginL10" name="Show Archived" onclick="filterProjectWiseData(event, this, '#project-table')">
+                                            Show Archived
+                                        </button> -->
+                                        </div>
+                                    </form>
+                                    <form class="form-inline pull-right">
+                                        <div class="input-group">
+                                            <input type="search" class="form-control" placeholder="Search Project">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-search"></i>
+                                            </div>
+                                        </div>
+                                        <!-- <span class="show-details-btn" action-type="show">
+                                        Show more
+                                        <i class="fa fa-angle-double-right"></i>
+                                    </span>
+                                    <span class="show-details-btn" action-type="hide" style="display: none">
+                                        Show less
+                                        <i class="fa fa-angle-double-left"></i>
+                                    </span> -->
+
+                                    </form>
+
+                                    <div class="table-wrapper">
+                                        <table class="table" id="project-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="width50">
+                                                        <div class="btn-group custom-filtr-table pull-left">
+                                                            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                <img src="images/Views.png">
+                                                            </button>
+                                                            <ul class="dropdown-menu filter-grid-column">
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Project ID</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Project ID" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Description</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Description" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Architects Project #</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Architects Project #" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Stage</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Stage" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Date Created</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Date Created" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Date Started</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Date Started" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Users</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Users" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">Project Manager</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Project Manager" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                                <li><a class="pull-left btn-block clearfix"><span class="pull-left">&nbsp;</span><input onclick="gridfilterColumn(this)" type="checkbox" data-type="Details" class="filter-grid-check pull-right text-right" checked="checked"></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- <input type="checkbox" onclick="checkAll(this)" class="pull-right"> -->
+
+                                                    </th>
+                                                    <th data-type="Project ID">Project ID</th>
+                                                    <th data-type="Description">Project Name</th>
+                                                    <!-- <th data-type="Architects Project #">Architects Project #</th>
+                                    <th data-type="Stage">Stage</th> -->
+                                                    <th data-type="Date Created">Date Created</th>
+                                                    <!-- <th data-type="Date Started">Date Started</th> -->
+                                                    <!-- <th data-type="Users">Users</th> -->
+                                                    <!-- <th data-type="Project Manager">Project Manager</th> -->
+                                                    <!-- <th data-type="Details">&nbsp;</th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">16-05961</td>
+                                                    <td data-type="Description">Milano Travel</td>
+                                                    <!-- <td data-type="Architects Project #">10</td>
+                                            <td data-type="Stage">Processing</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Anthony Mounivong</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">16-22504</td>
+                                                    <td data-type="Description">Medline Industries Office Tenant Fit-Out</td>
+                                                    <!--  <td data-type="Architects Project #">10</td>
+                                            <td data-type="Stage">Quick Estimating </td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Anthony Mounivong</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">09-15646</td>
+                                                    <td data-type="Description">Building 880</td>
+                                                    <!-- <td data-type="Architects Project #">17</td>
+                                            <td data-type="Stage">Estimating</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Peter parker</td> -->
+                                                    <!--   <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">15-32415</td>
+                                                    <td data-type="Description">Cargill Office Center Renewal</td>
+                                                    <!--   <td data-type="Architects Project #">19</td>
+                                            <td data-type="Stage">Processing</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Jamie Palmer</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">16-05961</td>
+                                                    <td data-type="Description">Milano Travel</td>
+                                                    <!--  <td data-type="Architects Project #">10</td>
+                                            <td data-type="Stage">Processing</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Jamie Palmer</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">16-22504</td>
+                                                    <td data-type="Description">Medline Industries Office Tenant Fit-Out</td>
+                                                    <!-- <td data-type="Architects Project #">10</td>
+                                            <td data-type="Stage">Quick Estimating </td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Jamie Palmer</td> -->
+                                                    <!--  <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">09-15646</td>
+                                                    <td data-type="Description">Building 880</td>
+                                                    <!-- <td data-type="Architects Project #">17</td>
+                                            <td data-type="Stage">Estimating</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!--  <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Simon Taffel</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">15-32415</td>
+                                                    <td data-type="Description">Cargill Office Center Renewal</td>
+                                                    <!-- <td data-type="Architects Project #">19</td>
+                                            <td data-type="Stage">Processing</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Albert Robbinson</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">16-05961</td>
+                                                    <td data-type="Description">Milano Travel</td>
+                                                    <!-- <td data-type="Architects Project #">10</td>
+                                            <td data-type="Stage">Processing</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!--  <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">John burno</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">16-22504</td>
+                                                    <td data-type="Description">Medline Industries Office Tenant Fit-Out</td>
+                                                    <!-- <td data-type="Architects Project #">10</td>
+                                            <td data-type="Stage">Quick Estimating </td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">Albert Robbinson</td> -->
+                                                    <!--  <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="My Projects Only" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!-- <input type="checkbox"  class="pull-right" > -->
+                                                    </td>
+                                                    <td data-type="Project ID">09-15646</td>
+                                                    <td data-type="Description">Building 880</td>
+                                                    <!-- <td data-type="Architects Project #">17</td>
+                                            <td data-type="Stage">Estimating</td> -->
+                                                    <td data-type="Date Created">09-21-2016</td>
+                                                    <!-- <td data-type="Date Started">09-21-2016</td>
+                                            <td data-type="Users">0</td>
+                                            <td data-type="Project Manager">John burno</td> -->
+                                                    <!-- <td data-type="Details"><button class="btn btn-primary">Details</button></td> -->
+                                                </tr>
+                                                <!--                                        <tr data-category="My Projects Only">
+                                                                                    <td class="text-center"><input type="checkbox"></td>
+                                                                                    <td data-type="Project ID">15-32415</td>
+                                                                                    <td data-type="Description">Cargill Office Center Renewal</td>
+                                                                                    <td data-type="Architects Project #">19</td>
+                                                                                    <td data-type="Stage">Processing</td>
+                                                                                    <td data-type="Date Created">09-21-2016</td>
+                                                                                    <td data-type="Date Started">09-21-2016</td>
+                                                                                    <td data-type="Users">0</td>
+                                                                                    <td data-type="Project Manager"></td>
+                                                                                    <td data-type="Details"><button class="btn btn-primary">Details</button></td>
+                                                                                </tr>
+                                                                                <tr data-category="My Projects Only">
+                                                                                    <td class="text-center"><input type="checkbox"></td>
+                                                                                    <td data-type="Project ID">16-05961</td>
+                                                                                    <td data-type="Description">Milano Travel</td>
+                                                                                    <td data-type="Architects Project #">10</td>
+                                                                                    <td data-type="Stage">Processing</td>
+                                                                                    <td data-type="Date Created">09-21-2016</td>
+                                                                                    <td data-type="Date Started">09-21-2016</td>
+                                                                                    <td data-type="Users">0</td>
+                                                                                    <td data-type="Project Manager"></td>
+                                                                                    <td data-type="Details"><button class="btn btn-primary">Details</button></td>
+                                                                                </tr>
+                                                                                <tr data-category="My Projects Only">
+                                                                                    <td class="text-center"><input type="checkbox"></td>
+                                                                                    <td data-type="Project ID">16-22504</td>
+                                                                                    <td data-type="Description">Medline Industries Office Tenant Fit-Out</td>
+                                                                                    <td data-type="Architects Project #">10</td>
+                                                                                    <td data-type="Stage">Quick Estimating </td>
+                                                                                    <td data-type="Date Created">09-21-2016</td>
+                                                                                    <td data-type="Date Started">09-21-2016</td>
+                                                                                    <td data-type="Users">0</td>
+                                                                                    <td data-type="Project Manager"></td>
+                                                                                    <td data-type="Details"><button class="btn btn-primary">Details</button></td>
+                                                                                </tr>
+                                                                                <tr data-category="Show Hidden">
+                                                                                    <td class="text-center"><input type="checkbox"></td>
+                                                                                    <td data-type="Project ID">07-32016</td>
+                                                                                    <td data-type="Description">Mason City Training 2  Day 2</td>
+                                                                                    <td data-type="Architects Project #">7</td>
+                                                                                    <td data-type="Stage">Lost Job</td>
+                                                                                    <td data-type="Date Created">09-21-2015</td>
+                                                                                    <td data-type="Date Started">09-21-2015</td>
+                                                                                    <td data-type="Users">2</td>
+                                                                                    <td data-type="Project Manager"></td>
+                                                                                    <td data-type="Details"><button class="btn btn-primary">Details</button></td>
+                                                                                </tr>-->
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">16-21265</td>
+                                                    <td data-type="Description">St. Johns Hospital</td>
+                                                    <!--<td data-type="Architects Project #">8</td>-->
+                                                    <!--<td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>-->
+                                                    <!--<td data-type="Users">2</td>-->
+                                                    <!--<td data-type="Project Manager">John burno</td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">16-21265</td>
+                                                    <td data-type="Description">St. Johns Hospital</td>
+                                                    <!--<td data-type="Architects Project #">8</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">14-46656</td>
+                                                    <td data-type="Description">Perry Land Hotel </td>
+                                                    <!--<td data-type="Architects Project #">0</td>
+                                            <td data-type="Stage">Lost Bid</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">07-32016</td>
+                                                    <td data-type="Description">Mason City Training 2 Day 2</td>
+                                                    <!--<td data-type="Architects Project #">7</td>
+                                            <td data-type="Stage">Lost Job</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">16-21265</td>
+                                                    <td data-type="Description">St. Johns Hospital</td>
+                                                    <!--<td data-type="Architects Project #">8</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">16-21265</td>
+                                                    <td data-type="Description">St. Johns Hospital</td>
+                                                    <!--<td data-type="Architects Project #">8</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">14-46656</td>
+                                                    <td data-type="Description">Perry Land Hotel </td>
+                                                    <!--td data-type="Architects Project #">0</td>
+                                            <td data-type="Stage">Lost Bid</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">07-32016</td>
+                                                    <td data-type="Description">Mason City Training 2 Day 2</td>
+                                                    <!--<td data-type="Architects Project #">7</td>
+                                            <td data-type="Stage">Lost Job</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">16-21265</td>
+                                                    <td data-type="Description">St. Johns Hospital</td>
+                                                    <!--<td data-type="Architects Project #">8</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">16-21265</td>
+                                                    <td data-type="Description">St. Johns Hospital</td>
+                                                    <!--<td data-type="Architects Project #">8</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Hidden" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">14-46656</td>
+                                                    <td data-type="Description">Perry Land Hotel </td>
+                                                    <!--<td data-type="Architects Project #">0</td>
+                                            <td data-type="Stage">Lost Bid</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td> -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">14-52228</td>
+                                                    <td data-type="Description">Fry’s Marketplace</td>
+                                                    <!--<td data-type="Architects Project #">18</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">12</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">10-55386</td>
+                                                    <td data-type="Description">INIT US Headquarters</td>
+                                                    <!--<td data-type="Architects Project #">15</td>
+                                            <td data-type="Stage">Quick Estimating</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">6</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">7-150703</td>
+                                                    <td data-type="Description">Comcast Meadow wood Tech Suite B</td>
+                                                    <!--<td data-type="Architects Project #">3</td>
+                                            <td data-type="Stage">Lost Bid </td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td>   -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">12-54955</td>
+                                                    <td data-type="Description">Garner Pediatric</td>
+                                                    <!--<td data-type="Architects Project #">5</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">4</td>
+                                            <td data-type="Project Manager">John</td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">14-52228</td>
+                                                    <td data-type="Description">Fry’s Marketplace</td>
+                                                    <!--<td data-type="Architects Project #">18</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">12</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">10-55386</td>
+                                                    <td data-type="Description">INIT US Headquarters</td>
+                                                    <!--<td data-type="Architects Project #">15</td>
+                                            <td data-type="Stage">Quick Estimating</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">6</td>
+                                            <td data-type="Project Manager">Michel Sischo</td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">7-150703</td>
+                                                    <td data-type="Description">Comcast Meadow wood Tech Suite B</td>
+                                                    <!--<td data-type="Architects Project #">3</td>
+                                            <td data-type="Stage">Lost Bid </td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager">Michel Sischo</td>-->
+                                                    <!--  <td data-type="Details"><button class="btn btn-info">Details</button></td>   -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">12-54955</td>
+                                                    <td data-type="Description">Garner Pediatric</td>
+                                                    <!--<td data-type="Architects Project #">5</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">4</td>
+                                            <td data-type="Project Manager">Bravo</td>-->
+                                                    <!--   <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">14-52228</td>
+                                                    <td data-type="Description">Fry’s Marketplace</td>
+                                                    <!--<td data-type="Architects Project #">18</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">12</td>
+                                            <td data-type="Project Manager">Big Boss</td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">10-55386</td>
+                                                    <td data-type="Description">INIT US Headquarters</td>
+                                                    <!--<td data-type="Architects Project #">15</td>
+                                            <td data-type="Stage">Quick Estimating</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">6</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">7-150703</td>
+                                                    <td data-type="Description">Comcast Meadow wood Tech Suite B</td>
+                                                    <!--<td data-type="Architects Project #">3</td>
+                                            <td data-type="Stage">Lost Bid </td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!--<td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">2</td>
+                                            <td data-type="Project Manager">John</td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                                <tr data-category="Show Archived" ondblclick="location.href='detailedEstimating_landing.html'">
+                                                    <td>
+                                                        <!--<input type="checkbox"  class="pull-right" >-->
+                                                    </td>
+                                                    <td data-type="Project ID">12-54955</td>
+                                                    <td data-type="Description">Garner Pediatric</td>
+                                                    <!--<td data-type="Architects Project #">5</td>
+                                            <td data-type="Stage">Scheduling</td>-->
+                                                    <td data-type="Date Created">09-21-2015</td>
+                                                    <!-- <td data-type="Date Started">09-21-2015</td>
+                                            <td data-type="Users">4</td>
+                                            <td data-type="Project Manager"></td>-->
+                                                    <!-- <td data-type="Details"><button class="btn btn-info">Details</button></td>  -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="paddingV10 marginB10 table-actions">
+                                        <button class="btn btn-primary " name="Hide">Hide</button>
+                                        <button class="btn btn-primary marginL10" name="Show Hidden" onclick="location.href='projectLanding.html'">
+                                            <!-- onclick="filterProjectWiseData(event, this, '#project-table')"-->Show Hidden </button>
+                                        <button class="btn btn-primary marginL10" name="Open" onclick="location.href = 'detailedEstimating_landing.html'" style="opacity:0.5;">Open</button>
+                                        <!-- <button class="btn btn-primary marginL10" name="Export" data-toggle="modal" data-target="#modal-export-project">Export</button> -->
+
+                                        <!--<button class="btn btn-primary marginL10" name="Archive">Archive</button>-->
+                                        <!-- <button class="btn btn-primary export-file-btn marginL10" name="Archive" type="button" title="Add Row" id="archiveProjects" onclick="archiveProject()">Archive</button> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal-export-project" tabindex="-1" role="dialog" aria-labelledby="modalInsertRowLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                    <h4 class="modal-title" id="gridSystemModalLabel">Export Type</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <form class="">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="radio clearfix">
+                                                            <label>
+                                                                <input type="radio" name="importType">PRO-TECH</label>
+                                                        </div>
+                                                        <div class="radio clearfix">
+                                                            <label>
+                                                                <input type="radio" name="importType">AAOS</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" name="">Include Discount</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary export-file-btn" type="button" title="Export" data-dismiss="modal" onclick="$('#exportFileBtn').trigger('click'),showSuccessMsg('Project has been exported successfully')">Export</button>
+                                    <input type="file" class="hide" id="exportFileBtn">
+                                    <!--<button type="button" class="btn btn-primary"  onclick="">Export</button>-->
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+
+                    </div>
+                    <div class="modal fade progressbarmodal" tabindex="-1" role="dialog" id="cutDataPopup">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-heading">
+                                        Processing...
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default cancelHide" data-dismiss="modal" id="cancelProcess">Cancel</button>
+
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <div class="modal fade" id="project-detail-popup" tabindex="-1" role="dialog" aria-labelledby="modalInsertRowLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content ">
+                                <div class="modal-header">
+                                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                    <h4 class="modal-title" id="gridSystemModalLabel">Project Details</h4>
+                                </div>
+                                <div class="modal-body container">
+                                    <div class="row">
+                                        <!--                                    <div class="col-md-12">
+                                                                            Enter the range of door #s to insert. You may include prefix or suffix codes to Door #s that already exist will be skipped.
+                                                                        </div>-->
+                                    </div>
+                                    <div class="row">
+                                        <form class="form-inline">
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project ID</label>
+                                                    <input type="text" class="form-control" id="ProjectID" value="16-21265" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Description</label>
+                                                    <input type="text" class="form-control" id="Description" value="St. Johns Hospital" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Architects Project #</label>
+                                                    <input type="number" class="form-control" id="Architects" value="12" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Stage</label>
+                                                    <input type="text" class="form-control" id="stage" value="Scheduling" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Date Created</label>
+                                                    <input type="text" class="form-control" id="date-created" value="09-21-2015" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Date Started</label>
+                                                    <input type="text" class="form-control" id="date-started" value="09-21-2015" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Users</label>
+                                                    <div class="dropdown">
+                                                        <button id="dLabel" class="dropdownEditDeleteBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            3
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <div class="dropdown-menu form-inline dropdownEditDeleteList " aria-labelledby="dLabel">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="" value="Dawn Erdmann">
+                                                                <a class="deletename" onclick="removeUser(this, '.dropdownEditDeleteList')"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="" value="Valerie Cesario">
+                                                                <a class="deletename" onclick="removeUser(this, '.dropdownEditDeleteList')"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="" value="Beau St. Louis">
+                                                                <a class="deletename" onclick="removeUser(this, '.dropdownEditDeleteList')"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                            <button class="btn btn-primary bdr3" type="button" title="Add" onclick="addUser(this,'.dropdownEditDeleteList ',event)">Add</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project Manager</label>
+                                                    <input type="text" class="form-control" id="project-manager" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Bid Date</label>
+                                                    <input type="text" class="form-control" id="project-manager" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Date Completed</label>
+                                                    <input type="text" class="form-control" id="date-completed" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Contractor </label>
+                                                    <input type="text" class="form-control" id="Contractor" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Architect </label>
+                                                    <input type="text" class="form-control" id="Architect" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Architects </label>
+                                                    <input type="text" class="form-control" id="Architects" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project Number</label>
+                                                    <input type="text" class="form-control" id="ProjectNumber" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Salesperson</label>
+                                                    <input type="text" class="form-control" id="Salesperson" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Measurement System</label>
+                                                    <input type="text" class="form-control" id="MeasurementSystem" value="English(Ft./In)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Hourly Labour Rate</label>
+                                                    <input type="text" class="form-control" id="HourlyLabourRate" value="15" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Hourly Installation Rate</label>
+                                                    <input type="text" class="form-control" id="HourlyInstallationRate" value="13" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Estimate Number</label>
+                                                    <input type="text" class="form-control" id="EstimateNumber" value="123456" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <label>Project Estimator ID</label>
+                                                    <input type="text" class="form-control" id="ProjectEstimatorID" value="" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <!--<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="appendRow('#estimating-home-table')">Insert</button>-->
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">Test Project</div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">John Knipper</div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer HTML -->
+                </div>
+            </div>
+
+            <script>
+                $('#project-table tbody tr').click(function() {
+                    $('.table-actions button[name="Open"]').css('opacity', '1');
+                });
+            </script>
+</body>
+
+</html>

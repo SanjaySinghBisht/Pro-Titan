@@ -1,0 +1,1017 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/quickEstimatingMaterial.css" type="text/css" rel="stylesheet" />
+    <!--<link href="css/bootstrap-toggle.css" type="text/css" rel="stylesheet" />-->
+
+    <link href="thumbnail-slider/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+    <script src="thumbnail-slider/thumbnail-slider.js" type="text/javascript"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.als-1.7.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailing.js"></script>
+    <script type="text/javascript" src="js/quickEstimatingMaterial.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid esimate-tab-list">
+                        <div class="row both-column-height-equal">
+                            <div class="col-xs-12 contentCollapsable">
+
+                                <div class="container-fluid">
+
+                                    <div class="row clearfix">
+                                        <div class="col-md-6">
+                                            <div class="page-header clearfix">
+                                                <h1 class="pull-left">Frames</h1>
+                                            </div>
+                                            <ul class="nav nav-tabs frame-menu-tabs">
+                                                <li class="active showSingleSubMenuBtn" data-menu-id="single-slider-frame" data-menu-type="single"><a data-toggle="pill" href="#single-slider-frame">Single</a></li>
+                                                <li data-menu-id="" data-menu-type="pair" class="hideSingleSubMenuBtn"><a data-toggle="pill" href="#single-slider-frame">Pair</a></li>
+                                                <li data-menu-id="" data-menu-type="borrowed light" class="hideSingleSubMenuBtn"><a data-toggle="pill" href="#single-slider-frame">Borrowed Lite</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+
+                                                <div id="single-slider-frame" class="tab-pane fade in active">
+                                                    <ul class="nestedNavigation">
+                                                        <li class="active"><a data-toggle="pill" href="#single-slider-frame">3 Sided</a></li>
+                                                        <li><a data-toggle="pill" href="#single-slider-frame">Side Lite</a></li>
+                                                    </ul>
+                                                    <ul class="nav nav-pills door-pills">
+                                                        <li class="active" data-menu-id="single-slider-frame" data-submenu-id="HMF"><a data-toggle="pill" href="#single-hollow-metal-frame">Hollow Metal </a></li>
+                                                        <li data-menu-id="" data-submenu-id="WF"><a data-toggle="pill" href="#">Wood </a></li>
+                                                        <li data-menu-id="" data-submenu-id="SSF"><a data-toggle="pill" href="#">Stainless Steel </a></li>
+                                                        <li data-menu-id="" data-submenu-id="FRPF"><a data-toggle="pill" href="#">FRP </a></li>
+                                                        <li data-menu-id="" data-submenu-id="SF"><a data-toggle="pill" href="#">Steel </a></li>
+                                                        <li data-menu-id="" data-submenu-id="SF"><a data-toggle="pill" href="#">Shared </a></li>
+                                                        <li data-menu-id="" data-submenu-id="EO"><a data-toggle="pill" href="#">Existing/ Others</a></li>
+                                                        <li data-menu-id="" data-submenu-id="F"><a data-toggle="pill" href="#">Favorites</a></li>
+                                                    </ul>
+                                                    <div class="">
+
+                                                        <div class="als-container submenu-list" id="single-hollow-metal-frame">
+                                                            <span class="als-prev"><img src="images/prev.png" alt="prev" title="previous" /></span>
+                                                            <div class="als-viewport">
+                                                                <ul class="als-wrapper padding0">
+                                                                    <li class="als-item thumb" data-toggle="modal" href="#grid-select-filters"><img src="images/frame-slider/1.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/2.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/3.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/4.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/5.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/6.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/7.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/8.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/9.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/10.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/1.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/2.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/3.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/4.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/5.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/6.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/7.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/frame-slider/8.jpg"></li>
+                                                                    <!-- <li class="als-item thumb"><img src="images/frame-slider/9.jpg"></li>
+                                                     <li class="als-item thumb"><img src="images/frame-slider/10.jpg"></li>-->
+                                                                </ul>
+                                                            </div>
+                                                            <span class="als-next"><img src="images/next.png" alt="next" title="next" /></span>
+                                                            <div class="add-new" data-toggle="modal" href="#add-frames">
+                                                                <i class="fa fa-plus"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="page-header clearfix">
+                                                <h1 class="pull-left">Doors</h1>
+                                            </div>
+                                            <ul class="nav nav-tabs door-menu-tabs">
+                                                <li class="active showSingleSubMenuBtn" data-menu-id="single-slider-door" data-menu-type="single"><a data-toggle="pill" href="#single-slider-door">Single</a></li>
+                                                <li data-menu-id="" data-menu-type="pair" class="hideSingleSubMenuBtn"><a data-toggle="pill" href="#single-slider-door">Pair</a></li>
+                                                <!-- <li data-menu-id="" data-menu-type="borrowed light"  class="hideSingleSubMenuBtn"><a data-toggle="pill" href="#single-slider-door" >Borrowed Light</a></li> -->
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="single-slider-door" class="tab-pane fade in active">
+                                                    <ul class="nestedNavigation" style="height:42px;">
+                                                        <!-- <li class="active"><a data-toggle="pill"  href="#single-slider-frame"">3 Sided</a></li> -->
+                                                        <!-- <li><a data-toggle="pill"  href="#single-slider-frame">Side Light</a></li> -->
+                                                    </ul>
+                                                    <ul class="nav nav-pills frame-pills">
+                                                        <li class="active" data-menu-id="single-slider-door" data-submenu-id="HMD"><a data-toggle="pill" href="#single-hollow-metal-door">Hollow Metal </a></li>
+                                                        <li data-menu-id="" data-submenu-id="WD"><a data-toggle="pill" href="#">Wood </a></li>
+                                                        <li data-menu-id="" data-submenu-id="SSD"><a data-toggle="pill" href="#">Stainless Steel </a></li>
+                                                        <li data-menu-id="" data-submenu-id="FRPD"><a data-toggle="pill" href="#">FRP </a></li>
+                                                        <li data-menu-id="" data-submenu-id="SD"><a data-toggle="pill" href="#">Aluminum </a></li>
+                                                        <li data-menu-id="" data-submenu-id="SD"><a data-toggle="pill" href="#">Glass </a></li>
+                                                        <li data-menu-id="" data-submenu-id="EO"><a data-toggle="pill" href="#">Existing/ Others</a></li>
+                                                        <li data-menu-id="" data-submenu-id="F"><a data-toggle="pill" href="#">Favorites</a></li>
+                                                    </ul>
+                                                    <div class="">
+
+                                                        <div class="als-container submenu-list" id="single-hollow-metal-door">
+                                                            <span class="als-prev"><img src="images/prev.png" alt="prev" title="previous" /></span>
+                                                            <div class="als-viewport">
+                                                                <ul class="als-wrapper padding0">
+                                                                    <li class="als-item thumb" data-toggle="modal" href="#grid-doorselect-filters"><img src="images/door-slider/1.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/2.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/3.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/4.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/5.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/6.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/7.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/8.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/9.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/10.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/1.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/2.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/3.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/4.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/5.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/6.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/7.jpg"></li>
+                                                                    <li class="als-item thumb"><img src="images/door-slider/8.jpg"></li>
+                                                                    <!--<li class="als-item thumb"><img src="images/door-slider/9.jpg"></li>
+                                                    <li class="als-item thumb"><img src="images/door-slider/10.jpg"></li>-->
+                                                                </ul>
+                                                            </div>
+                                                            <span class="als-next"><img src="images/next.png" alt="next" title="next" /></span>
+                                                            <div class="add-new" data-toggle="modal" href="#add-doors">
+                                                                <i class="fa fa-plus"></i>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-md-6 marginT15 pull-left" style="height: 380px;overflow: auto;">
+                                            <div class="table-wrapper">
+                                                <table class="table custom-grid" id="final-table">
+                                                    <thead>
+                                                        <tr class="mainHead">
+                                                            <th data-type="Frame Type">Frame Type</th>
+                                                            <th data-type="Item">Item</th>
+                                                            <th data-type="Part Details">Part Details</th>
+                                                            <th data-type="Quantity">Quantity</th>
+                                                            <th data-type="Amount">Amount</th>
+                                                            <th data-type="cost">+$</th>
+                                                            <th data-type="Extended">Extended</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <table class="table custom-grid col-md-12" id="final-total-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="Frame Type"></td>
+                                                            <td data-type="Item"></td>
+                                                            <td class="text-center"></td>
+                                                            <td data-type="Quantity"></td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 marginT15 pull-right" style="height: 380px;overflow: auto;">
+                                            <div class="table-wrapper">
+                                                <table class="table custom-grid" id="final-table">
+                                                    <thead>
+                                                        <tr class="mainHead">
+                                                            <th data-type="Door Type">Door Type</th>
+                                                            <th data-type="Item">Item</th>
+                                                            <th data-type="Part Details">Part Details</th>
+                                                            <th data-type="Quantity">Quantity</th>
+                                                            <th data-type="Amount">Amount</th>
+                                                            <th data-type="cost">+$</th>
+                                                            <th data-type="Extended">Extended</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="Frame Type">single</td>
+                                                            <td data-type="Item">HMF</td>
+                                                            <td data-type="Part Details">tlsMulti-story residential building</td>
+                                                            <td data-type="Quantity">1</td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+
+                                                    </tbody>
+
+                                                </table>
+                                                <table class="table custom-grid col-md-12" id="final-total-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="Frame Type"></td>
+                                                            <td data-type="Item"></td>
+                                                            <td class="text-center"></td>
+                                                            <td data-type="Quantity"></td>
+                                                            <td data-type="Amount">300</td>
+                                                            <td data-type="cost">400</td>
+                                                            <td data-type="Extended">20</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div id="grid-select-filters" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                                        <div class="modal-dialog modal-lg centered-modal" role="document">
+                                            <div class="modal-content ">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="gridSystemModalLabel">Attributes</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <table class="table" id="filter-options">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Vendor</th>
+                                                                        <th class="width150">Elevation Type</th>
+                                                                        <th>Profile</th>
+                                                                        <th>Gauge</th>
+                                                                        <th>Steel Type</th>
+                                                                        <th>Construction</th>
+                                                                        <th>Anchor</th>
+                                                                        <th>Label</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td cell-type="manuf">&nbsp;</td>
+                                                                        <td class="width150">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">CR</td>
+                                                                        <td cell-type="construction">SW</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td cell-type="manuf">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">A60</td>
+                                                                        <td cell-type="construction">WLD</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td cell-type="manuf">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">G90</td>
+                                                                        <td cell-type="construction">KD</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td cell-type="manuf">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">ALM Opt</td>
+                                                                        <td cell-type="construction">FW</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td class="" colspan="8" style="color: #0081c2;font-size: 14px;cursor: pointer">See more</td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                        <!--                                            <div class="col-md-12 text-center see-all-options">
+                                                                                            <span onclick="seeAllOptions('filter-options')">See All</span>
+                                                                                        </div>-->
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addCost()">Ok</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+                                    <!-- /.modal -->
+
+                                    <div id="grid-doorselect-filters" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                                        <div class="modal-dialog modal-lg centered-modal" role="document">
+                                            <div class="modal-content ">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="H1">Attributes</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <table class="table" id="filter-options">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Vendor</th>
+                                                                        <th>Series</th>
+                                                                        <th>Gauge</th>
+                                                                        <th>Steel Type/ Species</th>
+                                                                        <th>Edges</th>
+                                                                        <th>Label</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td cell-type="steel type">&nbsp;</td>
+                                                                        <td class="width150">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">CR</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="construction">SW</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td cell-type="steel type">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">A60</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="construction">WLD</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td cell-type="steel type">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">G90</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="construction">KD</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td cell-type="steel type">&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="steel type">ALM Opt</td>
+                                                                        <td>&nbsp;</td>
+                                                                        <td cell-type="construction">FW</td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td class="" colspan="6" style="color: #0081c2;font-size: 14px;cursor: pointer">See more</td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                        <!--                                            <div class="col-md-12 text-center see-all-options">
+                                                                                            <span onclick="seeAllOptions('filter-options')">See All</span>
+                                                                                        </div>-->
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addCost()">Ok</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+
+                                    <div id="add-frames" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                                        <div class="modal-dialog centered-modal" role="document">
+                                            <div class="modal-content ">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="gridSystemModalLabel">Add Frame</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <form>
+                                                                <!--                                                    <div class="col-md-5 col-md-offset-1">
+                                                                                                            <div class="form-group">
+                                                                                                                <label>Frame Type</label>
+                                                                                                                <input type="text" id="frame-type"/>
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Frame Name</label>
+                                                                        <input type="text" id="frame-name" class="form-control" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Frame Image</label>
+                                                                        <input type="file" id="frame-image" class="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Frame Manuf.</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-manuf" type="checkbox" value="">12a</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-manuf" type="checkbox" value="">14ga</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-manuf" type="checkbox" value="">16ga</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-manuf" type="checkbox" value="">18ga</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Frame Gauge</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-gauge" type="checkbox" value="">CR</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-gauge" type="checkbox" value="">A60</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-gauge" type="checkbox" value="">G90</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-gauge" type="checkbox" value="">ALM Opt</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Frame Steel Type</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-steel-type" type="checkbox" value="">Cu</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-steel-type" type="checkbox" value="">C</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-steel-type" type="checkbox" value="">FW</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-steel-type" type="checkbox" value="">BA</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label class="">Frame Construction</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-Construction" type="checkbox" value="">SW</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-Construction" type="checkbox" value="">WLD</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-Construction" type="checkbox" value="">KD</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="frame-Construction" type="checkbox" value="">FW</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addFrame()">Submit</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+                                    <div id="add-doors" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                                        <div class="modal-dialog centered-modal" role="document">
+                                            <div class="modal-content ">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="gridSystemModalLabel">Add Doors</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <form>
+                                                                <!--                                                    <div class="col-md-5 col-md-offset-1">
+                                                                                                            <div class="form-group">
+                                                                                                                <label>Door Type</label>
+                                                                                                                <input type="text" id="door-type"/>
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Door Name</label>
+                                                                        <input type="text" id="door-name" class="form-control" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Door Image</label>
+                                                                        <input type="file" id="door-image" class="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Door Manuf.</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-manuf" type="checkbox" value="">12a</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-manuf" type="checkbox" value="">14ga</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-manuf" type="checkbox" value="">16ga</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-manuf" type="checkbox" value="">18ga</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Door Gauge</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-gauge" type="checkbox" value="">CR</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-gauge" type="checkbox" value="">A60</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-gauge" type="checkbox" value="">G90</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-gauge" type="checkbox" value="">ALM Opt</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Door Steel Type</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-steel-type" type="checkbox" value="">Cu</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-steel-type" type="checkbox" value="">C</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-steel-type" type="checkbox" value="">FW</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-steel-type" type="checkbox" value="">BA</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11 col-md-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label class="">Door Construction</label>
+                                                                        <div>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-Construction" type="checkbox" value="">SW</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-Construction" type="checkbox" value="">WLD</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-Construction" type="checkbox" value="">KD</label>
+                                                                            <label class="checkbox-inline">
+                                                                                <input name="door-Construction" type="checkbox" value="">FW</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addDoor()">Submit</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            $(document).ready(function() {
+                $('.nestedNavigation li a').click(function() {
+                    $(this).closest('ul').children('li').removeClass('active');
+                    $(this).parent('li').addClass('active');
+                });
+
+                $('.hideSingleSubMenuBtn').click(function() {
+
+                    $(this).closest('.col-md-6').find('.nestedNavigation').hide();
+                    // $('.nestedNavigation').hide();
+                });
+                $('.showSingleSubMenuBtn').click(function() {
+                    $(this).closest('.col-md-6').find('.nestedNavigation').show();
+                });
+            });
+        </script>
+        <!-- Footer HTML -->
+
+</body>
+<!-- Project Data Change Popup -->
+<div class="modal fade change-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="changePopupData">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Milano Travel Change Management</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                    <button class="btn btn-default pull-left marginR5 start-new-change">
+                        Start New
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                        Drop
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target="#commitData" disabled="disabled">
+                        Commit
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 details-change">
+                        Details
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 switch-to-change">
+                        Switch To
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                        Compare
+                    </button>
+                    <button class="btn btn-primary pull-right create-final-estimate-btn">
+                        Create Final Estimate
+                    </button>
+                </div>
+                <table class="table project-change-data-table" style="table-layout:auto;">
+                    <thead>
+                        <tr class="borderB mainHead">
+                            <th class="borderR" data-type="Change">
+                                Change
+                            </th>
+                            <th class="borderR" data-type="Status">
+                                Status
+                            </th>
+                            <th class="borderR" data-type="Description">
+                                Description
+                            </th>
+                            <th class="borderR" data-type="Owner">
+                                Owner
+                            </th>
+                            <th class="borderR" data-type="Start-Date">
+                                Start Date
+                            </th>
+                            <th data-type="Commit-Date">
+                                Commit Date
+                            </th>
+                            <th data-type="compare-time">
+                                Time
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="add-data" style="display:none;">
+                            <td class="borderR">
+                                <input type="text" class="form-text change-value">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <input type="text" class="form-text description">
+                            </td>
+                            <td class="borderR">
+                                <input type="text" class="form-text owner">
+                            </td>
+                            <td class="borderR">
+                                <input id="datetimepicker1" type="text" class="start-date">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                        </tr>
+                        <tr class="current-row">
+                            <td class="borderR">Current</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Milano Travel</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <a href="#" class="comparsion-point" title="Start"><span class="badge new marginR10">C</span>
+                                    </a></td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="borderR">C0-01</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Sample Description</td>
+                            <td class="borderR">Dawn</td>
+                            <td class="borderR">05/16/2017</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new marginR10">C</span></a><a href="#" class="comparsion-point" title="Before"><span style="display: inline-block;" class="badge before marginR10">B</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="change-state-legend">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="badge start marginR10">S</span>
+                                    <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge committed marginR10">N</span>
+                                    <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge new marginR10">C</span>
+                                    <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge before marginR10">B</span>
+                                    <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge after marginR10">A</span>
+                                    <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Changes Commit Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="commitData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Commit Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 commit-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Drop Changes Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="dropData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Drop Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 drop-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

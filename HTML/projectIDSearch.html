@@ -1,0 +1,348 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Open Project</h1>
+                        </div>
+
+                        <div class="project-form-container">
+                            <div class="row">
+                                <form roll="form">
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="form-group required">
+                                            <label>Project ID</label>
+                                            <input class="form-control" type="text" name="projectID" value="2624" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <div class="form-group required">
+                                            <label>Project Description</label>
+                                            <input class="form-control" type="text" name="projectDescription" placeholder="Project Description" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Project Manager</label>
+                                            <input class="form-control" type="text" name="projectManager" placeholder="Project Manager" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Sales Manager</label>
+                                            <input class="form-control" type="text" name="salesManager" placeholder="Sales Manager" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-xs-12 erase-icon-box">
+                                        <div class="form-group">
+                                            <a href="#" title="Erase">
+                                                <span class="fa fa-eraser"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12 show-hide-proj">
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="checkbox"> Show Hidden Project</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h4 class="form-sub-title">All Projects</h4>
+                                    <div class="row add-archit-actionbtns">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label>View</label>
+                                                <div class="archit-view-fields">
+                                                    <select class="form-control">
+                                                        <option value="Original View" selected>Original View</option>
+                                                    </select>
+                                                    <div class="archit-view-actionbtns">
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-plus-sign"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-minus-sign"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-floppy-disk"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-print"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="table-responsive">
+                                                <table class="table sortingTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Project ID <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                            <th>Description <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                            <th>Architects Project Number <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>2624opening</td>
+                                                            <td>Multistory bulding</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <!-- <tr>
+                            <td>Regrestion Project</td>
+                            <td>Regrestion Description</td>
+                            <td>10000</td>
+                          </tr> -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row new-archite-form">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 clearfix new-add-vendor-btn">
+                                            <a href="newProject.html" class="btn btn-primary" type="button" title="New">
+                                                <!--  <span class="glyphicon glyphicon-plus"></span> -->New</a>
+                                            <div class="pull-right">
+                                                <button class="btn btn-primary" type="button" title="Open Project">
+                                                    <span class="glyphicon glyphicon-folder-open"></span> Open Project
+                                                </button>
+                                                <button class="btn btn-default" type="button" title="Close">Close</button>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-md-12 col-sm-12 col-xs-12 clearfix hidden">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Type</label>
+                          <select class="form-control" name="typeof">
+                           <option selected>Architect</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Full Name</label>
+                          <input class="form-control" type ="text" name="full_name" placeholder="Full Name" />  
+                        </div>
+                      </div>                    
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Address1</label>
+                          <input class="form-control" type ="text" name="address" placeholder="Address1" />
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Address2</label>
+                          <input class="form-control" type ="text" name="address2" placeholder="Address2" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 button-container text-right">
+                        <button class="btn btn-primary" type="button" title="Save" onclick="location.href=''">Save</button>
+                        <button class="btn btn-default" type="button" title="Cancel" onclick="location.href=''">Cancel</button>
+                      </div>
+                    </div>
+                  </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h4 class="form-sub-title">Recent Viewed Projects</h4>
+                                    <div class="row add-archit-actionbtns">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label>View</label>
+                                                <div class="archit-view-fields">
+                                                    <select class="form-control">
+                                                        <option value="Original View" selected>Original View</option>
+                                                    </select>
+                                                    <div class="archit-view-actionbtns">
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-plus-sign"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-minus-sign"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-floppy-disk"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="glyphicon glyphicon-print"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="table-responsive">
+                                                <table class="table sortingTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Project ID <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                            <th>Description <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                            <th>Architects Project Number <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>2624opening</td>
+                                                            <td>Multistory bulding</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Regrestion Project</td>
+                                                            <td>Regrestion Description</td>
+                                                            <td>10000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row new-archite-form">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 clearfix new-add-vendor-btn">
+                                            <div class="pull-right">
+                                                <button class="btn btn-primary" type="button" title="Open Project">
+                                                    <span class="glyphicon glyphicon-folder-open"></span> Open Project
+                                                </button>
+                                                <button class="btn btn-default" type="button" title="Close">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">John Knipper</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // $(".new-add-vendor-btn a").click(function(){
+                //   $(this).parent().next(".hidden").toggleClass("hidden");
+                // })
+            })
+        </script>
+</body>
+
+</html>

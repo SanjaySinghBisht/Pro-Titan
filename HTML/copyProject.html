@@ -1,0 +1,468 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Copy Project</h1>
+                        </div>
+
+                        <div class="project-form-container">
+                            <div class="alert alert-success" id="successmsg">
+                                Project Copied Succesfully
+                            </div>
+                            <div class="alert alert-danger" id="errormsg">
+                                Atleast One Project should be selected "From Table", "To Table" and Criteria
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h4 class="form-sub-title">From Project</h4>
+                                    <form class="form-inline">
+                                        <!-- 
+                    <div class="form-group">
+                      <label for="projectTo">Project</label>
+                      <input type="text" class="form-control" id="projectTo">
+                    </div>
+                    <div class="form-group">
+                      <label for="descriptionTo">Description</label>
+                      <input type="text" class="form-control" id="descriptionTo">
+                    </div>
+                    <div class="form-group erase-icon-box">
+                      <a href="#" title="Erase">
+                        <span class="fa fa-eraser"></span>
+                      </a>
+                  </div>
+                 -->
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form class="form-inline custom-search-filter revision clearfix">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label>View</label>
+                                                        <select class="form-control" id="centerViewDropdown" onchange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL30">
+                                                        <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Copy">
+                                                            <i class="glyphicon glyphicon-copy"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="File">
+                                                            <i class="glyphicon glyphicon-file"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row new-archite-form">
+                                        <form>
+                                            <div class="container-fluid row">
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Project ID</label>
+                                                        <input class="form-control" type="text" name="projectID" placeholder="Project ID" onblur="filterColumnText(this.value, '#projectFromTable', '2');" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Project Description</label>
+                                                        <input class="form-control" type="text" name="projectDescription" placeholder="Project Description" onblur="filterColumnText(this.value, '#projectFromTable', '3');" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid row">
+                                                <div class="col-md-12 checkProjects">
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Entire Project" id="entire-project" onclick="checkAllEntireProject(this)"> Entire Project
+                                                    </div>
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Elevations" class="check"> Elevations
+                                                    </div>
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Hardware" class="check" id="hardware"> Hardware
+                                                    </div>
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Bulk Material" class="check"> Bulk Material
+                                                    </div>
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Material" class="check"> Material
+                                                    </div>
+                                                    <div class="checkbox-inline marginL4">
+                                                        <input type="checkbox" value="Hardware Set" class="check"> Hardware Set
+                                                    </div>
+
+                                                    <div class="checkbox-inline marginL0">
+                                                        <input type="checkbox" value="Project Tracking" class="uncheck"> Project Tracking
+                                                    </div>
+
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Questions" class="uncheck"> Questions
+                                                    </div>
+
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Quotes" class="uncheck"> Quotes
+                                                    </div>
+
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Calls" class="uncheck"> Calls
+                                                    </div>
+
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Documents" class="uncheck"> Documents
+                                                    </div>
+
+                                                    <div class="checkbox-inline">
+                                                        <input type="checkbox" value="Copy Revsion" class="uncheck"> Copy Revsion
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="table-responsive table-wrap" style="height:150px;">
+                                                <table class="table sortingTable" id="projectFromTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="40">
+                                                                <input type="checkbox" onclick="checkAll(this)">
+                                                            </th>
+                                                            <th>Project ID <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                            <th>Description <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="40">
+                                                                <input type="checkbox">
+                                                            </td>
+                                                            <td>2624opening</td>
+                                                            <td>Multistory bulding</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox">
+                                                            </td>
+                                                            <td>Regression Project</td>
+                                                            <td>Regression Description</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h4 class="form-sub-title">To Project</h4>
+                                    <form class="form-inline">
+                                        <!-- 
+                    <div class="form-group">
+                      <label for="projectTo">Project</label>
+                      <input type="text" class="form-control" id="projectTo">
+                    </div>
+                    <div class="form-group">
+                      <label for="descriptionTo">Description</label>
+                      <input type="text" class="form-control" id="descriptionTo">
+                    </div>
+                    <div class="form-group erase-icon-box">
+                      <a href="#" title="Erase">
+                        <span class="fa fa-eraser"></span>
+                      </a>
+                  </div>
+                 -->
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form class="form-inline custom-search-filter revision clearfix">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label>View</label>
+                                                        <select class="form-control" id="Select1" onchange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL30">
+                                                        <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Copy">
+                                                            <i class="glyphicon glyphicon-copy"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Print">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="File">
+                                                            <i class="glyphicon glyphicon-file"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row new-archite-form">
+                                        <form>
+                                            <div class="container-fluid row">
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Project ID</label>
+                                                        <input class="form-control" type="text" name="projectID" placeholder="Project ID" onblur="filterColumnText(this.value, '#projectToTable', '2');" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Project Description</label>
+                                                        <input class="form-control" type="text" name="projectDescription" placeholder="Project Description" onblur="filterColumnText(this.value, '#projectToTable', '3');" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid row">
+                                                <div class="col-md-12">
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Entire Project" id="entire-project" onclick="checkAllEntireProject(this)"> Entire Project
+                                                    </div>
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Elevations" class="uncheck"> Elevations
+                                                    </div>
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Hardware" class="check" id="hardware"> Hardware
+                                                    </div>
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Bulk Material" class="uncheck"> Bulk Material
+                                                    </div>
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Material" class="check"> Material
+                                                    </div>
+                                                    <div class="invisible checkbox-inline marginL4">
+                                                        <input type="checkbox" value="Hardware Set" class="uncheck"> Hardware Set
+                                                    </div>
+
+                                                    <div class="invisible checkbox-inline marginL0">
+                                                        <input type="checkbox" value="Project Tracking" class="check"> Project Tracking
+                                                    </div>
+
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Questions" class="check"> Questions
+                                                    </div>
+
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Quotes" class="check"> Quotes
+                                                    </div>
+
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Calls" class="check"> Calls
+                                                    </div>
+
+                                                    <div class="invisible checkbox-inline">
+                                                        <input type="checkbox" value="Documents" class="check"> Documents
+                                                    </div>
+
+                                                    <div class="invisible invisible checkbox-inline">
+                                                        <input type="checkbox" value="Copy Revsion" class="check"> Copy Revsion
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="table-responsive table-wrap" style="height:150px;">
+                                                <table class="table sortingTable" id="projectToTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="40">
+                                                                <input type="checkbox" onclick="checkAll(this)">
+                                                            </th>
+                                                            <th>Project ID <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                            <th>Description <span class="glyphicon glyphicon-triangle-top"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="40">
+                                                                <input type="checkbox">
+                                                            </td>
+                                                            <td>2624opening</td>
+                                                            <td>Multistory bulding</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox">
+                                                            </td>
+                                                            <td>Regression Project</td>
+                                                            <td>Regression Description</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col-md-6 -->
+                            </div>
+                            <div class="button-container marginT20" style="overflow:hidden">
+                                <div class="pull-left">
+                                    <button class="btn btn-primary" type="button" onclick="location.href='newProject.html'" title="Create New Project">Create New Project</button>
+                                </div>
+                                <div class="pull-right">
+                                    <button class="btn btn-primary" type="button" onclick="copyProject(this)" title="Copy">Copy</button>
+                                    <button class="btn btn-default" type="button" title="Merge">Merge</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">John Knipper</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // $(".new-add-vendor-btn a").click(function(){
+                //   $(this).parent().next(".hidden").toggleClass("hidden");
+                // })
+            })
+        </script>
+</body>
+
+</html>

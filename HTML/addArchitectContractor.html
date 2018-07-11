@@ -1,0 +1,401 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Add Architect</h1>
+                        </div>
+
+                        <div class="project-form-container">
+                            <div class="row add-archit-titles">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <h4 class="form-sub-title">Master Architect List</h4>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12 col-md-offset-1">
+                                    <h4 class="form-sub-title">Current Architect List</h4>
+                                </div>
+                            </div>
+                            <div class="row add-archit-actionbtns">
+                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                    <form class="form-inline custom-search-filter revision clearfix">
+                                        <div class="form-group">
+                                            <div class="pull-left">
+                                                <label class="displayInline">View</label>
+                                                <select class="form-control" id="Select1" onChange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                    <option value="original">(**Original View**)</option>
+                                                </select>
+                                            </div>
+                                            <div class="pull-left marginL30">
+                                                <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                                <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                </button>
+
+                                                <button class="btn btn-default pull-left" type="button" title="Print">
+                                                    <i class="glyphicon glyphicon-print"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" type="button" title="Export">
+                                                    <i class=" glyphicon glyphicon-export"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                    <form class="form-inline custom-search-filter revision clearfix">
+                                        <div class="form-group">
+                                            <div class="pull-left">
+                                                <label class="displayInline">View</label>
+                                                <select class="form-control" id="Select2" onChange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                    <option value="original">(**Original View**)</option>
+                                                </select>
+                                            </div>
+                                            <div class="pull-left marginL30">
+                                                <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                                <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                </button>
+
+                                                <button class="btn btn-default pull-left" type="button" title="Print">
+                                                    <i class="glyphicon glyphicon-print"></i>
+                                                </button>
+                                                <button class="btn btn-default pull-left" type="button" title="Export">
+                                                    <i class=" glyphicon glyphicon-export"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row vendor-listing-container">
+                                <div class="col-md-4 col-sm-5 col-xs-12">
+                                    <div class="vendor-list-table">
+                                        <div class="table-responsive">
+                                            <table class="table sortingTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30"></th>
+                                                        <th>Type <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th>No. <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th>Address <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Frank</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Vikas</td>
+                                                        <td>India</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>John</td>
+                                                        <td>USA</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Vikas</td>
+                                                        <td>India</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>John</td>
+                                                        <td>USA</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-sm-1 col-xs-12 drag-drop-section">
+                                    <div class="drag-drop-icons">
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                        </a>
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-circle-arrow-left"></span>
+                                        </a>
+                                    </div>
+                                    <div class="archit-delete-btn">
+                                        <a href="#">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-5 col-xs-12">
+                                    <div class="vendor-list-table">
+                                        <div class="table-responsive">
+                                            <table class="table sortingTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30"></th>
+                                                        <th>Type <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th>No. <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th>Address <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Frank</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Vikas</td>
+                                                        <td>India</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Frank</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Vikas</td>
+                                                        <td>India</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Vikas</td>
+                                                        <td>India</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Vikas</td>
+                                                        <td>India</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row new-archite-form">
+                                <div class="col-md-12 col-sm-12 col-xs-12 clearfix new-add-vendor-btn">
+                                    <a href="javascript:void(0);" class="btn btn-primary" type="button" title="New">New</a>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12 clearfix hidden">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Type</label>
+                                                <select class="form-control" name="typeof">
+                                                    <option selected>Architect</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Full Name</label>
+                                                <input class="form-control" type="text" name="full_name" placeholder="Full Name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Address1</label>
+                                                <input class="form-control" type="text" name="address" placeholder="Address1" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Address2</label>
+                                                <input class="form-control" type="text" name="address2" placeholder="Address2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 button-container text-right">
+                                            <button class="btn btn-primary" type="button" title="Save" onClick="location.href=''">Save</button>
+                                            <button class="btn btn-default" type="button" title="Cancel" onClick="location.href=''">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">John Knipper</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".new-add-vendor-btn a").click(function() {
+                    $(this).parent().next(".hidden").toggleClass("hidden");
+                })
+            })
+        </script>
+</body>
+
+</html>

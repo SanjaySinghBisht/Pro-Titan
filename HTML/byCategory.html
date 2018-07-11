@@ -1,0 +1,1052 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/company_mnagement.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/company-management.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid by-project-wrapper">
+                        <!-- Page Header -->
+                        <!--<div class="app-title">Protech</div>-->
+
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Information By Category</h1>
+                        </div>
+                        <div class="row">
+                            <!--<div class="col-md-5">
+                            <form class="form-horizontal  revision clearfix" style="margin-bottom:0;">
+                                <div class="form-group">
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="centerViewDropdown" onchange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                            <option value="original">Original View</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-7 table-header-actions">
+                                        <div class="form-group archit-view-actionbtns">
+                                            <a href="#">
+                                                <span class="glyphicon glyphicon-plus-sign"></span>
+                                            </a>
+                                            <a href="#">
+                                                <span class="glyphicon glyphicon-minus-sign"></span>
+                                            </a>
+                                            <a href="#">
+                                                <span class="glyphicon glyphicon-floppy-disk"></span>
+                                            </a>
+                                            <a href="#">
+                                                <span class="glyphicon glyphicon-print"></span>
+                                            </a>
+                                            <a href="#">
+                                                <span class="glyphicon glyphicon-export"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>-->
+                            <div class="col-md-6">
+                                <form class="form-inline custom-search-filter revision clearfix">
+                                    <div class="form-group">
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control" id="Select1" onChange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="col-md-6 filter-container">
+                                <div class="row sub-filters">
+                                    <!--<div class="col-md-12">
+                                    <div class="">
+                                        <button class="btn btn-default" id="refresh-projects-table-data">
+                                    Refresh
+                                </button>
+                                    </div>-->
+                                    <!--<div class="">
+                                <div class="radio">
+                                    <label>
+                                            <input type="radio" name="projectSelection" checked/>
+                                            All Projects
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="radio">
+                                    <label><input type="radio" name="projectSelection">Current Project Only</label>
+                                </div>
+                            </div>-->
+                                    <div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">Show Hidden Projects</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--<label>
+                                Search :
+                            </label>
+                            <div class="no-padding input-wrapper">
+                                <label>Project ID:</label>
+                                <input type="text" class="form-control" value="" placeholder="Project ID" />
+                            </div>
+                            <div class="no-padding input-wrapper">
+                                <label>Description:</label>
+                                <input type="text" class="form-control" value="" placeholder="Description" />
+                            </div>
+                            <div class="no-padding input-wrapper">
+                                <button class="btn btn-default">
+                                    <span class="glyphicon glyphicon-erase">
+                                    </span>
+                                </button>
+                            </div>-->
+                        </div>
+                    </div>
+                    <!--<div class="row sub-filters">
+                        <div class="col-md-12">
+                            <div class="">
+                                <button class="btn btn-default" id="refresh-projects-table-data">
+                                    Refresh
+                                </button>
+                            </div>
+                            <!--<div class="">
+                                <div class="radio">
+                                    <label>
+                                            <input type="radio" name="projectSelection" checked/>
+                                            All Projects
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="radio">
+                                    <label><input type="radio" name="projectSelection">Current Project Only</label>
+                                </div>
+                            </div>-->
+                    <!--<div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="">Show Hidden Projects</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>-->
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#tasks">Tasks</a></li>
+                                    <li><a data-toggle="tab" href="#documents">Documents</a></li>
+                                    <li><a data-toggle="tab" href="#calls">Calls</a></li>
+                                    <li><a data-toggle="tab" href="#costs">Costs</a></li>
+                                    <li><a data-toggle="tab" href="#invoices">Invoices</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="tab-content">
+                            <!--tasks table start-->
+                            <div id="tasks" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                            <label>Drag a column header here to group by that column</label>
+                                        </div>
+                                        <div class="table-wrapper">
+                                            <table class="table custom-grid" id="bycategoryTaskTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="btn-group custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png" class="boximgthumbsize">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Project</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="project" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Project Desc.</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="projectDesc" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Subject</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="subject" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Task</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="task" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Resource</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="resource" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Sched. Start Date</span>
+                                                                            <input type="checkbox" onClick="gridfilterColumn(this)" data-type="schedStartDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Sched. Comp Date</span>
+                                                                            <input type="checkbox" onClick="gridfilterColumn(this)" data-type="schedCompDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Due Date</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="dueDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Act. Start Date</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="actStartDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Act. Comp. Date</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="actCompDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Email Receipts</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="emailReceipts" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Notes</span>
+                                                                            <input type="checkbox" onClick="gridfilterColumn(this)" data-type="contractor" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <!--<li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">Architects Project Number</span>
+                                                                <input type="checkbox" onclick="gridfilterColumn(this)" data-type="architectsProjectNumber" class="filter-grid-check pull-right text-right"
+                                                                    checked="checked">
+                                                            </a>
+                                                        </li>-->
+                                                                    <!--<li>
+                                                            <a class="pull-left btn-block clearfix">
+                                                                <span class="pull-left">Salesperson</span>
+                                                                <input type="checkbox" onclick="gridfilterColumn(this)" data-type="salesperson" class="filter-grid-check pull-right text-right"
+                                                                    checked="checked">
+                                                            </a>
+                                                        </li>-->
+                                                                </ul>
+                                                            </div>
+                                                        </th>
+                                                        <th data-type="project">
+                                                            Project
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="projectDesc">
+                                                            Project Desc.
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="subject">
+                                                            Subject
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="task">
+                                                            Task
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="resource">
+                                                            Resource
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="schedStartDate">
+                                                            Sched. Start Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="schedCompDate">
+                                                            Sched. Comp. Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="dueDate">
+                                                            Due Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="actStartDate">
+                                                            Act. Start Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="actCompDate">
+                                                            Act. Comp. Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="emailReceipts">
+                                                            Email Receipts
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="notes">
+                                                            Notes
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <!--<th data-type="architectsProjectNumber">
+                                                Architects Project Number
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                        <!--<th data-type="salesperson">
+                                                Salesperson
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="project"></td>
+                                                        <td data-type="projectDesc">Regression Test</td>
+                                                        <td data-type="subject">Attn. (Estimate Hardware) Project: Regression Test Project </td>
+                                                        <td data-type="task">Estimate Hardware</td>
+                                                        <td data-type="resource"></td>
+                                                        <td data-type="schedStartDate"></td>
+                                                        <td data-type="schedCompDate"></td>
+                                                        <td data-type="dueDate"></td>
+                                                        <td data-type="actStartDate"></td>
+                                                        <td data-type="actCompDate"></td>
+                                                        <td data-type="emailReceipts">0</td>
+                                                        <td data-type="notes"></td>
+                                                        <!--<td data-type="architectsProjectNumber">Architects Project Number</td>-->
+                                                        <!--<td data-type="salesperson">Salesperson</td>-->
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="project"></td>
+                                                        <td data-type="projectDesc">Regression Test</td>
+                                                        <td data-type="subject">Attn. (Estimate Hollow Metal) Project: Regression Test Project
+                                                        </td>
+                                                        <td data-type="task">Estimate Hollow Metal</td>
+                                                        <td data-type="resource"> </td>
+                                                        <td data-type="schedStartDate"></td>
+                                                        <td data-type="schedCompDate"></td>
+                                                        <td data-type="dueDate"></td>
+                                                        <td data-type="actStartDate"></td>
+                                                        <td data-type="actCompDate"></td>
+                                                        <td data-type="emailReceipts">0</td>
+                                                        <td data-type="notes"></td>
+                                                        <!--<td data-type="architectsProjectNumber">Architects Project Number</td>-->
+                                                        <!--<td data-type="salesperson">Salesperson</td>-->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="add-delete-control text-left">
+                                                <button class="btn btn-expanded pull-left" onclick="addNewRecordMaterial('#bycategoryTaskTable')">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-expanded pull-left" onclick="deleteTableDataMaterial()">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--calls table start-->
+                            <div id="calls" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                            <label>Drag a column header here to group by that column</label>
+                                        </div>
+                                        <div class="table-wrapper">
+                                            <table class="table custom-grid" id="byCategorycallTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="btn-group custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png" class="boximgthumbsize">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Call Date</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="callDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Call Length</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="callLength" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Notes</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </th>
+                                                        <th data-type="callDate">
+                                                            Call Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="callLength">
+                                                            Call Length
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="notes">
+                                                            Notes
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+
+                                                        <!--<th data-type="architectsProjectNumber">
+                                                Architects Project Number
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                        <!--<th data-type="salesperson">
+                                                Salesperson
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="callDate"></td>
+                                                        <td data-type="callLength"></td>
+                                                        <td data-type="notes"></td>
+                                                    </tr>
+                                                    <!--<tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="callDate">Project ID </td>
+                                                        <td data-type="callLength">Description </td>
+                                                        <td data-type="notes">Users </td>
+                                                    </tr>-->
+                                                </tbody>
+                                            </table>
+                                            <div class="add-delete-control text-left">
+                                                <button class="btn btn-expanded pull-left" onclick="addNewRecordMaterial('#byCategorycallTable')">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-expanded pull-left" onclick="deleteTableDataMaterial()">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--costs table start-->
+                            <div id="costs" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                            <label>Drag a column header here to group by that column</label>
+                                        </div>
+                                        <div class="table-wrapper">
+                                            <table class="table custom-grid" id="byCategoryCostTables">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="btn-group custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png" class="boximgthumbsize">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Vendor-Material</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="vendorMaterial" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Cost Categoryy</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="costCategory" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Cost Type</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="costType" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Qty</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="qty" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Amount</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="amount" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Markup/Margin</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="markupMargin" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Selling Price</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="sellingPrice" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Notes</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Invoice</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="invoice" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </th>
+                                                        <th data-type="vendorMaterial">
+                                                            Vendor-Material
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="costCategory">
+                                                            Cost Category
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="costType">
+                                                            Cost Type
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="qty">
+                                                            Qty
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="amount">
+                                                            Amount
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="markupMargin">
+                                                            Markup/Margin
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="sellingPrice">
+                                                            Selling Price
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="notes">
+                                                            Notes
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="invoice">
+                                                            Invoice
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <!--<th data-type="architectsProjectNumber">
+                                                Architects Project Number
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                        <!--<th data-type="salesperson">
+                                                Salesperson
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="vendorMaterial">CU - Hollow Metal Frame
+                                                        </td>
+                                                        <td data-type="costCategory">Scheduled
+                                                        </td>
+                                                        <td data-type="costType">Shop Labor (Minutes)
+                                                        </td>
+                                                        <td data-type="qty">$30.00
+                                                        </td>
+                                                        <td data-type="amount">7.5
+                                                        </td>
+                                                        <td data-type="markupMargin">0.0000000000000
+                                                        </td>
+                                                        <td data-type="sellingPrice">7.5</td>
+                                                        <td data-type="notes"></td>
+                                                        <td data-type="invoice"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="vendorMaterial">C - Hollow Metal Frame
+                                                        </td>
+                                                        <td data-type="costCategory">Scheduled
+                                                        </td>
+                                                        <td data-type="costType">Shop Labor (Minutes)
+                                                        </td>
+                                                        <td data-type="qty">$460.00
+                                                        </td>
+                                                        <td data-type="amount">115
+                                                        </td>
+                                                        <td data-type="markupMargin">0.0000000000000
+                                                        </td>
+                                                        <td data-type="sellingPrice">115</td>
+                                                        <td data-type="notes"></td>
+                                                        <td data-type="invoice"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="add-delete-control text-left">
+                                                <button class="btn btn-expanded pull-left" onclick="addNewRecordMaterial('#byCategoryCostTables')">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-expanded pull-left" onclick="deleteTableDataMaterial()">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--invoices table start-->
+                            <div id="invoices" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                            <label>Drag a column header here to group by that column</label>
+                                        </div>
+                                        <div class="table-wrapper">
+                                            <table class="table custom-grid" id="byCategoryInvoiceTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="btn-group custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png" class="boximgthumbsize">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Invoice</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="invoice" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Invoice Amount</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="invoiceAmount" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Amount</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="amount" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Vendor</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="vendor" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">PO#</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="po" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">PO Date</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="poDate" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Description</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Invoice Notes</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="invoiceNotes" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Notes</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </th>
+                                                        <th data-type="invoice">
+                                                            Invoice
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="invoiceAmount">
+                                                            Invoice Amount
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="amount">
+                                                            Amount
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="vendor">
+                                                            Vendor
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="po">
+                                                            PO#
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="poDate">
+                                                            PO Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="description">
+                                                            Description
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="invoiceNotes">
+                                                            Invoice Notes
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="notes">
+                                                            Notes
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <!--<th data-type="architectsProjectNumber">
+                                                Architects Project Number
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                        <!--<th data-type="salesperson">
+                                                Salesperson
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="invoice"></td>
+                                                        <td data-type="invoiceAmount"></td>
+                                                        <td data-type="amount"> </td>
+                                                        <td data-type="vendor"></td>
+                                                        <td data-type="po"> </td>
+                                                        <td data-type="poDate"> </td>
+                                                        <td data-type="description"></td>
+                                                        <td data-type="invoiceNotes"> </td>
+                                                        <td data-type="notes"> </td>
+                                                    </tr>
+                                                    <!--<tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="invoice">Vendor-Material</td>
+                                                        <td data-type="invoiceAmount">Description </td>
+                                                        <td data-type="amount">Users </td>
+                                                        <td data-type="vendor">Vendor-Material</td>
+                                                        <td data-type="po">Description </td>
+                                                        <td data-type="poDate">Users </td>
+                                                        <td data-type="description">Vendor-Material</td>
+                                                        <td data-type="invoiceNotes">Description </td>
+                                                        <td data-type="notes">Description </td>
+                                                    </tr>-->
+                                                </tbody>
+                                            </table>
+                                            <div class="add-delete-control text-left">
+                                                <button class="btn btn-expanded pull-left" onclick="addNewRecordMaterial('#byCategoryInvoiceTable')">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-expanded pull-left" onclick="deleteTableDataMaterial()">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- documents tab start--->
+                            <div id="documents" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                            <label>Drag a column header here to group by that column</label>
+                                        </div>
+                                        <div class="table-wrapper">
+                                            <table class="table custom-grid" id="byCategoryDocumentTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="btn-group custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Document Type</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="documentType" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Date</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="date" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Document Name</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="documentName" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Original File Path</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="originalFilePath" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Image/Document</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="imageDocument" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Notes</span>
+                                                                            <input onClick="gridfilterColumn(this)" type="checkbox" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <!---->
+
+                                                                </ul>
+                                                            </div>
+                                                        </th>
+                                                        <th data-type="documentType">
+                                                            Document Type
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="date">
+                                                            Date
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="documentName">
+                                                            Document Name
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="originalFilePath">
+                                                            Original File Path
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="imageDocument">
+                                                            Image/Document
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <th data-type="notes">
+                                                            Notes
+                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                        </th>
+                                                        <!--<th data-type="architectsProjectNumber">
+                                                Architects Project Number
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                        <!--<th data-type="salesperson">
+                                                Salesperson
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                            </th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="documentType"></td>
+                                                        <td data-type="date"> </td>
+                                                        <td data-type="documentName"></td>
+                                                        <td data-type="originalFilePath"></td>
+                                                        <td data-type="imageDocument"> </td>
+                                                        <td data-type="notes"> </td>
+                                                    </tr>
+                                                    <!--<tr>
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="documentType">Vendor-Material</td>
+                                                        <td data-type="date">Description </td>
+                                                        <td data-type="documentName">Users </td>
+                                                        <td data-type="originalFilePath">Vendor-Material</td>
+                                                        <td data-type="imageDocument">Description </td>
+                                                        <td data-type="notes">Users </td>
+                                                    </tr>-->
+                                                </tbody>
+                                            </table>
+                                            <div class="add-delete-control text-left">
+                                                <button class="btn btn-expanded pull-left" onclick="addNewRecordMaterial('#byCategoryDocumentTable')">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                                <button class="btn btn-expanded pull-left" onclick="deleteTableDataMaterial()">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer HTML -->
+</body>
+
+</html>

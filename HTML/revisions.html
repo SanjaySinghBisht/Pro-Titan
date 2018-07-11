@@ -1,0 +1,517 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <!-- <div class="app-title">Protech</div>
+                         -->
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Revisions</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form class="form-inline custom-search-filter revision clearfix">
+                                    <div class="form-group" style="width:100%;">
+                                        <div class="pull-left">
+                                            <label>View</label>
+                                            <select class="form-control" id="centerViewDropdown" onchange="selectView('#centerTable > tbody', this.value, 'centertable')">
+                                                <option value="original">Original View</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                              <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Copy">
+                                                <i class="glyphicon glyphicon-copy"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="File">
+                                                <i class="glyphicon glyphicon-file"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="alert alert-danger" id="errorMsg">
+                                    Below Approved project cannot be deleted.
+                                </div>
+                                <div class="table-responsive table-wrapper">
+                                    <table class="table" id="revisionTable">
+                                        <thead>
+                                            <tr>
+                                                <th class="width50">
+                                                    <div class="btn-group custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Name</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="name" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Type</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Status</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="status" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Date Created</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dateCreated" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Last Modified</span>
+                                                                    <input type="checkbox" onclick="gridfilterColumn(this)" data-type="lastModified" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Date Approved</span>
+                                                                    <input type="checkbox" onclick="gridfilterColumn(this)" data-type="dateApproved" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Notes</span>
+                                                                    <input type="checkbox" onclick="gridfilterColumn(this)" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Preview</span>
+                                                                    <input type="checkbox" onclick="gridfilterColumn(this)" data-type="preview" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </th>
+                                                <th class="width50">
+                                                    <input type="checkbox" onclick="selectAll(this)" />
+                                                </th>
+                                                <th data-type="name">Name</th>
+                                                <th data-type="type">Type</th>
+                                                <th data-type="status">Status</th>
+                                                <th data-type="dateCreated">Date Created</th>
+                                                <th data-type="lastModified">Last Modified</th>
+                                                <th data-type="dateApproved">Date Approved</th>
+                                                <th data-type="notes">Notes</th>
+                                                <th data-type="preview">Preview</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+                                                <td class="width50">
+                                                    <input type="checkbox" class="approved" />
+                                                </td>
+                                                <td data-type="name">CO1234</td>
+                                                <td data-type="type">Schedule Rev.</td>
+                                                <td data-type="status">Approved</td>
+                                                <td data-type="dateCreated">07/09/2015 01:34 PM</td>
+                                                <td data-type="lastModified">07/09/2015 01:38 PM</td>
+                                                <td data-type="dateApproved"></td>
+                                                <td data-type="notes">Change doors 108 & 109 to 3''6" and to a latche set from push...</td>
+                                                <td>
+                                                    <a href="#" title="Preview">
+                                                        <i class="glyphicon glyphicon-eye-open"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr class="child-row hide">
+                                                <td></td>
+                                                <td colspan="9">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Revision</th>
+                                                                    <th>Item</th>
+                                                                    <th>Date - Time</th>
+                                                                    <th>Opeartor</th>
+                                                                    <th>Item Date</th>
+                                                                    <th>Column</th>
+                                                                    <th>Original Value</th>
+                                                                    <th>Revised Value</th>
+                                                                    <th>User</th>
+                                                                    <th>Complain</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CO1234</td>
+                                                                    <td>1</td>
+                                                                    <td>07/09/2015 01:34 PM</td>
+                                                                    <td></td>
+                                                                    <td>07/09/2015</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+                                                <td class="width50">
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="name">CO4432</td>
+                                                <td data-type="type">Schedule Rev.</td>
+                                                <td data-type="status">Open</td>
+                                                <td data-type="dateCreated">08/05/2016 05:34 PM</td>
+                                                <td data-type="lastModified">08/05/2016 05:40 PM</td>
+                                                <td data-type="dateApproved"></td>
+                                                <td data-type="notes">Change doors 108 & 109 to 3''6" and to a latche set from push...</td>
+                                                <td>
+                                                    <a href="#" title="Preview">
+                                                        <i class="glyphicon glyphicon-eye-open"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr class="child-row hide">
+                                                <td></td>
+                                                <td colspan="9">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Revision</th>
+                                                                    <th>Item</th>
+                                                                    <th>Date - Time</th>
+                                                                    <th>Opeartor</th>
+                                                                    <th>Item Date</th>
+                                                                    <th>Column</th>
+                                                                    <th>Original Value</th>
+                                                                    <th>Revised Value</th>
+                                                                    <th>User</th>
+                                                                    <th>Complain</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CO1234</td>
+                                                                    <td>1</td>
+                                                                    <td>07/09/2015 01:34 PM</td>
+                                                                    <td></td>
+                                                                    <td>07/09/2015</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+                                                <td class="width50">
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td data-type="name">CO4567</td>
+                                                <td data-type="type">Schedule Rev.</td>
+                                                <td data-type="status">Open</td>
+                                                <td data-type="dateCreated">03/02/2014 06:20 PM</td>
+                                                <td data-type="lastModified">03/02/2014 06:24 PM</td>
+                                                <td data-type="dateApproved"></td>
+                                                <td data-type="notes">Change doors 108 & 109 to 3''6" and to a latche set from push...</td>
+                                                <td>
+                                                    <a href="#" title="Preview">
+                                                        <i class="glyphicon glyphicon-eye-open"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr class="child-row hide">
+                                                <td></td>
+                                                <td colspan="9">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Revision</th>
+                                                                    <th>Item</th>
+                                                                    <th>Date - Time</th>
+                                                                    <th>Opeartor</th>
+                                                                    <th>Item Date</th>
+                                                                    <th>Column</th>
+                                                                    <th>Original Value</th>
+                                                                    <th>Revised Value</th>
+                                                                    <th>User</th>
+                                                                    <th>Complain</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CO1234</td>
+                                                                    <td>1</td>
+                                                                    <td>07/09/2015 01:34 PM</td>
+                                                                    <td></td>
+                                                                    <td>07/09/2015</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <h4 class="form-sub-title">Select Export Type</h4>
+                        <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="radio">
+                              <label><input type="radio" name="importType">PRO-TECH</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="importType">AAOS</label>
+                            </div>
+                          </div>
+                        </div> -->
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                                <button class="btn btn-primary export-file-btn" type="button" title="Add Row" id="addRevsion">Add Revisions</button>
+                                <button class="btn btn-primary export-file-btn" type="button" title="Delete Row" id="deleteRevision">Delete Revisions</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+
+        <div class="modal fade" role="dialog" id="revisionDetailsPopup">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Revision Details</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Revision</th>
+                                                <th>Item</th>
+                                                <th>Date - Time</th>
+                                                <th>Opeartor</th>
+                                                <th>Item Date</th>
+                                                <th>Column</th>
+                                                <th>Original Value</th>
+                                                <th>Revised Value</th>
+                                                <th>User</th>
+                                                <th>Complain</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CO1234</td>
+                                                <td>1</td>
+                                                <td>07/09/2015 01:34 PM</td>
+                                                <td></td>
+                                                <td>07/09/2015</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.search-user').click(function() {
+                    if ($('#SearchUser').val() == 'Regression') {
+                        window.location.href = 'searchExportProject.html';
+                    }
+                });
+                $(".export-file-btn").click(function() {
+                    $(this).parents().next(".export-success-msg-section").show();
+                })
+            });
+        </script>
+</body>
+
+</html>

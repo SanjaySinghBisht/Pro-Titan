@@ -1,0 +1,571 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <!--  <div class="page-header clearfix">
+        <h1 class="pull-left">Price Book Transfer</h1>
+      </div> -->
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 pos-relative">
+                                <h4 class="form-sub-title">Price Book Available To Assign To Vendors</h4>
+                                <div class="moveBtn">
+                                    <a onclick="cutDatatransferData('#vendor', '#vendorCrossXfr')"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+                                </div>
+                                <form class="form-inline custom-search-filter revision clearfix">
+                                    <div class="form-group" style="width:100%;">
+
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control" id="Select1" onchange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                                <div class="table-wrapper transferMaterial grid ">
+
+                                    <table class="table sortingTable scrollingTable" id="vendor">
+                                        <thead>
+                                            <tr class="mainHead">
+                                                <th class="width30">
+                                                    <div class="btn-group custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Vendor Name</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="vendorNameID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Vendor Type</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="vendortypeID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Price Book</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="pricebookId" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </th>
+                                                <th class="width150" data-type="vendorNameID" class="width70">Vendor Name</th>
+                                                <th data-type="vendortypeID">Vendor Type </th>
+                                                <th data-type="pricebookId" class="widthP16">Price Book </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="width130 text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Baron</td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Dec2014e</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Baron</td>
+                                                <td data-type="vendortypeID">HMF</td>
+                                                <td data-type="pricebookId">Dec2014d</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Mar2014c</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">FRPD</td>
+                                                <td data-type="pricebookId">Mar2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Mar2014ce</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">HMF</td>
+                                                <td data-type="pricebookId">Mar2014d</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Mar2014c</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">FRPD</td>
+                                                <td data-type="pricebookId">Jan2004d</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Jan2004de</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">HMF</td>
+                                                <td data-type="pricebookId">Jan2004e</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Fleming</td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Feb2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Fleming</td>
+                                                <td data-type="vendortypeID">FRPD</td>
+                                                <td data-type="pricebookId">Feb2014a</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Frameworks </td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Sep2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="assignVendor" />
+                                                </td>
+                                                <td data-type="vendorNameID">Frameworks </td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Feb2012</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <h4 class="form-sub-title">Available Vendors</h4>
+                                <form class="form-inline custom-search-filter revision clearfix">
+                                    <div class="form-group" style="width:100%;">
+
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control" id="Select2" onchange="selectView('#centerTable > tbody',this.value, 'centertable')">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                      </button> -->
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                                <div class="table-wrapper transferMaterial grid">
+                                    <table class="table sortingTable scrollingTable" id="vendorCrossXfr">
+                                        <thead>
+                                            <tr class="mainHead">
+                                                <th class="width30">
+                                                    <div class="btn-group custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Vendor Name</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="vendorNameID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Vendor Type</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="vendortypeID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Effective Price Book</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="pricebookId" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Effective Date</span>
+                                                                    <input onclick="gridfilterColumn(this)" data-type="edateID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </th>
+                                                <th class="width150" data-type="vendorNameID" class="width70">Vendor Name</th>
+                                                <th data-type="vendortypeID">Vendor Type </th>
+                                                <th data-type="pricebookId" class="widthP16">Effective Price Book </th>
+                                                <th data-type="edateId" class="widthP16">Effective Date </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="width130 text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Baron</td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Dec2014e</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Baron</td>
+                                                <td data-type="vendortypeID">HMF</td>
+                                                <td data-type="pricebookId">Dec2014d</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Mar2014c</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">FRPD</td>
+                                                <td data-type="pricebookId">Mar2014</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Mar2014ce</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Ceco</td>
+                                                <td data-type="vendortypeID">HMF</td>
+                                                <td data-type="pricebookId">Mar2014d</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Mar2014c</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">FRPD</td>
+                                                <td data-type="pricebookId">Jan2004d</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Jan2004de</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Curries</td>
+                                                <td data-type="vendortypeID">HMF</td>
+                                                <td data-type="pricebookId">Jan2004e</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Fleming</td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Feb2014</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Fleming</td>
+                                                <td data-type="vendortypeID">FRPD</td>
+                                                <td data-type="pricebookId">Feb2014a</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Frameworks </td>
+                                                <td data-type="vendortypeID">HMD</td>
+                                                <td data-type="pricebookId">Sep2014</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <input type="radio" name="availableVendor">
+                                                </td>
+                                                <td data-type="vendorNameID">Frameworks </td>
+                                                <td data-type="vendortypeID">ALF</td>
+                                                <td data-type="pricebookId">Feb2012</td>
+                                                <td data-type="edateId" class="widthP16">10-01-2011 </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="progressBarwindow">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Installing</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-heading">
+                            Processing...
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default cancelHide" data-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+</body>
+
+</html>

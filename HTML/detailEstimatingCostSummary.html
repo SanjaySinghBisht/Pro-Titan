@@ -1,0 +1,1852 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/project.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/detailcostsummary.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="container-fluid esimate-tab-list">
+                        <!-- Tabs -->
+                        <!-- <div class="page-header clearfix">
+                            <div class="row">
+                                <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <h1 class="pull-left">Cost & Quoting</h1>
+                                </div>
+                            </div> 
+                        </div> -->
+
+                        <!-- Tab panes -->
+                        <div class="CQmenuHeader row">
+                            <div class="header col-md-8 col-md-offset-2">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingCostSummary.html'"><a href="detailEstimatingCostSummary.html" class="active">Group Your Material</a><span class="active"><i class="glyphicon glyphicon-th-list"></i></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingCostSummaryFrame.html'"><a href="detailEstimatingCostSummaryFrame.html">Choose Template & Contractor</a><span><i class="glyphicon glyphicon-stats"></i><br/></span></div>
+                                    </div>
+
+                                    <!-- <div class="col-md-2"><div class="cqmenuBtn"><a href="#">Select Contractor</a><span><i class="glyphicon glyphicon-user"></i><br/></span></div></div> -->
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingQuoting.html'"><a href="detailEstimatingQuoting.html">Submit Proposals</a><span><i class="glyphicon glyphicon-flash"></i><br/></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn" onClick="window.location.href = './detailEstimatingManagequote.html'"><a href="detailEstimatingManagequote.html">Proposals Status</a><span><i class="glyphicon glyphicon-compressed"></i><br/></span></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="cqmenuBtn"><a href="#" class="">History</a><span class=""><i class="glyphicon glyphicon-cd"></i><br/></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of CQ menu End here -->
+                        <div class="tab-content" style="margin-top: 30px;">
+                            <div role="tabpanel" class="tab-pane active" style="margin-top:0px; border: 1px solid #f1f1f1;padding: 0px 15px 15px;background: rgba(250, 250, 250, 0.64);">
+                                <div class="row materialNav">
+                                    <div class="col-md-12">
+                                        <div class="materialNavBtn">
+                                            <div class="btn-group btn-group-justified" onclick="getTabEvent('this', event)">
+                                                <a href="#" class="btn btn-default col-md-2 mnbtn active" id="detailmaterial-tab">Detailed Material</a>
+                                                <a href="#" class="btn btn-default col-md-2 mnbtn" id="groupmaterial-tab">Grouped Material</a>
+                                                <a href="#" class="btn btn-default col-md-2 mnbtn" id="vendormaterial-tab">Vendor Material</a>
+                                                <a href="#" class="btn btn-default col-md-2 mnbtn" id="lumpsum-tab">Lump Sum</a>
+                                                <a href="#" class="btn btn-default col-md-2 mnbtn" id="groupcode-tab">Grouped Code</a>
+                                            </div>
+                                        </div>
+
+                                        <button class="btn btn-primary" data-target="#discountPopup" data-toggle="modal" style="float: right; margin-top: -32px; margin-right: 78px;">Project Discounts</button>
+                                    </div>
+                                </div>
+                                <!-- End of CQ menu Nav here -->
+
+                                <div class="row navcontentPanel">
+                                    <div class="col-md-12">
+                                        <div class="proposalpanel " id="detailmaterial-panel">
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 tasklabel">Description</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">UOM</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Qty</div>
+                                                <div class="pull-left col-md-2 tasklabel text-center">Extended Cost</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Markup / Margin</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Total</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 1</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 2</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Selling Price</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Notes</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-Hollow Metal Frame-Freight</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$1.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$100</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$100</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$100</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-Hollow Metal Door-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$28.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$30,011.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$30,011.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$30,011.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-Hollow Metal Frame-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$42.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$17,726.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$17,726.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$17,726.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-FRP Door-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$22.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">GR-Wood Door-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">FW-Aluminum Frame-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$19.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">FW-Aluminum Door-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$19.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$35,650.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$35,650.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$35,650.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">MK-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$107.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$10,516.18</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$10,516.18</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$10,516.18</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">BE-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$87.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$130,413.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$130,413.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$130,413.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">BU-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$188.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$14,089.19</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$14,089.19</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$14,089.19</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">HI-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$40.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$201.2</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$201.2</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$201.2</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">MC-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$47.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$3,971.5</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,971.5</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,971.5</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">K2-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$67.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$26,733.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26,733.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26,733.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">KN-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$47.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$3,438.05</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,438.05</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,438.05</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">GR-Wood Door-Quoted Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$24.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">ST-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$20.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$4,020.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$4,020.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$4,020.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-Hollow Metal Door-Freight</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$1.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$500.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$500.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$500.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">ST-Hardware-Material</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$60.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$7,192.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$7,192.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$7,192.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div class="proposalpanel hide" id="groupmaterial-panel">
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 tasklabel">Description</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">UOM</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Qty</div>
+                                                <div class="pull-left col-md-2 tasklabel text-center">Extended Cost</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Markup / Margin</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Total</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 1</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 2</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Selling Price</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Notes</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$663.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$200,574.32</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$200,574.32</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$200,574.32</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Hollow Metal Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$28.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$30,511.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$30,511.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$30,511.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Hollow Metal Frame</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$42.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$17,826.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$17,826.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$17,826.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Wood Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Aluminum Frame</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$19.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Aluminum Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$19.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$35,650.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$35,650.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$35,650.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">FRP Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$22.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="proposalpanel hide " id="vendormaterial-panel">
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 tasklabel">Description</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">UOM</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Qty</div>
+                                                <div class="pull-left col-md-2 tasklabel text-center">Extended Cost</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Markup / Margin</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Total</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 1</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 2</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Selling Price</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Notes</div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-Hollow Metal Frame</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$42.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$17,826.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$17,826.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$17,826.57</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-Hollow Metal Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$28.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$30,511.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$30,511.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$30,511.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">MK-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$107.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$10,516.18</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$10,516.18</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$10,516.18</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">GR-Wood Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$5,365.29</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">BE-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$87.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$130,413.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$130,413.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$130,413.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">BU-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$188.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$14,089.19</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$14,089.19</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$14,089.19</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">HI-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$40.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$201.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$201.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$201.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">MC-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$47.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$3,971.50</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,971.50</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,971.50</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">ST-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$20.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$4,020.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$4,020.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$4,020.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">ST-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$60.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$7,192.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$7,192.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$7,192.20</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">K2-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$67.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$26,733.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26,733.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$26,733.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">KN-Hardware</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$47.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$3,438.05</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,438.05</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$3,438.05</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">FW-Aluminum Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$19.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$35,650.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$35,650.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$35,650.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">FW-Aluminum Frame</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$19.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$16,864.99</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">CU-FRP Door</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$22.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$91,286.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div class="proposalpanel hide " id="lumpsum-panel">
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 tasklabel">Description</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">UOM</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Qty</div>
+                                                <div class="pull-left col-md-2 tasklabel text-center">Extended Cost</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Markup / Margin</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Total</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 1</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 2</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Selling Price</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Notes</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Cost For Entire Project</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$1.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$398,078.17</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$398,078.17</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$398,078.17</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div class="proposalpanel hide " id="groupcode-panel">
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 tasklabel">Description</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">UOM</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Qty</div>
+                                                <div class="pull-left col-md-2 tasklabel text-center">Extended Cost</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Markup / Margin</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Total</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 1</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Tax Rate 2</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Selling Price</div>
+                                                <div class="pull-left col-md-1 tasklabel text-center">Notes</div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="pull-left col-md-2 taskData">Unassigned</div>
+                                                <div class="pull-left col-md-1 taskData text-center">EA</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$845.00</div>
+                                                <div class="pull-left col-md-2 taskData text-center">$398,078.17</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$398,078.17</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">0.00</div>
+                                                <div class="pull-left col-md-1 taskData text-center">$398,078.17</div>
+                                                <div class="pull-left col-md-1 taskData text-center">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-primary marginT10" onclick="location.href='detailEstimatingCostSummaryFrame.html'">Done</button>
+                                    </div>
+                                </div>
+                                <!-- End of tab Panel -->
+                            </div>
+                            <!-- End of tab Content -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="discountPopup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog modal-lg centered-modal" role="document" id="basePopup">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="H1">Attributes</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="ProjrowtabularGrid">
+
+                            <div class="ProjrowTabHeader clearfix marginB5">
+                                <div class="padding0">
+                                    <div class="form-inline">
+                                        <div class="col-md-4 ">
+                                            <div class="form-group">
+                                                <label for="focusedInput">vendor :</label>
+                                                <select class="form-control amselect" id="Vendor">
+                                                    <option>Don-Jo</option>
+                                                    <option>Ives</option>
+                                                    <option>K.N. Crowder</option>
+                                                    <option>Norton</option>
+                                                    <option>Pemko</option>
+                                                    <option>Rixson</option>
+                                                    <option>Rockwood</option>
+                                                    <option>Secruition</option>
+                                                    <option>Yele</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 ">
+                                            <div class="form-group">
+                                                <label for="focusedInput">Price Book :</label>
+                                                <select class="form-control amselect" id="PBook">
+                                                    <option>January 2015</option>
+                                                    <option>Februry 2016</option>
+                                                    <option>March 2014</option>
+                                                    <option>December 2016</option>
+                                                    <option>October 2015</option>
+                                                    <option>November 2014</option>
+                                                    <option>August 2012</option>
+                                                    <option>May 2011</option>
+                                                    <option>July 2017</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3  pull-right">
+                                            <div class="form-group">
+                                                <button id="vendQuoBtn" class="btn btn-default vendQuoBtn">Vender Proposal</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="ProjrowtabularGridHead">
+                                        <div class="col-md-2">Name</div>
+                                        <div class="col-md-2">Abbr.</div>
+                                        <div class="col-md-2">Type</div>
+                                        <div class="col-md-3">Vendor Adjustments</div>
+                                        <div class="col-md-3">Price Book Adjustments</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="ProjrowtabularGridData">
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse51"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Don-Jo
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse51" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse512"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse512" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 512-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 51-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse52"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Ives
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse52" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse522"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse522" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 522-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 52-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse53"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> K.N Crowder
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse53" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse532"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse532" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 532-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 53-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse54"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Norton
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse54" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse542"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse542" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 542-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 54-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse55"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> pemko
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse55" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse552"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse552" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 552-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 55-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse56"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Rixon
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50/ -63</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse56" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse562"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse562" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 562-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 56-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse57"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Rockwood
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse57" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse572"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse572" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 572-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 57-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse58"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Securiton
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse58" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse582"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse582" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 582-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 58-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                        <div class="panel-group">
+                                            <div class="panel">
+
+                                                <div class="panel-heading row vendorRows">
+                                                    <div class="panel-title col-md-2">
+                                                        <a data-toggle="collapse" href="#collapse59"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> Yele
+                                                    </div>
+                                                    <div class="type col-md-2">DJ</div>
+                                                    <div class="type col-md-2">HDW</div>
+                                                    <div class="type col-md-3">-50</div>
+                                                    <div class="type col-md-3">&nbsp;</div>
+                                                </div>
+                                                <!-- end Panel-heading row-->
+
+                                                <div id="collapse59" class="panel-collapse collapse inside_collap">
+                                                    <div class="row headerV">
+                                                        <div class="col-md-2">Type</div>
+                                                        <div class="col-md-2">Adj #1</div>
+                                                        <div class="col-md-2">Adj #2</div>
+                                                        <div class="col-md-2">Adj #3</div>
+                                                        <div class="col-md-2">Adj #4</div>
+                                                        <div class="col-md-2">Adj #5</div>
+                                                    </div>
+                                                    <!-- end rwo-HeaderV-->
+                                                    <div class="panel">
+                                                        <div class="panel-heading row">
+                                                            <div class="panel-title col-md-2"><a data-toggle="collapse" href="#collapse592"><span class="glyphicon glyphicon-chevron-down smIcon"></span></a> H1</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                            <div class="col-md-2">0.00</div>
+                                                        </div>
+                                                        <!-- end Pheading row-->
+
+                                                        <div id="collapse592" class="panel-collapse collapse child_collap">
+                                                            <div class="row headerV">
+                                                                <table class="table table_collap table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Type</th>
+                                                                            <th>Description</th>
+                                                                            <th>Part Description</th>
+                                                                            <th>Adjustment</th>
+                                                                            <th>List Price</th>
+                                                                            <th>Spec. Net</th>
+                                                                            <th>Spec. Net Price</th>
+                                                                            <th>No Charge</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>HI</td>
+                                                                            <td>Hinge Pin Stop</td>
+                                                                            <td>Don-Jo 1512</td>
+                                                                            <td>&nbsp;</td>
+                                                                            <td>0.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                            <td>20.00</td>
+                                                                            <td>
+                                                                                <input type="checkbox" name="specNet" checked>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- end row Header-->
+                                                        </div>
+                                                        <!-- end Collapse 592-->
+                                                    </div>
+                                                    <!-- end Inside Panel-->
+                                                </div>
+                                                <!-- end Outside Collapse 59-->
+                                            </div>
+                                            <!-- end Outside Panel-->
+
+                                        </div>
+                                        <!-- end Panel Group-->
+
+                                    </div>
+                                    <!-- end ProjrowtabularGridData-->
+                                </div>
+                                <!-- end col-md-12-->
+                            </div>
+                            <!-- end row-->
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+            <div class="modal-dialog modal-lg" role="document" id="vender_quote_modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="vq">Vender Proposal</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table_collap table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Vendor</th>
+                                            <th>Project</th>
+                                            <th>Proposal Number</th>
+                                            <th>Revision #</th>
+                                            <th>Prefix</th>
+                                            <th>Amount</th>
+                                            <th>Qty.</th>
+                                            <th>Issued on/</th>
+                                            <th>valid Thru.</th>
+                                            <th>Notes</th>
+                                            <th>Docs</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>AA</td>
+                                            <td>2624Openings</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>11-17-2016</td>
+                                            <td>12-17-2016</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="quoteLogBtn">Proposal Log</button>
+                        <button type="button" class="btn btn-default" id="closequoteLogPopup">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#vender_quote_modal').hide();
+                $('#vendQuoBtn').click(function() {
+                    $('#basePopup').hide();
+                    $('#vender_quote_modal').show();
+                });
+
+                $('#quoteLogBtn, #closequoteLogPopup').click(function() {
+                    $('#basePopup').show();
+                    $('#vender_quote_modal').hide();
+                });
+            });
+        </script>
+</body>
+<!-- Project Data Change Popup -->
+<div class="modal fade change-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="changePopupData">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Milano Travel Change Management</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding change-reuest-btn marginB10">
+                    <button class="btn btn-default pull-left marginR5 start-new-change">
+                        Start New
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 drop-change" data-toggle="modal">
+                        Drop
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 commit-change" data-toggle="modal" data-target="#commitData" disabled="disabled">
+                        Commit
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 details-change">
+                        Details
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 switch-to-change">
+                        Switch To
+                    </button>
+                    <button class="btn btn-default pull-left marginR5 compare-change" disabled="disabled">
+                        Compare
+                    </button>
+                    <button class="btn btn-primary pull-right create-final-estimate-btn">
+                        Create Final Estimate
+                    </button>
+                </div>
+                <table class="table project-change-data-table" style="table-layout:auto;">
+                    <thead>
+                        <tr class="borderB mainHead">
+                            <th class="borderR" data-type="Change">
+                                Change
+                            </th>
+                            <th class="borderR" data-type="Status">
+                                Status
+                            </th>
+                            <th class="borderR" data-type="Description">
+                                Description
+                            </th>
+                            <th class="borderR" data-type="Owner">
+                                Owner
+                            </th>
+                            <th class="borderR" data-type="Start-Date">
+                                Start Date
+                            </th>
+                            <th data-type="Commit-Date">
+                                Commit Date
+                            </th>
+                            <th data-type="compare-time">
+                                Time
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="add-data" style="display:none;">
+                            <td class="borderR">
+                                <input type="text" class="form-text change-value">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <input type="text" class="form-text description">
+                            </td>
+                            <td class="borderR">
+                                <input type="text" class="form-text owner">
+                            </td>
+                            <td class="borderR">
+                                <input id="datetimepicker1" type="text" class="start-date">
+                            </td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                        </tr>
+                        <tr class="current-row">
+                            <td class="borderR">Current</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Milano Travel</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR"></td>
+                            <td class="borderR">
+                                <a href="#" class="comparsion-point" title="Start"><span class="badge new marginR10">C</span>
+                                    </a></td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="borderR">C0-01</td>
+                            <td class="borderR">Active</td>
+                            <td class="borderR">Sample Description</td>
+                            <td class="borderR">Dawn</td>
+                            <td class="borderR">05/16/2017</td>
+                            <td class="borderR"></td>
+                            <td class="borderR"><a href="#" class="comparsion-point" title="Now"><span class="badge new marginR10">C</span></a><a href="#" class="comparsion-point" title="Before"><span style="display: inline-block;" class="badge before marginR10">B</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="change-state-legend">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="badge start marginR10">S</span>
+                                    <strong>Start</strong> <span class="small">(The Start of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge committed marginR10">N</span>
+                                    <strong>Now</strong> <span class="small">(The Current State of the change)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge new marginR10">C</span>
+                                    <strong>Committed</strong> <span class="small">(The change as committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge before marginR10">B</span>
+                                    <strong>Before</strong> <span class="small">(The State before the change was committed)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge after marginR10">A</span>
+                                    <strong>After</strong> <span class="small">(The State after the change was committed)</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Changes Commit Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="commitData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Commit Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 commit-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Drop Changes Popup -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="dropData">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Drop Your Changes?</h4>
+            </div>
+            <div class="modal-body clearfix col-md-offset-2">
+                <button class="btn btn-primary pull-left marginR5 drop-done">
+                    Yes
+                </button>
+                <button class="btn btn-default pull-left marginR5 commit-cancel" data-dismiss="modal" aria-label="Close">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

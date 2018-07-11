@@ -1,0 +1,302 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Assa Abloy</title>
+
+  <!-- Custom Style CSS -->
+  <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" />
+ 
+
+  <!-- Custom JS -->
+  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+  <!-- Bootstrap realted JS -->
+  <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script type='text/javascript' src='js/mustache.js'></script>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+  <div class="stickyFooterRelContainer">
+    <!-- Header Start -->
+     <header class="header pos-relative">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                            <div class="row">
+                               <div class="col-md-12">
+                                    <div class="row">
+                                        
+                                        <div class="col-md-7">
+                                            <ul class="nav navbar-nav">
+                                                <li><span>Welcome Erdmann, Dawn</span></li>
+                                                <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                     <li><input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'"></li>
+                                                    <li><input type="button" value="Logout" onclick="window.location.href = './login.html'"></li>
+                                                </ul>
+                                            </li>
+                                            <li  class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle" >Help</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><input type="button" value="Help Forms"></li>
+                                                        <li><input type="button" value="Live Chat"></li>
+                                                        <li><input type="button" value="FAQ"></li>
+                                                    </ul>
+
+                                            </li>
+                                                <li><a href="contactUs.html">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 pull-right">
+                                            <div class="indicator">
+                                                <ul class="indicator-btn">
+                                                    <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                    </li>
+                                                </ul>
+                                            <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pushbuttons pos-headerpushbuttons">
+                    <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                </div>
+            </header>
+     <div id='ribbonMenuBar' class='marginB15'>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="container-fluid content-container">
+
+    <div class="row both-column-height-equal">
+      <div class="col-xs-12 contentCollapsable pos-relative">    
+        <div class="pushbuttons pos-sidebarpushbuttons">
+          <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+          <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+        </div>
+      	<div class="container-fluid" >
+          <!-- Page Header -->
+          <!--<div class="app-title">Protech</div>-->
+          
+        	<div class="page-header clearfix">
+            <h1 class="pull-left">Create User</h1>
+            <!-- <div class="pull-right">
+             <div class="search-user clearfix">
+                <input class=" form-control pull-left" type ="text" name="search_user" value="" placeholder="Search User"/>
+                <button type="button" class="search-btn pull-right"><span class="glyphicon glyphicon-search"></span></button>
+             </div>
+            </div> -->
+        	</div>
+          
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="userId-verify-box">
+                <form roll="form">
+                  <label class="pull-left">User ID:</label>
+                  <div class="verify-input-area pull-left">
+                    <input class="form-control" type ="text" name="userid" value="" placeholder="User ID" />
+                    <button class="btn btn-default" type="button" title="Verify Availability" onclick="location.href=''">Verify Availability</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <form roll="form">
+            <div class="create-user-form-container">
+              <h4 class="form-sub-title">Details</h4>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Full Name</label>
+                    <input class="form-control" type ="text" name="full_name" placeholder="Full Name" />  
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input class="form-control" type ="text" name="address" placeholder="Address" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Company</label>
+                    <select class="form-control" name="companies">
+                     <option  value="company" selected>Company</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label> Zip</label>
+                    <input class="form-control" type ="text" name="zip" placeholder="Zip Code" />  
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Employee no.</label>
+                    <input class="form-control" type ="text" name="employee_no" placeholder="Employee No."/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input class="form-control" type ="text" name="city" placeholder="City"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input class="form-control" type ="text" name="email" placeholder="Email"/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>State</label>
+                    <select class="form-control" name="states">
+                         <option value="State" selected>State</option>
+                         <option value="California">California</option>
+                         <option value="Florida">Florida</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Phone no.</label>
+                    <input class="form-control" type ="text" name="Phone number" placeholder="Phone number"/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Country</label>
+                    <select class="form-control" name="countries">
+                      <option value="Country" selected>Country</option>
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Cell no.</label>
+                    <input class="form-control" type ="text" name="Phone number" placeholder="Phone number"/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Certification</label>
+                    <input class="form-control" type ="text" name="employee_no" placeholder="Employee No."/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type ="text" name="password" placeholder="Password"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                    <label class="assign-profile-label">Assign Profile</label>
+                    <select name="profile" class="form-control">
+                      <option  selected="Administrator"  value="Administrator" selected>Administrator</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 clearfix">
+                  <div class="form-group">
+                    <label class="add-sign-label">Add Signature</label>
+                    <div class="image-upload">
+                      <!-- <label for="file-input">
+                        <img style="height:20;" src="images/upload.jpg"/>
+                     </label> 
+                     <input id="file-input" type="file"/>-->
+                     <a class='btn btn-default' href='javascript:void(0);'>
+                        Upload
+                        <input type="file" style='' name="file_source" size="40" >
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                  <div class="form-group">
+                    <label for="profile"> </label>
+                    <div class="row userformfield">
+                      <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                        <span class="chkbox"><input style="position:inherit" type="checkbox" name="ViewCalendar"  /> View Calendar</span>
+                      </div>
+                      <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                        <span class="chkbox"><input style="position:inherit" type="checkbox" name="IsSecurityAdmin" /> Is Security Admin</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="button-container text-right">
+                <button class="btn btn-primary" type="button" title="Save" onclick="location.href=''">Save</button>
+                <button class="btn btn-default" type="button" title="Cancel" onclick="location.href=''">Cancel</button>
+              </div>
+            </div>
+          </form>
+      	</div>
+    	</div>
+
+    </div>
+  </div>
+  </div>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer HTML -->
+  <script>
+      $(document).ready(function () {
+
+          $('.search-user').click(function () {
+              if ($('#SearchUser').val() == 'John') {
+                  window.location.href = 'disableUserSearch.html';
+              }
+          });
+      });
+    </script>
+</body>
+
+</html>

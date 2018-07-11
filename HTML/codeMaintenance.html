@@ -1,0 +1,1049 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="col-xs-12 contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Header -->
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Code Maintenance</h1>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 pos-relative">
+
+                                <form class="form-inline custom-search-filter revision clearfix">
+                                    <div class="form-group" style="width:100%;">
+
+                                        <div class="pull-left">
+                                            <label class="displayInline">View</label>
+                                            <select class="form-control">
+                                                <option value="original">(**Original View**)</option>
+                                            </select>
+                                        </div>
+                                        <div class="pull-left marginL30">
+                                            <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                <i class="glyphicon glyphicon-minus"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Save">
+                                                <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Print">
+                                                <i class="glyphicon glyphicon-print"></i>
+                                            </button>
+                                            <button class="btn btn-default pull-left" type="button" title="Export">
+                                                <i class=" glyphicon glyphicon-export"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="table-wrapper transferMaterial grid ">
+                                    <!--                                    <table class="table sortingTable scrollingTable" id="masterHardwarecostTable">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th class="width30">
+                                                                                        <div class="btn-group custom-filtr-table">
+                                                                                            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                <img src="images/Views.png"  class="boximgthumbsize">
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu filter-grid-column">
+                                                                                                <li>
+                                                                                                    <a class="pull-left btn-block clearfix">
+                                                                                                        <span class="pull-left">Description</span>
+                                                                                                        <input onclick="gridfilterColumn(this)" data-type="Description" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a class="pull-left btn-block clearfix">
+                                                                                                        <span class="pull-left">Allow Edits?</span>
+                                                                                                        <input onclick="gridfilterColumn(this)" data-type="Allow Edits?" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th class="width150" data-type="Description">Description</th>
+                                                                                    <th data-type="Allow Edits?">Allow Edits?</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td><input type="checkbox" /></td>
+                                                                                    <td class="width150" data-type="Description">Accounting Export Types</td>
+                                                                                    <td data-type="Allow Edits?" class="text-center">N</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><input type="checkbox" /></td>
+                                                                                    <td class="width150" data-type="Description">Approved Product Types</td>
+                                                                                    <td data-type="Allow Edits?" class="text-center">Y</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><input type="checkbox" /></td>
+                                                                                    <td class="width150" data-type="Description">Attribute Class</td>
+                                                                                    <td data-type="Allow Edits?" class="text-center">N</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td><input type="checkbox" /></td>
+                                                                                    <td class="width150" data-type="Description">Accounting Export Types</td>
+                                                                                    <td data-type="Allow Edits?" class="text-center">N</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>-->
+                                    <table class="table custom-grid" id="">
+                                        <thead>
+                                            <tr>
+                                                <th class="width50">
+                                                    <div class="btn-group custom-filtr-table">
+                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                            <img src="images/Views.png" class="boximgthumbsize">
+                                                        </button>
+                                                        <ul class="dropdown-menu filter-grid-column">
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Description</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="descriptionID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pull-left btn-block clearfix">
+                                                                    <span class="pull-left">Allow Edit?</span>
+                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="allowEdit" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </th>
+                                                <th data-type="descriptionID">
+                                                    Description
+                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                </th>
+                                                <th data-type="allowEdit">
+                                                    Allow Edit?
+                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+
+                                                <td data-type="descriptionID">Accounting Export Types</td>
+                                                <td data-type="allowEdit">N</td>
+
+                                            </tr>
+
+                                            <tr class="child-row hide">
+                                                <td>&nbsp;</td>
+                                                <td colspan="10">
+                                                    <div class="table-wrap" style="overflow:auto;">
+                                                        <!--<div class="col-md-12">
+                                                                <ul class="nav nav-tabs">
+                                                                        <li class="active"><a data-toggle="tab" href="#price-book-detail">Price Book Detail</a></li>
+                                                                </ul>
+                                                        </div>-->
+                                                        <div class="col-md-12">
+                                                            <div id="price-book-detail">
+                                                                <!--                                                                <div class="child-table-header">
+                                                                    Price Book Detail
+                                                                </div>-->
+                                                                <div class="table-wrapper">
+                                                                    <table class="table custom-grid" id="">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="width50">
+                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                            <img src="images/Views.png" class="boximgthumbsize">
+                                                                                        </button>
+                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Code</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Code" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Description</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">User</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="User" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Sort Order</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Sort Order" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Seq. #</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="sequence" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Required?</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Required" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+
+                                                                                    </div>
+                                                                                </th>
+                                                                                <th data-type="Code">
+                                                                                    Code
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Description">
+                                                                                    Description
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="User">
+                                                                                    User
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Sort Order">
+                                                                                    Sort Order
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="sequence">
+                                                                                    Seq. #
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+
+                                                                                <th data-type="Required">
+                                                                                    Required?
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    ASCII
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML v6
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML_NO_PRICING
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+
+                                                <td data-type="descriptionID">Approved Product Types</td>
+                                                <td data-type="allowEdit">Y</td>
+
+                                            </tr>
+
+                                            <tr class="child-row hide">
+                                                <td>&nbsp;</td>
+                                                <td colspan="10">
+                                                    <div class="table-wrap" style="overflow:auto;">
+                                                        <!--<div class="col-md-12">
+                                                                <ul class="nav nav-tabs">
+                                                                        <li class="active"><a data-toggle="tab" href="#price-book-detail">Price Book Detail</a></li>
+                                                                </ul>
+                                                        </div>-->
+                                                        <div class="col-md-12">
+                                                            <div id="price-book-detail">
+                                                                <!--                                                                <div class="child-table-header">
+                                                                    Price Book Detail
+                                                                </div>-->
+                                                                <div class="table-wrapper">
+                                                                    <table class="table custom-grid" id="">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="width50">
+                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                            <img src="images/Views.png" class="boximgthumbsize">
+                                                                                        </button>
+                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Code</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Code" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Description</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">User</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="User" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Sort Order</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Sort Order" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Seq. #</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="sequence" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Required?</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Required" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+
+                                                                                    </div>
+                                                                                </th>
+                                                                                <th data-type="Code">
+                                                                                    Code
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Description">
+                                                                                    Description
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="User">
+                                                                                    User
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Sort Order">
+                                                                                    Sort Order
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="sequence">
+                                                                                    Seq. #
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+
+                                                                                <th data-type="Required">
+                                                                                    Required?
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    ASCII
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML v6
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML_NO_PRICING
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+
+                                                <td data-type="descriptionID">Attribute Class</td>
+                                                <td data-type="allowEdit">N</td>
+
+                                            </tr>
+
+                                            <tr class="child-row hide">
+                                                <td>&nbsp;</td>
+                                                <td colspan="10">
+                                                    <div class="table-wrap" style="overflow:auto;">
+                                                        <!--<div class="col-md-12">
+                                                                <ul class="nav nav-tabs">
+                                                                        <li class="active"><a data-toggle="tab" href="#price-book-detail">Price Book Detail</a></li>
+                                                                </ul>
+                                                        </div>-->
+                                                        <div class="col-md-12">
+                                                            <div id="price-book-detail">
+                                                                <!--                                                                <div class="child-table-header">
+                                                                    Price Book Detail
+                                                                </div>-->
+                                                                <div class="table-wrapper">
+                                                                    <table class="table custom-grid" id="">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="width50">
+                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                            <img src="images/Views.png" class="boximgthumbsize">
+                                                                                        </button>
+                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Code</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Code" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Description</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">User</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="User" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Sort Order</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Sort Order" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Seq. #</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="sequence" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Required?</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Required" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+
+                                                                                    </div>
+                                                                                </th>
+                                                                                <th data-type="Code">
+                                                                                    Code
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Description">
+                                                                                    Description
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="User">
+                                                                                    User
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Sort Order">
+                                                                                    Sort Order
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="sequence">
+                                                                                    Seq. #
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+
+                                                                                <th data-type="Required">
+                                                                                    Required?
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    ASCII
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML v6
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML_NO_PRICING
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="inside-grid-add btn btn-default pull-left">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                </td>
+
+                                                <td data-type="descriptionID">Bundling Codes</td>
+                                                <td data-type="allowEdit">N</td>
+
+                                            </tr>
+
+                                            <tr class="child-row hide">
+                                                <td>&nbsp;</td>
+                                                <td colspan="10">
+                                                    <div class="table-wrap" style="overflow:auto;">
+                                                        <!--<div class="col-md-12">
+                                                                <ul class="nav nav-tabs">
+                                                                        <li class="active"><a data-toggle="tab" href="#price-book-detail">Price Book Detail</a></li>
+                                                                </ul>
+                                                        </div>-->
+                                                        <div class="col-md-12">
+                                                            <div id="price-book-detail">
+                                                                <!--                                                                <div class="child-table-header">
+                                                                    Price Book Detail
+                                                                </div>-->
+                                                                <div class="table-wrapper">
+                                                                    <table class="table custom-grid" id="">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="width50">
+                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                            <img src="images/Views.png" class="boximgthumbsize">
+                                                                                        </button>
+                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Code</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Code" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Description</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">User</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="User" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Sort Order</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Sort Order" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Seq. #</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="sequence" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                    <span class="pull-left">Required?</span>
+                                                                                                    <input onclick="gridfilterColumn(this)" type="checkbox" data-type="Required" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+
+                                                                                    </div>
+                                                                                </th>
+                                                                                <th data-type="Code">
+                                                                                    Code
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Description">
+                                                                                    Description
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="User">
+                                                                                    User
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="Sort Order">
+                                                                                    Sort Order
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                                <th data-type="sequence">
+                                                                                    Seq. #
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+
+                                                                                <th data-type="Required">
+                                                                                    Required?
+                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    ASCII
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    1
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    2
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML v6
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    3
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td data-type="Code">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Description">
+                                                                                    XML_NO_PRICING
+                                                                                </td>
+                                                                                <td data-type="User">
+
+                                                                                </td>
+                                                                                <td data-type="Sort Order">
+                                                                                    0
+                                                                                </td>
+                                                                                <td data-type="sequence">
+                                                                                    4
+                                                                                </td>
+                                                                                <td data-type="Required">
+                                                                                    <input type="checkbox" />
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer HTML -->
+</body>
+
+</html>

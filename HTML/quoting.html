@@ -1,0 +1,1444 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/fullcalendar.min.css">
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+
+            <div class="row both-column-height-equal">
+
+                <div class="col-xs-12 contentCollapsable">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid">
+
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">Quoting</h1>
+                        </div>
+
+                        <div class="project-form-container">
+
+                            <div>
+                                <div>
+                                    <div>
+                                        <div class="row ">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+
+                                                        <div id="" class="">
+                                                            <div class="row add-archit-actionbtns">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                    <form class="form-inline custom-search-filter revision clearfix">
+                                                                        <div class="form-group btn-block">
+                                                                            <div class="pull-left">
+                                                                                <label class="displayInline">View</label>
+                                                                                <select class="form-control" id="Select1" onchange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                                                    <option value="original">(**Original View**)</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="pull-left marginL10">
+                                                                                <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                                                <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                                                </button>
+                                                                                <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                                                <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                                                </button>
+                                                                                <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                                </button> -->
+                                                                                <button class="btn btn-default pull-left" type="button" title="Save">
+                                                                                    <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                                                </button>
+
+                                                                                <button class="btn btn-default pull-left" type="button" title="Print">
+                                                                                    <i class="glyphicon glyphicon-print"></i>
+                                                                                </button>
+                                                                                <button class="btn btn-default pull-left" type="button" title="Export">
+                                                                                    <i class=" glyphicon glyphicon-export"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="pull-left marginL30">
+                                                                                <button class="btn btn-default" type="button" onclick="loadFromCostSummary('#quotesTable', 3)">
+                                                                                    Load From Cost Summary
+                                                                                </button>
+                                                                                <button class="btn btn-default" type="button" onclick="window.open('Quote - NO QUOTE DESCRIPTION FOUND - EDSS HINT.pdf')">
+                                                                                    View Quote
+                                                                                </button>
+                                                                                <button class="btn btn-default" type="button" onclick="addContractors('#quotesTable', '#architectModal')">
+                                                                                    Contractor/Architects
+                                                                                </button>
+                                                                                <button class="btn btn-default" type="button">
+                                                                                    Submit Quote
+                                                                                </button>
+                                                                                <button class="btn btn-default" type="button">
+                                                                                    Reports
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <ul class="nav nav-tabs">
+                                                                        <li class="active"><a data-toggle="tab" href="#quote">Quotes</a></li>
+                                                                        <li><a data-toggle="tab" href="#quote-status">Quote Status</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-content master-material-management-tab-content">
+                                                                <!--- Quote Starts----->
+                                                                <div id="quote" class="tab-pane fade in active ">
+                                                                    <div class="row ">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                            <div class="page-header clearfix">
+                                                                                <h1 class="text-left">Quotes</h1>
+                                                                            </div>
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header ">
+                                                                                <label>Drag a column header here to group by that column</label>
+                                                                            </div>
+                                                                            <div class="table-wrapper">
+                                                                                <table class="table custom-grid " id="quotesTable">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>
+                                                                                                <div class="btn-group custom-filtr-table ">
+                                                                                                    <button type="button " class="btn btn-link dropdown-toggle
+                                                                                                " data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                        <i class="glyphicon glyphicon-align-left "></i>
+                                                                                                    </button>
+                                                                                                    <ul class="dropdown-menu filter-grid-column ">
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Description</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="description " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Status</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="status " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Create Date</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="createDate " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Due Date</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dueDate " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Project Classification</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="projectClass " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Quote Format</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quoteFormat " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Sales Person</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="salesPerson " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Tax Rate</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="taxRate " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Awarded to Contractor</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="awardToCont " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Awarded to Company</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="awardToComp " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix ">
+                                                                                                                <span class="pull-left ">Printed Notes</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="printNotes " class="filter-grid-check pull-right text-right " checked="checked ">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </th>
+                                                                                            <th>
+                                                                                                <input type="checkbox" onclick="checkAll(this)">
+                                                                                            </th>
+                                                                                            <th data-type="description ">
+                                                                                                Description
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="status ">
+                                                                                                Status
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="createDate ">
+                                                                                                Create Date
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="dueDate ">
+                                                                                                Due Date
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="projectClass ">
+                                                                                                Project Classification
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="quoteFormat ">
+                                                                                                Quote Format
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="salesPerson ">
+                                                                                                Sales Person
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="taxRate ">
+                                                                                                Tax Rate
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="awardToCont ">
+                                                                                                Awarded to Contractor
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="awardToComp ">
+                                                                                                Awarded to Company
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                            <th data-type="printNotes ">
+                                                                                                Printed Notes
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom "></span>
+                                                                                            </th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr style="background-color:#337ab7;color:#fff;">
+                                                                                            <td>
+                                                                                                <button class="vendor-list-toggle-btn btn btn-default pull-left">
+                                                                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                                                                </button>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <input type="checkbox">
+                                                                                            </td>
+                                                                                            <td data-type="description "></td>
+                                                                                            <td data-type="status" class="dropdown-column">
+                                                                                                <div class="col-xs-12">
+                                                                                                    <span class="dropdown-toggle" data-toggle="dropdown">New</span>
+                                                                                                    <span class="caret"></span>
+                                                                                                    <div class="dropdown-menu">
+                                                                                                        <table class="table">
+                                                                                                            <tbody>
+                                                                                                                <tr data-value="New" data-color='{"background-color":"#337ab7","color":"#fff"}'>
+                                                                                                                    <td>New</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Lost" data-color='{"background-color":"#f4f4f4","color":"#757575"}'>
+                                                                                                                    <td>Lost</td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td data-type="createDate ">
+                                                                                                <input type="text" value="" class="datepickercal" style="color:#757575">
+                                                                                            </td>
+                                                                                            <td data-type="dueDate ">
+                                                                                                <input type="text" value="" class="datepickercal" style="color:#757575">
+                                                                                            </td>
+                                                                                            <td data-type="projectClass" class="dropdown-column">
+                                                                                                <div class="col-xs-12">
+                                                                                                    <span class="dropdown-toggle" data-toggle="dropdown">ED1</span>
+                                                                                                    <span class="caret"></span>
+                                                                                                    <div class="dropdown-menu">
+                                                                                                        <table class="table">
+                                                                                                            <thead>
+                                                                                                                <tr>
+                                                                                                                    <td>Type</td>
+                                                                                                                    <td>Abbr.</td>
+                                                                                                                    <td>Item Description</td>
+                                                                                                                </tr>
+                                                                                                            </thead>
+                                                                                                            <tbody>
+                                                                                                                <tr>
+                                                                                                                    <td>ED1</td>
+                                                                                                                    <td>SA</td>
+                                                                                                                    <td>AD8473-12v ETP US10BE</td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                    <td>ED2</td>
+                                                                                                                    <td>SA</td>
+                                                                                                                    <td>AD8473-12v ETP US10BE</td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                    <td>ED3</td>
+                                                                                                                    <td>SA</td>
+                                                                                                                    <td>AD8473-12v ETP US10BE</td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td data-type="quoteFormat " class="dropdown-column">
+                                                                                                <div class="col-xs-12">
+                                                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Sample 1</span>
+                                                                                                    <span class="caret"></span>
+                                                                                                    <div class="dropdown-menu">
+                                                                                                        <table class="table custom-contractor-list">
+                                                                                                            <tbody>
+                                                                                                                <tr data-value="Sample 1">
+                                                                                                                    <td>Sample 1</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Sample 2">
+                                                                                                                    <td>Sample 2</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Sample 3">
+                                                                                                                    <td>Sample 3</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Sample 4">
+                                                                                                                    <td>Sample 4</td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td data-type="salesPerson "></td>
+                                                                                            <td data-type="taxRate ">0.00000000</td>
+                                                                                            <td data-type="awardToCont" class="dropdown-column">
+                                                                                                <div class="col-xs-12">
+                                                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Beverage Construction, Inc.</span>
+                                                                                                    <span class="caret"></span>
+                                                                                                    <div class="dropdown-menu">
+                                                                                                        <table class="table custom-contractor-list">
+                                                                                                            <tbody>
+                                                                                                                <tr data-value="J.C. Ripberger">
+                                                                                                                    <td>J.C. Ripberger</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Beverage Construction, Inc.">
+                                                                                                                    <td>Beverage Construction, Inc.</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Elmwood Contracting, Inc.">
+                                                                                                                    <td>Elmwood Contracting, Inc.</td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td data-type="awardToComp "></td>
+                                                                                            <td data-type="printNotes" class="column-text-box">
+                                                                                                <div class="col-md-12">
+                                                                                                    <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                                                    <span class="caret"></span>
+                                                                                                    <div class="dropdown-menu">
+                                                                                                        <textarea class="form-control"> </textarea>
+                                                                                                        <div class="col-md-12 text-right">
+                                                                                                            <button class="btn btn-primary">Ok</button>
+                                                                                                            <button class="btn btn-default">Cancel</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="vendor-list-toggle-row" style="display: none;">
+                                                                                            <td colspan="23">
+                                                                                                <ul class="nav nav-tabs">
+                                                                                                    <li class="active"><a data-toggle="tab" href="#quoteDetailTab">Quote Detail</a></li>
+                                                                                                    <li><a data-toggle="tab" href="#quoteNotes">Quote Notes</a></li>
+                                                                                                    <li><a data-toggle="tab" href="#quoteSentHistory">Quote Sent History</a></li>
+                                                                                                    <li><a data-toggle="tab" href="#quoteRevision">Quote Revisions</a></li>
+                                                                                                </ul>
+                                                                                                <div class="tab-content master-material-management-tab-content">
+                                                                                                    <!-- Vendor Tab start -->
+                                                                                                    <div id="quoteDetailTab" class="tab-pane fade in active">
+                                                                                                        <h4 class="form-sub-title">Quote Detail</h4>
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-md-12">
+                                                                                                                <div class="table-responsive">
+                                                                                                                    <table class="table">
+                                                                                                                        <thead>
+                                                                                                                            <tr>
+                                                                                                                                <th>
+                                                                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                                                            <img src="images/Views.png">
+                                                                                                                                        </button>
+                                                                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Description</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="abbrID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">UOM</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="nameID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Qty</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="webAddressID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Extended</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="address1ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Markup</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="address2ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Total</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="address3ID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Tax Rate</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="cityID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Selling Price</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="stateID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Notes</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="zipID" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                        </ul>
+                                                                                                                                    </div>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="abbrID">Description
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="nameID">
+                                                                                                                                    UOM
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="webAddressID">
+                                                                                                                                    Qty
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="Address1ID">
+                                                                                                                                    Extended
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="Address2ID">
+                                                                                                                                    Markup
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="Address3ID">
+                                                                                                                                    Total
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="cityID">
+                                                                                                                                    Tax Rate
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="stateID">
+                                                                                                                                    Selling Price
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="zipID">
+                                                                                                                                    Notes
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr class="odd-row">
+                                                                                                                                <td>
+                                                                                                                                </td>
+                                                                                                                                <td data-type="abbrID">C</td>
+                                                                                                                                <td data-type="nameID">Ceco</td>
+                                                                                                                                <td data-type="webAddressID" class="column-input-number">
+                                                                                                                                    <input type="number" value="3">
+                                                                                                                                </td>
+                                                                                                                                <td data-type="Address1ID">9151 Telecom Dr</td>
+                                                                                                                                <td data-type="Address2ID"></td>
+                                                                                                                                <td data-type="Address3ID"></td>
+                                                                                                                                <td data-type="cityID">Milan</td>
+                                                                                                                                <td data-type="stateID">TN</td>
+                                                                                                                                <td data-type="zipId" class="column-text-box">
+                                                                                                                                    <div class="col-md-12">
+                                                                                                                                        <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                                                                                        <span class="caret"></span>
+                                                                                                                                        <div class="dropdown-menu">
+                                                                                                                                            <textarea class="form-control">
+                                                                                                                                            </textarea>
+                                                                                                                                            <div class="col-md-12 text-right">
+                                                                                                                                                <button class="btn btn-primary">Ok</button>
+                                                                                                                                                <button class="btn btn-default">Cancel</button>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr class="even-row">
+                                                                                                                                <td>
+                                                                                                                                </td>
+                                                                                                                                <td data-type="abbrID">CU</td>
+                                                                                                                                <td data-type="nameID">Curries</td>
+                                                                                                                                <td data-type="webAddressID" class="column-input-number">
+                                                                                                                                    <input type="number" value="3">
+                                                                                                                                </td>
+                                                                                                                                <td data-type="Address1ID">1502 12th St. NW</td>
+                                                                                                                                <td data-type="Address2ID">PO Box 1648</td>
+                                                                                                                                <td data-type="Address3ID"></td>
+                                                                                                                                <td data-type="cityID">PO Box 1648</td>
+                                                                                                                                <td data-type="stateID">IA</td>
+                                                                                                                                <td data-type="zipId" class="column-text-box">
+                                                                                                                                    <div class="col-md-12">
+                                                                                                                                        <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                                                                                        <span class="caret"></span>
+                                                                                                                                        <div class="dropdown-menu">
+                                                                                                                                            <textarea class="form-control">
+                                                                                                                                            </textarea>
+                                                                                                                                            <div class="col-md-12 text-right">
+                                                                                                                                                <button class="btn btn-primary">Ok</button>
+                                                                                                                                                <button class="btn btn-default">Cancel</button>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div id="quoteNotes" class="tab-pane fade">
+                                                                                                        <h4 class="form-sub-title">Quote Notes</h4>
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-md-12">
+                                                                                                                <div class="table-responsive">
+                                                                                                                    <table class="table">
+                                                                                                                        <thead>
+                                                                                                                            <tr>
+                                                                                                                                <th>
+                                                                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                                                            <img src="images/Views.png">
+                                                                                                                                        </button>
+                                                                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Create Date</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="createDate" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">User</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="user" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Notes</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="notes" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                        </ul>
+                                                                                                                                    </div>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="createDate">Create Date
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="user">
+                                                                                                                                    User
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="webAddressID">
+                                                                                                                                    Notes(will not print on quote)
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr class="odd-row">
+                                                                                                                                <td>
+                                                                                                                                </td>
+                                                                                                                                <td data-type="createDate">
+                                                                                                                                    <input type="text" value="" class="datepickercal" style="color:#757575">
+                                                                                                                                </td>
+                                                                                                                                <td data-type="user">Wizard</td>
+                                                                                                                                <td data-type="webAddressID" class="column-text-box">
+                                                                                                                                    <div class="col-md-12">
+                                                                                                                                        <span class="dropdown-toggle" data-toggle="dropdown">Note</span>
+                                                                                                                                        <span class="caret"></span>
+                                                                                                                                        <div class="dropdown-menu">
+                                                                                                                                            <textarea class="form-control"> </textarea>
+                                                                                                                                            <div class="col-md-12 text-right">
+                                                                                                                                                <button class="btn btn-primary">Ok</button>
+                                                                                                                                                <button class="btn btn-default">Cancel</button>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div id="quoteSentHistory" class="tab-pane fade">
+                                                                                                        <h4 class="form-sub-title">Quote Sent History</h4>
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-md-12">
+                                                                                                                <div class="table-responsive">
+                                                                                                                    <table class="table">
+                                                                                                                        <thead>
+                                                                                                                            <tr>
+                                                                                                                                <th>
+                                                                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                                                            <img src="images/Views.png">
+                                                                                                                                        </button>
+                                                                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Name</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="name" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Date Sent</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="dateSentHistory" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Method Sent</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="methodSent" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Quote</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="quote" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                        </ul>
+                                                                                                                                    </div>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="name">Name
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="dateSentHitory">
+                                                                                                                                    Date Sent
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="methodSent">
+                                                                                                                                    Method Sent
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="quote">
+                                                                                                                                    Quote
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr class="odd-row">
+                                                                                                                                <td>
+                                                                                                                                </td>
+                                                                                                                                <td data-type="name">
+                                                                                                                                    Beverage Construction, Inc.
+                                                                                                                                </td>
+                                                                                                                                <td data-type="dateSentHistory">
+                                                                                                                                    <input type="text" value="" class="datepickercal" style="color:#757575">
+                                                                                                                                </td>
+                                                                                                                                <td data-type="Method Sent"></td>
+                                                                                                                                <td data-type="quote" class="column-text-box"></td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div id="quoteRevision" class="tab-pane fade">
+                                                                                                        <h4 class="form-sub-title">Quote Revision</h4>
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-md-12">
+                                                                                                                <div class="table-responsive">
+                                                                                                                    <table class="table">
+                                                                                                                        <thead>
+                                                                                                                            <tr>
+                                                                                                                                <th>
+                                                                                                                                    <div class="btn-group custom-filtr-table">
+                                                                                                                                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                            <img src="images/Views.png">
+                                                                                                                                        </button>
+                                                                                                                                        <ul class="dropdown-menu filter-grid-column">
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Description</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="description" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Created On</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="createdOn" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                            <li>
+                                                                                                                                                <a class="pull-left btn-block clearfix">
+                                                                                                                                                    <span class="pull-left">Created By</span>
+                                                                                                                                                    <input onclick="gridfilterColumn(this)" data-type="methodSent" class="filter-grid-check pull-right text-right" checked="checked" type="checkbox">
+                                                                                                                                                </a>
+                                                                                                                                            </li>
+                                                                                                                                        </ul>
+                                                                                                                                    </div>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="name" style="display: table-cell;">Description
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="createdOn">
+                                                                                                                                    Created On
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                                <th data-type="createdBy">
+                                                                                                                                    Created By
+                                                                                                                                    <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+
+                                                                            <!-----Quote Formats Start -------------------------->
+                                                                            <div id="quote-format" class="tab-pane marginT45">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                        <div class="page-header clearfix">
+                                                                                            <h1 class="text-left">Quote Formats</h1>
+                                                                                        </div>
+                                                                                        <div class="btn-block column-drag-header">
+                                                                                            <label>Drag a column header here to group by that column</label>
+                                                                                        </div>
+                                                                                        <div class="table-wrapper">
+                                                                                            <table class="table custom-grid" id="quoteFormatTable">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th style="width:5%;" class="text-center">
+                                                                                                            <div class="btn-group custom-filtr-table">
+                                                                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                                    <img src="images/Views.png">
+                                                                                                                </button>
+                                                                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                                                                    <li>
+                                                                                                                        <a class="pull-left btn-block clearfix">
+                                                                                                                            <span class="pull-left">Description</span>
+                                                                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="description" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <a class="pull-left btn-block clearfix">
+                                                                                                                            <span class="pull-left">Format</span>
+                                                                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="format" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                                <input type="checkbox" onclick="checkAll(this)">
+                                                                                                            </div>
+                                                                                                        </th>
+                                                                                                        <th data-type="description">
+                                                                                                            Description
+                                                                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                        </th>
+                                                                                                        <th data-type="same">
+                                                                                                            Format
+                                                                                                            <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                                        </th>
+
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td class="text-center">
+                                                                                                            <input type="checkbox">
+                                                                                                        </td>
+                                                                                                        <td data-type="description">Sample 2</td>
+                                                                                                        <td data-type="format">Edit</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="text-center">
+                                                                                                            <input type="checkbox">
+                                                                                                        </td>
+                                                                                                        <td data-type="description">Sample 3</td>
+                                                                                                        <td data-type="format">Edit</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="text-center">
+                                                                                                            <input type="checkbox">
+                                                                                                        </td>
+                                                                                                        <td data-type="description">Sample 1</td>
+                                                                                                        <td data-type="format">Edit</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="text-center">
+                                                                                                            <input type="checkbox">
+                                                                                                        </td>
+                                                                                                        <td data-type="description">Sample 4</td>
+                                                                                                        <td data-type="format">Edit</td>
+                                                                                                    </tr>
+
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                        <div class="col-md-12 add-delete-control text-left custom-search-filter" style="padding-left:0;background:#d2d2d2 none repeat scroll 0 0;">
+                                                                                            <button class="btn btn-default pull-left" type="button" onclick="addBlankRecord('#quoteFormatTable')">
+                                                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                                                            </button>
+                                                                                            <button class="btn btn-default pull-left" onclick="deleteRecord('#quoteFormatTable')">
+                                                                                                <i class="glyphicon glyphicon-minus"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-----Quote Status Start -------------------------->
+                                                                <div id="quote-status" class="tab-pane fade">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12 column-drag-header">
+                                                                                <label>Drag a column header here to group by that column</label>
+                                                                            </div>
+                                                                            <div class="table-wrapper">
+                                                                                <table class="table custom-grid" id="">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>
+                                                                                                <div class="btn-group custom-filtr-table">
+                                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                                        <img src="images/Views.png">
+                                                                                                    </button>
+                                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Quote</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quote" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Contractor</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="contractor" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Phone</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="dateSent" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Quotes Status</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quoteStatus" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Method Sent</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="methodSent" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Status</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="status" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Email Address</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="emailAddress" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Fax Number</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="faxNumber" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                                <span class="pull-left">Cell Phone</span>
+                                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="cellPhone" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </th>
+                                                                                            <th data-type="quote">
+                                                                                                Quote
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="contractor">
+                                                                                                Contractor
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="phone">
+                                                                                                Phone
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="dateSent">
+                                                                                                Date Sent
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="quoteStatus">
+                                                                                                Quotes Status
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="methodSent">
+                                                                                                Method Sent
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="status">
+                                                                                                Status
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="emailAddress">
+                                                                                                Email Address
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="faxNumber">
+                                                                                                Fax Number
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                            <th data-type="cellPhone">
+                                                                                                Cell Phone
+                                                                                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                                                            </th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td>&nbsp;</td>
+                                                                                            <td data-type="quote"></td>
+                                                                                            <td data-type="contractor">Beverage Construction,Inc</td>
+                                                                                            <td data-type="phone"></td>
+                                                                                            <td data-type="dateSent">
+                                                                                                <input type="text" value="" class="datepickercal" style="color:#757575">
+                                                                                            </td>
+                                                                                            <td data-type="quoteStatus"></td>
+                                                                                            <td data-type="methodSent"></td>
+                                                                                            <td data-type="status" class="dropdown-column">
+                                                                                                <div class="col-xs-12">
+                                                                                                    <span class="dropdown-toggle" data-toggle="dropdown">New</span>
+                                                                                                    <span class="caret"></span>
+                                                                                                    <div class="dropdown-menu">
+                                                                                                        <table class="table">
+                                                                                                            <tbody>
+                                                                                                                <tr data-value="New" data-color="{&quot;background-color&quot;:&quot;#337ab7&quot;,&quot;color&quot;:&quot;#fff&quot;}">
+                                                                                                                    <td>New</td>
+                                                                                                                </tr>
+                                                                                                                <tr data-value="Lost" data-color="{&quot;background-color&quot;:&quot;#f4f4f4&quot;,&quot;color&quot;:&quot;#757575&quot;}">
+                                                                                                                    <td>Lost</td>
+                                                                                                                </tr>
+                                                                                                            </tbody>
+                                                                                                        </table>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td data-type="emailAddress"></td>
+                                                                                            <td data-type="faxNumber"></td>
+                                                                                            <td data-type="cellPhone"></td>
+                                                                                        </tr>
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-2 col-sm-2 col-xs-12 ">Test Project</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">&copy; ASSA ABLOY 2016 PRO TECH Version 9.0.0.0</div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">John Simmons</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Modal Window -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="architectModal">
+            <div class="modal-dialog custom-modal-large" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Architects/Conractors</h4>
+                    </div>
+                    <div class="modal-body" id="copyhardwareset">
+                        <div class="container-fluid">
+                            <div class="project-form-container">
+                                <div class="row add-archit-titles add-archit-actionbtns vendor-listing-container" style="position:relative;">
+                                    <div class="col-md-6">
+                                        <h4 class="form-sub-title">Master Vendor List</h4>
+                                        <form class="form-inline custom-search-filter revision clearfix">
+                                            <div class="form-group">
+                                                <div class="pull-left">
+                                                    <label class="displayInline">View</label>
+                                                    <select class="form-control" id="Select1" onchange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                        <option value="original">(**Original View**)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginL30">
+                                                    <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                    <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                    <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                    <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                        <i class="glyphicon glyphicon-minus"></i>
+                                                    </button>
+                                                    <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                      <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                    </button> -->
+                                                    <button class="btn btn-default pull-left" type="button" title="Save">
+                                                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                    </button>
+
+                                                    <button class="btn btn-default pull-left" type="button" title="Print">
+                                                        <i class="glyphicon glyphicon-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-default pull-left" type="button" title="Export">
+                                                        <i class=" glyphicon glyphicon-export"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="explicit-controls col-black" style="right:-7px;top:114px;">
+                                            <button class="btn btn-link" type="button" title="Go" style="padding:6px 0px;" onclick="moveData('#allContractorTable', '#currentContractorTable', addToContractorList)">
+                                                <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                                            </button>
+                                            <button class="btn btn-link" type="button" id="deleteMasterSetBtn" title="Go" style="padding:6px 0px;" onclick="deleteRecord('#currentContractorTable', addToContractorList)">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="btn-block group-by-control">
+                                            Drag a column header here to group by that column
+                                        </div>
+                                        <div class="table-responsive grid" style="padding:0;height:250px;overflow:scroll;">
+                                            <table class="table sortingTable" id="allContractorTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30">
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="images/Views.png">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Type</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" checked="checked" data-type="type" class="filter-grid-check pull-right text-right" style="">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Name</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="name" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Address1</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="address1" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </th>
+                                                        <th data-type="type">Type <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th data-type="name">Name <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th data-type="address1">Address <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Architect</td>
+                                                        <td data-type="name">Raw International</td>
+                                                        <td data-type="address1">606 South</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Architect</td>
+                                                        <td data-type="name">Wright & Associates</td>
+                                                        <td data-type="address1">1 W. State St. </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Architect</td>
+                                                        <td data-type="name">Accord Architects</td>
+                                                        <td data-type="address1">606 South</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Architect</td>
+                                                        <td data-type="name">CSO Shenkel Scultz</td>
+                                                        <td data-type="address1">280 East</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Architect</td>
+                                                        <td data-type="name">Bill Jones Architectural Firm</td>
+                                                        <td data-type="address1">1502 SW Elm St.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Architect</td>
+                                                        <td data-type="name">J.C. Ripberger</td>
+                                                        <td data-type="address1">1502 SW Elm St.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Contractor</td>
+                                                        <td data-type="name">Beverage Construction, Inc.</td>
+                                                        <td data-type="address1">32 Barley St.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Contractor</td>
+                                                        <td data-type="name">Happy Hammer Construction</td>
+                                                        <td data-type="address1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Contractor</td>
+                                                        <td data-type="name">Elmwood Contracting, Inc.</td>
+                                                        <td data-type="address1">613 Elm St.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Contractor</td>
+                                                        <td data-type="name">Two Men and a Hammer</td>
+                                                        <td data-type="address1">8D Common Have</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Contractor</td>
+                                                        <td data-type="name">Big Hammer Construction, Inc.</td>
+                                                        <td data-type="address1">15 Claw St.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="form-sub-title">Current Vendors For Project</h4>
+                                        <form class="form-inline custom-search-filter revision clearfix">
+                                            <div class="form-group">
+                                                <div class="pull-left">
+                                                    <label class="displayInline">View</label>
+                                                    <select class="form-control" id="Select2" onchange="selectView('#centerTable &gt; tbody', this.value, 'centertable')">
+                                                        <option value="original">(**Original View**)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginL30">
+                                                    <!-- <button class="btn btn-default pull-left" onclick="importGridData('#centerViewDropdown', '#centerTable > tbody', 'centertable')" type="button" title="Add View"> -->
+                                                    <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                    </button>
+                                                    <!-- <button class="btn btn-default pull-left" onclick="removeGridData('#centerViewDropdown' ,'#centerTable > tbody')" type="button" title="Remove View"> -->
+                                                    <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                        <i class="glyphicon glyphicon-minus"></i>
+                                                    </button>
+                                                    <!-- <button class="btn btn-default pull-left" onclick="exportGridData('#centerTable')" type="button" title="Save">
+                                                      <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                    </button> -->
+                                                    <button class="btn btn-default pull-left" type="button" title="Save">
+                                                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                    </button>
+
+                                                    <button class="btn btn-default pull-left" type="button" title="Print">
+                                                        <i class="glyphicon glyphicon-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-default pull-left" type="button" title="Export">
+                                                        <i class=" glyphicon glyphicon-export"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="btn-block group-by-control">
+                                            Drag a column header here to group by that column
+                                        </div>
+                                        <div class="table-responsive grid" style="padding:0;height:250px;overflow:scroll;">
+                                            <table class="table sortingTable" id="currentContractorTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30"></th>
+                                                        <th>Type <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th>Name <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                        <th>Address <span class="glyphicon glyphicon-triangle-bottom"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Accord Architects</td>
+                                                        <td>425 E.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>Raw International</td>
+                                                        <td>606 South</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Architect</td>
+                                                        <td>CSO Shenkel Scultz</td>
+                                                        <td>280 East</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Contractor</td>
+                                                        <td>J.C. Ripberger</td>
+                                                        <td>1502 SW Elm St.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>Contractor</td>
+                                                        <td>Beverage Construction, Inc.</td>
+                                                        <td>280 East</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">Contractor</td>
+                                                        <td data-type="name">Elmwood Contracting, Inc.</td>
+                                                        <td data-type="address1">613 Elm St.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary submit-btn" data-dismiss="modal">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <!-- Footer HTML -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // $(".new-add-vendor-btn a ").click(function(){
+                //   $(this).parent().next(".hidden ").toggleClass("hidden ");
+                // })
+                $("#project-id-src ").on("blur ", function() {
+                    if ($("#project-id-src ").val() == ('2624'))
+                        window.location.href = "projectIDSearch.html ";
+                })
+            })
+        </script>
+</body>
+
+</html>

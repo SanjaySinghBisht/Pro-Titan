@@ -1,0 +1,1992 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Assa Abloy</title>
+
+    <!-- Custom Style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap realted JS -->
+    <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/mustache.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="stickyFooterRelContainer">
+        <!-- Header Start -->
+        <header class="header pos-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix welcome-strip">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-7">
+                                        <ul class="nav navbar-nav">
+                                            <li><span>Welcome Erdmann, Dawn</span></li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu1" data-toggle="dropdown" class="dropdown-toggle">Profile</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Switch user" onClick="window.location.href = './switchUsers.html'">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Logout" onclick="window.location.href = './login.html'">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown"> <a href="#" id="dropdownMenu2" data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <input type="button" value="Help Forms">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="Live Chat">
+                                                    </li>
+                                                    <li>
+                                                        <input type="button" value="FAQ">
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                            <li><a href="contactUs.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="indicator">
+                                            <ul class="indicator-btn">
+                                                <li class="list-unstyled">
+                                                    <a class="btn btn-info project-status marginR5" title="Milano Travel" type="button">
+                                                        Milano Travel
+                                                    </a>
+                                                    <a class="btn btn-sucess change-status" type="button" data-toggle="modal" data-target="#changePopupData">
+                                                        Change : C0-01
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pushbuttons pos-headerpushbuttons">
+                        <a href="javascript:void(0);" class="collapseheaderBtn" title="Header Collapse Button"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="expandheaderBtn" title="Header Expand Button"><i class="fa fa-chevron-down " aria-hidden="true"></i></a>
+                    </div>
+        </header>
+        <div id='ribbonMenuBar' class='marginB15'>
+
+        </div>
+        </div>
+
+        <div class="container-fluid content-container">
+            <div class="row both-column-height-equal">
+                <div class="contentCollapsable pos-relative">
+                    <div class="pushbuttons pos-sidebarpushbuttons">
+                        <a href="javascript:void();" class="collapseBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <a href="javascript:void();" class="expandBtn"><i class="fa fa-chevron-right " aria-hidden="true"></i></a>
+                    </div>
+                    <div class="container-fluid esimate-tab-list">
+
+                        <!-- Tab panes -->
+
+                        <!-- Page Header -->
+                        <div class="page-header clearfix">
+                            <h1 class="text-left"><span>Create Hardware Set</span> <!--&nbsp;<i class="fa fa-angle-double-right"></i>&nbsp; <span style="font-size:20px;">Add Parts</span>--></h1>
+                        </div>
+                        <!--<div class="tab-heading">
+                            <h2>Create Hardware Set</h2>
+                          </div>-->
+                        <div class="col-md-12 wholeLeftArea">
+                            <div class="row pos-relative ">
+                                <div class="pos-absolute" style="right:0;z-index:99;">
+                                    <button class="btn btn-default expandtable collapseTable" id="toggleBtn" type="button" title="Reset">
+                                        <i class="glyphicon glyphicon-resize-full"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-6 leftArea pos-relative">
+                                    <div class="moveBtn" style="right:-35px;">
+                                        <a onclick="transferData('.leftGrid', '#centertable');"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+
+                                        <a onclick="deleteRow(this, '#leftTopGrid, #leftGridFavouriteTable,#leftBottomGrid, #centertable')"><span class="glyphicon glyphicon-trash margin-TB15"></span></a>
+                                        <a onclick="cutDataVendorCrossXfr('#', '#')"><span class="glyphicon glyphicon-resize-horizontal"></span></a>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="clearfix marginB15">
+                                            <div class="padding-10px">
+                                                <button class="btn btn-default" type="button" title="Search" onclick="swipeTable('#leftGridFavouriteTable', '#leftTopGrid ')">
+                                                    <i class="glyphicon glyphicon-search"></i> Search
+                                                </button>
+                                                <button class="btn btn-default" type="button" title="Recent">
+                                                    <i class="glyphicon glyphicon-new-window"></i> Recent
+                                                </button>
+                                                <button class="btn btn-default" type="button" title="Favorite" onclick="swipeTable('#leftTopGrid', '#leftGridFavouriteTable ')">
+                                                    <i class="glyphicon glyphicon-heart"></i> Favorite
+                                                </button>
+                                                <button class="btn btn-default" type="button" title="Other Project">
+                                                    <i class="glyphicon glyphicon-modal-window"></i> Other Project
+                                                </button>
+                                                <!--<button class="btn btn-default" type="button" title="Open Project">
+                                        <i class="glyphicon glyphicon-floppy-disk"></i> Save
+                                    </button>-->
+                                            </div>
+                                        </div>
+                                        <form class="form-horizontal custom-search-filter clearfix" style="margin-bottom:0;">
+                                            <div class="form-group col-md-12">
+                                                <div class="pull-left marginR5">
+                                                    <select class="form-control">
+                                                        <option selected>Mfr.</option>
+                                                        <option value="">PE</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginR5">
+                                                    <select class="form-control">
+                                                        <option selected>Type</option>
+                                                        <option value="">LO</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginR5">
+                                                    <select class="form-control" id="">
+                                                        <option value="original">Product Line</option>
+                                                    </select>
+                                                </div>
+                                                <div class="pull-left marginR5">
+                                                    <input type="text" class="form-control" placeholder="Search" />
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                        <div class="topgridarea clearfix marginB15">
+                                            <div class="table-wrap overflow-auto" style="height:179px;">
+                                                <table class="table table-bordered table-striped custom-search-filter leftGrid" id="leftTopGrid" style='margin-bottom: 0;'>
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <th class="table-head width50 text-right" data-type="checkbox">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Mfr. </span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="mfr" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Type</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Product Line</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="productLine" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Part Description </span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDesc" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Cut Sheet</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="cutsheet" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th class="table-head width70" data-type="mfr">Mfr. <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head width70" data-type="type"> Type <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head" data-type="productLine"> Product Line <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head  width150" data-type="partDesc">Part Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head width90" data-type="cutsheet">Cut Sheet <i class="glyphicon glyphicon-triangle-top"></i></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">29SE</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18BRASS</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SATIN</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SILVER</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18WHITE</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18BRASS</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SATIN</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18SILVER</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="mfr">PE</td>
+                                                            <td data-type="type">LO</td>
+                                                            <td data-type="productLine">Sliding Door Locks</td>
+                                                            <td data-type="partDesc">6 18WHITE</td>
+                                                            <td data-type="cutsheet"><img src="images/pdf-icon.png" width="12" height="16" class="pdfIcon"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered table-striped custom-search-filter leftGrid" id="leftGridFavouriteTable" style='display:none; margin-bottom: 0;'>
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <th class="table-head width50 text-right" data-type="checkbox">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Category</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="categoryID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Name</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="nameID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Use</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="useID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Notes</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="notesID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th class="table-head width150" data-type="categoryID">Category <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head width150" data-type="nameID"> Name <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head" data-type="useID"> Use <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head  width150" data-type="notesID">Notes <i class="glyphicon glyphicon-triangle-top"></i></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">School</td>
+                                                            <td data-type="nameID">Class Room Sets</td>
+                                                            <td data-type="useID">Locks</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Hospital</td>
+                                                            <td data-type="nameID">Silver Cross</td>
+                                                            <td data-type="useID">Locks</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Hotel</td>
+                                                            <td data-type="nameID">Hotel Office</td>
+                                                            <td data-type="useID">HMD</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Hospital</td>
+                                                            <td data-type="nameID">St. Johns</td>
+                                                            <td data-type="useID">Locks</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">ASSA Abloy</td>
+                                                            <td data-type="nameID">Standard Mater</td>
+                                                            <td data-type="useID">Vendor</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" class="parentCheck">
+                                                            </td>
+                                                            <td data-type="categoryID">Alligion</td>
+                                                            <td data-type="nameID">Standard Mater</td>
+                                                            <td data-type="useID">Vendor</td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="bottomtGridArea">
+                                            <h5 class="text-left">Modifiers</h5>
+                                            <div class="table-wrap  overflow-auto" style="height:150px;">
+                                                <table class="table table-bordered table-striped custom-search-filter leftGrid" id="" style="margin-bottom:0;">
+                                                    <thead>
+                                                        <tr class="table-head">
+                                                            <th class="table-head width50 text-right" data-type="checkbox">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Print Code </span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="printCode" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Description</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="desc" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th class="table-head" data-type="printCode">Print Code <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                            <th class="table-head" data-type="desc"> Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">11</td>
+                                                            <td data-type="desc">17/32(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">12</td>
+                                                            <td data-type="desc">39/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">13</td>
+                                                            <td data-type="desc">43/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">14</td>
+                                                            <td data-type="desc">47/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">15</td>
+                                                            <td data-type="desc">55/64(13mm) Spindle Length</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-type="checkbox" class="text-right">
+                                                                <input type="checkbox" class="childCheck">
+                                                            </td>
+                                                            <td data-type="printCode">16</td>
+                                                            <td data-type="desc">59/64(13mm) Spindle Length</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6" id="centerArea">
+                                    <div class="row" style="margin-left:30px;">
+                                        <div class="clearfix marginB15">
+                                            <form class="form-inline custom-search-filter clearfix">
+                                                <div class="form-group" style="width:100%;">
+                                                    <div class="pull-left">
+                                                        <label class="displayInline">View</label>
+                                                        <select class="form-control" id="Select12">
+                                                            <option value="original">(**Original View**)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="pull-left marginL10">
+                                                        <button class="btn btn-default pull-left" type="button" title="Add View">
+                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Remove View">
+                                                            <i class="glyphicon glyphicon-minus"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Save">
+                                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Reset">
+                                                            <i class="glyphicon glyphicon-copy"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Reset">
+                                                            <i class="glyphicon glyphicon-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-default pull-left" type="button" title="Reset">
+                                                            <i class="glyphicon glyphicon-file"></i>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <form class="form-inline custom-search-filter clearfix" style="margin-bottom:20px;">
+                                            <div class="pull-left">
+                                                <div class="form-group">
+                                                    <label>Hdw Set</label>
+                                                    <select class="form-control" id="Select6">
+                                                        <option value="original">Select</option>
+                                                        <option value="">1.0</option>
+                                                        <option value="">2.0</option>
+                                                        <option value="">3.0</option>
+                                                        <option value="">4.0</option>
+                                                        <option value="">5.0</option>
+                                                        <option value="">6.0</option>
+                                                        <option value="">7.0</option>
+                                                        <option value="">8.0</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="pull-left marginL10">
+                                                <label class="displayInline">Opening Size</label>
+                                                <input type="text" class="form-control width50" placeholder="Width" />
+                                                <input type="text" class="form-control width50 " placeholder="Height" />
+                                            </div>
+                                            <div class="pull-left marginL10">
+                                                <div class="form-group">
+
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="select"> Single
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="select" /> Pair
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="pull-right marginL30">
+                                                <button type="button" onclick="duplicateRecord('#centertable')" class="btn btn-default btn-sm" style="">Duplicate</button>
+                                                <button type="button" onclick="addNewRecord('#centertable')" class="btn btn-default btn-sm">New</button>
+                                            </div>
+
+                                        </form>
+                                        <div class="table-wrap overflow-auto " style="height:368px;">
+                                            <table class="table table-bordered table-striped custom-search-filter" style="margin-bottom:0;" id="centertable">
+                                                <thead>
+                                                    <tr class="table-head">
+                                                        <th class="table-head width50 text-right">
+                                                            <div class="btn-group pull-left custom-filtr-table">
+                                                                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                    <img src="images/Views.png">
+                                                                </button>
+                                                                <ul class="dropdown-menu filter-grid-column">
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Item</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="item" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Mrf.</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="mrfID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Part Description</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescription" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Used ?</span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="productLine" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="pull-left btn-block clearfix">
+                                                                            <span class="pull-left">Type </span>
+                                                                            <input onclick="gridfilterColumn(this)" type="checkbox" data-type="type" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                        </a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <input type="checkbox" onclick="checkAll(this)">
+                                                        </th>
+                                                        <th class="table-head" data-type="item">Item <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head width150" data-type="partDescription"> Part Description <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head" data-type="mrfID"> Mrf. <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head" data-type="usedId"> Used ? <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                        <th class="table-head" data-type="type">Type <i class="glyphicon glyphicon-triangle-top"></i></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="addedRow" style="display:none;">
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">&nbsp;</td>
+                                                        <td data-type="partDescription">29SE</td>
+                                                        <td data-type="usedId">PE</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">LO</td>
+                                                    </tr>
+                                                    <tr class="vendor-list-toggle-row">
+                                                        <td>&nbsp;</td>
+                                                        <td data-type="item" colspan="5">
+                                                            <table class="table table-bordered table-striped custom-search-filter">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th data-type="checkbox" class="text-right width50">
+                                                                            <input type="checkbox" class="childCheck">
+                                                                        </th>
+                                                                        <th data-type="printCode" class="width150">Print Code</th>
+                                                                        <th data-type="desc">Description</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <tr>
+                                                                            <td data-type="checkbox" class="text-right">
+                                                                                <input type="checkbox" class="childCheck">
+                                                                            </td>
+                                                                            <td data-type="printCode">12</td>
+                                                                            <td data-type="desc">39/64(13mm) Spindle Length</td>
+                                                                        </tr>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button class="vendor-list-toggle-btn pull-left btn btn-expanded">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                            <input type="checkbox" class="pull-right" />
+                                                        </td>
+                                                        <td data-type="item">HI-1</td>
+                                                        <td data-type="partDescription">T4A3786 X NRP 4-1/2" X 4-1/2" US 26C</td>
+                                                        <td data-type="usedId">MK</td>
+                                                        <td data-type="type">
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td data-type="type">HI</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row borderSeparator">
+                                <div class="pos-absolute" style="right:0;z-index:99;">
+                                    <button class="btn btn-default collapsetableBottom expandtableBottom" id="toggleBtnBottom" type="button" title="Reset">
+                                        <i class="glyphicon glyphicon-resize-full"></i>
+                                    </button>
+                                </div>
+                                <div class="tabs-table">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#hdwSet" data-toggle="tab" aria-expanded="false">Hdw Set</a></li>
+                                        <li><a href="#hdwSetByDetails" data-toggle="tab" aria-expanded="true">Hdw Set (by Details)</a></li>
+                                    </ul>
+                                    <div class="tab-content heightResizeTable">
+                                        <div id="hdwSet" class="tab-pane fade active in">
+
+                                            <div class="clearfix marginB10">
+                                                <button type="button" class="btn btn-default btn-sm" style=""><i class="glyphicon glyphicon-plus"></i> Add Opening</button>
+                                                <button type="button" class="btn btn-default btn-sm" style=""><i class="glyphicon glyphicon-copy"></i> Copy Set To</button>
+                                                <button type="button" class="btn btn-default btn-sm" style=""><i class="glyphicon glyphicon-align-justify"></i> Get from Detailing</button>
+                                            </div>
+
+                                            <div class="table-wrap overflow-auto" style="height:205px;">
+                                                <table class="table table-bordered table-striped custom-search-filter marginB0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="width30">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                        <img src="images/Views.png">
+                                                                    </button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Hdw Set</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwset" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Quantity</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Used ?</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="usedID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+
+                                                            </th>
+                                                            <th data-type="hdwset">Hdw set </th>
+                                                            <th data-type="quantityID">Quantity</th>
+                                                            <th data-type="usedID">Used ? </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">1.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">2.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">3.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">4.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">5.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">6.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">7.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <button class="vendor-list-toggle-btn pull-left btn btn-expanded"><i class="glyphicon glyphicon-plus"></i></button>
+                                                            </td>
+                                                            <td data-type="hdwset">8.0 </td>
+                                                            <td data-type="quantityID">3</td>
+                                                            <td data-type="usedID">
+                                                                <input type="checkbox" /> </td>
+                                                        </tr>
+                                                        <tr class="vendor-list-toggle-row even-row">
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="3">
+                                                                <table class="table table-bordered table-striped custom-search-filter">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="width30">
+                                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                                        <img src="images/Views.png">
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Item </span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwsetItemId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Qty.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="quantityID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">UOM</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="UOMID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Leaf</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Part Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescId" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a class="pull-left btn-block clearfix">
+                                                                                                <span class="pull-left">Hdw Type Desc.</span>
+                                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwTypeID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </th>
+                                                                            <th data-type="hdwsetItemId">Hdw Item </th>
+                                                                            <th data-type="quantityID">Qty.</th>
+                                                                            <th data-type="UOMID">UOM</th>
+                                                                            <th data-type="leafID">Leaf </th>
+                                                                            <th data-type="manufID">Manuf.</th>
+                                                                            <th data-type="partDescId">Part Desc. </th>
+                                                                            <th data-type="hdwTypeID">Hdw Type Desc. </th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-1 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot Set </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">PV-2 </td>
+                                                                            <td data-type="quantityID">2.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">RF</td>
+                                                                            <td data-type="partDescId">M195 613E </td>
+                                                                            <td data-type="hdwTypeID">Pivot </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>&nbsp;</td>
+                                                                            <td data-type="hdwsetItemId">MU-1 </td>
+                                                                            <td data-type="quantityID">1.00</td>
+                                                                            <td data-type="UOMID">EA</td>
+                                                                            <td data-type="leafID">B </td>
+                                                                            <td data-type="manufID">SA</td>
+                                                                            <td data-type="partDescId">L980 PC</td>
+                                                                            <td data-type="hdwTypeID">Muilion </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <div id="hdwSetByDetails" class="tab-pane fade ">
+
+                                            <div class="table-wrap overflow-auto" style="height:205px;">
+                                                <table class="table table-bordered table-striped custom-search-filter marginB0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="width50">
+                                                                <div class="btn-group pull-left custom-filtr-table">
+                                                                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <img src="images/Views.png"></button>
+                                                                    <ul class="dropdown-menu filter-grid-column">
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Hdw Set</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwset" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Hdw Item</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwItemID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Qty.</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="qtyID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">UOM</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="uomID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Leaf.</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="leafID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Manuf.</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="manuID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Part Description</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="partDescID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Notes</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="notesID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Hdw Type Description</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="hdwtypeDescID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="pull-left btn-block clearfix">
+                                                                                <span class="pull-left">Set Description</span>
+                                                                                <input onclick="gridfilterColumn(this)" type="checkbox" data-type="setDescID" class="filter-grid-check pull-right text-right" checked="checked">
+                                                                            </a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <input type="checkbox" class="pull-right" onclick="checkAll(this)" />
+                                                            </th>
+                                                            <th data-type="hdwset" class="width90">Hdw set </th>
+                                                            <th data-type="hdwItemID" class="width90">Hdw Item</th>
+                                                            <th data-type="qtyID" class="width70">Qty.</th>
+                                                            <th data-type="uomID" class="width70">UOM </th>
+                                                            <th data-type="leafID" class="width70">Leaf.</th>
+                                                            <th data-type="manuID" class="width70">Manuf. </th>
+                                                            <th data-type="partDescID">Part Description </th>
+                                                            <th data-type="notesID">Notes</th>
+                                                            <th data-type="hdwtypeDescID">Hdw Type Description </th>
+                                                            <th data-type="setDescID">Set Description </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="hdwset">2 </td>
+                                                            <td data-type="hdwItemID">HI-1</td>
+                                                            <td data-type="qtyID">3.00</td>
+                                                            <td data-type="uomID">EA </td>
+                                                            <td data-type="leafID">B</td>
+                                                            <td data-type="manuID">AD </td>
+                                                            <td data-type="partDescID">1870 2.75 119 </td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                            <td data-type="hdwtypeDescID">&nbsp;</td>
+                                                            <td data-type="setDescID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="hdwset">2 </td>
+                                                            <td data-type="hdwItemID">CL-1</td>
+                                                            <td data-type="qtyID">1.00</td>
+                                                            <td data-type="uomID">EA </td>
+                                                            <td data-type="leafID">B</td>
+                                                            <td data-type="manuID">SA </td>
+                                                            <td data-type="partDescID">TB WD 1130 HU EB </td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                            <td data-type="hdwtypeDescID">Surface Closer</td>
+                                                            <td data-type="setDescID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="hdwset">2 </td>
+                                                            <td data-type="hdwItemID">HI-1</td>
+                                                            <td data-type="qtyID">3.00</td>
+                                                            <td data-type="uomID">EA </td>
+                                                            <td data-type="leafID">B</td>
+                                                            <td data-type="manuID">AD </td>
+                                                            <td data-type="partDescID">1870 2.75 119 </td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                            <td data-type="hdwtypeDescID">&nbsp;</td>
+                                                            <td data-type="setDescID">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <input type="checkbox" />
+                                                            </td>
+                                                            <td data-type="hdwset">2 </td>
+                                                            <td data-type="hdwItemID">CL-1</td>
+                                                            <td data-type="qtyID">1.00</td>
+                                                            <td data-type="uomID">EA </td>
+                                                            <td data-type="leafID">B</td>
+                                                            <td data-type="manuID">SA </td>
+                                                            <td data-type="partDescID">TB WD 1130 HU EB </td>
+                                                            <td data-type="notesID">&nbsp;</td>
+                                                            <td data-type="hdwtypeDescID">Surface Closer</td>
+                                                            <td data-type="setDescID">&nbsp;</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pdfArea">
+                            <div class="pull-right" style="z-index:99;">
+                                <button class="btn btn-default collapsetablePDF expandtablePDF" id="toggleBtnPDF" type="button" title="Reset">
+                                    <i class="glyphicon glyphicon-resize-full"></i>
+                                </button>
+                            </div>
+
+                            <!-- <iframe src="pdf/sample.pdf" width="100%" height="500">
+This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>
+</iframe>-->
+
+                            <embed src="pdf/sample.pdf" type="application/pdf" width="100%" height="770">
+                            <!-- <object data="pdf/Pricebook Management.pdf" type="application/pdf" width="100%" height="500">
+</object>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-left">The global leader in door opening solutions </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-right">&copy; ASSA ABLOY 2016 | Legal | Email: info@assaabloy.com </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Footer HTML -->
+
+</body>
+
+</html>

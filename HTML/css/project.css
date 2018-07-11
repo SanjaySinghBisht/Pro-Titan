@@ -1,0 +1,176 @@
+.show-details-btn{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 15px;
+    background: #2dcb2d;//#5cb85c;
+    color: #ffffff;
+    cursor: pointer;
+    /*margin: 10px 5px;*/
+	    
+    width: 120px;
+    height: 34px;
+}
+.show-details-btn:hover{
+    background: #5cb85c;
+}
+.table-actions>button,
+.filters button{
+    width: 130px !important;
+}
+#project-table td[data-type="Details"],
+#project-table th[data-type="Details"]{
+    width: 100px;
+}
+#project-table td[data-type="Details"]>button{
+    padding: 3px 7px !important;
+    opacity: 0.7;
+}
+#project-detail-popup .input-group{
+    width: 90%;
+    margin:5px auto;
+}
+
+/*------------------------Project Discount page css -------------------------*/
+
+.ProjrowTabHeader {
+    /*background: #fafafa;*/
+    padding: 10px 0px;
+    border-bottom: 1px solid #ddd;
+    /*border-radius: 10px;*/
+}
+
+button.vendQuoBtn {
+    background: #ddd;
+    box-shadow: 0px 1px 1px #999;
+    border-radius: 4px;
+}
+
+
+.ProjrowtabularGridHead div {
+    background: #bbdde8;
+    border-right: 1px solid #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000;
+    font-size: bold;
+}
+.vendorRows {
+    /*background: #e3f9ff;
+	background:#f4f4f4;*/
+    margin: 0px;
+	Padding:0px;
+}
+.vendorRows div {
+    padding: 5px 10px;
+    border-right: 1px solid #c8c8ca;
+    font-size: 12px;
+}
+.smIcon {
+    font-size: 12px;
+    color: #00a0d0 !important;
+    margin-right: 5px;
+}
+.inside_collap .headerV {
+    margin: 5px 15px 1px 15px;
+}
+
+.inside_collap {
+    padding: 10px 20px;
+    background: #f5f5f5;
+    color: #555;
+}
+.inside_collap .headerV div {
+    padding: 5px 10px;
+    background: #bbdde8;
+    border-right: 1px solid #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.inside_collap .panel {
+    margin: 0px 15px;
+    background: #e3e3e3;
+    color: #777;
+}
+
+.child_collap .headerV {
+    margin: 0px 30px;
+}
+.table_collap tbody tr td {
+    background: #fafafa;
+}
+.ProjrowtabularGridData .panel-group{
+	margin-bottom:0px;
+}
+.ProjrowtabularGridData .panel-group:nth-child(even){
+    background: #f4f4f4 !important;
+}
+.ProjrowtabularGridData .panel-group .panel{
+    background: none;
+    border:0px;
+}
+.ProjrowtabularGridData .panel-group .panel .panel-title{
+    font-size: 12px;
+}
+
+.headTag_call div{
+	background: #5bc0de;
+    color: #fff;
+    padding: 5px 10px;
+    border-right: 1px dotted #fafafa;
+}
+.contentTag_call div {
+        padding: 5px 10px;
+		background: #fafafa;
+}
+.contentTag_call .row{
+	margin-bottom:2px;
+}
+
+.createconTag_call div{
+	padding:10px;
+
+}
+
+input.userNm_call {
+    width: 85%;
+    padding: 6px;
+    border: 1px solid #ccc;
+}
+input.date_call {
+    width: 85%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea.userComm_call {
+    overflow: auto;
+    border: 1px solid #ccc;
+	    padding: 6px;
+}
+.padding10{padding:10px !important;}
+
+.myAllBtn-3 {
+    box-shadow: 0px 5px 0px 0px #cdcdcd;
+    border-radius: 5px;
+    padding: 5px 25px !important;
+    font-size: 18px !important;
+    text-decoration: none;
+    margin: 5px 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    background-color: #e6e6e6 !important;
+}
+
+.myProBtn-3 {
+    box-shadow: 0px 5px 0px 0px #00a0d0;
+    border-radius: 5px;
+    padding: 5px 25px !important;
+    font-size: 18px !important;
+    text-decoration: none;
+    margin: 5px 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
